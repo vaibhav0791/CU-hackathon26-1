@@ -537,8 +537,9 @@ Return ONLY valid JSON with this exact structure:
             "smiles": smiles,
             "molecular_weight": mw,
             "dose_mg": dose,
+            "is_experimental": is_experimental,
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "drug_info": drug_info or {"smiles": smiles, "molecular_weight": mw},
+            "drug_info": drug_info or {"smiles": smiles, "molecular_weight": mw, "therapeutic_class": "Experimental Compound"},
             **analysis_data
         }
         
