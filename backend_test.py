@@ -181,20 +181,91 @@ class PharmaAITester:
             200
         )
 
-    def test_invalid_drug(self):
-        """Test POST /analyze with invalid drug name"""
-        invalid_data = {
-            "drug_name": "NonExistentDrug123",
+    def test_analyze_smiles_missing(self):
+        """Test POST /analyze with missing SMILES - should return 400 error"""
+        analysis_data = {
+            "drug_name": "Test Drug",
             "dose_mg": 100
         }
         
         success, response = self.run_test(
-            "Invalid Drug Analysis", 
+            "Missing SMILES Test", 
             "POST", 
             "/analyze", 
-            404, 
-            invalid_data
+            400, 
+            analysis_data
         )
+        
+        return success
+
+    def test_natural_language_summaries(self):
+        """Test that analysis results contain natural_language_summary in all 4 panels"""
+        analysis_data = {
+            "smiles": "CC(=O)Oc1ccccc1C(=O)O",  # Aspirin SMILES
+            "drug_name": "Aspirin",
+            "dose_mg": 500
+        }
+        
+        success, response = self.run_test(
+            "Natural Language Summaries Test", 
+            "POST", 
+            "/analyze", 
+            200, 
+            analysis_data, 
+            timeout=60
+        )
+        
+        if success and isinstance(response, dict):
+            # Check each panel has natural_language_summary
+            panels = ["solubility", "excipients", "stability", "pk_compatibility"]
+            missing_summaries = []
+            
+            for panel in panels:
+                panel_data = response.get(panel, {})
+                if not panel_data.get("natural_language_summary"):
+                    missing_summaries.append(panel)
+            
+            if missing_summaries:
+                self.log(f"  ❌ Missing natural_language_summary in: {missing_summaries}")
+                return False
+            else:
+                self.log(f"  ✅ All 4 panels have natural_language_summary")
+                return True
+        
+        return success
+
+    def test_molecule_overview(self):
+        """Test that analysis results contain molecule_overview section"""
+        analysis_data = {
+            "smiles": "c1ccc2c(c1)cc(=O)n2Cc1ccc(cc1)C(=O)N1CCCC1",  # Experimental
+            "dose_mg": 100
+        }
+        
+        success, response = self.run_test(
+            "Molecule Overview Test", 
+            "POST", 
+            "/analyze", 
+            200, 
+            analysis_data, 
+            timeout=60
+        )
+        
+        if success and isinstance(response, dict):
+            molecule_overview = response.get("molecule_overview", {})
+            
+            if not molecule_overview:
+                self.log(f"  ❌ Missing molecule_overview section")
+                return False
+                
+            required_keys = ["inferred_class", "key_features", "drug_likeness"]
+            missing_keys = [key for key in required_keys if key not in molecule_overview]
+            
+            if missing_keys:
+                self.log(f"  ❌ Missing molecule_overview keys: {missing_keys}")
+                return False
+            else:
+                self.log(f"  ✅ molecule_overview section complete")
+                return True
         
         return success
 
