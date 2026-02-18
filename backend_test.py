@@ -182,7 +182,7 @@ class PharmaAITester:
         )
 
     def test_analyze_smiles_missing(self):
-        """Test POST /analyze with missing SMILES - should return 400 error"""
+        """Test POST /analyze with missing SMILES - should return 422 validation error"""
         analysis_data = {
             "drug_name": "Test Drug",
             "dose_mg": 100
@@ -192,7 +192,7 @@ class PharmaAITester:
             "Missing SMILES Test", 
             "POST", 
             "/analyze", 
-            400, 
+            422,  # FastAPI returns 422 for validation errors
             analysis_data
         )
         
