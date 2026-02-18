@@ -1,72 +1,536 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
-from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List
+import json
 import uuid
+import io
 from datetime import datetime, timezone
-
+from pathlib import Path
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Any
+from emergentintegrations.llm.chat import LlmChat, UserMessage
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Create the main app without a prefix
-app = FastAPI()
-
-# Create a router with the /api prefix
+app = FastAPI(title="PHARMA-AI Formulation Optimizer")
 api_router = APIRouter(prefix="/api")
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-# Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
+# ─── Drug Database (SMILES + properties) ────────────────────────────────────────
+DRUG_DATABASE = {
+    "Aspirin": {
+        "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+        "molecular_weight": 180.16,
+        "molecular_formula": "C9H8O4",
+        "logp": 1.19,
+        "pka": 3.5,
+        "bcs_class": "I",
+        "therapeutic_class": "NSAID / Antiplatelet",
+        "route": "Oral"
+    },
+    "Ibuprofen": {
+        "smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+        "molecular_weight": 206.28,
+        "molecular_formula": "C13H18O2",
+        "logp": 3.97,
+        "pka": 4.91,
+        "bcs_class": "II",
+        "therapeutic_class": "NSAID",
+        "route": "Oral"
+    },
+    "Acetaminophen": {
+        "smiles": "CC(=O)Nc1ccc(O)cc1",
+        "molecular_weight": 151.16,
+        "molecular_formula": "C8H9NO2",
+        "logp": 0.46,
+        "pka": 9.5,
+        "bcs_class": "I",
+        "therapeutic_class": "Analgesic / Antipyretic",
+        "route": "Oral"
+    },
+    "Metformin": {
+        "smiles": "CN(C)C(=N)NC(=N)N",
+        "molecular_weight": 129.16,
+        "molecular_formula": "C4H11N5",
+        "logp": -1.43,
+        "pka": 2.8,
+        "bcs_class": "III",
+        "therapeutic_class": "Antidiabetic (Biguanide)",
+        "route": "Oral"
+    },
+    "Atorvastatin": {
+        "smiles": "CC(C)c1c(C(=O)Nc2ccccc2F)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)O",
+        "molecular_weight": 558.64,
+        "molecular_formula": "C33H35FN2O5",
+        "logp": 6.36,
+        "pka": 4.46,
+        "bcs_class": "II",
+        "therapeutic_class": "Statin / Antilipidemic",
+        "route": "Oral"
+    },
+    "Lisinopril": {
+        "smiles": "OC(=O)[C@@H](CCc1ccccc1)N[C@@H](CC(=O)O)C(=O)N1CCC[C@H]1C(=O)O",
+        "molecular_weight": 405.49,
+        "molecular_formula": "C21H31N3O5",
+        "logp": -1.54,
+        "pka": 2.5,
+        "bcs_class": "III",
+        "therapeutic_class": "ACE Inhibitor / Antihypertensive",
+        "route": "Oral"
+    },
+    "Omeprazole": {
+        "smiles": "CC1=CN=C(C)C(CC2=NC3=CC=CC=C3N2)=C1",
+        "molecular_weight": 345.42,
+        "molecular_formula": "C17H19N3O3S",
+        "logp": 2.23,
+        "pka": 4.77,
+        "bcs_class": "II",
+        "therapeutic_class": "Proton Pump Inhibitor",
+        "route": "Oral"
+    },
+    "Amoxicillin": {
+        "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(=O)O",
+        "molecular_weight": 365.40,
+        "molecular_formula": "C16H19N3O5S",
+        "logp": 0.87,
+        "pka": 2.4,
+        "bcs_class": "I",
+        "therapeutic_class": "Antibiotic (Penicillin)",
+        "route": "Oral"
+    },
+    "Metoprolol": {
+        "smiles": "CC(C)NCC(O)COc1ccc(CCOC)cc1",
+        "molecular_weight": 267.36,
+        "molecular_formula": "C15H25NO3",
+        "logp": 1.88,
+        "pka": 9.7,
+        "bcs_class": "I",
+        "therapeutic_class": "Beta-blocker / Antihypertensive",
+        "route": "Oral"
+    },
+    "Simvastatin": {
+        "smiles": "CCC(C)(C)C(=O)O[C@@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@@H]12",
+        "molecular_weight": 418.57,
+        "molecular_formula": "C25H38O5",
+        "logp": 4.68,
+        "pka": 13.5,
+        "bcs_class": "II",
+        "therapeutic_class": "Statin / Antilipidemic",
+        "route": "Oral"
+    },
+    "Amlodipine": {
+        "smiles": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OCC)C1c1ccccc1Cl",
+        "molecular_weight": 408.88,
+        "molecular_formula": "C20H25ClN2O5",
+        "logp": 3.0,
+        "pka": 8.6,
+        "bcs_class": "I",
+        "therapeutic_class": "Calcium Channel Blocker",
+        "route": "Oral"
+    },
+    "Losartan": {
+        "smiles": "CCCc1nc(-c2ccccc2Cl)c(-c2ccc(CN3C(=O)N(Cc4ccc(-c5ccccc5-c5nnn[nH]5)cc4)C3=S)cc2)o1",
+        "molecular_weight": 422.91,
+        "molecular_formula": "C22H23ClN6O",
+        "logp": 4.01,
+        "pka": 5.0,
+        "bcs_class": "II",
+        "therapeutic_class": "ARB / Antihypertensive",
+        "route": "Oral"
+    },
+    "Warfarin": {
+        "smiles": "OC(=O)CCCC1CC(=O)c2ccccc2O1",
+        "molecular_weight": 308.33,
+        "molecular_formula": "C19H16O4",
+        "logp": 2.7,
+        "pka": 5.05,
+        "bcs_class": "I",
+        "therapeutic_class": "Anticoagulant",
+        "route": "Oral"
+    },
+    "Metronidazole": {
+        "smiles": "Cc1ncc([N+](=O)[O-])n1CCO",
+        "molecular_weight": 171.15,
+        "molecular_formula": "C6H9N3O3",
+        "logp": -0.02,
+        "pka": 2.62,
+        "bcs_class": "I",
+        "therapeutic_class": "Antibiotic / Antiprotozoal",
+        "route": "Oral"
+    },
+    "Ciprofloxacin": {
+        "smiles": "OC(=O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+        "molecular_weight": 331.34,
+        "molecular_formula": "C17H18FN3O3",
+        "logp": 0.28,
+        "pka": 6.09,
+        "bcs_class": "IV",
+        "therapeutic_class": "Fluoroquinolone Antibiotic",
+        "route": "Oral"
+    },
+    "Doxycycline": {
+        "smiles": "OC1=C(C(=O)[C@H]2C[C@@H]3CC4=C(O)c5c(O)cccc5C(=O)[C@@]4(O)[C@H]3[C@H]2[C@@H]1C(N)=O)c(O)c1c(=C2)c(O)cccc1=O",
+        "molecular_weight": 444.43,
+        "molecular_formula": "C22H24N2O8",
+        "logp": -0.02,
+        "pka": 3.4,
+        "bcs_class": "I",
+        "therapeutic_class": "Tetracycline Antibiotic",
+        "route": "Oral"
+    },
+    "Fluoxetine": {
+        "smiles": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+        "molecular_weight": 309.33,
+        "molecular_formula": "C17H18F3NO",
+        "logp": 4.05,
+        "pka": 9.8,
+        "bcs_class": "I",
+        "therapeutic_class": "SSRI Antidepressant",
+        "route": "Oral"
+    },
+    "Sertraline": {
+        "smiles": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc21",
+        "molecular_weight": 306.23,
+        "molecular_formula": "C17H17Cl2N",
+        "logp": 5.06,
+        "pka": 9.47,
+        "bcs_class": "II",
+        "therapeutic_class": "SSRI Antidepressant",
+        "route": "Oral"
+    },
+    "Alprazolam": {
+        "smiles": "Cc1nnc2n1-c1ccc(Cl)cc1C(=Nc1ccccc1)CC2",
+        "molecular_weight": 308.76,
+        "molecular_formula": "C17H13ClN4",
+        "logp": 2.12,
+        "pka": 2.48,
+        "bcs_class": "I",
+        "therapeutic_class": "Benzodiazepine / Anxiolytic",
+        "route": "Oral"
+    },
+    "Clopidogrel": {
+        "smiles": "COC(=O)[C@@H](c1ccccc1Cl)N1CCc2sccc2C1",
+        "molecular_weight": 321.82,
+        "molecular_formula": "C16H16ClNO2S",
+        "logp": 2.64,
+        "pka": 4.55,
+        "bcs_class": "I",
+        "therapeutic_class": "Antiplatelet",
+        "route": "Oral"
+    },
+    "Tamoxifen": {
+        "smiles": "CCN(CC)/C=C/C(=C(\\c1ccccc1)/c1ccc(OCCN(CC)CC)cc1)c1ccccc1",
+        "molecular_weight": 371.51,
+        "molecular_formula": "C26H29NO",
+        "logp": 6.3,
+        "pka": 8.85,
+        "bcs_class": "II",
+        "therapeutic_class": "SERM / Anticancer",
+        "route": "Oral"
+    },
+    "Morphine": {
+        "smiles": "[C@@H]12[C@H]3CC4=CC(=C(O)C=C4[C@H]1[C@H](O)CC2)NC3",
+        "molecular_weight": 285.34,
+        "molecular_formula": "C17H19NO3",
+        "logp": 0.9,
+        "pka": 8.0,
+        "bcs_class": "I",
+        "therapeutic_class": "Opioid Analgesic",
+        "route": "Oral / Parenteral"
+    },
+    "Gabapentin": {
+        "smiles": "NCC1(CC(=O)O)CCCCC1",
+        "molecular_weight": 171.24,
+        "molecular_formula": "C9H17NO2",
+        "logp": -1.1,
+        "pka": 3.68,
+        "bcs_class": "III",
+        "therapeutic_class": "Anticonvulsant / Neuropathic Pain",
+        "route": "Oral"
+    },
+    "Prednisolone": {
+        "smiles": "[C@@]12(O)CC[C@H]3[C@@H](CCC4=CC(=O)C=C[C@@]34C)[C@@H]1CC[C@@H]2C(=O)CO",
+        "molecular_weight": 360.44,
+        "molecular_formula": "C21H28O5",
+        "logp": 1.62,
+        "pka": 12.6,
+        "bcs_class": "I",
+        "therapeutic_class": "Corticosteroid",
+        "route": "Oral"
+    },
+    "Methotrexate": {
+        "smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(CC(=O)O)cc1",
+        "molecular_weight": 454.44,
+        "molecular_formula": "C20H22N8O5",
+        "logp": -1.85,
+        "pka": 3.36,
+        "bcs_class": "III",
+        "therapeutic_class": "Antifolate / Anticancer",
+        "route": "Oral / Parenteral"
+    },
+    "Furosemide": {
+        "smiles": "NS(=O)(=O)c1cc(C(=O)O)c(NCc2ccco2)cc1Cl",
+        "molecular_weight": 330.74,
+        "molecular_formula": "C12H11ClN2O5S",
+        "logp": 2.03,
+        "pka": 3.9,
+        "bcs_class": "IV",
+        "therapeutic_class": "Loop Diuretic",
+        "route": "Oral / IV"
+    },
+    "Hydrochlorothiazide": {
+        "smiles": "NS(=O)(=O)c1cc2c(cc1Cl)NCNS2(=O)=O",
+        "molecular_weight": 297.74,
+        "molecular_formula": "C7H8ClN3O4S2",
+        "logp": -0.07,
+        "pka": 7.9,
+        "bcs_class": "IV",
+        "therapeutic_class": "Thiazide Diuretic",
+        "route": "Oral"
+    },
+    "Levothyroxine": {
+        "smiles": "NC(Cc1cc(I)c(Oc2cc(I)c(O)c(I)c2)c(I)c1)C(=O)O",
+        "molecular_weight": 776.87,
+        "molecular_formula": "C15H11I4NO4",
+        "logp": 3.16,
+        "pka": 2.2,
+        "bcs_class": "II",
+        "therapeutic_class": "Thyroid Hormone",
+        "route": "Oral"
+    },
+    "Enalapril": {
+        "smiles": "CCOC(=O)[C@@H](CCc1ccccc1)NC(C)C(=O)N1CCC[C@H]1C(=O)O",
+        "molecular_weight": 376.45,
+        "molecular_formula": "C20H28N2O5",
+        "logp": 0.11,
+        "pka": 3.0,
+        "bcs_class": "III",
+        "therapeutic_class": "ACE Inhibitor",
+        "route": "Oral"
+    },
+    "Sildenafil": {
+        "smiles": "CCCc1nn(C)c2c1nc(C)nc2N1CCN(Cc2ccc(S(=O)(=O)N3CCOCC3)cc2)CC1",
+        "molecular_weight": 474.58,
+        "molecular_formula": "C22H30N6O4S",
+        "logp": 1.9,
+        "pka": 5.97,
+        "bcs_class": "II",
+        "therapeutic_class": "PDE5 Inhibitor / Vasodilator",
+        "route": "Oral"
+    }
+}
+
+# ─── Pydantic Models ─────────────────────────────────────────────────────────────
+class AnalysisRequest(BaseModel):
+    drug_name: str
+    molecular_weight: Optional[float] = None
+    dose_mg: Optional[float] = None
+    custom_smiles: Optional[str] = None
+
+class AnalysisResult(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    drug_name: str
+    smiles: str
+    molecular_weight: float
+    dose_mg: float
+    timestamp: str
+    solubility: Dict[str, Any]
+    excipients: Dict[str, Any]
+    stability: Dict[str, Any]
+    pk_compatibility: Dict[str, Any]
+    drug_info: Dict[str, Any]
 
-class StatusCheckCreate(BaseModel):
-    client_name: str
+# ─── Routes ──────────────────────────────────────────────────────────────────────
 
-# Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "PHARMA-AI Formulation Optimizer API", "version": "1.0.0"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
+@api_router.get("/drugs")
+async def get_drugs():
+    drugs = []
+    for name, info in DRUG_DATABASE.items():
+        drugs.append({"name": name, **info})
+    return {"drugs": drugs, "total": len(drugs)}
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
+@api_router.get("/drugs/{drug_name}")
+async def get_drug(drug_name: str):
+    # Case-insensitive search
+    for name, info in DRUG_DATABASE.items():
+        if name.lower() == drug_name.lower():
+            return {"name": name, **info}
+    raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found in database")
 
-# Include the router in the main app
+@api_router.post("/analyze")
+async def analyze_drug(request: AnalysisRequest):
+    drug_name = request.drug_name
+    drug_info = None
+
+    # Lookup drug in database
+    for name, info in DRUG_DATABASE.items():
+        if name.lower() == drug_name.lower():
+            drug_info = info
+            drug_name = name
+            break
+
+    if not drug_info and not request.custom_smiles:
+        raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found. Please provide a custom SMILES string.")
+
+    smiles = request.custom_smiles or drug_info["smiles"]
+    mw = request.molecular_weight or (drug_info["molecular_weight"] if drug_info else 300.0)
+    dose = request.dose_mg or 100.0
+    bcs_class = drug_info.get("bcs_class", "I") if drug_info else "Unknown"
+    logp = drug_info.get("logp", 2.0) if drug_info else 2.0
+    pka = drug_info.get("pka", 7.0) if drug_info else 7.0
+    therapeutic_class = drug_info.get("therapeutic_class", "Unknown") if drug_info else "Unknown"
+    route = drug_info.get("route", "Oral") if drug_info else "Oral"
+
+    # AI Analysis
+    llm_key = os.environ.get("EMERGENT_LLM_KEY")
+    if not llm_key:
+        raise HTTPException(status_code=500, detail="LLM API key not configured")
+
+    session_id = str(uuid.uuid4())
+    chat = LlmChat(
+        api_key=llm_key,
+        session_id=session_id,
+        system_message="""You are an expert pharmaceutical scientist and formulation chemist specializing in drug delivery systems, PK/PD modeling, and dosage form optimization. 
+        You provide highly detailed, scientifically accurate analysis of drug formulation parameters.
+        Always respond with valid JSON only, no markdown code blocks, no extra text.""",
+    ).with_model("openai", "gpt-4o")
+
+    prompt = f"""Analyze the following drug for pharmaceutical formulation optimization and provide a comprehensive JSON analysis.
+
+Drug: {drug_name}
+SMILES: {smiles}
+Molecular Weight: {mw} g/mol
+BCS Class: {bcs_class}
+LogP: {logp}
+pKa: {pka}
+Therapeutic Class: {therapeutic_class}
+Route of Administration: {route}
+Target Dose: {dose} mg
+
+Provide a JSON response with exactly this structure (use realistic pharmaceutical science values):
+{{
+  "solubility": {{
+    "prediction": "number between 0 and 100 representing solubility score",
+    "accuracy": "prediction accuracy percentage like 96.4",
+    "classification": "Highly Soluble / Moderately Soluble / Poorly Soluble",
+    "aqueous_solubility_mg_ml": "numeric value",
+    "ph_optimal": "optimal pH for solubility",
+    "mechanisms": ["list of 3 key solubility mechanisms/factors"],
+    "enhancement_strategies": ["list of 3 enhancement strategies if needed"]
+  }},
+  "excipients": {{
+    "binders": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
+    "fillers": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
+    "disintegrants": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
+    "lubricants": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
+    "coating": {{"recommended": true/false, "type": "coating type if recommended", "rationale": "reason"}},
+    "incompatibilities": ["list of 2-3 known excipient incompatibilities to avoid"],
+    "optimal_dosage_form": "Tablet / Capsule / Suspension / etc."
+  }},
+  "stability": {{
+    "shelf_life_years": "number",
+    "shelf_life_score": "0-100 score",
+    "primary_degradation": "main degradation pathway",
+    "degradation_mechanisms": ["list of 3 degradation mechanisms"],
+    "storage_conditions": {{"temperature": "recommended temp", "humidity": "% RH", "light": "light protection needed", "container": "container type"}},
+    "accelerated_data": [
+      {{"condition": "25C/60%RH", "months": 0, "potency": 100}},
+      {{"condition": "25C/60%RH", "months": 3, "potency": "realistic value"}},
+      {{"condition": "25C/60%RH", "months": 6, "potency": "realistic value"}},
+      {{"condition": "25C/60%RH", "months": 12, "potency": "realistic value"}},
+      {{"condition": "40C/75%RH", "months": 0, "potency": 100}},
+      {{"condition": "40C/75%RH", "months": 1, "potency": "realistic value"}},
+      {{"condition": "40C/75%RH", "months": 3, "potency": "realistic value"}},
+      {{"condition": "40C/75%RH", "months": 6, "potency": "realistic value"}}
+    ],
+    "packaging_recommendation": "recommended packaging"
+  }},
+  "pk_compatibility": {{
+    "bioavailability_percent": "number 0-100",
+    "bioavailability_score": "0-100 score",
+    "tmax_hours": "time to max concentration",
+    "t_half_hours": "half-life",
+    "absorption_rate": "Fast / Moderate / Slow",
+    "absorption_mechanism": "passive diffusion / active transport / etc.",
+    "distribution_vd": "volume of distribution L/kg",
+    "protein_binding_percent": "% protein binding",
+    "metabolism": {{"primary_enzyme": "CYP enzyme or other", "metabolites": ["list of major metabolites"], "first_pass": "% first pass effect"}},
+    "excretion": {{"route": "renal/hepatic/mixed", "percent_unchanged": "% excreted unchanged"}},
+    "bioavailability_curve": [
+      {{"time": 0, "concentration": 0}},
+      {{"time": 0.5, "concentration": "realistic Cmax fraction"}},
+      {{"time": 1, "concentration": "value"}},
+      {{"time": 2, "concentration": "value"}},
+      {{"time": 4, "concentration": "value"}},
+      {{"time": 6, "concentration": "value"}},
+      {{"time": 8, "concentration": "value"}},
+      {{"time": 12, "concentration": "value"}},
+      {{"time": 24, "concentration": "value"}}
+    ],
+    "recommended_dosage_form": "specific recommendation with rationale",
+    "dosing_frequency": "once/twice/three times daily etc."
+  }}
+}}"""
+
+    try:
+        user_message = UserMessage(text=prompt)
+        response = await chat.send_message(user_message)
+        
+        # Parse JSON response
+        analysis_data = json.loads(response)
+        
+        result = {
+            "id": str(uuid.uuid4()),
+            "drug_name": drug_name,
+            "smiles": smiles,
+            "molecular_weight": mw,
+            "dose_mg": dose,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "drug_info": drug_info or {"smiles": smiles, "molecular_weight": mw},
+            **analysis_data
+        }
+        
+        # Save to MongoDB
+        doc = result.copy()
+        await db.analyses.insert_one(doc)
+        doc.pop("_id", None)
+        
+        return result
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON parse error: {e}, response: {response[:500]}")
+        raise HTTPException(status_code=500, detail="AI returned invalid JSON. Please retry.")
+    except Exception as e:
+        logger.error(f"Analysis error: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@api_router.get("/analyses")
+async def get_analyses():
+    analyses = await db.analyses.find({}, {"_id": 0}).sort("timestamp", -1).to_list(50)
+    return {"analyses": analyses, "total": len(analyses)}
+
+@api_router.get("/analyses/{analysis_id}")
+async def get_analysis(analysis_id: str):
+    analysis = await db.analyses.find_one({"id": analysis_id}, {"_id": 0})
+    if not analysis:
+        raise HTTPException(status_code=404, detail="Analysis not found")
+    return analysis
+
 app.include_router(api_router)
 
 app.add_middleware(
@@ -76,13 +540,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
