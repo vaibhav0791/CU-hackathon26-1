@@ -374,25 +374,38 @@ async def get_drug(drug_name: str):
 
 @api_router.post("/analyze")
 async def analyze_drug(request: AnalysisRequest):
-    drug_name = request.drug_name
+    smiles = request.smiles.strip()
+    if not smiles:
+        raise HTTPException(status_code=400, detail="SMILES string is required.")
+
+    # Try to match with database by name (optional) or by SMILES
     drug_info = None
+    drug_name = request.drug_name or "Experimental Compound"
 
-    # Lookup drug in database
-    for name, info in DRUG_DATABASE.items():
-        if name.lower() == drug_name.lower():
-            drug_info = info
-            drug_name = name
-            break
+    if request.drug_name:
+        for name, info in DRUG_DATABASE.items():
+            if name.lower() == request.drug_name.lower():
+                drug_info = info
+                drug_name = name
+                # If no custom SMILES override, use DB smiles
+                if not request.smiles or request.smiles == info["smiles"]:
+                    smiles = info["smiles"]
+                break
 
-    if not drug_info and not request.custom_smiles:
-        raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found. Please provide a custom SMILES string.")
+    # If SMILES matches a known drug, auto-detect info
+    if not drug_info:
+        for name, info in DRUG_DATABASE.items():
+            if info["smiles"] == smiles:
+                drug_info = info
+                if drug_name == "Experimental Compound":
+                    drug_name = name
+                break
 
-    smiles = request.custom_smiles or drug_info["smiles"]
     mw = request.molecular_weight or (drug_info["molecular_weight"] if drug_info else 300.0)
     dose = request.dose_mg or 100.0
-    bcs_class = drug_info.get("bcs_class", "I") if drug_info else "Unknown"
-    logp = drug_info.get("logp", 2.0) if drug_info else 2.0
-    pka = drug_info.get("pka", 7.0) if drug_info else 7.0
+    bcs_class = drug_info.get("bcs_class", "Unknown") if drug_info else "Unknown"
+    logp = drug_info.get("logp", "Unknown") if drug_info else "Unknown"
+    pka = drug_info.get("pka", "Unknown") if drug_info else "Unknown"
     therapeutic_class = drug_info.get("therapeutic_class", "Unknown") if drug_info else "Unknown"
     route = drug_info.get("route", "Oral") if drug_info else "Oral"
 
@@ -406,7 +419,8 @@ async def analyze_drug(request: AnalysisRequest):
         api_key=llm_key,
         session_id=session_id,
         system_message="""You are an expert pharmaceutical scientist and formulation chemist specializing in drug delivery systems, PK/PD modeling, and dosage form optimization. 
-        You provide highly detailed, scientifically accurate analysis of drug formulation parameters.
+        You provide highly detailed, scientifically accurate analysis of drug formulation parameters purely from the SMILES structure.
+        When the drug is unknown/experimental, derive all properties from the SMILES structure itself using cheminformatics reasoning.
         Always respond with valid JSON only, no markdown code blocks, no extra text.""",
     ).with_model("openai", "gpt-4o")
 
