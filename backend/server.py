@@ -395,11 +395,14 @@ async def analyze_drug(request: AnalysisRequest):
     # If SMILES matches a known drug, auto-detect info
     if not drug_info:
         for name, info in DRUG_DATABASE.items():
-            if info["smiles"] == smiles:
+            if info["smiles"].strip() == smiles.strip():
                 drug_info = info
                 if drug_name == "Experimental Compound":
                     drug_name = name
                 break
+
+    # is_experimental only when no DB entry was matched AND no name was provided by user
+    is_experimental = (drug_info is None) and not bool(request.drug_name)
 
     mw = request.molecular_weight or (drug_info["molecular_weight"] if drug_info else 300.0)
     dose = request.dose_mg or 100.0
