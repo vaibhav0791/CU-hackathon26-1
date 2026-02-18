@@ -424,80 +424,94 @@ async def analyze_drug(request: AnalysisRequest):
         Always respond with valid JSON only, no markdown code blocks, no extra text.""",
     ).with_model("openai", "gpt-4o")
 
-    prompt = f"""Analyze the following drug for pharmaceutical formulation optimization and provide a comprehensive JSON analysis.
+    is_experimental = drug_info is None
+    experimental_note = "IMPORTANT: This is an experimental/novel compound with no known name. Derive ALL properties purely from the SMILES molecular structure using expert cheminformatics reasoning (functional groups, ring systems, hydrogen bond donors/acceptors, rotatable bonds, LogP estimation, etc.)." if is_experimental else ""
 
-Drug: {drug_name}
+    prompt = f"""Analyze the following {'experimental ' if is_experimental else ''}drug compound for pharmaceutical formulation optimization.
+
+Compound Name: {drug_name}
 SMILES: {smiles}
-Molecular Weight: {mw} g/mol
-BCS Class: {bcs_class}
-LogP: {logp}
-pKa: {pka}
+Estimated Molecular Weight: {mw} g/mol
+{'BCS Class: ' + str(bcs_class) if bcs_class != 'Unknown' else 'BCS Class: Determine from SMILES'}
+{'LogP: ' + str(logp) if logp != 'Unknown' else 'LogP: Estimate from SMILES'}
+{'pKa: ' + str(pka) if pka != 'Unknown' else 'pKa: Estimate from SMILES'}
 Therapeutic Class: {therapeutic_class}
-Route of Administration: {route}
 Target Dose: {dose} mg
+{experimental_note}
 
-Provide a JSON response with exactly this structure (use realistic pharmaceutical science values):
+Each section MUST include a "natural_language_summary" — 2-3 plain English sentences explaining the findings to a non-expert audience (judges, investors, healthcare decision-makers). Use simple language: avoid jargon, explain what the numbers mean for real-world drug manufacturing.
+
+Return ONLY valid JSON with this exact structure:
 {{
+  "molecule_overview": {{
+    "inferred_class": "What type of molecule this appears to be based on SMILES",
+    "key_features": ["list of 3-4 notable structural features identified from SMILES"],
+    "drug_likeness": "Lipinski/Veber rule assessment"
+  }},
   "solubility": {{
-    "prediction": "number between 0 and 100 representing solubility score",
-    "accuracy": "prediction accuracy percentage like 96.4",
+    "prediction": "number 0-100",
+    "accuracy": "accuracy % like 96.4",
     "classification": "Highly Soluble / Moderately Soluble / Poorly Soluble",
     "aqueous_solubility_mg_ml": "numeric value",
-    "ph_optimal": "optimal pH for solubility",
-    "mechanisms": ["list of 3 key solubility mechanisms/factors"],
-    "enhancement_strategies": ["list of 3 enhancement strategies if needed"]
+    "ph_optimal": "optimal pH",
+    "mechanisms": ["3 key solubility mechanisms"],
+    "enhancement_strategies": ["3 enhancement strategies"],
+    "natural_language_summary": "2-3 plain English sentences for non-experts explaining what this solubility result means for making this into a real medicine. E.g. how easy/hard it is to dissolve and what that means for patients."
   }},
   "excipients": {{
-    "binders": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
-    "fillers": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
-    "disintegrants": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
-    "lubricants": [{{"name": "excipient name", "grade": "grade/type", "recommended_conc": "% w/w", "rationale": "brief reason"}}],
-    "coating": {{"recommended": true/false, "type": "coating type if recommended", "rationale": "reason"}},
-    "incompatibilities": ["list of 2-3 known excipient incompatibilities to avoid"],
-    "optimal_dosage_form": "Tablet / Capsule / Suspension / etc."
+    "binders": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
+    "fillers": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
+    "disintegrants": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
+    "lubricants": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
+    "coating": {{"recommended": true/false, "type": "coating type", "rationale": "reason"}},
+    "incompatibilities": ["2-3 incompatibilities to avoid"],
+    "optimal_dosage_form": "Tablet / Capsule / etc.",
+    "natural_language_summary": "2-3 plain English sentences explaining what excipients are and why these specific ones were chosen — like explaining to a non-chemist what 'ingredients' go into the pill and why."
   }},
   "stability": {{
     "shelf_life_years": "number",
-    "shelf_life_score": "0-100 score",
+    "shelf_life_score": "0-100",
     "primary_degradation": "main degradation pathway",
-    "degradation_mechanisms": ["list of 3 degradation mechanisms"],
-    "storage_conditions": {{"temperature": "recommended temp", "humidity": "% RH", "light": "light protection needed", "container": "container type"}},
+    "degradation_mechanisms": ["3 degradation mechanisms"],
+    "storage_conditions": {{"temperature": "temp", "humidity": "% RH", "light": "protection needed", "container": "container type"}},
     "accelerated_data": [
       {{"condition": "25C/60%RH", "months": 0, "potency": 100}},
-      {{"condition": "25C/60%RH", "months": 3, "potency": "realistic value"}},
-      {{"condition": "25C/60%RH", "months": 6, "potency": "realistic value"}},
-      {{"condition": "25C/60%RH", "months": 12, "potency": "realistic value"}},
+      {{"condition": "25C/60%RH", "months": 3, "potency": 98}},
+      {{"condition": "25C/60%RH", "months": 6, "potency": 97}},
+      {{"condition": "25C/60%RH", "months": 12, "potency": 95}},
       {{"condition": "40C/75%RH", "months": 0, "potency": 100}},
-      {{"condition": "40C/75%RH", "months": 1, "potency": "realistic value"}},
-      {{"condition": "40C/75%RH", "months": 3, "potency": "realistic value"}},
-      {{"condition": "40C/75%RH", "months": 6, "potency": "realistic value"}}
+      {{"condition": "40C/75%RH", "months": 1, "potency": 97}},
+      {{"condition": "40C/75%RH", "months": 3, "potency": 94}},
+      {{"condition": "40C/75%RH", "months": 6, "potency": 90}}
     ],
-    "packaging_recommendation": "recommended packaging"
+    "packaging_recommendation": "packaging type",
+    "natural_language_summary": "2-3 plain English sentences about how long this drug will last on the shelf and what conditions are needed to keep it safe and effective — frame it from a patient safety perspective."
   }},
   "pk_compatibility": {{
     "bioavailability_percent": "number 0-100",
-    "bioavailability_score": "0-100 score",
-    "tmax_hours": "time to max concentration",
-    "t_half_hours": "half-life",
+    "bioavailability_score": "number 0-100",
+    "tmax_hours": "hours to peak",
+    "t_half_hours": "half-life hours",
     "absorption_rate": "Fast / Moderate / Slow",
-    "absorption_mechanism": "passive diffusion / active transport / etc.",
-    "distribution_vd": "volume of distribution L/kg",
-    "protein_binding_percent": "% protein binding",
-    "metabolism": {{"primary_enzyme": "CYP enzyme or other", "metabolites": ["list of major metabolites"], "first_pass": "% first pass effect"}},
-    "excretion": {{"route": "renal/hepatic/mixed", "percent_unchanged": "% excreted unchanged"}},
+    "absorption_mechanism": "mechanism",
+    "distribution_vd": "L/kg",
+    "protein_binding_percent": "% binding",
+    "metabolism": {{"primary_enzyme": "enzyme", "metabolites": ["metabolites"], "first_pass": "% effect"}},
+    "excretion": {{"route": "route", "percent_unchanged": "%"}},
     "bioavailability_curve": [
       {{"time": 0, "concentration": 0}},
-      {{"time": 0.5, "concentration": "realistic Cmax fraction"}},
-      {{"time": 1, "concentration": "value"}},
-      {{"time": 2, "concentration": "value"}},
-      {{"time": 4, "concentration": "value"}},
-      {{"time": 6, "concentration": "value"}},
-      {{"time": 8, "concentration": "value"}},
-      {{"time": 12, "concentration": "value"}},
-      {{"time": 24, "concentration": "value"}}
+      {{"time": 0.5, "concentration": 45}},
+      {{"time": 1, "concentration": 85}},
+      {{"time": 2, "concentration": 100}},
+      {{"time": 4, "concentration": 75}},
+      {{"time": 6, "concentration": 55}},
+      {{"time": 8, "concentration": 38}},
+      {{"time": 12, "concentration": 18}},
+      {{"time": 24, "concentration": 4}}
     ],
-    "recommended_dosage_form": "specific recommendation with rationale",
-    "dosing_frequency": "once/twice/three times daily etc."
+    "recommended_dosage_form": "specific recommendation",
+    "dosing_frequency": "frequency",
+    "natural_language_summary": "2-3 plain English sentences about how the drug gets absorbed into the body, how quickly it works, and how long it stays active — written for patients or investors, not scientists."
   }}
 }}"""
 
