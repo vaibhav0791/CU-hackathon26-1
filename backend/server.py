@@ -427,7 +427,6 @@ async def analyze_drug(request: AnalysisRequest):
         Always respond with valid JSON only, no markdown code blocks, no extra text.""",
     ).with_model("openai", "gpt-4o")
 
-    is_experimental = drug_info is None
     experimental_note = "IMPORTANT: This is an experimental/novel compound with no known name. Derive ALL properties purely from the SMILES molecular structure using expert cheminformatics reasoning (functional groups, ring systems, hydrogen bond donors/acceptors, rotatable bonds, LogP estimation, etc.)." if is_experimental else ""
 
     prompt = f"""Analyze the following {'experimental ' if is_experimental else ''}drug compound for pharmaceutical formulation optimization.
