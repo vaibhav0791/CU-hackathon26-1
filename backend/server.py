@@ -333,10 +333,10 @@ DRUG_DATABASE = {
 
 # ─── Pydantic Models ─────────────────────────────────────────────────────────────
 class AnalysisRequest(BaseModel):
-    drug_name: str
+    smiles: str                              # SMILES is now the PRIMARY required field
+    drug_name: Optional[str] = None         # Name is optional (for experimental drugs)
     molecular_weight: Optional[float] = None
     dose_mg: Optional[float] = None
-    custom_smiles: Optional[str] = None
 
 class AnalysisResult(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
