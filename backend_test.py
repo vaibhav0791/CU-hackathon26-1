@@ -278,10 +278,13 @@ class PharmaAITester:
             self.test_root_endpoint,
             self.test_get_drugs,
             self.test_get_single_drug,
-            self.test_analyze_aspirin,
+            self.test_analyze_aspirin_with_smiles,
+            self.test_analyze_experimental_smiles_only,
+            self.test_analyze_smiles_missing,
+            self.test_natural_language_summaries,
+            self.test_molecule_overview,
             self.test_get_analyses,
-            self.test_get_specific_analysis,
-            self.test_invalid_drug
+            self.test_get_specific_analysis
         ]
         
         for test_method in test_methods:
