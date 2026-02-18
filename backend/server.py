@@ -491,8 +491,17 @@ Provide a JSON response with exactly this structure (use realistic pharmaceutica
         user_message = UserMessage(text=prompt)
         response = await chat.send_message(user_message)
         
-        # Parse JSON response
-        analysis_data = json.loads(response)
+        # Clean and parse JSON response (handle markdown code blocks)
+        clean_response = response.strip()
+        if clean_response.startswith('```json'):
+            clean_response = clean_response[7:]  # Remove ```json
+        if clean_response.startswith('```'):
+            clean_response = clean_response[3:]   # Remove ```
+        if clean_response.endswith('```'):
+            clean_response = clean_response[:-3]  # Remove ending ```
+        clean_response = clean_response.strip()
+        
+        analysis_data = json.loads(clean_response)
         
         result = {
             "id": str(uuid.uuid4()),
