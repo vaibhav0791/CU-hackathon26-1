@@ -91,16 +91,16 @@ class PharmaAITester:
         """Test GET /drugs/{drug_name} for specific drug"""
         return self.run_test("Get Single Drug (Aspirin)", "GET", "/drugs/Aspirin", 200)
 
-    def test_analyze_aspirin(self):
-        """Test POST /analyze with Aspirin and 500mg dose"""
+    def test_analyze_aspirin_with_smiles(self):
+        """Test POST /analyze with Aspirin SMILES (should return is_experimental=false)"""
         analysis_data = {
+            "smiles": "CC(=O)Oc1ccccc1C(=O)O",  # Aspirin SMILES
             "drug_name": "Aspirin",
             "dose_mg": 500
         }
         
-        # Use longer timeout since AI analysis takes 15-30 seconds
         success, response = self.run_test(
-            "AI Analysis (Aspirin 500mg)", 
+            "AI Analysis (Aspirin with SMILES)", 
             "POST", 
             "/analyze", 
             200, 
@@ -110,15 +110,57 @@ class PharmaAITester:
         
         if success and isinstance(response, dict):
             # Verify required analysis fields are present
-            required_fields = ["id", "drug_name", "solubility", "excipients", "stability", "pk_compatibility"]
+            required_fields = ["id", "drug_name", "smiles", "solubility", "excipients", "stability", "pk_compatibility", "is_experimental"]
             missing_fields = [field for field in required_fields if field not in response]
             
             if missing_fields:
                 self.log(f"  ❌ Missing analysis fields: {missing_fields}")
                 return False
-            else:
-                self.log(f"  ✅ All analysis panels present: {required_fields}")
-                return True
+                
+            # Check that it's NOT experimental (known drug)
+            if response.get("is_experimental", True):
+                self.log(f"  ❌ Expected is_experimental=false for known drug Aspirin")
+                return False
+                
+            # Check drug name matches
+            if response.get("drug_name") != "Aspirin":
+                self.log(f"  ❌ Expected drug_name=Aspirin, got {response.get('drug_name')}")
+                return False
+                
+            self.log(f"  ✅ All analysis panels present, is_experimental=false, drug_name=Aspirin")
+            return True
+        
+        return success
+
+    def test_analyze_experimental_smiles_only(self):
+        """Test POST /analyze with ONLY experimental SMILES (no drug_name) - should return is_experimental=true"""
+        analysis_data = {
+            "smiles": "c1ccc2c(c1)cc(=O)n2Cc1ccc(cc1)C(=O)N1CCCC1"  # Experimental compound
+        }
+        
+        success, response = self.run_test(
+            "Experimental SMILES Analysis (no name)", 
+            "POST", 
+            "/analyze", 
+            200, 
+            analysis_data, 
+            timeout=60
+        )
+        
+        if success and isinstance(response, dict):
+            # Check that it IS experimental (unknown SMILES)
+            if not response.get("is_experimental", False):
+                self.log(f"  ❌ Expected is_experimental=true for unknown SMILES")
+                return False
+                
+            # Check drug name defaults to "Experimental Compound"
+            drug_name = response.get("drug_name", "")
+            if "Experimental" not in drug_name:
+                self.log(f"  ❌ Expected experimental compound name, got: {drug_name}")
+                return False
+                
+            self.log(f"  ✅ is_experimental=true, drug_name='{drug_name}'")
+            return True
         
         return success
 
