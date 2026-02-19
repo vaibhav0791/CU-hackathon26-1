@@ -452,8 +452,8 @@ function setupDevServer(config) {
             // Commit the change to git
             const timestamp = Date.now();
             try {
-              execSync(`git -c user.name="visual-edit" -c user.email="support@emergent.sh" add "${result.file}"`);
-              execSync(`git -c user.name="visual-edit" -c user.email="support@emergent.sh" commit -m "visual_edit_variable_${timestamp}"`);
+              execSync(`git -c user.name="visual-edit" -c user.email="pharma-ai@example.com" add "${result.file}"`);
+              execSync(`git -c user.name="visual-edit" -c user.email="pharma-ai@example.com" commit -m "visual_edit_variable_${timestamp}"`);
             } catch (gitError) {
               console.error(`Git commit failed for variableEdit: ${gitError.message}`);
             }
