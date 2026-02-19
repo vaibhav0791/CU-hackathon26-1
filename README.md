@@ -75,7 +75,8 @@ yarn install
 
 Create `backend/.env`:
 ```env
-OPENAI_API_KEY=your_openai_api_key
+HF_API_KEY=your_huggingface_api_key
+HF_MODEL=meta-llama/Llama-3.3-70B-Instruct
 MONGO_URL=mongodb://localhost:27017  # Optional
 DB_NAME=pharma_ai
 ```
