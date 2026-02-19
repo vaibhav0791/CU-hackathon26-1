@@ -77,5 +77,5 @@ Build a full-stack application called "PHARMA-AI" serving as an "AI-Driven Optim
 
 ## Notes
 - Application uses hardcoded drug list (not MongoDB)
-- AI powered by Emergent LLM Key (appears as standard OpenAI)
+- AI powered by Hugging Face Llama-3.3-70B-Instruct (open-source)
 - 3D viewer depends on PubChem API availability
