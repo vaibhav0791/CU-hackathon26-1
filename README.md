@@ -165,12 +165,12 @@ For novel molecules with no name—just enter the SMILES. PHARMA-AI uses structu
 | FastAPI | Async REST API framework |
 | Python 3.11 | Runtime |
 | aiohttp | Async HTTP client for external APIs |
-| OpenAI GPT-4o | Core AI formulation engine |
+| Llama-3.3-70B | Core AI formulation engine (Hugging Face) |
 
 ### External Services
 | Service | Usage |
 |--------|-------|
-| OpenAI GPT-4o | AI formulation analysis engine |
+| Llama-3.3-70B-Instruct | AI formulation analysis (via Hugging Face) |
 | PubChem REST API | 3D molecular structure retrieval |
 
 ---
