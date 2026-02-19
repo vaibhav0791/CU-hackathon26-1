@@ -572,7 +572,7 @@ Return ONLY valid JSON with this exact structure:
 
     try:
         # Hugging Face Inference API call (using router endpoint)
-        hf_url = f"https://router.huggingface.co/hf-inference/models/{hf_model}/v1/chat/completions"
+        hf_url = f"https://router.huggingface.co/{hf_model}/v1/chat/completions"
         headers = {
             "Authorization": f"Bearer {hf_api_key}",
             "Content-Type": "application/json"
