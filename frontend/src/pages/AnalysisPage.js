@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
-import { Dna, FlaskConical, ArrowLeft, Download, Activity, Brain, Microscope, CheckCircle2, AlertTriangle, Clock, Package, Thermometer, Droplets, Atom, MessageSquare, Beaker } from 'lucide-react';
+import { Dna, FlaskConical, ArrowLeft, Download, Activity, Brain, Microscope, CheckCircle2, AlertTriangle, Clock, Package, Thermometer, Droplets, Atom, MessageSquare, Beaker, Eye } from 'lucide-react';
+import MoleculeViewer from '../components/MoleculeViewer';
 import jsPDF from 'jspdf';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
