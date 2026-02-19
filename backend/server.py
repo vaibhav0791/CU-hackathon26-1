@@ -468,20 +468,17 @@ async def analyze_drug(request: AnalysisRequest):
     therapeutic_class = drug_info.get("therapeutic_class", "Unknown") if drug_info else "Unknown"
     route = drug_info.get("route", "Oral") if drug_info else "Oral"
 
-    # AI Analysis
-    llm_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("EMERGENT_LLM_KEY")
-    if not llm_key:
-        raise HTTPException(status_code=500, detail="LLM API key not configured")
+    # AI Analysis using Hugging Face Llama-3.3-70B-Instruct
+    hf_api_key = os.environ.get("HF_API_KEY")
+    hf_model = os.environ.get("HF_MODEL", "meta-llama/Llama-3.3-70B-Instruct")
+    
+    if not hf_api_key:
+        raise HTTPException(status_code=500, detail="Hugging Face API key not configured")
 
-    session_id = str(uuid.uuid4())
-    chat = LlmChat(
-        api_key=llm_key,
-        session_id=session_id,
-        system_message="""You are an expert pharmaceutical scientist and formulation chemist specializing in drug delivery systems, PK/PD modeling, and dosage form optimization. 
-        You provide highly detailed, scientifically accurate analysis of drug formulation parameters purely from the SMILES structure.
-        When the drug is unknown/experimental, derive all properties from the SMILES structure itself using cheminformatics reasoning.
-        Always respond with valid JSON only, no markdown code blocks, no extra text.""",
-    ).with_model("openai", "gpt-4o")
+    system_message = """You are an expert pharmaceutical scientist and formulation chemist specializing in drug delivery systems, PK/PD modeling, and dosage form optimization. 
+You provide highly detailed, scientifically accurate analysis of drug formulation parameters purely from the SMILES structure.
+When the drug is unknown/experimental, derive all properties from the SMILES structure itself using cheminformatics reasoning.
+Always respond with valid JSON only, no markdown code blocks, no extra text."""
 
     experimental_note = "IMPORTANT: This is an experimental/novel compound with no known name. Derive ALL properties purely from the SMILES molecular structure using expert cheminformatics reasoning (functional groups, ring systems, hydrogen bond donors/acceptors, rotatable bonds, LogP estimation, etc.)." if is_experimental else ""
 
