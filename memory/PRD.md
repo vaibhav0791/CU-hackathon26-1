@@ -47,6 +47,7 @@ Build a full-stack application called "PHARMA-AI" serving as an "AI-Driven Optim
 - [x] TECHNICAL_OVERVIEW.md documentation
 - [x] Professional README.md
 - [x] Platform branding removal (.emergent deleted)
+- [x] Switched AI engine from GPT-4o to Llama-3.3-70B-Instruct (Hugging Face)
 
 ## API Endpoints
 | Method | Endpoint | Description |
