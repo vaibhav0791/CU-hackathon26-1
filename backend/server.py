@@ -374,6 +374,39 @@ async def get_drug(drug_name: str):
             return {"name": name, **info}
     raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found in database")
 
+@api_router.get("/molecule3d")
+async def get_molecule_3d(smiles: str = Query(..., description="SMILES string")):
+    """Fetch 3D SDF from PubChem for a given SMILES string."""
+    encoded = urllib.parse.quote(smiles, safe='')
+    headers = {"User-Agent": "PHARMA-AI/1.0"}
+
+    try:
+        async with aiohttp.ClientSession() as session:
+            # Step 1: Get CID from SMILES
+            cid_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{encoded}/cids/TXT"
+            async with session.get(cid_url, headers=headers, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+                if resp.status != 200:
+                    raise HTTPException(status_code=404, detail="Compound not found in PubChem. 3D visualization unavailable for this structure.")
+                cid_text = (await resp.text()).strip()
+                cid = cid_text.split("\n")[0].strip()
+
+            # Step 2: Get 3D SDF by CID
+            sdf_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/record/SDF?record_type=3d"
+            async with session.get(sdf_url, headers=headers, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+                if resp.status != 200:
+                    raise HTTPException(status_code=404, detail="3D structure not available in PubChem for this compound.")
+                sdf_data = await resp.text()
+
+        return {"sdf": sdf_data, "cid": cid, "source": "PubChem"}
+
+    except aiohttp.ClientError as e:
+        raise HTTPException(status_code=503, detail=f"PubChem service unavailable: {str(e)}")
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @api_router.post("/analyze")
 async def analyze_drug(request: AnalysisRequest):
     smiles = request.smiles.strip()
