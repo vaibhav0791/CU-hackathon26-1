@@ -527,7 +527,7 @@ const AnalysisPage = () => {
         ['binders', 'fillers', 'disintegrants', 'lubricants'].forEach(cat => {
           if (exc[cat]?.length) {
             addLine(`${cat.charAt(0).toUpperCase() + cat.slice(1)}:`, 0, [160, 100, 255]);
-            exc[cat].forEach(e => addLine(`- ${e.name} (${e.grade || ''}) — ${e.recommended_conc}`, 4));
+            exc[cat].forEach(e => addLine(`- ${e.name} (${e.grade || ''}) - ${e.recommended_conc}`, 4));
           }
         });
         if (exc.incompatibilities?.length) {
@@ -593,7 +593,7 @@ const AnalysisPage = () => {
         addMetricBar('Protein Binding', `${pk.protein_binding_percent}%`, parseFloat(pk.protein_binding_percent), [200, 140, 20]);
         addKeyValues([
           ['Tmax', `${pk.tmax_hours} h`],
-          ['T½ (Half-life)', `${pk.t_half_hours} h`],
+          ['T1/2 (Half-life)', `${pk.t_half_hours} h`],
           ['Absorption', pk.absorption_rate],
           ['Volume of Distribution', `${pk.distribution_vd} L/kg`],
           ['Primary Enzyme', pk.metabolism?.primary_enzyme],
