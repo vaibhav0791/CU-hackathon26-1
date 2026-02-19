@@ -351,10 +351,282 @@ const AnalysisPage = () => {
     setExporting(true);
     try {
       const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-      const pageWidth = pdf.internal.pageSize.getWidth();
-      const pageHeight = pdf.internal.pageSize.getHeight();
-      const margin = 14;
-      let y = margin;
+      const W = pdf.internal.pageSize.getWidth();
+      const H = pdf.internal.pageSize.getHeight();
+      const M = 14;
+      let y = 0;
+
+      // ── COVER HEADER ─────────────────────────────────────────────
+      // Teal-to-purple gradient effect via filled rects
+      pdf.setFillColor(0, 18, 28);
+      pdf.rect(0, 0, W, 46, 'F');
+      pdf.setFillColor(0, 40, 60);
+      pdf.rect(0, 0, 80, 46, 'F');
+      // Cyan accent bar on left
+      pdf.setFillColor(0, 242, 255);
+      pdf.rect(0, 0, 4, 46, 'F');
+      // Title
+      pdf.setFontSize(20); pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(0, 242, 255);
+      pdf.text('PHARMA-AI', M + 2, 16);
+      pdf.setFontSize(9); pdf.setTextColor(148, 180, 200);
+      pdf.text('AI-Driven Formulation Science Platform', M + 2, 23);
+      pdf.setFontSize(8); pdf.setTextColor(80, 120, 140);
+      pdf.text(`Report generated: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`, M + 2, 30);
+      pdf.text(`Analysis ID: ${result.id || 'N/A'}${result.is_experimental ? '  |  EXPERIMENTAL COMPOUND' : ''}`, M + 2, 37);
+      // Status badge (right side)
+      pdf.setFillColor(result.is_experimental ? 112 : 0, result.is_experimental ? 0 : 190, result.is_experimental ? 255 : 100);
+      pdf.roundedRect(W - 52, 12, 38, 12, 2, 2, 'F');
+      pdf.setFontSize(8); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(255, 255, 255);
+      pdf.text(result.is_experimental ? 'EXPERIMENTAL' : 'KNOWN DRUG', W - 33, 20, { align: 'center' });
+      y = 54;
+
+      // ── DRUG INFO BOX ────────────────────────────────────────────
+      pdf.setFillColor(8, 16, 24);
+      pdf.roundedRect(M, y, W - M * 2, 36, 3, 3, 'F');
+      pdf.setDrawColor(0, 120, 160); pdf.setLineWidth(0.4);
+      pdf.roundedRect(M, y, W - M * 2, 36, 3, 3, 'S');
+      // Left accent
+      pdf.setFillColor(0, 242, 255);
+      pdf.rect(M, y, 3, 36, 'F');
+
+      pdf.setFontSize(16); pdf.setFont('helvetica', 'bold'); pdf.setTextColor(240, 248, 255);
+      pdf.text(result.drug_name, M + 8, y + 12);
+      pdf.setFontSize(8); pdf.setFont('helvetica', 'normal'); pdf.setTextColor(100, 140, 170);
+      const smilesText = `SMILES: ${(result.smiles || '').substring(0, 68)}${(result.smiles || '').length > 68 ? '...' : ''}`;
+      pdf.text(smilesText, M + 8, y + 21);
+      pdf.setTextColor(150, 180, 200);
+      pdf.text(`MW: ${result.molecular_weight} g/mol   Dose: ${result.dose_mg} mg   BCS: ${result.drug_info?.bcs_class || 'N/A'}   LogP: ${result.drug_info?.logp || 'N/A'}   Class: ${result.drug_info?.therapeutic_class || 'Unknown'}`, M + 8, y + 29);
+      y += 44;
+
+      // helper: add new page if needed
+      const ensureSpace = (needed) => {
+        if (y + needed > H - 16) { pdf.addPage(); y = M; }
+      };
+
+      // helper: colored section header
+      const addSectionHeader = (title, bgRGB, textRGB) => {
+        ensureSpace(18);
+        pdf.setFillColor(...bgRGB);
+        pdf.roundedRect(M, y, W - M * 2, 13, 2, 2, 'F');
+        pdf.setFontSize(10); pdf.setFont('helvetica', 'bold');
+        pdf.setTextColor(...textRGB);
+        pdf.text(title, M + 6, y + 9);
+        y += 18;
+        pdf.setFont('helvetica', 'normal'); pdf.setFontSize(9); pdf.setTextColor(200, 218, 230);
+      };
+
+      // helper: colored metric row with bar
+      const addMetricBar = (label, value, pct, barRGB) => {
+        ensureSpace(12);
+        pdf.setFontSize(8); pdf.setTextColor(140, 165, 185);
+        pdf.text(label, M + 4, y + 5);
+        pdf.setTextColor(...barRGB); pdf.setFont('helvetica', 'bold');
+        pdf.text(String(value), W - M - 4, y + 5, { align: 'right' });
+        pdf.setFont('helvetica', 'normal');
+        // Track
+        pdf.setFillColor(20, 30, 40); pdf.roundedRect(M + 4, y + 7, W - M * 2 - 8, 3, 1, 1, 'F');
+        // Fill
+        const fillW = Math.max(2, Math.min(pct / 100, 1) * (W - M * 2 - 8));
+        pdf.setFillColor(...barRGB); pdf.roundedRect(M + 4, y + 7, fillW, 3, 1, 1, 'F');
+        y += 14;
+      };
+
+      const addLine = (text, indent = 0, colorRGB = [190, 210, 225]) => {
+        ensureSpace(7);
+        const lines = pdf.splitTextToSize(text, W - M * 2 - indent - 4);
+        pdf.setTextColor(...colorRGB); pdf.setFontSize(8.5);
+        pdf.text(lines, M + 4 + indent, y);
+        y += lines.length * 5;
+      };
+
+      const addNLBox = (text, borderRGB) => {
+        if (!text) return;
+        ensureSpace(20);
+        const lines = pdf.splitTextToSize(`"${text}"`, W - M * 2 - 16);
+        const boxH = lines.length * 4.8 + 10;
+        pdf.setFillColor(10, 18, 28);
+        pdf.roundedRect(M, y, W - M * 2, boxH, 2, 2, 'F');
+        pdf.setDrawColor(...borderRGB); pdf.setLineWidth(0.5);
+        pdf.line(M + 1, y + 1, M + 1, y + boxH - 1); // left accent line
+        pdf.setFontSize(7); pdf.setTextColor(...borderRGB); pdf.setFont('helvetica', 'bold');
+        pdf.text('PLAIN ENGLISH', M + 5, y + 5.5);
+        pdf.setFont('helvetica', 'italic'); pdf.setTextColor(180, 200, 220);
+        pdf.text(lines, M + 8, y + 10);
+        y += boxH + 5;
+        pdf.setFont('helvetica', 'normal');
+      };
+
+      const addKeyValues = (pairs) => {
+        const colW = (W - M * 2 - 8) / 2;
+        pairs.forEach(([label, value], i) => {
+          if (i % 2 === 0) {
+            ensureSpace(10);
+          }
+          const col = i % 2;
+          const cx = M + 4 + col * (colW + 4);
+          if (i % 2 === 0) {
+            // Light row bg
+            pdf.setFillColor(8, 16, 24);
+            pdf.roundedRect(M, y, W - M * 2, 8, 1, 1, 'F');
+          }
+          pdf.setFontSize(8); pdf.setTextColor(100, 130, 150);
+          pdf.text(label + ':', cx, y + 5.5);
+          pdf.setTextColor(200, 220, 235); pdf.setFont('helvetica', 'bold');
+          const labelW = pdf.getTextWidth(label + ': ');
+          pdf.text(String(value || 'N/A'), cx + labelW, y + 5.5);
+          pdf.setFont('helvetica', 'normal');
+          if (col === 1) y += 10;
+        });
+        if (pairs.length % 2 !== 0) y += 10;
+        y += 2;
+      };
+
+      // ── 1. MOLECULE OVERVIEW ─────────────────────────────────────
+      if (result.molecule_overview) {
+        addSectionHeader('MOLECULE OVERVIEW', [0, 35, 55], [0, 210, 240]);
+        addLine(`Inferred Class: ${result.molecule_overview.inferred_class}`);
+        addLine(`Drug-Likeness: ${result.molecule_overview.drug_likeness}`);
+        if (result.molecule_overview.key_features?.length) {
+          result.molecule_overview.key_features.forEach(f => addLine(`• ${f}`, 4));
+        }
+        y += 4;
+      }
+
+      // ── 2. SOLUBILITY ────────────────────────────────────────────
+      if (result.solubility) {
+        addSectionHeader('SOLUBILITY PREDICTION', [0, 30, 45], [0, 220, 255]);
+        const sol = result.solubility;
+        addMetricBar('Solubility Score', `${parseFloat(sol.prediction).toFixed(0)}/100`, parseFloat(sol.prediction), [0, 200, 240]);
+        addMetricBar('Prediction Accuracy', `${sol.accuracy}%`, parseFloat(sol.accuracy), [0, 180, 210]);
+        addKeyValues([
+          ['Classification', sol.classification],
+          ['Aqueous Solubility', `${sol.aqueous_solubility_mg_ml} mg/mL`],
+          ['Optimal pH', sol.ph_optimal],
+          ['Enhancement Needed', (parseFloat(sol.prediction) < 60) ? 'Yes' : 'No'],
+        ]);
+        if (sol.mechanisms?.length) {
+          addLine('Mechanisms:', 0, [0, 180, 210]);
+          sol.mechanisms.forEach(m => addLine(`• ${m}`, 4));
+        }
+        if (sol.enhancement_strategies?.length) {
+          addLine('Enhancement Strategies:', 0, [0, 200, 200]);
+          sol.enhancement_strategies.forEach(s => addLine(`▶ ${s}`, 4));
+        }
+        addNLBox(sol.natural_language_summary, [0, 180, 210]);
+      }
+
+      // ── 3. EXCIPIENTS ────────────────────────────────────────────
+      if (result.excipients) {
+        addSectionHeader('EXCIPIENT RECOMMENDATIONS', [22, 0, 44], [180, 120, 255]);
+        const exc = result.excipients;
+        addKeyValues([
+          ['Optimal Dosage Form', exc.optimal_dosage_form],
+          ['Coating', exc.coating?.recommended ? exc.coating.type : 'Not required'],
+        ]);
+        ['binders', 'fillers', 'disintegrants', 'lubricants'].forEach(cat => {
+          if (exc[cat]?.length) {
+            addLine(`${cat.charAt(0).toUpperCase() + cat.slice(1)}:`, 0, [160, 100, 255]);
+            exc[cat].forEach(e => addLine(`• ${e.name} (${e.grade || ''}) — ${e.recommended_conc}`, 4));
+          }
+        });
+        if (exc.incompatibilities?.length) {
+          addLine('⚠ Incompatibilities to Avoid:', 0, [255, 120, 120]);
+          exc.incompatibilities.forEach(i => addLine(`• ${i}`, 4, [220, 150, 150]));
+        }
+        addNLBox(exc.natural_language_summary, [150, 80, 255]);
+      }
+
+      // ── 4. STABILITY ─────────────────────────────────────────────
+      if (result.stability) {
+        addSectionHeader('STABILITY FORECAST', [0, 36, 22], [0, 220, 140]);
+        const sta = result.stability;
+        addMetricBar('Shelf-Life Score', `${sta.shelf_life_years} years`, (parseFloat(sta.shelf_life_years) / 5) * 100, [0, 200, 130]);
+        addMetricBar('Stability Score', `${sta.shelf_life_score || 80}/100`, parseFloat(sta.shelf_life_score || 80), [0, 180, 110]);
+        addKeyValues([
+          ['Primary Degradation', sta.primary_degradation],
+          ['Packaging', sta.packaging_recommendation],
+          ['Temperature', sta.storage_conditions?.temperature],
+          ['Humidity', sta.storage_conditions?.humidity],
+          ['Light Protection', sta.storage_conditions?.light],
+          ['Container', sta.storage_conditions?.container],
+        ]);
+        if (sta.degradation_mechanisms?.length) {
+          addLine('Degradation Mechanisms:', 0, [0, 180, 110]);
+          sta.degradation_mechanisms.forEach(m => addLine(`• ${m}`, 4));
+        }
+        // Stability table
+        if (sta.accelerated_data?.length) {
+          ensureSpace(30);
+          addLine('ICH Stability Data:', 0, [0, 200, 130]);
+          const tblX = M + 4; const colWs = [40, 30, 30];
+          pdf.setFontSize(7.5); pdf.setFont('helvetica', 'bold');
+          pdf.setFillColor(0, 40, 28);
+          pdf.rect(tblX, y, colWs[0] + colWs[1] + colWs[2], 6, 'F');
+          pdf.setTextColor(0, 210, 140);
+          pdf.text('Condition', tblX + 2, y + 4.5);
+          pdf.text('Month', tblX + colWs[0] + 2, y + 4.5);
+          pdf.text('Potency (%)', tblX + colWs[0] + colWs[1] + 2, y + 4.5);
+          y += 7; pdf.setFont('helvetica', 'normal');
+          sta.accelerated_data.slice(0, 6).forEach((row, ri) => {
+            ensureSpace(6);
+            pdf.setFillColor(ri % 2 === 0 ? 8 : 12, ri % 2 === 0 ? 16 : 20, ri % 2 === 0 ? 12 : 18);
+            pdf.rect(tblX, y, colWs[0] + colWs[1] + colWs[2], 5.5, 'F');
+            pdf.setTextColor(160, 200, 180);
+            pdf.text(row.condition, tblX + 2, y + 4);
+            pdf.text(String(row.months), tblX + colWs[0] + 2, y + 4);
+            const pot = parseFloat(row.potency);
+            pdf.setTextColor(pot > 97 ? 0 : pot > 93 ? 200 : 220, pot > 97 ? 200 : pot > 93 ? 180 : 100, pot > 97 ? 130 : 60);
+            pdf.text(String(row.potency), tblX + colWs[0] + colWs[1] + 2, y + 4);
+            y += 5.5;
+          });
+          y += 5;
+        }
+        addNLBox(sta.natural_language_summary, [0, 190, 120]);
+      }
+
+      // ── 5. PK COMPATIBILITY ──────────────────────────────────────
+      if (result.pk_compatibility) {
+        addSectionHeader('PK-COMPATIBILITY & BIOAVAILABILITY', [36, 26, 0], [255, 190, 60]);
+        const pk = result.pk_compatibility;
+        addMetricBar('Bioavailability', `${pk.bioavailability_percent}%`, parseFloat(pk.bioavailability_percent), [240, 165, 30]);
+        addMetricBar('Protein Binding', `${pk.protein_binding_percent}%`, parseFloat(pk.protein_binding_percent), [200, 140, 20]);
+        addKeyValues([
+          ['Tmax', `${pk.tmax_hours} h`],
+          ['T½ (Half-life)', `${pk.t_half_hours} h`],
+          ['Absorption', pk.absorption_rate],
+          ['Volume of Distribution', `${pk.distribution_vd} L/kg`],
+          ['Primary Enzyme', pk.metabolism?.primary_enzyme],
+          ['First-Pass Effect', pk.metabolism?.first_pass],
+          ['Excretion Route', pk.excretion?.route],
+          ['Dosing Frequency', pk.dosing_frequency],
+        ]);
+        addLine(`Recommended: ${pk.recommended_dosage_form}`, 0, [220, 170, 50]);
+        if (pk.metabolism?.metabolites?.length) {
+          addLine('Major Metabolites:', 0, [200, 150, 40]);
+          pk.metabolism.metabolites.forEach(m => addLine(`• ${m}`, 4));
+        }
+        addNLBox(pk.natural_language_summary, [230, 160, 40]);
+      }
+
+      // ── FOOTER ───────────────────────────────────────────────────
+      const totalPages = pdf.internal.getNumberOfPages();
+      for (let i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+        pdf.setFillColor(4, 8, 14);
+        pdf.rect(0, H - 10, W, 10, 'F');
+        pdf.setFontSize(7); pdf.setTextColor(60, 90, 110); pdf.setFont('helvetica', 'normal');
+        pdf.text(`PHARMA-AI Formulation Optimizer  |  Page ${i} of ${totalPages}`, M, H - 4);
+        pdf.text('For research use only. Consult a qualified pharmaceutical scientist before manufacturing.', W - M, H - 4, { align: 'right' });
+      }
+
+      pdf.save(`PHARMAI_${(result.drug_name || 'Compound').replace(/[\s/]/g, '_')}_Report.pdf`);
+    } catch (err) {
+      console.error('PDF error:', err);
+    } finally {
+      setExporting(false);
+    }
+  };
 
       // Dark header
       pdf.setFillColor(2, 6, 10);
