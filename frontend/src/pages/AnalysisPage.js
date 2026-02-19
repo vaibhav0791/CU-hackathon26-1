@@ -692,6 +692,18 @@ const AnalysisPage = () => {
         <MoleculeOverview data={result.molecule_overview} isExperimental={result.is_experimental} />
       </div>
 
+      {/* 3D Viewer on Analysis Page */}
+      <div style={{ padding: '0 32px 20px', position: 'relative', zIndex: 1 }}>
+        <div style={{ background: 'rgba(10,14,20,0.8)', border: '1px solid rgba(0,242,255,0.1)', borderRadius: '16px', padding: '20px 22px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+            <Eye size={14} color="#00f2ff" />
+            <span style={{ color: '#00f2ff', fontSize: '11px', letterSpacing: '1.5px', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>3D MOLECULAR STRUCTURE</span>
+            <span style={{ color: '#334155', fontSize: '10px', marginLeft: '8px' }}>Interactive \u00b7 Rotate \u00b7 Zoom \u00b7 Change Style</span>
+          </div>
+          <MoleculeViewer smiles={result.smiles} />
+        </div>
+      </div>
+
       {/* 4-panel Grid */}
       <div style={{ padding: '0 32px 40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px', position: 'relative', zIndex: 1 }}>
         <SolubilityPanel data={result.solubility} />
