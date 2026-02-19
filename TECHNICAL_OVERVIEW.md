@@ -138,8 +138,8 @@ User enters SMILES
 | FastAPI | 0.x | Async REST API framework |
 | Python | 3.11 | Runtime |
 | Motor | 3.x | Async MongoDB driver |
-| aiohttp | 3.x | Async HTTP client for PubChem API |
-| OpenAI GPT-4o | Latest | Core AI formulation engine |
+| aiohttp | 3.x | Async HTTP client for PubChem API & Hugging Face |
+| Llama-3.3-70B-Instruct | Latest | Core AI formulation engine (via Hugging Face) |
 | jsPDF (server-side) | — | PDF via frontend |
 
 ### Database
@@ -150,7 +150,7 @@ User enters SMILES
 ### External Services
 | Service | Usage |
 |--------|-------|
-| OpenAI GPT-4o | AI formulation analysis engine |
+| Llama-3.3-70B-Instruct | AI formulation analysis engine (Hugging Face Inference API) |
 | PubChem REST API | 3D molecular structure retrieval (SDF format) |
 | Google Fonts | Manrope, IBM Plex Sans, JetBrains Mono |
 
