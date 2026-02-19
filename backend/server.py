@@ -571,8 +571,38 @@ Return ONLY valid JSON with this exact structure:
 }}"""
 
     try:
-        user_message = UserMessage(text=prompt)
-        response = await chat.send_message(user_message)
+        # Hugging Face Inference API call
+        hf_url = f"https://api-inference.huggingface.co/models/{hf_model}/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {hf_api_key}",
+            "Content-Type": "application/json"
+        }
+        
+        payload = {
+            "model": hf_model,
+            "messages": [
+                {"role": "system", "content": system_message},
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 4096,
+            "temperature": 0.7,
+            "top_p": 0.95
+        }
+        
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                hf_url,
+                headers=headers,
+                json=payload,
+                timeout=aiohttp.ClientTimeout(total=120)
+            ) as resp:
+                if resp.status != 200:
+                    error_text = await resp.text()
+                    logger.error(f"Hugging Face API error: {resp.status} - {error_text}")
+                    raise HTTPException(status_code=resp.status, detail=f"AI service error: {error_text}")
+                
+                result_json = await resp.json()
+                response = result_json["choices"][0]["message"]["content"]
         
         # Clean and parse JSON response (handle markdown code blocks)
         clean_response = response.strip()
