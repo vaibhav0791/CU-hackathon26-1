@@ -394,7 +394,7 @@ async def get_molecule_3d(smiles: str = Query(..., description="SMILES string"))
                 timeout=aiohttp.ClientTimeout(total=20)
             ) as resp:
                 resp_text = (await resp.text()).strip()
-                if resp.status != 200 or not resp_text.isdigit():
+                if resp.status != 200 or not resp_text.isdigit() or resp_text == '0':
                     raise HTTPException(
                         status_code=404,
                         detail="Compound not found in PubChem. 3D visualization unavailable for this experimental structure."
