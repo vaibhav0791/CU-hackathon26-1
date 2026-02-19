@@ -448,7 +448,7 @@ async def analyze_drug(request: AnalysisRequest):
     route = drug_info.get("route", "Oral") if drug_info else "Oral"
 
     # AI Analysis
-    llm_key = os.environ.get("EMERGENT_LLM_KEY")
+    llm_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("EMERGENT_LLM_KEY")
     if not llm_key:
         raise HTTPException(status_code=500, detail="LLM API key not configured")
 
