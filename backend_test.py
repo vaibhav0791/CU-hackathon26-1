@@ -7,7 +7,7 @@ import time
 
 class PharmaAITester:
     def __init__(self):
-        self.base_url = "https://pharma-ai-optimizer.preview.emergentagent.com/api"
+        self.base_url = "https://cheminformatics-lab.preview.emergentagent.com/api"
         self.tests_run = 0
         self.tests_passed = 0
         self.analysis_id = None
