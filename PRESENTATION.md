@@ -50,7 +50,7 @@ A deep-tech platform that converts a **SMILES string** into a **Clinical-Grade F
 
 - **Frontend:** React 18, Tailwind CSS, 3Dmol.js (WebGL).
 - **Backend:** FastAPI (Asynchronous Python).
-- **AI Engine:** GPT-4o (State-of-the-art chemical reasoning).
+- **AI Engine:** Llama-3.3-70B-Instruct (Open-source, Meta AI).
 - **Database:** MongoDB (Scalable non-relational storage).
 - **Data Source:** PubChem REST API integration.
 
