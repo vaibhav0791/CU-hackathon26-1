@@ -206,7 +206,7 @@ SMILES (Simplified Molecular Input Line Entry System) was chosen because:
 1. **Universal**: All chemistry databases and tools use SMILES
 2. **Complete**: Encodes atoms, bonds, rings, chirality, aromaticity
 3. **Works for unknowns**: Chemists always have the SMILES—even for unnamed compounds
-4. **AI-compatible**: GPT-4o can reason about functional groups from SMILES
+4. **AI-compatible**: Llama-3.3 can reason about functional groups from SMILES
 
 ### BCS Classification System
 
@@ -261,7 +261,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- OpenAI for GPT-4o formulation reasoning
+- Meta AI for Llama-3.3-70B formulation reasoning
+- Hugging Face for inference infrastructure
 - PubChem for molecular structure data
 - 3Dmol.js for WebGL visualization
 - The pharmaceutical science community
