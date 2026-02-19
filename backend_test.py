@@ -269,6 +269,64 @@ class PharmaAITester:
         
         return success
 
+    def test_molecule3d_endpoint(self):
+        """Test GET /molecule3d with Aspirin SMILES - should return CID and SDF data"""
+        aspirin_smiles = "CC(=O)Oc1ccccc1C(=O)O"
+        
+        success, response = self.run_test(
+            "3D Molecule Data (Aspirin)", 
+            "GET", 
+            f"/molecule3d?smiles={aspirin_smiles}", 
+            200,
+            timeout=30
+        )
+        
+        if success and isinstance(response, dict):
+            required_keys = ["sdf", "cid", "source"]
+            missing_keys = [key for key in required_keys if key not in response]
+            
+            if missing_keys:
+                self.log(f"  ❌ Missing molecule3d response keys: {missing_keys}")
+                return False
+                
+            # Check that SDF data is present and looks valid
+            sdf_data = response.get("sdf", "")
+            if not sdf_data or len(sdf_data) < 100:
+                self.log(f"  ❌ SDF data is empty or too short: {len(sdf_data)} chars")
+                return False
+                
+            # Check CID is present and numeric
+            cid = response.get("cid", "")
+            if not cid or not str(cid).isdigit():
+                self.log(f"  ❌ Invalid CID: {cid}")
+                return False
+                
+            # Check source is PubChem
+            source = response.get("source", "")
+            if source != "PubChem":
+                self.log(f"  ❌ Expected source=PubChem, got: {source}")
+                return False
+                
+            self.log(f"  ✅ Valid 3D data: CID={cid}, SDF={len(sdf_data)} chars, source={source}")
+            return True
+        
+        return success
+
+    def test_molecule3d_experimental_compound(self):
+        """Test GET /molecule3d with experimental SMILES - should return 404"""
+        experimental_smiles = "c1ccc2c(c1)cc(=O)n2Cc1ccc(cc1)C(=O)N1CCCC1"
+        
+        success, response = self.run_test(
+            "3D Molecule Data (Experimental - expect 404)", 
+            "GET", 
+            f"/molecule3d?smiles={experimental_smiles}", 
+            404,
+            timeout=20
+        )
+        
+        # This test expects 404, so success means the API correctly returned 404
+        return success
+
     def run_all_tests(self):
         """Run the complete test suite"""
         self.log("🧪 Starting PHARMA-AI Backend API Test Suite")
