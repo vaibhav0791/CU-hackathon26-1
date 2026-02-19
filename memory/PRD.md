@@ -15,7 +15,7 @@ Build a full-stack application called "PHARMA-AI" serving as an "AI-Driven Optim
 ## Technology Stack
 - **Frontend**: React 18, Tailwind CSS, Recharts, 3Dmol.js, jsPDF
 - **Backend**: FastAPI, Python 3.11, aiohttp
-- **AI**: OpenAI GPT-4o via Emergent LLM Key
+- **AI**: Llama-3.3-70B-Instruct (via Hugging Face Inference API)
 - **External API**: PubChem (3D molecular structures)
 
 ## Architecture
