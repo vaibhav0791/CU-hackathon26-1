@@ -571,15 +571,18 @@ Return ONLY valid JSON with this exact structure:
 }}"""
 
     try:
-        # Hugging Face Inference API call (using router endpoint)
-        hf_url = f"https://router.huggingface.co/{hf_model}/v1/chat/completions"
+        # Hugging Face Inference API via novita router
+        hf_url = "https://router.huggingface.co/novita/v3/openai/chat/completions"
         headers = {
             "Authorization": f"Bearer {hf_api_key}",
             "Content-Type": "application/json"
         }
         
+        # Use lowercase model name for novita
+        model_name = hf_model.lower()
+        
         payload = {
-            "model": hf_model,
+            "model": model_name,
             "messages": [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt}
