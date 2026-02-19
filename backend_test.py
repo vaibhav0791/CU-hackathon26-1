@@ -336,6 +336,8 @@ class PharmaAITester:
             self.test_root_endpoint,
             self.test_get_drugs,
             self.test_get_single_drug,
+            self.test_molecule3d_endpoint,
+            self.test_molecule3d_experimental_compound,
             self.test_analyze_aspirin_with_smiles,
             self.test_analyze_experimental_smiles_only,
             self.test_analyze_smiles_missing,
