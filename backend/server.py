@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
@@ -8,6 +8,8 @@ import logging
 import json
 import uuid
 import io
+import urllib.parse
+import aiohttp
 from datetime import datetime, timezone
 from pathlib import Path
 from pydantic import BaseModel, Field
