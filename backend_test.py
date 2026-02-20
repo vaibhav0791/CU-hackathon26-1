@@ -1,6 +1,7 @@
-# Backend Test
+# backend_test.py
 
-# Update to point to the new base URL
-BASE_URL = "http://localhost:8000/api"
+# Your backend test code goes here. Make sure to replace the base URL.
 
-# Add other test code here...
+BASE_URL = "http://localhost:8000/api"  # Updated base URL
+
+# ... rest of the script ...
