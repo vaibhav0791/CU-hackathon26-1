@@ -110,7 +110,17 @@ const LandingPage = () => {
           dose_mg: dose ? parseFloat(dose) : undefined,
         }),
       });
-      const data = await res.json();
+      
+      // Read response as text first to handle non-JSON errors
+      const rawText = await res.text();
+      let data;
+      try {
+        data = JSON.parse(rawText);
+      } catch (parseErr) {
+        // Response is not JSON (likely HTML error page)
+        throw new Error('Server error. Please try again in a moment.');
+      }
+      
       if (!res.ok) throw new Error(data.detail || 'Analysis failed');
       navigate('/analysis', { state: { result: data } });
     } catch (err) {
