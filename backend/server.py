@@ -15,6 +15,10 @@ from pathlib import Path
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 
+# RDKit for 3D coordinate generation (fallback when PubChem unavailable)
+from rdkit import Chem
+from rdkit.Chem import AllChem
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
