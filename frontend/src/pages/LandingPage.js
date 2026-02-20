@@ -101,6 +101,9 @@ const LandingPage = () => {
     setError('');
     setLoading(true);
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 120000); // 2 min timeout
+      
       const res = await fetch(`${BACKEND_URL}/api/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -109,7 +112,10 @@ const LandingPage = () => {
           drug_name: drugName.trim() || undefined,
           dose_mg: dose ? parseFloat(dose) : undefined,
         }),
+        signal: controller.signal,
       });
+      
+      clearTimeout(timeoutId);
       
       // Read response as text first to handle non-JSON errors
       const rawText = await res.text();
@@ -117,14 +123,19 @@ const LandingPage = () => {
       try {
         data = JSON.parse(rawText);
       } catch (parseErr) {
-        // Response is not JSON (likely HTML error page)
-        throw new Error('Server error. Please try again in a moment.');
+        // Response is not JSON (likely HTML error page from gateway timeout)
+        console.error('Non-JSON response:', rawText.substring(0, 500));
+        throw new Error('Analysis timed out. The AI is processing a complex molecule. Please try again.');
       }
       
       if (!res.ok) throw new Error(data.detail || 'Analysis failed');
       navigate('/analysis', { state: { result: data } });
     } catch (err) {
-      setError(err.message);
+      if (err.name === 'AbortError') {
+        setError('Analysis timed out. Please try again with a simpler compound.');
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
