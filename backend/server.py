@@ -377,59 +377,83 @@ async def get_drug(drug_name: str):
             return {"name": name, **info}
     raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found in database")
 
+
+def generate_3d_from_smiles(smiles: str) -> str:
+    """Generate 3D SDF from SMILES using RDKit."""
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        raise ValueError("Invalid SMILES string")
+    
+    # Add hydrogens for better 3D structure
+    mol = Chem.AddHs(mol)
+    
+    # Generate 3D coordinates using ETKDG (better conformer generation)
+    result = AllChem.EmbedMolecule(mol, AllChem.ETKDGv3())
+    if result == -1:
+        # Fallback to random coordinates if ETKDG fails
+        result = AllChem.EmbedMolecule(mol, randomSeed=42)
+        if result == -1:
+            raise ValueError("Could not generate 3D coordinates")
+    
+    # Optimize geometry
+    try:
+        AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
+    except:
+        pass  # Continue even if optimization fails
+    
+    # Convert to SDF format
+    sdf = Chem.MolToMolBlock(mol)
+    return sdf
+
+
 @api_router.get("/molecule3d")
 async def get_molecule_3d(smiles: str = Query(..., description="SMILES string")):
-    """Fetch 3D SDF from PubChem for a given SMILES string."""
+    """Fetch 3D SDF from PubChem, fallback to RDKit for novel compounds."""
     headers = {
         "User-Agent": "PHARMA-AI/1.0",
         "Content-Type": "application/x-www-form-urlencoded"
     }
 
+    # First, try PubChem
     try:
         async with aiohttp.ClientSession() as session:
-            # Step 1: POST smiles to PubChem (avoids URL-path encoding issues)
+            # Step 1: POST smiles to PubChem
             cid_url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/TXT"
             post_data = f"smiles={urllib.parse.quote(smiles, safe='')}"
             async with session.post(
                 cid_url,
                 data=post_data,
                 headers=headers,
-                timeout=aiohttp.ClientTimeout(total=20)
+                timeout=aiohttp.ClientTimeout(total=15)
             ) as resp:
                 resp_text = (await resp.text()).strip()
-                if resp.status != 200 or not resp_text.isdigit() or resp_text == '0':
-                    raise HTTPException(
-                        status_code=404,
-                        detail="Compound not found in PubChem. 3D visualization unavailable for this experimental structure."
-                    )
-                cid = resp_text.split("\n")[0].strip()
-
-            # Step 2: Fetch 3D SDF by CID
-            sdf_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/record/SDF?record_type=3d"
-            async with session.get(
-                sdf_url,
-                headers={"User-Agent": "PHARMA-AI/1.0"},
-                timeout=aiohttp.ClientTimeout(total=20)
-            ) as resp:
-                if resp.status != 200:
-                    raise HTTPException(
-                        status_code=404,
-                        detail="3D conformer not available in PubChem for this compound."
-                    )
-                sdf_data = await resp.text()
-
-            # Validate the SDF has actual 3D coordinate content
-            if "V2000" not in sdf_data and "V3000" not in sdf_data:
-                raise HTTPException(status_code=404, detail="Invalid SDF data returned from PubChem.")
-
-        return {"sdf": sdf_data, "cid": cid, "source": "PubChem"}
-
-    except aiohttp.ClientError as e:
-        raise HTTPException(status_code=503, detail=f"PubChem service unavailable: {str(e)}")
-    except HTTPException:
-        raise
+                if resp.status == 200 and resp_text.isdigit() and resp_text != '0':
+                    cid = resp_text.split("\n")[0].strip()
+                    
+                    # Step 2: Fetch 3D SDF by CID
+                    sdf_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/record/SDF?record_type=3d"
+                    async with session.get(
+                        sdf_url,
+                        headers={"User-Agent": "PHARMA-AI/1.0"},
+                        timeout=aiohttp.ClientTimeout(total=15)
+                    ) as sdf_resp:
+                        if sdf_resp.status == 200:
+                            sdf_data = await sdf_resp.text()
+                            if "V2000" in sdf_data or "V3000" in sdf_data:
+                                return {"sdf": sdf_data, "cid": cid, "source": "PubChem"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.info(f"PubChem lookup failed, falling back to RDKit: {e}")
+
+    # Fallback: Generate 3D using RDKit
+    try:
+        logger.info(f"Generating 3D structure with RDKit for: {smiles[:50]}...")
+        sdf_data = generate_3d_from_smiles(smiles)
+        return {"sdf": sdf_data, "cid": None, "source": "RDKit (computed)"}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=f"Cannot generate 3D structure: {str(e)}")
+    except Exception as e:
+        logger.error(f"RDKit 3D generation failed: {e}")
+        raise HTTPException(status_code=500, detail="Failed to generate 3D structure")
 
 
 @api_router.post("/analyze")
