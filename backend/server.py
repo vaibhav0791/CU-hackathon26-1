@@ -380,29 +380,55 @@ async def get_drug(drug_name: str):
 
 def generate_3d_from_smiles(smiles: str) -> str:
     """Generate 3D SDF from SMILES using RDKit."""
-    mol = Chem.MolFromSmiles(smiles)
+    # Try to parse the SMILES
+    mol = Chem.MolFromSmiles(smiles, sanitize=False)
     if mol is None:
         raise ValueError("Invalid SMILES string")
     
+    # Try to sanitize, but continue if it fails
+    try:
+        Chem.SanitizeMol(mol)
+    except:
+        # Try kekulization fix
+        try:
+            Chem.Kekulize(mol, clearAromaticFlags=True)
+        except:
+            pass
+    
     # Add hydrogens for better 3D structure
-    mol = Chem.AddHs(mol)
+    try:
+        mol = Chem.AddHs(mol)
+    except:
+        pass
     
     # Generate 3D coordinates using ETKDG (better conformer generation)
-    result = AllChem.EmbedMolecule(mol, AllChem.ETKDGv3())
-    if result == -1:
-        # Fallback to random coordinates if ETKDG fails
-        result = AllChem.EmbedMolecule(mol, randomSeed=42)
-        if result == -1:
-            raise ValueError("Could not generate 3D coordinates")
+    params = AllChem.ETKDGv3()
+    params.randomSeed = 42
+    params.maxAttempts = 50
     
-    # Optimize geometry
-    try:
-        AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
-    except:
-        pass  # Continue even if optimization fails
+    result = AllChem.EmbedMolecule(mol, params)
+    if result == -1:
+        # Fallback to basic embedding
+        result = AllChem.EmbedMolecule(mol, randomSeed=42, useRandomCoords=True)
+        if result == -1:
+            # Last resort: use 2D coordinates as pseudo-3D
+            AllChem.Compute2DCoords(mol)
+    
+    # Optimize geometry if we have 3D coords
+    if result != -1:
+        try:
+            AllChem.MMFFOptimizeMolecule(mol, maxIters=200)
+        except:
+            try:
+                AllChem.UFFOptimizeMolecule(mol, maxIters=200)
+            except:
+                pass
     
     # Convert to SDF format
     sdf = Chem.MolToMolBlock(mol)
+    if not sdf:
+        raise ValueError("Could not generate 3D structure")
+    
     return sdf
 
 
