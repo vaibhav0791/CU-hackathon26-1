@@ -1,0 +1,57 @@
+========================================
+EXPERIMENTAL DRUG CHALLENGE
+========================================
+
+SMILES: CC(C)(C)c1ccc(cc1)C(=O)NC(=S)Nc2ccc(cc2)C(C)(C)C
+
+Drug Name: Experimental Compound BT-474
+
+========================================
+HOW TO TEST:
+========================================
+
+1. Make sure backend is running (START_BACKEND.bat)
+2. Make sure frontend is running (cd frontend && npm start)
+3. Go to http://localhost:3000
+4. Click "Analyze Molecule"
+5. Paste the SMILES above
+6. Enter drug name: Experimental Compound BT-474
+7. Click "Analyze Molecule" button
+8. Wait 30-60 seconds for AI analysis
+
+========================================
+WHAT TO CHECK:
+========================================
+
+Backend Console:
+- Look for "Using Hugging Face API" message (confirms API is working)
+- If you see "Using mock data" - API is NOT working
+
+Frontend Results:
+- Check all 5 tabs: Overview, Solubility, Formulation, Stability, PK/PD
+- Judge accuracy of:
+  * Chemistry predictions
+  * Solubility analysis
+  * Formulation recommendations
+  * Stability predictions
+  * PK/PD parameters
+
+========================================
+NEW FEATURES ADDED:
+========================================
+
+1. COMPARE DRUGS
+   - Click "Compare Drugs" on landing page
+   - Enter two different SMILES
+   - See side-by-side comparison
+   - Visual indicators show which drug wins each category
+
+2. WHAT-IF SCENARIOS
+   - Click "What-If Scenarios" on landing page
+   - Test different scenarios:
+     * Increase dose
+     * Change storage temperature
+     * Change formulation type
+   - See predicted impact on drug properties
+
+========================================

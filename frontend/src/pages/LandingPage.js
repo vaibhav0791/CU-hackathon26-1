@@ -10,7 +10,7 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const stats = [
   { label: 'Solubility Accuracy', value: '98.2%', color: '#00f2ff' },
   { label: 'Stability Models', value: '500+', color: '#7000ff' },
-  { label: 'Drug Database', value: '30 APIs', color: '#00ff9d' },
+  { label: 'Drug Database', value: '150+ APIs', color: '#00ff9d' },
   { label: 'PK Predictions', value: 'Real-time', color: '#f59e0b' },
 ];
 
@@ -169,7 +169,7 @@ const LandingPage = () => {
           </div>
           <h1 style={{ fontFamily: "'Manrope', sans-serif", fontSize: 'clamp(36px, 4.5vw, 62px)', fontWeight: 800, lineHeight: 1.08, color: '#f8fafc', margin: '0 0 22px 0', letterSpacing: '-2px' }}>
             From Molecule
-            <span style={{ display: 'block', background: 'linear-gradient(90deg, #00f2ff, #7000ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>to Medicine</span>
+            <span style={{ display: 'block', background: 'linear-gradient(90deg, #00f2ff, #7000ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>to Drugs</span>
             in Seconds
           </h1>
           <p style={{ color: '#94a3b8', fontSize: '15px', lineHeight: 1.75, marginBottom: '36px', maxWidth: '460px' }}>
@@ -186,6 +186,12 @@ const LandingPage = () => {
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <button data-testid="hero-cta-btn" onClick={() => document.getElementById('analyze-section').scrollIntoView({ behavior: 'smooth' })} style={{ background: 'linear-gradient(135deg, #00f2ff, #7000ff)', border: 'none', borderRadius: '28px', padding: '13px 30px', color: 'white', fontWeight: 700, fontSize: '14px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '9px', boxShadow: '0 0 28px rgba(0,242,255,0.18)' }}>
               <FlaskConical size={16} /> Analyze a Molecule
+            </button>
+            <button onClick={() => navigate('/compare')} style={{ background: 'rgba(0,255,157,0.08)', border: '1px solid rgba(0,255,157,0.25)', borderRadius: '28px', padding: '13px 24px', color: '#00ff9d', fontWeight: 600, fontSize: '13px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              Compare Drugs
+            </button>
+            <button onClick={() => navigate('/what-if')} style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.25)', borderRadius: '28px', padding: '13px 24px', color: '#f59e0b', fontWeight: 600, fontSize: '13px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              What-If Scenarios
             </button>
             <button onClick={() => handleLoadExample(EXPERIMENTAL_EXAMPLES[1])} style={{ background: 'rgba(112,0,255,0.08)', border: '1px solid rgba(112,0,255,0.25)', borderRadius: '28px', padding: '13px 24px', color: '#a78bfa', fontWeight: 600, fontSize: '13px', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
               <Beaker size={15} /> Try Experimental Drug
