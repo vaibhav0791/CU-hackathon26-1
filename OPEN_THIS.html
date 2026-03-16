@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHARMA-AI - Launch</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        .info {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status.running {
+            background: #10b981;
+            color: white;
+        }
+        .status.stopped {
+            background: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 PHARMA-AI</h1>
+        <p style="color: #666; margin-bottom: 30px;">AI-Driven Pharmaceutical Formulation Optimizer</p>
+        
+        <div class="info">
+            <h3>📋 Quick Start Guide:</h3>
+            <ol style="text-align: left; color: #333;">
+                <li><strong>Start Backend:</strong> Open terminal in <code>backend</code> folder and run:<br>
+                    <code style="background: #e0e0e0; padding: 5px; border-radius: 5px; display: inline-block; margin-top: 5px;">
+                        python -m uvicorn server:app --reload --port 8001
+                    </code>
+                </li>
+                <li><strong>Open Frontend:</strong> Click the button below</li>
+            </ol>
+        </div>
+
+        <a href="frontend/build/index.html" class="btn">🚀 Launch PHARMA-AI</a>
+        
+        <div style="margin-top: 30px; padding: 15px; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
+            <strong>⚠️ Important:</strong> Make sure the backend server is running on port 8001 before using the app!
+        </div>
+
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            <p>Backend API: <code>http://localhost:8001</code></p>
+            <p>Frontend Build: <code>./frontend/build/</code></p>
+        </div>
+    </div>
+</body>
+</html>
