@@ -1,0 +1,32 @@
+[
+    {
+        "drug_name": "Atorvastatin",
+        "smiles": "CC(C)C1=C(C(=C(N1CCC(CC(O)CC(=O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
+        "cid": 60823,
+        "bcs_class": "I"
+    },
+    {
+        "drug_name": "Amlodipine",
+        "smiles": "CC1=C(C(C(=C(N1)COCCN)C2=CC=CC=C2Cl)C(=O)OC)C(=O)OCC",
+        "cid": 2162,
+        "bcs_class": "I"
+    },
+    {
+        "drug_name": "Lisinopril",
+        "smiles": "C1CC(N(C1)C(CCCCN)C(=O)NC(CCC2=CC=CC=C2)C(=O)O)C(=O)O",
+        "cid": 5362119,
+        "bcs_class": "I"
+    },
+    {
+        "drug_name": "Metoprolol",
+        "smiles": "CC(C)NCC(COc1ccc(cc1)CCOC)O",
+        "cid": 4171,
+        "bcs_class": "I"
+    },
+    {
+        "drug_name": "Warfarin",
+        "smiles": "CC(=O)CC(c1ccccc1)c2c(O)c3ccccc3oc2=O",
+        "cid": 54678486,
+        "bcs_class": "I"
+    }
+]
