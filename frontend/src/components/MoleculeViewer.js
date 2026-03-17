@@ -239,12 +239,10 @@ const MoleculeViewer = ({ smiles }) => {
         {status === 'error' && (
           <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '28px', textAlign: 'center' }}>
             <AlertCircle size={26} color="rgba(245,158,11,0.5)" style={{ marginBottom: '12px' }} />
-            <div style={{ color: '#f59e0b', fontSize: '12px', lineHeight: 1.6, maxWidth: '300px', fontWeight: 600 }}>3D Structure Not Available</div>
-            <div style={{ color: '#78350f', fontSize: '11px', marginTop: '8px', lineHeight: 1.5, maxWidth: '320px' }}>
-              {error}
-            </div>
-            <div style={{ color: '#451a03', fontSize: '10px', marginTop: '12px', lineHeight: 1.5, maxWidth: '340px', background: 'rgba(245,158,11,0.08)', padding: '8px 12px', borderRadius: '6px' }}>
-              Note: 3D visualization requires PubChem-registered compounds or valid RDKit-compatible SMILES. The AI analysis works for any SMILES structure.
+            <div style={{ color: '#78350f', fontSize: '12px', lineHeight: 1.6, maxWidth: '300px' }}>{error}</div>
+            <div style={{ color: '#292524', fontSize: '11px', marginTop: '10px', lineHeight: 1.5 }}>
+              3D view requires a PubChem-registered compound.<br />
+              The AI analysis still runs on <em>any</em> SMILES.
             </div>
           </div>
         )}
