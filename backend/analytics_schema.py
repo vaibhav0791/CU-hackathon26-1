@@ -1,6 +1,10 @@
-from pydantic import Field, ConfigDict
-from beanie import Document
-from pymongo import ASCENDING
+from pydantic import BaseModel, Field, ConfigDict
+
+class Document(BaseModel):
+    pass
+
+ASCENDING = 1
+
 from datetime import datetime
 from typing import Optional
 from enum import Enum

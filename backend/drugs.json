@@ -3,30 +3,353 @@
         "drug_name": "Atorvastatin",
         "smiles": "CC(C)C1=C(C(=C(N1CCC(CC(O)CC(=O)O)O)C2=CC=C(C=C2)F)C3=CC=CC=C3)C(=O)NC4=CC=CC=C4",
         "cid": 60823,
-        "bcs_class": "I"
+        "bcs_class": "II",
+        "category": "Cardiovascular"
     },
     {
         "drug_name": "Amlodipine",
         "smiles": "CC1=C(C(C(=C(N1)COCCN)C2=CC=CC=C2Cl)C(=O)OC)C(=O)OCC",
         "cid": 2162,
-        "bcs_class": "I"
+        "bcs_class": "I",
+        "category": "Cardiovascular"
     },
     {
         "drug_name": "Lisinopril",
         "smiles": "C1CC(N(C1)C(CCCCN)C(=O)NC(CCC2=CC=CC=C2)C(=O)O)C(=O)O",
         "cid": 5362119,
-        "bcs_class": "I"
+        "bcs_class": "III",
+        "category": "Cardiovascular"
     },
     {
         "drug_name": "Metoprolol",
         "smiles": "CC(C)NCC(COc1ccc(cc1)CCOC)O",
         "cid": 4171,
-        "bcs_class": "I"
+        "bcs_class": "I",
+        "category": "Cardiovascular"
     },
     {
         "drug_name": "Warfarin",
         "smiles": "CC(=O)CC(c1ccccc1)c2c(O)c3ccccc3oc2=O",
         "cid": 54678486,
-        "bcs_class": "I"
+        "bcs_class": "I",
+        "category": "Anticoagulant"
+    },
+    {
+        "drug_name": "Diltiazem",
+        "smiles": "COc1ccc2c(c1)SC(c1ccc(F)cc1)C(OC(C)=O)C(=O)N2CCN(C)C",
+        "cid": 39186,
+        "bcs_class": "I",
+        "molecular_weight": 414.52,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Verapamil",
+        "smiles": "COc1ccc(CCN(C)CCCC(C#N)(c2ccc(OC)c(OC)c2)C(C)C)cc1OC",
+        "cid": 2520,
+        "bcs_class": "I",
+        "molecular_weight": 454.60,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Digoxin",
+        "smiles": "CC1OC(OC2CC(O)C(OC3CC(O)C(OC4CCC5(C)C(CCC5C5CCC6(C)C(=CC(=O)OC6)C5)C4)O3)O2)C(O)CC1O",
+        "cid": 2724385,
+        "bcs_class": "IV",
+        "molecular_weight": 780.94,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Spironolactone",
+        "smiles": "CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3(C)C(CCC34CCC(=O)O4)C12",
+        "cid": 5833,
+        "bcs_class": "II",
+        "molecular_weight": 416.57,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Propranolol",
+        "smiles": "CC(C)NCC(O)COc1cccc2ccccc12",
+        "cid": 4946,
+        "bcs_class": "I",
+        "molecular_weight": 259.34,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Nifedipine",
+        "smiles": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+        "cid": 4485,
+        "bcs_class": "II",
+        "molecular_weight": 346.33,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Carvedilol",
+        "smiles": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+        "cid": 2585,
+        "bcs_class": "II",
+        "molecular_weight": 406.47,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Ramipril",
+        "smiles": "CCOC(=O)C(CCc1ccccc1)NC(C)C(=O)N1C2CCCC2CC1C(=O)O",
+        "cid": 5362129,
+        "bcs_class": "I",
+        "molecular_weight": 416.51,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Candesartan",
+        "smiles": "CCOc1nc2cccc(C(=O)O)c2n1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1",
+        "cid": 2541,
+        "bcs_class": "II",
+        "molecular_weight": 440.45,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Bisoprolol",
+        "smiles": "CC(C)NCC(O)COc1ccc(COCCOC(C)C)cc1",
+        "cid": 2405,
+        "bcs_class": "I",
+        "molecular_weight": 325.44,
+        "category": "Cardiovascular"
+    },
+    {
+        "drug_name": "Azithromycin",
+        "smiles": "CCC1C(C(C(N(CC(CC(C(C(C(C(C(=O)O1)C)OC2CC(C(C(O2)C)O)(C)OC)C)OC3C(C(CC(O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O",
+        "cid": 447043,
+        "bcs_class": "II",
+        "molecular_weight": 748.98,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Levofloxacin",
+        "smiles": "CC1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+        "cid": 149096,
+        "bcs_class": "I",
+        "molecular_weight": 361.37,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Fluconazole",
+        "smiles": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+        "cid": 3365,
+        "bcs_class": "I",
+        "molecular_weight": 306.27,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Acyclovir",
+        "smiles": "C1=NC2=C(N1COCCO)N=C(NC2=O)N",
+        "cid": 135398513,
+        "bcs_class": "III",
+        "molecular_weight": 225.20,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Oseltamivir",
+        "smiles": "CCOC(=O)C1=CC(OC(CC)CC)C(NC(C)=O)C(N)C1",
+        "cid": 65028,
+        "bcs_class": "I",
+        "molecular_weight": 312.40,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Rifampicin",
+        "smiles": "CC1C=CC=C(C(=O)NC2=CC(=C3C(=C2O)C(=C(C4=C3C(=O)C(O4)(OC=CC(C(C(C(C(C(C1O)C)OC(=O)C)C)O)C)OC)C)C)O)C=NN5CCN(CC5)C)C",
+        "cid": 5381226,
+        "bcs_class": "II",
+        "molecular_weight": 822.94,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Trimethoprim",
+        "smiles": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+        "cid": 5578,
+        "bcs_class": "I",
+        "molecular_weight": 290.32,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Nitrofurantoin",
+        "smiles": "O=C1CN(N=Cc2ccc(o2)[N+](=O)[O-])C(=O)N1",
+        "cid": 6604200,
+        "bcs_class": "IV",
+        "molecular_weight": 238.16,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Clindamycin",
+        "smiles": "CCCC1CC(N(C1)C)C(=O)NC(C(C2C(C(C(C(O2)SC)O)O)O)O)C(C)Cl",
+        "cid": 29029,
+        "bcs_class": "I",
+        "molecular_weight": 424.98,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Vancomycin",
+        "cid": 14969,
+        "bcs_class": "III",
+        "molecular_weight": 1449.25,
+        "category": "Anti-infective"
+    },
+    {
+        "drug_name": "Levetiracetam",
+        "smiles": "CCC(C(=O)NC)CC(=O)N1CCCC1",
+        "cid": 441341,
+        "bcs_class": "I",
+        "molecular_weight": 170.21,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Carbamazepine",
+        "smiles": "c1ccc2c(c1)C=Cc1ccccc1N2C(=O)N",
+        "cid": 2554,
+        "bcs_class": "II",
+        "molecular_weight": 236.27,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Valproic Acid",
+        "smiles": "CCCC(CCC)C(=O)O",
+        "cid": 3121,
+        "bcs_class": "I",
+        "molecular_weight": 144.21,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Lithium Carbonate",
+        "smiles": "[Li+].[Li+].[O-]C([O-])=O",
+        "cid": 11125,
+        "bcs_class": "I",
+        "molecular_weight": 73.89,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Risperidone",
+        "smiles": "CC1=C(C(=O)N2CCCCC2)C(=O)N(N1)c1ccc(F)cc1",
+        "cid": 5073,
+        "bcs_class": "II",
+        "molecular_weight": 410.48,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Quetiapine",
+        "smiles": "OCCOCCN1CCN(CC1)c1c2ccccc2Sc2ccccc21",
+        "cid": 5002,
+        "bcs_class": "II",
+        "molecular_weight": 383.51,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Duloxetine",
+        "smiles": "CNCC(Oc1cccc2ccccc12)c1cccs1",
+        "cid": 60835,
+        "bcs_class": "II",
+        "molecular_weight": 297.41,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Venlafaxine",
+        "smiles": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+        "cid": 5656,
+        "bcs_class": "I",
+        "molecular_weight": 277.40,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Bupropion",
+        "smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+        "cid": 444,
+        "bcs_class": "I",
+        "molecular_weight": 239.74,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Escitalopram",
+        "smiles": "Fc1ccc(C2(OCCN(C)C)CCc3cc(C#N)ccc32)cc1",
+        "cid": 146570,
+        "bcs_class": "I",
+        "molecular_weight": 324.39,
+        "category": "CNS"
+    },
+    {
+        "drug_name": "Imatinib",
+        "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+        "cid": 5291,
+        "bcs_class": "II",
+        "molecular_weight": 493.60,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Erlotinib",
+        "smiles": "COCCOc1cc2ncnc(Nc3cccc(C#C)c3)c2cc1OCCOC",
+        "cid": 176870,
+        "bcs_class": "II",
+        "molecular_weight": 393.44,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Sorafenib",
+        "smiles": "CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)cc2)ccn1",
+        "cid": 216239,
+        "bcs_class": "II",
+        "molecular_weight": 464.82,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Sunitinib",
+        "smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C=c2[nH]c(=O)c3ccccc3/2)c1C",
+        "cid": 5329102,
+        "bcs_class": "IV",
+        "molecular_weight": 398.47,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Capecitabine",
+        "smiles": "CCCCCOC(=O)NC1=NC(=O)N(C=C1F)C1OC(C)C(O)C1O",
+        "cid": 60953,
+        "bcs_class": "I",
+        "molecular_weight": 359.35,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Cyclophosphamide",
+        "smiles": "ClCCN(CCCl)P1(=O)NCCCO1",
+        "cid": 2907,
+        "bcs_class": "I",
+        "molecular_weight": 261.08,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Doxorubicin",
+        "smiles": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)CC(O)(C(=O)CO)CC3OC1CC(N)C(O)C(C)O1",
+        "cid": 31703,
+        "bcs_class": "III",
+        "molecular_weight": 543.52,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Paclitaxel",
+        "smiles": "CC1=C2C(C(=O)C3(C)CC(OC(=O)C(O)C(NC(=O)c4ccccc4)c4ccccc4)C(OC(C)=O)C(OC(=O)c4ccccc4)C3C2(C)C)OC(=O)CC1O",
+        "cid": 36314,
+        "bcs_class": "IV",
+        "molecular_weight": 853.91,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Cisplatin",
+        "smiles": "[NH3][Pt]([NH3])(Cl)Cl",
+        "cid": 84691,
+        "bcs_class": "III",
+        "molecular_weight": 300.05,
+        "category": "Oncology"
+    },
+    {
+        "drug_name": "Rituximab",
+        "cid": null,
+        "bcs_class": "III",
+        "molecular_weight": 145531.0,
+        "category": "Oncology"
     }
 ]

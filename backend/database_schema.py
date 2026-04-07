@@ -1,6 +1,11 @@
-from pydantic import Field, ConfigDict
-from beanie import Document
-from pymongo import ASCENDING
+from pydantic import BaseModel, Field, ConfigDict
+
+# Lightweight base class replacing beanie's Document (server uses SQLite)
+class Document(BaseModel):
+    pass
+
+ASCENDING = 1
+
 from datetime import datetime
 from typing import Optional
 
@@ -16,6 +21,9 @@ class AnalysisBlueprint(Document):
     confidence_score: float = Field(0.0, ge=0.0, le=100.0, description="AI prediction confidence")
     bcs_class: str = Field(..., description="BCS Classification (I, II, III, or IV)")
     
+    # H-4: Drug Category Tags (Therapeutic classification)
+    category: Optional[str] = Field(None, description="Therapeutic category (e.g. Cardiovascular, CNS, Anti-infective)")
+
     # Timestamps for audit trail
     created_at: datetime = Field(default_factory=datetime.utcnow, description="When analysis was created")
     updated_at: datetime = Field(default_factory=datetime.utcnow, description="When analysis was last updated")
