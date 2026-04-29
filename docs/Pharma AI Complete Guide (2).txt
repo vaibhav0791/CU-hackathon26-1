@@ -1,0 +1,568 @@
+■ Pharma AI Platform
+Complete Technical Blueprint
+Model Selection · Dataset Guide · Fine-Tuning on Google Colab Pro
+Drug Discovery · Target Discovery · Clinical Trial Analysis · Formulation
+April 2026 | Confidential Research Document
+
+4
+Features
+
+4
+AI Models
+
+Google
+Colab Pro
+
+Free
+Datasets
+
+01 · Project Overview
+The Pharma AI Platform is a scientist-facing web application that uses multiple specialized AI/ML models to
+automate and accelerate the four core pillars of modern pharmaceutical research. Each feature is backed by a
+purpose-trained or fine-tuned model, free public datasets, and runs on Google Colab Pro for accessible GPU
+compute.
+
+Feature
+
+What it Does
+
+Primary Model
+
+Drug Discovery
+
+Generate & screen drug-like molecules, predict bioactivity
+PRECIOUS3-GPT + ChemBERTa
+
+Target Discovery
+
+Identify disease-related proteins/genes from omicsPRECIOUS3-GPT
+data
++ ESM-2
+
+Clinical Trial Analysis Extract insights from trial data, predict outcomes ClinicalBERT / BioBERT
+Formulation
+
+Predict solubility, excipient compatibility, stability ChemBERTa / MolBERT
+
+02 · AI Models — Detailed Breakdown
+
+Model 1 — PRECIOUS3-GPT (insilicomedicine/precious3-gpt-multi-modal)
+This is a multimodal GPT developed by Insilico Medicine, specifically designed for pharmaceutical and biological
+tasks. It is the primary backbone of your platform.
+Parameter
+
+Value
+
+Parameters
+
+89.4 Million
+
+Architecture
+
+Transformer (GPT-style, Multimodal)
+
+Tensor Type
+
+BF16 (Brain Float 16)
+
+Primary Tasks
+
+Drug discovery, Omics, Chemistry, Biology
+
+License
+
+CC-BY-NC-4.0 (Free for non-commercial)
+
+Base Model
+
+f-galkin/batman2
+
+HuggingFace
+
+insilicomedicine/precious3-gpt-multi-modal
+
+■ Best used for: Drug Discovery + Target Discovery
+■■ Limitation: Not designed for clinical NLP or formulation-specific data
+
+Model 2 — ChemBERTa (seyonec/ChemBERTa-zinc-base-v1)
+A BERT-based model pre-trained on SMILES molecular strings from the ZINC dataset. Excellent for molecular
+property prediction — exactly what Formulation and Drug Discovery need.
+Parameter
+
+Value
+
+Parameters
+
+~125 Million
+
+Input Format
+
+SMILES strings (molecular notation)
+
+Tasks
+
+Solubility, Toxicity, Bioavailability prediction
+
+License
+
+MIT (Fully open)
+
+HuggingFace
+
+seyonec/ChemBERTa-zinc-base-v1
+
+■ Best used for: Formulation + Drug Discovery (molecular side)
+
+Model 3 — ClinicalBERT / BioBERT
+ClinicalBERT is fine-tuned on MIMIC-III clinical notes. BioBERT is trained on PubMed + PMC biomedical literature.
+Either works for Clinical Trial Analysis — ClinicalBERT is preferred for structured trial data, BioBERT for
+literature-based analysis.
+Parameter
+
+Value
+
+ClinicalBERT HuggingFace
+
+emilyalsentzer/Bio_ClinicalBERT
+
+BioBERT HuggingFace
+
+dmis-lab/biobert-v1.1
+
+Tasks
+
+Trial outcome prediction, adverse event extraction, NLP on trial reports
+
+License
+
+MIT / Apache 2.0 (Both open)
+
+■ Best used for: Clinical Trial Analysis
+
+Model 4 — ESM-2 (Meta's Protein Language Model)
+ESM-2 by Meta AI is a protein language model trained on 250 million protein sequences. It understands protein
+structure, function, and interactions — essential for Target Discovery.
+Parameter
+
+Value
+
+HuggingFace
+
+facebook/esm2_t33_650M_UR50D (650M) or esm2_t6_8M_UR50D (8M — Colab friendly)
+
+Tasks
+
+Protein function prediction, target-ligand binding, sequence embeddings
+
+License
+
+MIT
+
+Colab Note
+
+Use the 8M or 35M version on Colab Pro to save VRAM
+
+■ Best used for: Target Discovery (protein side)
+
+03 · Datasets — What You Need & Where to Get It (Free)
+● Drug Discovery
+Dataset
+
+URL / Location
+
+What You Get
+
+ChEMBL
+
+https://www.ebi.ac.uk/chembl/
+
+Bioactivity data, IC50/EC50 values, SMILES,
+drug-target pairs. 2M+ compounds.
+
+PubChem
+
+https://pubchem.ncbi.nlm.nih.gov/
+
+Free API. Molecular properties — MW, logP, H-bond
+donors/acceptors, toxicity.
+
+ZINC15
+
+https://zinc15.docking.org/
+
+750M+ purchasable compounds in SMILES. Good
+for generative model training.
+
+QM9
+
+HuggingFace datasets: "qm9"
+
+134k small organic molecules with quantum
+properties — good for property prediction.
+
+■ Data Format: CSV/SDF files with SMILES strings + property labels (logP, MW, IC50 values)
+
+● Target Discovery
+Dataset
+
+URL / Location
+
+What You Get
+
+UniProt
+
+https://www.uniprot.org/
+
+Human proteome sequences in FASTA format.
+Download the full SwissProt reviewed set.
+
+RCSB PDB
+
+https://www.rcsb.org/
+
+3D protein structures. Download .pdb files for binding
+site analysis.
+
+GEO (Gene
+Expression
+Omnibus)
+
+https://www.ncbi.nlm.nih.gov/geo/
+
+RNA-seq datasets for gene expression. Filter for
+disease-specific studies.
+
+STRING DB
+
+https://string-db.org/
+
+Protein-protein interaction networks. Useful for target
+ranking.
+
+■ Data Format: FASTA sequences, CSV expression matrices, PDB structure files
+
+● Clinical Trial Analysis
+Dataset
+
+URL / Location
+
+What You Get
+
+ClinicalTrials.gov API
+
+https://clinicaltrials.gov/api/gui
+
+Free REST API. Returns trial metadata, phases,
+outcomes, adverse events in JSON.
+
+MIMIC-III
+
+https://physionet.org/content/mimiciii/
+
+Real ICU patient records. Requires credentialing
+(free but needs registration).
+
+AACT Database
+
+https://aact.ctti-clinicaltrials.org/
+
+Structured PostgreSQL dump of all ClinicalTrials.gov
+data. Easier to query.
+
+■ Data Format: JSON from API, CSV from AACT, structured tables with phase/outcome/adverse event columns
+
+● Formulation
+Dataset
+
+URL / Location
+
+What You Get
+
+Drugbank
+
+https://go.drugbank.com/
+
+Excipient-drug info, solubility, formulation details.
+Free academic access.
+
+ESOL Dataset
+
+HuggingFace / DeepChem
+
+Water solubility dataset for 1,128 compounds.
+Perfect for solubility prediction training.
+
+Tox21
+
+https://tripod.nih.gov/tox21/
+
+12,000+ compounds with toxicity labels across 12
+assays. Perfect for toxicity model.
+
+Excipient Database
+(GRAS)
+
+FDA GRAS list (publicly available
+CSV)
+
+Generally Recognized as Safe excipients. Use for
+formulation compatibility.
+
+■ Data Format: SMILES + solubility values, SMILES + toxicity binary labels, CSV of excipient properties
+
+04 · Google Colab Pro — Setup & GPU Guide
+
+Why Google Colab Pro is Enough
+Google Colab Pro gives you access to A100 and V100 GPUs with up to 40GB VRAM. All 4 models selected for this
+project are designed to be fine-tunable within this constraint. PRECIOUS3-GPT at 89.4M params takes under 4GB
+VRAM for fine-tuning with 4-bit quantization.
+
+GPU Available on Colab Pro
+
+VRAM
+
+Best For
+
+T4 (Standard)
+
+16 GB
+
+ChemBERTa, ClinicalBERT, ESM-2 (8M)
+
+V100 (Pro)
+
+16 GB
+
+PRECIOUS3-GPT fine-tuning (with 4-bit quant)
+
+A100 (Pro+)
+
+40 GB
+
+All models, larger batch sizes, faster training
+
+Step 1 — Install Dependencies (Run this first in every notebook)
+!pip install transformers datasets peft accelerate bitsandbytes rdkit-pypi torch
+torchvision torchaudio deepchem
+
+Step 2 — Enable GPU in Colab
+Runtime → Change runtime type → Hardware accelerator → GPU → Select A100 if available → Save
+
+Step 3 — Mount Google Drive (for saving checkpoints)
+from google.colab import drive drive.mount('/content/drive') # Save your fine-tuned models
+to /content/drive/MyDrive/pharma_ai/
+
+05 · Fine-Tuning — Step-by-Step for Each Model
+
+Fine-Tuning PRECIOUS3-GPT (Drug & Target Discovery)
+Use LoRA (Low-Rank Adaptation) — this is the most efficient method for fine-tuning large models on Colab. LoRA
+freezes most weights and trains only small adapter matrices, reducing memory from ~12GB to ~4GB.
+
+Step 1 — Load model with 4-bit quantization
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig import
+torch bnb_config = BitsAndBytesConfig( load_in_4bit=True, bnb_4bit_quant_type='nf4',
+bnb_4bit_compute_dtype=torch.bfloat16 ) model = AutoModelForCausalLM.from_pretrained(
+'insilicomedicine/precious3-gpt-multi-modal', quantization_config=bnb_config,
+device_map='auto' ) tokenizer =
+AutoTokenizer.from_pretrained('insilicomedicine/precious3-gpt-multi-modal')
+
+Step 2 — Apply LoRA Configuration
+from peft import LoraConfig, get_peft_model, TaskType lora_config = LoraConfig( r=16, #
+Rank — higher = more expressive but more memory lora_alpha=32, # Scaling factor
+target_modules=['q_proj', 'v_proj'], # Which layers to adapt lora_dropout=0.05,
+bias='none', task_type=TaskType.CAUSAL_LM ) model = get_peft_model(model, lora_config)
+model.print_trainable_parameters()
+
+Step 3 — Prepare Dataset (ChEMBL drug data example)
+from datasets import load_dataset # Example: load SMILES + bioactivity labels dataset =
+load_dataset('csv', data_files={'train': 'chembl_train.csv'}) def tokenize(example):
+return tokenizer(example['smiles'], truncation=True, max_length=512) tokenized =
+dataset.map(tokenize, batched=True)
+
+Step 4 — Train with HuggingFace Trainer
+from transformers import TrainingArguments, Trainer training_args = TrainingArguments(
+output_dir='/content/drive/MyDrive/pharma_ai/precious3_ft', num_train_epochs=3,
+per_device_train_batch_size=4, # Keep low for Colab gradient_accumulation_steps=8, #
+Simulates batch_size=32 learning_rate=2e-4, fp16=True, # Mixed precision save_steps=500,
+logging_steps=100, ) trainer = Trainer( model=model, args=training_args,
+train_dataset=tokenized['train'], ) trainer.train()
+■ Expected Time on A100 (Colab Pro+): ~2-4 hours for 3 epochs on 50k ChEMBL compounds
+
+Fine-Tuning ChemBERTa (Formulation & Drug Discovery)
+ChemBERTa is a BERT model — fine-tune it as a classifier/regressor on molecular property data (solubility,
+toxicity). This is straightforward and very fast on Colab.
+from transformers import AutoModelForSequenceClassification, AutoTokenizer model =
+AutoModelForSequenceClassification.from_pretrained( 'seyonec/ChemBERTa-zinc-base-v1',
+num_labels=1 # Regression task (e.g., logS solubility) ) # Your dataset: CSV with 'smiles'
+column + 'solubility' column # Tokenize SMILES strings the same way as text # Use MSELoss
+for regression, CrossEntropyLoss for classification (toxicity) # Fine-tune same way as
+above with Trainer # No LoRA needed — ChemBERTa is small enough to full fine-tune on Colab
+■ Expected Time on T4 (free Colab): ~30-45 minutes for ESOL solubility dataset
+
+Fine-Tuning ClinicalBERT (Clinical Trial Analysis)
+Use ClinicalBERT for text classification on trial outcome data. Input: trial description text. Output: outcome class
+(success/failure/ongoing).
+model = AutoModelForSequenceClassification.from_pretrained(
+'emilyalsentzer/Bio_ClinicalBERT', num_labels=3 # e.g., 0=Failed, 1=Ongoing, 2=Successful
+) # Dataset from ClinicalTrials.gov API — extract 'brief_summary' + outcome label #
+Fine-tune with Trainer, batch_size=16, lr=3e-5, epochs=3 # Achieves ~80-85% accuracy on
+trial outcome classification
+■ Expected Time on T4 (Colab free): ~20-30 minutes
+
+06 · Full Platform Architecture
+Here is how all models connect in your Pharma AI platform:
+
+Platform Layer
+
+Component
+
+Technology
+
+Frontend (Website)
+
+User interface for scientists
+
+React.js + TailwindCSS
+
+Backend API
+
+Routes requests to models
+
+FastAPI (Python)
+
+Drug Discovery Module
+
+SMILES input → molecule generation & scoring
+PRECIOUS3-GPT + ChemBERTa
+
+Target Discovery Module
+
+Gene/protein input → target ranking
+
+PRECIOUS3-GPT + ESM-2
+
+Clinical Trial Module
+
+Text input → trial outcome prediction
+
+ClinicalBERT
+
+Formulation Module
+
+SMILES → solubility/toxicity/stability
+
+ChemBERTa fine-tuned
+
+Database
+
+Store molecules, results, user queries
+
+Supabase (PostgreSQL)
+
+Molecular Visualization
+
+3D molecule viewer
+
+RDKit + 3Dmol.js
+
+Model Serving
+
+Host fine-tuned models
+
+HuggingFace Inference API / FastAPI
+
+Tech Stack Summary
+Layer
+
+Tools
+
+AI/ML Models
+
+PyTorch, HuggingFace Transformers, PEFT (LoRA), BitsAndBytes
+
+Chemistry Tools
+
+RDKit, DeepChem, PubChem API
+
+Backend
+
+FastAPI, Python 3.10+
+
+Frontend
+
+React.js, TailwindCSS, 3Dmol.js (3D visualization)
+
+Database
+
+Supabase (free tier available)
+
+Training
+
+Google Colab Pro (A100/V100 GPUs)
+
+Model Storage
+
+Google Drive + HuggingFace Hub (free)
+
+07 · Recommended Build Timeline & Important Notes
+
+Suggested Development Timeline
+Phase
+
+Weeks
+
+Phase 1 — Data
+
+1-2
+
+Phase 2 — Fine-tune ChemBERTa
+3
+
+What to Do
+
+Download ChEMBL, PubChem, ESOL, ClinicalTrials data. Clean & format into CSV/SMILE
+Fine-tune on ESOL (solubility) and Tox21 (toxicity). Validate accuracy.
+
+Phase 3 — Fine-tune ClinicalBERT
+4
+Fine-tune on ClinicalTrials.gov outcome data. Test on held-out trials.
+Phase 4 — Fine-tune PRECIOUS3-GPT
+5-6
+Fine-tune with LoRA on ChEMBL drug-target pairs. Most time-intensive step.
+Phase 5 — ESM-2 Target Discovery
+7
+Set up ESM-2 embeddings for protein sequences. Build target ranking pipeline.
+Phase 6 — Backend + API 8-9
+
+FastAPI backend. Connect all models to REST endpoints.
+
+Phase 7 — Frontend
+
+React.js UI. Add 3D molecular viewer, result dashboards.
+
+10-11
+
+Phase 8 — Testing & Deploy
+12
+
+Test end-to-end. Deploy on HuggingFace Spaces or AWS/GCP free tier.
+
+■■ Important Notes
+• License: PRECIOUS3-GPT uses CC-BY-NC-4.0 — free for research and academic use only. If you commercialize
+the platform, switch to a commercial-friendly alternative like GPT-J or Mistral fine-tuned on pharma data.
+• Colab Disconnect: Colab disconnects after ~12 hours. Always save checkpoints to Google Drive every 500 steps
+using save_steps=500 in TrainingArguments.
+• Colab Pro Compute Units: Heavy training (PRECIOUS3-GPT) will consume compute units quickly on A100. Budget
+~5-10 compute units per training session. Buy extra if needed.
+• MIMIC-III Dataset: Requires free registration and credentialing at PhysioNet. Takes 1-2 days for approval. Apply
+early.
+• Data Size: Start fine-tuning with a 10% sample of large datasets (ChEMBL has 2M+ compounds). A 50k-100k subset
+is enough to get strong results.
+• RDKit for Visualization: Use RDKit in Python to draw 2D molecule structures. For 3D visualization in the web
+frontend, use 3Dmol.js (JavaScript library, free).
+
+Pharma AI Platform — Complete Technical Blueprint
+Drug Discovery · Target Discovery · Clinical Trial Analysis · Formulation
+Models: PRECIOUS3-GPT, ChemBERTa, ClinicalBERT, ESM-2 | Training: Google Colab Pro | April 2026
+
+
