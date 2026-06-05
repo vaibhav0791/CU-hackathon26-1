@@ -1,214 +1,248 @@
 # backend/manual_ingestion_runner.py
+"""
+Main Data Ingestion Pipeline Orchestrator
+Coordinates fetching and ingestion of pharmaceutical data from multiple sources
+"""
+
 import asyncio
 import logging
-import sys
+import json
 from datetime import datetime
+from pathlib import Path
+from typing import Dict, List
+
 from ingestors.enhanced_db_handler import EnhancedDatabaseHandler
 from fetchers.drug_discovery_fetcher import DrugDiscoveryFetcher
 from fetchers.target_discovery_fetcher import TargetDiscoveryFetcher
 from fetchers.clinical_trial_fetcher import ClinicalTrialFetcher
 from fetchers.formulation_fetcher import FormulationFetcher
 
-# Setup logging
+# Configure logging
+logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
-logger = logging.getLogger(__name__)
 
 class ManualDataIngestionEngine:
-    """Manual data ingestion engine for all 19 datasets"""
+    """
+    Main ingestion orchestrator that:
+    1. Fetches data from multiple sources
+    2. Validates data quality
+    3. Deduplicates records
+    4. Stores in database
+    5. Generates quality reports
+    """
     
-    def __init__(self):
-        self.db = EnhancedDatabaseHandler("pharma_enhanced.db")
-        self.drug_fetcher = DrugDiscoveryFetcher()
-        self.target_fetcher = TargetDiscoveryFetcher()
-        self.trial_fetcher = ClinicalTrialFetcher()
-        self.formulation_fetcher = FormulationFetcher()
+    def __init__(self, db_path: str = "pharma_enhanced.db", cache_dir: str = "ingestion_cache"):
+        """Initialize all components"""
+        self.db_path = db_path
+        self.cache_dir = cache_dir
+        
+        # Initialize database with validation & dedup support
+        self.db = EnhancedDatabaseHandler(self.db_path)
+        
+        # Initialize fetchers
+        self._initialize_fetchers()
+        
         self.total_records = 0
+        self.start_time = None
+        self.ingestion_summary = {}
     
-    async def ingest_all(self):
-        """Ingest all datasets"""
-        logger.info("=" * 80)
-        logger.info("🚀 MANUAL DATA INGESTION ENGINE - ALL 19 DATASETS")
-        logger.info(f"⏰ Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        logger.info("=" * 80)
-        logger.info("")
+    def _initialize_fetchers(self):
+        """Initialize all data fetchers"""
+        try:
+            self.drug_fetcher = DrugDiscoveryFetcher(self.db_path, self.cache_dir)
+            self.target_fetcher = TargetDiscoveryFetcher(self.db_path, self.cache_dir)
+            self.trial_fetcher = ClinicalTrialFetcher(self.db_path, self.cache_dir)
+            self.formulation_fetcher = FormulationFetcher(self.db_path, self.cache_dir)
+            
+            logger.info("✅ All fetchers initialized successfully")
+        except Exception as e:
+            logger.error(f"❌ Error initializing fetchers: {e}")
+            raise
+    
+    async def run_all_ingestions(self):
+        """Main execution flow - run all ingestions"""
+        self.start_time = datetime.now()
+        logger.info("🚀 Starting comprehensive data ingestion pipeline")
+        logger.info(f"⏰ Start time: {self.start_time}\n")
         
         try:
-            # PHASE 1: Drug Discovery
-            logger.info("=" * 80)
-            logger.info("📊 PHASE 1: DRUG DISCOVERY DATASETS (4/19)")
-            logger.info("=" * 80)
-            logger.info("")
+            # Fetch data from all sources
+            data_collections = await self._fetch_all_data()
             
-            await self._ingest_chembl()
-            await self._ingest_pubchem()
-            await self._ingest_zinc15()
-            await self._ingest_qm9()
+            # Ingest all data with validation & deduplication
+            await self._ingest_all_data(data_collections)
             
-            # PHASE 2: Target Discovery
-            logger.info("=" * 80)
-            logger.info("🔬 PHASE 2: TARGET DISCOVERY DATASETS (4/19)")
-            logger.info("=" * 80)
-            logger.info("")
-            
-            await self._ingest_uniprot()
-            await self._ingest_pdb()
-            await self._ingest_geo()
-            await self._ingest_string()
-            
-            # PHASE 3: Clinical Trials
-            logger.info("=" * 80)
-            logger.info("🏥 PHASE 3: CLINICAL TRIAL DATASETS (3/19)")
-            logger.info("=" * 80)
-            logger.info("")
-            
-            await self._ingest_clinical_trials()
-            await self._ingest_mimic()
-            await self._ingest_aact()
-            
-            # PHASE 4: Formulation
-            logger.info("=" * 80)
-            logger.info("⚗️  PHASE 4: FORMULATION DATASETS (4/19)")
-            logger.info("=" * 80)
-            logger.info("")
-            
-            await self._ingest_drugbank()
-            await self._ingest_gras()
-            await self._ingest_esol()
-            await self._ingest_tox21()
-            
-            # Summary
-            self._print_summary()
+            # Generate quality report
+            self._generate_ingestion_report()
             
         except Exception as e:
-            logger.error(f"❌ Error during ingestion: {e}")
-            import traceback
-            traceback.print_exc()
-        finally:
-            logger.info("✅ Ingestion engine closing...")
+            logger.error(f"❌ Fatal error during ingestion: {e}")
+            self.db.log_ingestion(
+                dataset_name="comprehensive_pipeline",
+                total_records=self.total_records,
+                status="FAILED",
+                errors=str(e)
+            )
+            raise
     
-    async def _ingest_chembl(self):
-        chembl_records = await self.drug_fetcher.fetch_chembl()
-        inserted = self.db.batch_insert('chembl_bioactivity', chembl_records)
-        self.db.log_ingestion('chembl_bioactivity', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_pubchem(self):
-        pubchem_records = await self.drug_fetcher.fetch_pubchem()
-        inserted = self.db.batch_insert('pubchem_properties', pubchem_records)
-        self.db.log_ingestion('pubchem_properties', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_zinc15(self):
-        zinc_records = await self.drug_fetcher.fetch_zinc15()
-        inserted = self.db.batch_insert('zinc15_compounds', zinc_records)
-        self.db.log_ingestion('zinc15_compounds', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_qm9(self):
-        qm9_records = await self.drug_fetcher.fetch_qm9()
-        inserted = self.db.batch_insert('qm9_properties', qm9_records)
-        self.db.log_ingestion('qm9_properties', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_uniprot(self):
-        uniprot_records = await self.target_fetcher.fetch_uniprot()
-        inserted = self.db.batch_insert('uniprot_sequences', uniprot_records)
-        self.db.log_ingestion('uniprot_sequences', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_pdb(self):
-        pdb_records = await self.target_fetcher.fetch_pdb()
-        inserted = self.db.batch_insert('pdb_structures', pdb_records)
-        self.db.log_ingestion('pdb_structures', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_geo(self):
-        geo_records = await self.target_fetcher.fetch_geo()
-        inserted = self.db.batch_insert('geo_expression', geo_records)
-        self.db.log_ingestion('geo_expression', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_string(self):
-        string_records = await self.target_fetcher.fetch_string()
-        inserted = self.db.batch_insert('string_interactions', string_records)
-        self.db.log_ingestion('string_interactions', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_clinical_trials(self):
-        ct_records = await self.trial_fetcher.fetch_clinical_trials()
-        inserted = self.db.batch_insert('clinical_trials', ct_records)
-        self.db.log_ingestion('clinical_trials', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_mimic(self):
-        mimic_records = await self.trial_fetcher.fetch_mimic()
-        inserted = self.db.batch_insert('mimic_patients', mimic_records)
-        self.db.log_ingestion('mimic_patients', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_aact(self):
-        aact_records = await self.trial_fetcher.fetch_aact()
-        inserted = self.db.batch_insert('aact_trials', aact_records)
-        self.db.log_ingestion('aact_trials', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_drugbank(self):
-        drugbank_records = await self.formulation_fetcher.fetch_drugbank()
-        inserted = self.db.batch_insert('drugbank_formulations', drugbank_records)
-        self.db.log_ingestion('drugbank_formulations', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_gras(self):
-        gras_records = await self.formulation_fetcher.fetch_gras_excipients()
-        inserted = self.db.batch_insert('gras_excipients', gras_records)
-        self.db.log_ingestion('gras_excipients', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_esol(self):
-        esol_records = await self.formulation_fetcher.fetch_esol_solubility()
-        inserted = self.db.batch_insert('esol_solubility', esol_records)
-        self.db.log_ingestion('esol_solubility', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    async def _ingest_tox21(self):
-        tox21_records = await self.formulation_fetcher.fetch_tox21()
-        inserted = self.db.batch_insert('tox21_toxicity', tox21_records)
-        self.db.log_ingestion('tox21_toxicity', inserted, 'SUCCESS')
-        self.total_records += inserted
-    
-    def _print_summary(self):
-        """Print ingestion summary"""
-        logger.info("")
-        logger.info("=" * 80)
-        logger.info("📈 FINAL INGESTION SUMMARY")
-        logger.info("=" * 80)
+    async def _fetch_all_data(self) -> Dict[str, List]:
+        """Fetch data from all sources in parallel"""
+        logger.info("📡 FETCHING DATA FROM ALL SOURCES...\n")
         
+        # Fetch in parallel for speed
+        drug_data, target_data, trial_data, formulation_data = await asyncio.gather(
+            self._fetch_step("drug_discovery", self.drug_fetcher.fetch, 1),
+            self._fetch_step("target_discovery", self.target_fetcher.fetch, 2),
+            self._fetch_step("clinical_trials", self.trial_fetcher.fetch, 3),
+            self._fetch_step("formulations", self.formulation_fetcher.fetch, 4),
+        )
+        
+        return {
+            "drug": drug_data,
+            "target": target_data,
+            "trial": trial_data,
+            "formulation": formulation_data
+        }
+    
+    async def _fetch_step(self, name: str, fetcher_func, step_num: int) -> List:
+        """Execute a single fetch step with logging"""
+        logger.info(f"📦 STEP {step_num}/4: Fetching {name} data...")
+        try:
+            data = await fetcher_func()
+            logger.info(f"✅ Fetched {len(data)} {name} records\n")
+            return data
+        except Exception as e:
+            logger.error(f"❌ Error fetching {name}: {e}\n")
+            return []
+    
+    async def _ingest_all_data(self, data_collections: Dict[str, List]):
+        """Ingest all fetched data with validation"""
+        logger.info("\n✅ STEP 5/5: Ingesting data with validation...\n")
+        
+        ingestion_config = [
+            {
+                "name": "Drug Discovery",
+                "emoji": "💊",
+                "data_key": "drug",
+                "table": "chembl_bioactivity",
+                "unique_field": "compound_id"
+            },
+            {
+                "name": "Target Discovery",
+                "emoji": "🎯",
+                "data_key": "target",
+                "table": "string_interactions",
+                "unique_field": "interaction_id"
+            },
+            {
+                "name": "Clinical Trials",
+                "emoji": "🏥",
+                "data_key": "trial",
+                "table": "clinical_trials",
+                "unique_field": "nct_id"
+            },
+            {
+                "name": "Formulations",
+                "emoji": "⚗️",
+                "data_key": "formulation",
+                "table": "drugbank_formulations",
+                "unique_field": "drug_id"
+            }
+        ]
+        
+        for config in ingestion_config:
+            data = data_collections.get(config["data_key"], [])
+            
+            if data:
+                logger.info(f"{config['emoji']} Ingesting {len(data)} {config['name'].lower()} records...")
+                
+                stats = self.db.batch_insert_with_validation(
+                    table=config["table"],
+                    records=data,
+                    unique_field=config["unique_field"]
+                )
+                
+                self.total_records += stats["inserted"]
+                
+                logger.info(
+                    f"✅ {config['name']}: "
+                    f"Inserted={stats['inserted']}, "
+                    f"Duplicates={stats['duplicates']}, "
+                    f"Errors={stats['errors']}\n"
+                )
+                
+                self.ingestion_summary[config["name"]] = stats
+                
+                # Log to database
+                self.db.log_ingestion(
+                    dataset_name=config["data_key"],
+                    total_records=len(data),
+                    status="SUCCESS"
+                )
+    
+    def _generate_ingestion_report(self):
+        """Generate comprehensive ingestion report"""
+        end_time = datetime.now()
+        duration = (end_time - self.start_time).total_seconds()
+        
+        logger.info("\n" + "="*80)
+        logger.info("📊 INGESTION COMPLETE - QUALITY REPORT")
+        logger.info("="*80)
+        logger.info(f"⏱️ Duration: {duration:.2f} seconds")
+        logger.info(f"📈 Total Records Inserted: {self.total_records}")
+        
+        # Print database stats
         stats = self.db.get_stats()
-        total = 0
-        
+        logger.info("\n📦 DATABASE STATISTICS:")
         for table, count in sorted(stats.items()):
-            total += count
-            status = "✅" if count > 0 else "⚠️"
-            logger.info(f"{status} {table}: {count} records")
+            if count > 0:
+                logger.info(f"  ✅ {table:40s}: {count:7,d} records")
+            else:
+                logger.info(f"  ⚪ {table:40s}: {count:7,d} records")
         
-        logger.info("")
-        logger.info(f"🎉 TOTAL RECORDS INGESTED: {total}")
-        logger.info(f"⏱️  Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        logger.info("=" * 80)
+        # Print quality report
+        logger.info("\n")
+        self.db.print_quality_report()
+        
+        # Save report to JSON
+        self._save_report_to_json(duration, stats)
+    
+    def _save_report_to_json(self, duration: float, stats: Dict):
+        """Save detailed ingestion report to JSON"""
+        report = {
+            "timestamp": datetime.now().isoformat(),
+            "duration_seconds": duration,
+            "total_records_inserted": self.total_records,
+            "database_statistics": stats,
+            "ingestion_summary": self.ingestion_summary,
+            "quality_metrics": self.db.quality_metrics
+        }
+        
+        report_path = Path("ingestion_reports")
+        report_path.mkdir(exist_ok=True)
+        
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_file = report_path / f"ingestion_report_{timestamp}.json"
+        
+        with open(report_file, "w") as f:
+            json.dump(report, f, indent=2)
+        
+        logger.info(f"\n✅ Report saved to: {report_file}\n")
+
 
 async def main():
-    engine = ManualDataIngestionEngine()
-    await engine.ingest_all()
+    """Main entry point"""
+    try:
+        engine = ManualDataIngestionEngine()
+        await engine.run_all_ingestions()
+        logger.info("✅ Data ingestion pipeline completed successfully!")
+    except Exception as e:
+        logger.error(f"\n❌ Pipeline failed: {e}")
+        raise
+
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except KeyboardInterrupt:
-        logger.warning("\n⚠️ Ingestion cancelled by user")
-        sys.exit(1)
-    except Exception as e:
-        logger.error(f"\n❌ Fatal error: {e}")
-        sys.exit(1)
+    asyncio.run(main())

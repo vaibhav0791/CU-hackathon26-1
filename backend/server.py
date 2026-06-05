@@ -1,5 +1,6 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Query
 from dotenv import load_dotenv
+from discovery_router import router as discovery_router
 from starlette.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import os
@@ -443,6 +444,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 api_router = APIRouter(prefix="/api")
+api_router.include_router(discovery_router)
 
 # ============ V-2: Drug Database ============
 

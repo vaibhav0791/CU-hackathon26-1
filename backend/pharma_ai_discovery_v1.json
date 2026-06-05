@@ -1,0 +1,29 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_062C43597EBC5F50",
+    "smiles": "c1ccc(-c2nc3c(-c4nc5ccccc5o4)cccc3o2)cc1",
+    "chembl_id": "CHEMBL113081",
+    "pubchem_cid": "N/A",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "ingestion_timestamp": "2026-06-05T19:26:15.225171+00:00"
+  },
+  {
+    "pharma_uid": "PAI_COMP_867FC2A74FAB1EEA",
+    "smiles": "Cc1ccc2oc(-c3cccc(N4C(=O)c5ccc(C(=O)O)cc5C4=O)c3)nc2c1",
+    "chembl_id": "CHEMBL324340",
+    "pubchem_cid": "N/A",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "ingestion_timestamp": "2026-06-05T19:26:15.225209+00:00"
+  },
+  {
+    "pharma_uid": "PAI_COMP_05C364995AF4C226",
+    "smiles": "COc1ccccc1-c1ccc2oc(-c3ccc(OC)c(N4C(=O)c5ccc(C(=O)O)cc5C4=O)c3)nc2c1",
+    "chembl_id": "CHEMBL109600",
+    "pubchem_cid": "N/A",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "ingestion_timestamp": "2026-06-05T19:26:15.225237+00:00"
+  }
+]

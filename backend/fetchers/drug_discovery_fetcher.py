@@ -1,29 +1,65 @@
 # backend/fetchers/drug_discovery_fetcher.py
+"""Fetch drug discovery data from multiple pharmaceutical databases"""
+import logging
 import asyncio
 import httpx
-import logging
-import json
-import sqlite3
-from pathlib import Path
-from datetime import datetime
 from typing import List, Dict, Any
+from fetchers.base_fetcher import BaseFetcher
 
 logger = logging.getLogger(__name__)
 
-class DrugDiscoveryFetcher:
-    """Fetches drug discovery data from 4 datasets"""
+class DrugDiscoveryFetcher(BaseFetcher):
+    """Fetch drug discovery data from ChEMBL, PubChem, ZINC15, and QM9"""
     
-    def __init__(self, db_path: str, cache_dir: Path):
-        self.db_path = db_path
-        self.cache_dir = cache_dir
-        self.session = None
-    
-    async def fetch_chembl(self):
-        """Fetch from ChEMBL Bioactivity Database"""
-        logger.info("🔍 Fetching ChEMBL Bioactivity data...")
+    async def fetch(self) -> List[Dict[str, Any]]:
+        """
+        Main fetch method - combines all data sources
+        Returns list of drug records ready for ingestion
+        """
+        logger.info("🔍 Fetching drug discovery data from all sources...")
+        
+        # Try to load from cache first
+        cached_data = self._load_from_cache("drug_discovery")
+        if cached_data:
+            logger.info(f"✅ Loaded {len(cached_data)} drug records from cache")
+            return self._add_metadata(cached_data)
         
         try:
-            # ChEMBL API endpoint for bioactivity data
+            # Fetch from all sources in parallel
+            logger.info("📡 Fetching from multiple sources (ChEMBL, PubChem, ZINC15, QM9)...")
+            
+            chembl_data = await self.fetch_chembl()
+            pubchem_data = await self.fetch_pubchem()
+            zinc15_data = await self.fetch_zinc15()
+            qm9_data = await self.fetch_qm9()
+            
+            # Combine all data
+            all_drug_data = chembl_data + pubchem_data + zinc15_data + qm9_data
+            
+            # Remove duplicates by compound_id
+            unique_drugs = {}
+            for drug in all_drug_data:
+                compound_id = drug.get('compound_id')
+                if compound_id and compound_id not in unique_drugs:
+                    unique_drugs[compound_id] = drug
+            
+            final_data = list(unique_drugs.values())
+            
+            if final_data:
+                self._save_to_cache("drug_discovery", final_data)
+                logger.info(f"✅ Fetched {len(final_data)} unique drug records (after dedup)")
+            
+            return self._add_metadata(final_data)
+        
+        except Exception as e:
+            logger.error(f"❌ Error in drug discovery fetch: {e}")
+            return []
+    
+    async def fetch_chembl(self) -> List[Dict[str, Any]]:
+        """Fetch from ChEMBL Bioactivity Database"""
+        logger.info("  📊 ChEMBL: Fetching bioactivity data...")
+        
+        try:
             url = "https://www.ebi.ac.uk/chembl/api/data/activity.json"
             
             async with httpx.AsyncClient(timeout=30.0) as client:
@@ -34,275 +70,259 @@ class DrugDiscoveryFetcher:
                     data = response.json()
                     records = data.get('results', [])
                     
-                    await self._save_chembl_data(records)
-                    logger.info(f"✅ Ingested {len(records)} ChEMBL records")
+                    chembl_data = []
+                    for record in records:
+                        try:
+                            drug = {
+                                'compound_id': record.get('molecule_chembl_id', ''),
+                                'compound_name': record.get('molecule_pref_name', ''),
+                                'smiles': record.get('canonical_smiles', ''),
+                                'target': record.get('target_pref_name', ''),
+                                'activity_value': record.get('standard_value'),
+                                'activity_type': record.get('type', '')
+                            }
+                            if drug['compound_id']:  # Only add if has ID
+                                chembl_data.append(drug)
+                        except Exception as e:
+                            logger.warning(f"    ⚠️ Skipping ChEMBL record: {e}")
+                    
+                    logger.info(f"  ✅ ChEMBL: Got {len(chembl_data)} records")
+                    return chembl_data
                 else:
-                    logger.warning(f"⚠️ ChEMBL API returned {response.status_code}")
-                    await self._load_sample_chembl_data()
+                    logger.warning(f"  ⚠️ ChEMBL API returned {response.status_code}")
+                    return await self._load_sample_chembl_data()
         
         except Exception as e:
-            logger.error(f"❌ Error fetching ChEMBL: {e}")
-            await self._load_sample_chembl_data()
+            logger.error(f"  ❌ ChEMBL fetch error: {e}")
+            return await self._load_sample_chembl_data()
     
-    async def fetch_pubchem(self):
+    async def fetch_pubchem(self) -> List[Dict[str, Any]]:
         """Fetch from PubChem Molecular Properties"""
-        logger.info("🔍 Fetching PubChem Molecular Properties...")
+        logger.info("  📊 PubChem: Fetching molecular properties...")
         
         try:
-            # Sample drug CIDs to fetch
-            sample_cids = [2244, 5288826, 5360545, 2662]  # Aspirin, Ibuprofen, Naproxen, Acetaminophen
+            # Sample drug CIDs (Aspirin, Ibuprofen, Naproxen, Acetaminophen, Naproxen, Diclofenac)
+            sample_cids = [2244, 3672, 5280343, 2662, 5360545, 3033]
             
             compounds = []
             async with httpx.AsyncClient(timeout=30.0) as client:
                 for cid in sample_cids:
                     try:
                         url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/JSON"
-                        response = await client.get(url)
+                        response = await client.get(url, timeout=10.0)
                         
                         if response.status_code == 200:
                             data = response.json()
-                            props = data['PC_Compounds'][0]
-                            
-                            compound = {
-                                'cid': cid,
-                                'compound_name': props.get('props', [{}])[0].get('urn', {}).get('label', f'CID_{cid}'),
-                                'smiles': props.get('atoms', {}).get('smiles', ''),
-                                'molecular_weight': props.get('props', [{}])[1].get('ival', 0) if len(props.get('props', [])) > 1 else 0,
-                                'logp': props.get('props', [{}])[2].get('fval', 0) if len(props.get('props', [])) > 2 else 0,
-                            }
-                            compounds.append(compound)
+                            compound = self._parse_pubchem_response(data, cid)
+                            if compound:
+                                compounds.append(compound)
                         
-                        await asyncio.sleep(0.5)  # Rate limiting
+                        await asyncio.sleep(0.3)  # Rate limiting
                     
                     except Exception as e:
-                        logger.warning(f"Could not fetch PubChem CID {cid}: {e}")
+                        logger.warning(f"    ⚠️ Could not fetch PubChem CID {cid}: {e}")
             
             if compounds:
-                await self._save_pubchem_data(compounds)
-                logger.info(f"✅ Ingested {len(compounds)} PubChem records")
+                logger.info(f"  ✅ PubChem: Got {len(compounds)} records")
+                return compounds
             else:
-                logger.warning("⚠️ No PubChem data fetched, using sample data")
-                await self._load_sample_pubchem_data()
+                logger.warning("  ⚠️ PubChem: No data fetched, using sample data")
+                return await self._load_sample_pubchem_data()
         
         except Exception as e:
-            logger.error(f"❌ Error fetching PubChem: {e}")
-            await self._load_sample_pubchem_data()
+            logger.error(f"  ❌ PubChem fetch error: {e}")
+            return await self._load_sample_pubchem_data()
     
-    async def fetch_zinc15(self):
+    async def fetch_zinc15(self) -> List[Dict[str, Any]]:
         """Fetch from ZINC15 Database"""
-        logger.info("🔍 Fetching ZINC15 Compounds...")
+        logger.info("  📊 ZINC15: Fetching compounds...")
         
         try:
-            # ZINC15 API endpoint
             url = "https://zinc.docking.org/api/substances/"
             
             async with httpx.AsyncClient(timeout=30.0) as client:
-                response = await client.get(url, params={"limit": 50})
+                response = await client.get(url, params={"limit": 50}, timeout=10.0)
                 
                 if response.status_code == 200:
                     data = response.json()
                     records = data.get('results', [])
                     
-                    await self._save_zinc15_data(records)
-                    logger.info(f"✅ Ingested {len(records)} ZINC15 records")
+                    zinc_data = []
+                    for record in records:
+                        try:
+                            drug = {
+                                'compound_id': record.get('zinc_id', ''),
+                                'compound_name': record.get('substance_name', ''),
+                                'smiles': record.get('smiles', ''),
+                                'molecular_weight': record.get('molecular_weight'),
+                                'price': record.get('price_min')
+                            }
+                            if drug['compound_id']:
+                                zinc_data.append(drug)
+                        except Exception as e:
+                            logger.warning(f"    ⚠️ Skipping ZINC15 record: {e}")
+                    
+                    logger.info(f"  ✅ ZINC15: Got {len(zinc_data)} records")
+                    return zinc_data
                 else:
-                    logger.warning(f"⚠️ ZINC15 API returned {response.status_code}")
-                    await self._load_sample_zinc15_data()
+                    logger.warning(f"  ⚠️ ZINC15 API returned {response.status_code}")
+                    return await self._load_sample_zinc15_data()
         
         except Exception as e:
-            logger.error(f"❌ Error fetching ZINC15: {e}")
-            await self._load_sample_zinc15_data()
+            logger.error(f"  ❌ ZINC15 fetch error: {e}")
+            return await self._load_sample_zinc15_data()
     
-    async def fetch_qm9(self):
-        """Load QM9 Quantum Properties from HuggingFace"""
-        logger.info("🔍 Fetching QM9 Quantum Properties...")
+    async def fetch_qm9(self) -> List[Dict[str, Any]]:
+        """Load QM9 Quantum Properties"""
+        logger.info("  📊 QM9: Fetching quantum properties...")
         
         try:
-            from datasets import load_dataset
+            try:
+                from datasets import load_dataset
+                
+                logger.info("    Loading QM9 from HuggingFace (first 100 molecules)...")
+                dataset = load_dataset('qm9', split='train[:100]')
+                
+                qm9_data = []
+                for idx, item in enumerate(dataset):
+                    try:
+                        record = {
+                            'compound_id': f'QM9_{idx}',
+                            'molecule_id': item.get('ID', ''),
+                            'smiles': item.get('SMILES', ''),
+                            'homo_energy': float(item.get('homo', 0)) if item.get('homo') else 0,
+                            'lumo_energy': float(item.get('lumo', 0)) if item.get('lumo') else 0,
+                            'gap_energy': float(item.get('gap', 0)) if item.get('gap') else 0,
+                        }
+                        qm9_data.append(record)
+                    except Exception as e:
+                        logger.warning(f"    ⚠️ Skipping QM9 record: {e}")
+                
+                logger.info(f"  ✅ QM9: Got {len(qm9_data)} records")
+                return qm9_data
             
-            # Load QM9 dataset from HuggingFace
-            logger.info("Loading QM9 from HuggingFace (this may take a moment)...")
-            dataset = load_dataset('qm9', split='train[:100]')  # Load first 100
-            
-            records = []
-            for item in dataset:
-                record = {
-                    'molecule_id': item.get('ID', ''),
-                    'smiles': item.get('SMILES', ''),
-                    'homo_energy': float(item.get('homo', 0)),
-                    'lumo_energy': float(item.get('lumo', 0)),
-                    'gap_energy': float(item.get('gap', 0)),
-                    'dipole_moment': float(item.get('mu', 0)),
-                    'polarizability': float(item.get('alpha', 0)),
-                }
-                records.append(record)
-            
-            await self._save_qm9_data(records)
-            logger.info(f"✅ Ingested {len(records)} QM9 records")
+            except ImportError:
+                logger.warning("  ⚠️ HuggingFace datasets not installed, using sample data")
+                return await self._load_sample_qm9_data()
         
         except Exception as e:
-            logger.error(f"❌ Error fetching QM9: {e}")
-            await self._load_sample_qm9_data()
+            logger.error(f"  ❌ QM9 fetch error: {e}")
+            return await self._load_sample_qm9_data()
     
-    async def _save_chembl_data(self, records: List[Dict]):
-        """Save ChEMBL data to database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        for record in records:
-            try:
-                cursor.execute('''
-                    INSERT OR REPLACE INTO chembl_bioactivity
-                    (compound_id, compound_name, smiles, target_name, bioactivity_type, 
-                     bioactivity_value, units, assay_type, ingestion_date)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (
-                    record.get('molecule_chembl_id', ''),
-                    record.get('molecule_pref_name', ''),
-                    record.get('canonical_smiles', ''),
-                    record.get('target_pref_name', ''),
-                    record.get('type', ''),
-                    record.get('standard_value'),
-                    record.get('standard_units', ''),
-                    record.get('assay_type', ''),
-                    datetime.now().isoformat()
-                ))
-            except Exception as e:
-                logger.warning(f"Could not insert ChEMBL record: {e}")
-        
-        conn.commit()
-        conn.close()
+    def _parse_pubchem_response(self, data: Dict, cid: int) -> Dict[str, Any]:
+        """Parse PubChem API response"""
+        try:
+            compound = data['PC_Compounds'][0]
+            
+            # Extract properties
+            props = compound.get('props', [])
+            
+            # Get SMILES
+            smiles = ''
+            if compound.get('atoms') and compound['atoms'].get('aid'):
+                smiles = compound.get('atoms', {}).get('aid', [{}])[0].get('smiles', '')
+            
+            record = {
+                'compound_id': f'PUBCHEM_{cid}',
+                'compound_name': f'PubChem_CID_{cid}',
+                'smiles': smiles,
+                'molecular_weight': 0,
+                'logp': 0
+            }
+            
+            return record
+        except Exception as e:
+            logger.warning(f"Could not parse PubChem response for CID {cid}: {e}")
+            return None
     
-    async def _save_pubchem_data(self, records: List[Dict]):
-        """Save PubChem data to database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        for record in records:
-            cursor.execute('''
-                INSERT OR REPLACE INTO pubchem_properties
-                (cid, compound_name, smiles, molecular_weight, logp, h_bond_donors,
-                 h_bond_acceptors, tpsa, rotatable_bonds, ingestion_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                record.get('cid'),
-                record.get('compound_name', ''),
-                record.get('smiles', ''),
-                record.get('molecular_weight', 0),
-                record.get('logp', 0),
-                record.get('h_bond_donors', 0),
-                record.get('h_bond_acceptors', 0),
-                record.get('tpsa', 0),
-                record.get('rotatable_bonds', 0),
-                datetime.now().isoformat()
-            ))
-        
-        conn.commit()
-        conn.close()
-    
-    async def _save_zinc15_data(self, records: List[Dict]):
-        """Save ZINC15 data to database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        for record in records:
-            cursor.execute('''
-                INSERT OR REPLACE INTO zinc15_compounds
-                (zinc_id, compound_name, smiles, molecular_weight, price_min, 
-                 price_max, suppliers, ingestion_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                record.get('zinc_id', ''),
-                record.get('substance_name', ''),
-                record.get('smiles', ''),
-                record.get('molecular_weight', 0),
-                record.get('price_min'),
-                record.get('price_max'),
-                record.get('supplier_count', 0),
-                datetime.now().isoformat()
-            ))
-        
-        conn.commit()
-        conn.close()
-    
-    async def _save_qm9_data(self, records: List[Dict]):
-        """Save QM9 data to database"""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        
-        for record in records:
-            cursor.execute('''
-                INSERT OR REPLACE INTO qm9_properties
-                (molecule_id, smiles, homo_energy, lumo_energy, gap_energy, 
-                 dipole_moment, polarizability, ingestion_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            ''', (
-                record.get('molecule_id', ''),
-                record.get('smiles', ''),
-                record.get('homo_energy', 0),
-                record.get('lumo_energy', 0),
-                record.get('gap_energy', 0),
-                record.get('dipole_moment', 0),
-                record.get('polarizability', 0),
-                datetime.now().isoformat()
-            ))
-        
-        conn.commit()
-        conn.close()
-    
-    async def _load_sample_chembl_data(self):
+    async def _load_sample_chembl_data(self) -> List[Dict[str, Any]]:
         """Load sample ChEMBL data as fallback"""
-        sample_data = [
+        logger.info("    Loading sample ChEMBL data...")
+        return [
             {
                 'compound_id': 'CHEMBL100001',
                 'compound_name': 'Aspirin',
                 'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
-                'target_name': 'Cyclooxygenase',
-                'bioactivity_type': 'IC50',
-                'bioactivity_value': 100.0,
-                'units': 'nM',
-                'assay_type': 'binding'
+                'target': 'Cyclooxygenase',
+                'activity_value': 8.5,
+                'activity_type': 'IC50'
+            },
+            {
+                'compound_id': 'CHEMBL100002',
+                'compound_name': 'Ibuprofen',
+                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
+                'target': 'Cyclooxygenase',
+                'activity_value': 9.2,
+                'activity_type': 'IC50'
+            },
+            {
+                'compound_id': 'CHEMBL100003',
+                'compound_name': 'Naproxen',
+                'smiles': 'COc1ccc2cc(ccc2c1)C(C)C(=O)O',
+                'target': 'Cyclooxygenase',
+                'activity_value': 8.9,
+                'activity_type': 'IC50'
             }
         ]
-        await self._save_chembl_data(sample_data)
     
-    async def _load_sample_pubchem_data(self):
+    async def _load_sample_pubchem_data(self) -> List[Dict[str, Any]]:
         """Load sample PubChem data as fallback"""
-        sample_data = [
+        logger.info("    Loading sample PubChem data...")
+        return [
             {
-                'cid': 2244,
+                'compound_id': 'PUBCHEM_2244',
                 'compound_name': 'Aspirin',
                 'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
                 'molecular_weight': 180.16,
                 'logp': 1.19
+            },
+            {
+                'compound_id': 'PUBCHEM_3672',
+                'compound_name': 'Ibuprofen',
+                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
+                'molecular_weight': 206.28,
+                'logp': 3.97
             }
         ]
-        await self._save_pubchem_data(sample_data)
     
-    async def _load_sample_zinc15_data(self):
+    async def _load_sample_zinc15_data(self) -> List[Dict[str, Any]]:
         """Load sample ZINC15 data as fallback"""
-        sample_data = [
+        logger.info("    Loading sample ZINC15 data...")
+        return [
             {
-                'zinc_id': 'ZINC000000001',
-                'substance_name': 'Sample Compound',
+                'compound_id': 'ZINC000000001',
+                'compound_name': 'Sample Compound 1',
                 'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
                 'molecular_weight': 180.0,
-                'supplier_count': 5
+                'price': 50.0
+            },
+            {
+                'compound_id': 'ZINC000000002',
+                'compound_name': 'Sample Compound 2',
+                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
+                'molecular_weight': 206.0,
+                'price': 75.0
             }
         ]
-        await self._save_zinc15_data(sample_data)
     
-    async def _load_sample_qm9_data(self):
+    async def _load_sample_qm9_data(self) -> List[Dict[str, Any]]:
         """Load sample QM9 data as fallback"""
-        sample_data = [
+        logger.info("    Loading sample QM9 data...")
+        return [
             {
-                'molecule_id': 'QM9_1',
+                'compound_id': 'QM9_1',
+                'molecule_id': 'QM9_001',
                 'smiles': 'C',
                 'homo_energy': -0.50,
                 'lumo_energy': 0.10,
-                'gap_energy': 0.60,
-                'dipole_moment': 0.0,
-                'polarizability': 2.5
+                'gap_energy': 0.60
+            },
+            {
+                'compound_id': 'QM9_2',
+                'molecule_id': 'QM9_002',
+                'smiles': 'CC',
+                'homo_energy': -0.45,
+                'lumo_energy': 0.15,
+                'gap_energy': 0.60
             }
         ]
-        await self._save_qm9_data(sample_data)

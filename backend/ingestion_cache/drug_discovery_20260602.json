@@ -1,0 +1,46 @@
+[
+  {
+    "compound_id": "PUBCHEM_2244",
+    "compound_name": "Aspirin",
+    "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+    "molecular_weight": 180.16,
+    "logp": 1.19
+  },
+  {
+    "compound_id": "PUBCHEM_3672",
+    "compound_name": "Ibuprofen",
+    "smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+    "molecular_weight": 206.28,
+    "logp": 3.97
+  },
+  {
+    "compound_id": "ZINC000000001",
+    "compound_name": "Sample Compound 1",
+    "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+    "molecular_weight": 180.0,
+    "price": 50.0
+  },
+  {
+    "compound_id": "ZINC000000002",
+    "compound_name": "Sample Compound 2",
+    "smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
+    "molecular_weight": 206.0,
+    "price": 75.0
+  },
+  {
+    "compound_id": "QM9_1",
+    "molecule_id": "QM9_001",
+    "smiles": "C",
+    "homo_energy": -0.5,
+    "lumo_energy": 0.1,
+    "gap_energy": 0.6
+  },
+  {
+    "compound_id": "QM9_2",
+    "molecule_id": "QM9_002",
+    "smiles": "CC",
+    "homo_energy": -0.45,
+    "lumo_energy": 0.15,
+    "gap_energy": 0.6
+  }
+]

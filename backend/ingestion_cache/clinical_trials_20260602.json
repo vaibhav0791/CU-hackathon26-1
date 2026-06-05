@@ -1,0 +1,86 @@
+[
+  {
+    "nct_id": "NCT04412565",
+    "title": "COVID-19 Vaccine Study Phase 3",
+    "condition": "COVID-19",
+    "phase": "Phase 3",
+    "status": "COMPLETED",
+    "enrollment": 44000
+  },
+  {
+    "nct_id": "NCT04567890",
+    "title": "Phase 3 Study of Drug X in Type 2 Diabetes",
+    "condition": "Type 2 Diabetes Mellitus",
+    "phase": "Phase 3",
+    "status": "Recruiting",
+    "enrollment": 500
+  },
+  {
+    "nct_id": "NCT04567891",
+    "title": "Phase 2 Study of Drug Z in Hypertension",
+    "condition": "Hypertension",
+    "phase": "Phase 2",
+    "status": "Active, not recruiting",
+    "enrollment": 300
+  },
+  {
+    "nct_id": "NCT04567892",
+    "title": "Phase 4 Study of Drug Y in Cardiovascular Disease",
+    "condition": "Cardiovascular Disease",
+    "phase": "Phase 4",
+    "status": "Recruiting",
+    "enrollment": 1000
+  },
+  {
+    "nct_id": "NCT04567893",
+    "title": "Phase 1 Study of Novel Compound in Healthy Volunteers",
+    "condition": "Healthy",
+    "phase": "Phase 1",
+    "status": "Active, not recruiting",
+    "enrollment": 50
+  },
+  {
+    "patient_id": "MIMIC_001",
+    "gender": "M",
+    "age": 65,
+    "admission_type": "EMERGENCY",
+    "mortality": 0
+  },
+  {
+    "patient_id": "MIMIC_002",
+    "gender": "F",
+    "age": 72,
+    "admission_type": "URGENT",
+    "mortality": 1
+  },
+  {
+    "patient_id": "MIMIC_003",
+    "gender": "M",
+    "age": 55,
+    "admission_type": "ELECTIVE",
+    "mortality": 0
+  },
+  {
+    "patient_id": "MIMIC_004",
+    "gender": "F",
+    "age": 68,
+    "admission_type": "EMERGENCY",
+    "mortality": 0
+  },
+  {
+    "nct_id": "AACT_NCT04412565",
+    "title": "AACT: COVID-19 Vaccine Study",
+    "condition": "COVID-19",
+    "phase": "Phase 3",
+    "status": "COMPLETED",
+    "enrollment": 44000
+  },
+  {
+    "nct_id": "AACT_NCT04567890",
+    "title": "AACT: Type 2 Diabetes Study",
+    "condition": "Type 2 Diabetes",
+    "phase": "Phase 3",
+    "status": "Recruiting",
+    "enrollment": 500
+  }
+]
