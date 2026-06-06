@@ -1,46 +1,48 @@
 # backend/discovery_router.py
 """
-Pharma AI - Automated Discovery Data Gateway
-Exposes a live API endpoint for the AI team to fetch pristine ChEMBL + PubChem data automatically.
+Pharma AI - Dynamic Automated Routing Gateway
+Exposes a single universal path to retrieve any dataset programmatically.
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Query
 from run_discovery_audit import PharmaAIDiscoveryAudit
 
-router = APIRouter(tags=["Discovery Ingestion"])
+router = APIRouter(tags=["Universal Data Retrieval"])
 
-@router.get("/discovery/pristine-data")
-async def get_pristine_training_data(limit: int = 50):
+@router.get("/discovery/retrieve")
+async def dynamic_data_retrieval(
+    category: str = Query(..., description="The category name (e.g., respiratory, pain, diabetes, cancer)"),
+    limit: int = 100
+):
     """
-    Automated API Gateway for the AI Training Team.
-    Dynamically tests endpoints, references training metrics history, and drops old target blocks.
+    🌐 AUTOMATED MASTER GATEWAY:
+    Accepts any category request, triggers dynamic extraction, removes history duplication,
+    and automatically hands over the data payload to Damini/Tech Team.
     """
     try:
         audit_engine = PharmaAIDiscoveryAudit()
         
-        # 1. Fetch from live endpoints
-        chembl_data = await audit_engine.test_and_fetch_chembl(limit=limit)
-        pubchem_data = await audit_engine.test_and_fetch_pubchem_properties(cid=3672) # Ibuprofen validation verification
+        # Build keyword search arrays based on request input
+        category_clean = category.strip().upper()
+        keywords = [category_clean]
         
-        # 2 & 3. Combine ChEMBL + PubChem data arrays and run history validation cleanup
-        pristine_dataset = audit_engine.join_and_deduplicate(
-            chembl_list=chembl_data, 
-            pubchem_profile=pubchem_data
-        )
+        # Map sub-targets if common terms are parsed
+        if "CANCER" in category_clean or "ONCOLOGY" in category_clean:
+            keywords.extend(["TUMOR", "BRCA", "EGFR", "KINASE"])
+        elif "RESPIRATORY" in category_clean:
+            keywords.extend(["ADRB2", "PDE4D", "CHRM3", "HRH1", "IL5"])
+        elif "PAIN" in category_clean:
+            keywords.extend(["OPRM1", "TRPV1", "SCN9A", "FAAH"])
+
+        # Fetch clean, filtered structural lists
+        pristine_dataset = await audit_engine.fetch_dynamic_category(keywords=keywords, limit=limit)
         
-        if not pristine_dataset:
-            return {
-                "status": "success",
-                "total_records": 0,
-                "message": "All retrieved items matched previously trained data arrays. No new data generated.",
-                "data": []
-            }
-            
         return {
             "status": "success",
-            "total_records": len(pristine_dataset),
+            "requested_category": category,
+            "total_records_retrieved": len(pristine_dataset),
             "data": pristine_dataset
         }
         
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Automated Ingestion Gateway Error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Universal Ingestion Gateway Error: {str(e)}")
