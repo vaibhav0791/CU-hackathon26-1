@@ -1,0 +1,592 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_B3C249A02AE698BA",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34OC(Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(CN/C(S)=N/Cc1ccc(O)c(OC)c1)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL27105",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Displacement of [3H]RTX binding from vanilloid receptor",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A7320558041ED622",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34OC(Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(C/N=C(\\S)Nc1ccc(O)c(OC)c1)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL285922",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Displacement of [3H]RTX binding from vanilloid receptor",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2D60D54486FC7735",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34O[C@](Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(COC(=O)Cc1ccc(O)c(OC)c1)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL17976",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Displacement of [3H]RTX binding from vanilloid receptor",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_94022D251135496B",
+    "smiles": "Cc1cccc(N(C)CCNC(=O)Nc2ccccc2Br)c1",
+    "chembl_id": "CHEMBL123812",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9A6A60058AE0F49D",
+    "smiles": "CC(=O)N(CCNC(=O)Nc1ccccc1Br)c1cccc(C)c1",
+    "chembl_id": "CHEMBL123130",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FE5F136786423FC0",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1C)c1cccc(C)c1",
+    "chembl_id": "CHEMBL120383",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7D7B33BD1C3E42C5",
+    "smiles": "COc1cccc(NC(=O)/C=C/c2ccc(Cl)cc2)c1",
+    "chembl_id": "CHEMBL122413",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EDF717D446884142",
+    "smiles": "Cc1cccc(N(CCNC(=O)Nc2ccccc2Br)Cc2ccccc2)c1",
+    "chembl_id": "CHEMBL121238",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C93D94F1B7C2D242",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1ccc(C)c(F)c1",
+    "chembl_id": "CHEMBL122191",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DDFAA7B34273500F",
+    "smiles": "CCN(CCNC(=O)Nc1cccc(Cl)c1Cl)c1cccc(C)c1",
+    "chembl_id": "CHEMBL331972",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F86928116F6D8C6F",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1cccc(F)c1",
+    "chembl_id": "CHEMBL120824",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_895A66D9C7D20597",
+    "smiles": "CCN(CCNC(=O)Nc1cccc2ccccc12)c1cccc(C)c1",
+    "chembl_id": "CHEMBL121496",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_12426EF4E6E97493",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1)c1cccc(C)c1",
+    "chembl_id": "CHEMBL331487",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E58B7805CB87E2CD",
+    "smiles": "CCN(CCNC(=O)Nc1ccc(Br)cc1)c1cccc(C)c1",
+    "chembl_id": "CHEMBL121382",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_332C7A989095D93F",
+    "smiles": "Cc1cccc(NCCNC(=O)Nc2ccccc2Br)c1",
+    "chembl_id": "CHEMBL121222",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_09A83305A9BFC97A",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1ccc(C)cc1",
+    "chembl_id": "CHEMBL124404",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0CC6E948FB7D8ABF",
+    "smiles": "CCN(CCNC(=O)Nc1cccc(Br)c1)c1cccc(C)c1",
+    "chembl_id": "CHEMBL121563",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_165049401B5463A5",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1ccccc1C",
+    "chembl_id": "CHEMBL124228",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_313D2FC3C08E0E33",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1ccccc1",
+    "chembl_id": "CHEMBL123816",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B0B2889F71D35490",
+    "smiles": "CC[N+](C)(CCNC(=O)Nc1ccccc1Br)c1cccc(C)c1.[I-]",
+    "chembl_id": "CHEMBL120965",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AB87AA5138ADFE60",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1F)c1cccc(C)c1",
+    "chembl_id": "CHEMBL121558",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_15B296D053709D85",
+    "smiles": "CCN(CCNC(=O)Nc1cc(Cl)ccc1Cl)c1cccc(C)c1",
+    "chembl_id": "CHEMBL124398",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_21155D91B779C182",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Cl)c1cccc(C)c1",
+    "chembl_id": "CHEMBL121139",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6DFC612A9C6C2290",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1ccc(F)c(F)c1",
+    "chembl_id": "CHEMBL119959",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D188B5E946B186CC",
+    "smiles": "Oc1cc2c(cc1O)CN(C(=S)NCCc1ccc(Cl)cc1)CCC2",
+    "chembl_id": "CHEMBL391997",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_40135D344EA34AEA",
+    "smiles": "CCN(CCNC(=O)Nc1ccccc1Br)c1cccc(C)c1",
+    "chembl_id": "CHEMBL120735",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Antagonistic activity against human transient receptor potential vanilloid type 1 in FLIPR assay",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DCEC26ADBC99FDB1",
+    "smiles": "O=C(NCc1ccc(Cl)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL102010",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1A2A18376B26B229",
+    "smiles": "CCC(C)(C)c1ccc(CCC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL104623",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9B4FF079707FEFFB",
+    "smiles": "O=C(NCCc1ccc(Cl)c(Cl)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL103590",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_186E828A78271AED",
+    "smiles": "O=C(NCc1ccc(Cl)c(C(F)(F)F)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL102486",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BFEF5DB693521DC0",
+    "smiles": "O=C(Nc1cc(C(F)(F)F)cc(C(F)(F)F)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL320906",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FD1041EFD015FE34",
+    "smiles": "COc1ccc(CCNC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL103898",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9036438D0DC1C362",
+    "smiles": "O=C(NCCc1cccc(C(F)(F)F)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL317045",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6BF5248C55E27B83",
+    "smiles": "CCCCCc1ccc(C(=O)Nc2cccnc2)cc1",
+    "chembl_id": "CHEMBL321932",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Increased [Ca2+] influx in human vanilloid receptor subtype 1 expressing HEK293 cell membranes",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B827D73C4AFFD705",
+    "smiles": "O=C(Nc1cccc(C(F)(F)F)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL317011",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_55A5D33178D44F21",
+    "smiles": "O=C(/C=C/c1ccccc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL106391",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EE99DA5142D010DD",
+    "smiles": "O=C(NCCc1ccc(OC(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL105252",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_655CA789D8F84683",
+    "smiles": "O=C(CCc1ccc(C(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL104445",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_04CE476C86D4F3DB",
+    "smiles": "CCCCc1ccc(NC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL105694",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_09F62D0148D5FFF3",
+    "smiles": "O=C(Nc1ccc(C(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL104892",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_56991BCD30AD1319",
+    "smiles": "O=C(NCCc1ccc(C(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL103063",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B3E7957E1CCBD4E0",
+    "smiles": "COc1ccc(CNC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL323352",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_108B5DB838E88AE6",
+    "smiles": "O=C(NCc1cccc(C(F)(F)F)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL322396",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_26FB505621275F31",
+    "smiles": "CC(C)(C)c1ccc(CNC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL323134",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D3AC2037C924C46F",
+    "smiles": "CC(C)(C)c1ccc(/C=C/C(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL105046",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7A18D16D7C0CCD4C",
+    "smiles": "O=C(Nc1ccc(Cl)c(Cl)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL104176",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BC5C27C6EBF26A56",
+    "smiles": "CC(C)(C)c1ccc(CCNC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL419351",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B5B9BAB58DD9992B",
+    "smiles": "O=C(NCc1ccc(C(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL104028",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_00B9CAAA6F77C1FA",
+    "smiles": "O=C(CCc1ccc(Cl)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL105101",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D400436C6260EE14",
+    "smiles": "CCCCCc1ccc(C(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL102073",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A5BDACAECA31991D",
+    "smiles": "O=C(NCCc1ccccc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL103842",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AD8DF6505674FF42",
+    "smiles": "O=C(NCc1ccc(OC(F)(F)F)cc1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL101751",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3C60DA45B60C598C",
+    "smiles": "O=C(NCc1ccc(Cl)c(Cl)c1)Nc1cccc2cnccc12",
+    "chembl_id": "CHEMBL104757",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8CA40D7B65DB0CD5",
+    "smiles": "CC(C)(C)c1ccc(CCC(=O)Nc2cccc3cnccc23)cc1",
+    "chembl_id": "CHEMBL319037",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards human vanilloid receptor subtype 1 expressed in HEK293 cell membrane using [3H]-RTX as radioligand.",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5A459416E8A20312",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34OC(Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(COC(=O)Cc1ccc(O)c(OC)c1I)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL18246",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Inhibition of [3H]RTX binding to human Vanilloid receptor subtype 1 expressed in HEK293 cells",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3FA55CBEF5353D29",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34O[C@](Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(COC(=O)Cc1cc(OC)c(O)cc1I)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL18441",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Inhibition of [3H]RTX binding to human Vanilloid receptor subtype 1 expressed in HEK293 cells",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_32660066856987A0",
+    "smiles": "C=C(C)[C@]12C[C@@H](C)[C@@]34O[C@](Cc5ccccc5)(O[C@@H]1[C@@H]3C=C(COC(=O)Cc1cc(OC)c(OC(C)=O)cc1I)C[C@]1(O)C(=O)C(C)=C[C@@H]41)O2",
+    "chembl_id": "CHEMBL18058",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Inhibition of [3H]RTX binding to human Vanilloid receptor subtype 1 expressed in HEK293 cells",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C767B5D73B1A1DCA",
+    "smiles": "O=C(Cc1ccc(Cl)c(Cl)c1)Nc1cccc2ccc(O)cc12",
+    "chembl_id": "CHEMBL440535",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards cloned human vanilloid receptor subtype 1 in HEK293 cell membranes using [3H]RTX as radioligand",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_595C20FC1D323D73",
+    "smiles": "O=C(NCc1ccccc1)Nc1cccc2ccc(O)cc12",
+    "chembl_id": "CHEMBL139989",
+    "pubchem_cid": "Ingested via Target Gateway",
+    "molecular_weight": "Fetched on Demand",
+    "log_p": "Fetched on Demand",
+    "assay_context": "Binding affinity towards cloned human vanilloid receptor subtype 1 in HEK293 cell membranes using [3H]RTX as radioligand",
+    "ingestion_timestamp": "2026-06-06T22:40:00Z"
+  }
+]
