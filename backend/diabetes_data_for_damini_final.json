@@ -1,0 +1,982 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_C18FC83422284198",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2ccc3ccccc3n2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL117716",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 624.72,
+    "log_p": -0.25,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AF9031D64565FE1F",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3nc(CCC(=O)O)n(Cc4ccc5ccc(C(=N)N)cc5c4)c3c2)CC1",
+    "chembl_id": "CHEMBL369583",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 512.61,
+    "log_p": 4.38,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_20D3DBF333F6F0DB",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3c(c2)nc(C(C)C)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL176744",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 482.63,
+    "log_p": 5.49,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_01583F2900D88061",
+    "smiles": "CCC(C)c1nc2cc(OC3CCN(C(C)=N)CC3)ccc2n1Cc1ccc2ccc(C(=N)N)cc2c1",
+    "chembl_id": "CHEMBL367476",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 496.66,
+    "log_p": 5.88,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7A569305E06D9EA5",
+    "smiles": "CCN(C(=O)C1=CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1)C1CCCCC1",
+    "chembl_id": "CHEMBL50117",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 396.54,
+    "log_p": 3.1,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_417A24A9DE8589CA",
+    "smiles": "COC(=O)C(C)CN(c1ccc2c(c1)nc(C)n2Cc1ccc2ccc(C(=N)N)cc2c1)C1CCN(C(C)=N)CC1",
+    "chembl_id": "CHEMBL366405",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 553.71,
+    "log_p": 4.91,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B4F70E4E693D53F3",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(=O)N[C@H](CO)c1ccccc1",
+    "chembl_id": "CHEMBL108952",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 557.61,
+    "log_p": -0.61,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FC900276348608A1",
+    "smiles": "COc1cc(CNC(=O)[C@@H]2CCCN2C(=O)C(N)C(c2ccccc2)c2ccccc2)cc(OC)c1",
+    "chembl_id": "CHEMBL3142655",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 487.6,
+    "log_p": 3.47,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_729128C55E16D063",
+    "smiles": "Cc1cc(NC(=O)Cc2ccc3[nH]c(-c4ccc(Cl)s4)nc3c2)ccc1-n1ccccc1=O",
+    "chembl_id": "CHEMBL337921",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 474.97,
+    "log_p": 5.59,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_67AAB8EC3E2FF960",
+    "smiles": "Cc1cc(NC(=O)Cc2ccc3[nH]c(-c4ccc(Cl)s4)nc3c2)ccc1N1CCOCC1=O",
+    "chembl_id": "CHEMBL340500",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 480.98,
+    "log_p": 4.8,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8B99EF4B1AF7FB06",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CNC(=O)c2cnccn2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL117721",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 561.63,
+    "log_p": -2.4,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DA801EB584A1782F",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2ccc(O)nc2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL331807",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 590.66,
+    "log_p": -1.7,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5044F3AF7F294553",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2ccccc2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL117777",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 573.68,
+    "log_p": -0.8,
+    "assay_context": "In vitro inhibition against human Thrombin ( FIIa) was evaluated; Inactive",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_52D1F658ADB03EA8",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2ccccn2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL323642",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 574.66,
+    "log_p": -1.4,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B224C4F7BC2C6338",
+    "smiles": "CCCCc1nc2cc(OC3CCN(C(C)=N)CC3)ccc2n1Cc1ccc2ccc(C(=N)N)cc2c1",
+    "chembl_id": "CHEMBL176640",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 496.66,
+    "log_p": 5.7,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B3A3EF0AE584F403",
+    "smiles": "CC(=N)N1CCC(N(CC(N)=O)c2ccc3c(c2)nc(C)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL171120",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 510.65,
+    "log_p": 3.58,
+    "assay_context": "The compound was tested in vitro for inhibitory activity against human Coagulation factor II; ND is not determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1D9740EB6175F6CE",
+    "smiles": "COC(=O)CCCN(c1ccc2c(c1)nc(C)n2Cc1ccc2ccc(C(=N)N)cc2c1)C1CCN(C(C)=N)CC1",
+    "chembl_id": "CHEMBL366855",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 553.71,
+    "log_p": 5.05,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BEDC27FA9C3E4B50",
+    "smiles": "CNc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL441593",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 541.76,
+    "log_p": 6.98,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_55E06B86F5A3D700",
+    "smiles": "Cc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCOCC1",
+    "chembl_id": "CHEMBL281809",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 542.75,
+    "log_p": 6.48,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A7F1AB9CC5E829D8",
+    "smiles": "COC(=O)[C@H](NC(=O)[C@@H]1CCC[C@H]1C(=O)NCc1ccc(C(=N)N)cc1)c1ccccc1",
+    "chembl_id": "CHEMBL433275",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 436.51,
+    "log_p": 2.03,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_ED676075FFC28B34",
+    "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2CCC[C@H]2C(=O)NC2CCCCC2)cc1",
+    "chembl_id": "CHEMBL45692",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 370.5,
+    "log_p": 2.45,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D4DEE0728F29BA58",
+    "smiles": "Cc1ccc(C)c(CNC(=O)[C@@H]2CCCN2C(=O)C(N)C(c2ccccc2)c2ccccc2)c1",
+    "chembl_id": "CHEMBL3142745",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 455.6,
+    "log_p": 4.07,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_690DC2B848C7CC97",
+    "smiles": "O=C(CCc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCOCC2=O)cc1F",
+    "chembl_id": "CHEMBL125499",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 498.97,
+    "log_p": 5.02,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7761BC28A7D870C5",
+    "smiles": "CC(=N)N1CCC(N(CC(N)=O)c2ccc3nc(C)n(Cc4ccc5ccc(C(=N)N)cc5c4)c3c2)CC1",
+    "chembl_id": "CHEMBL369480",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 510.65,
+    "log_p": 3.58,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_050539881664A2E5",
+    "smiles": "COc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3ccccc23)ccc1CN1CCOCC1",
+    "chembl_id": "CHEMBL275819",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 542.75,
+    "log_p": 6.47,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4BB2AFAD271C0EFC",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(=O)N[C@H](C)Cc1ccccc1",
+    "chembl_id": "CHEMBL431443",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 555.64,
+    "log_p": 0.29,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BFA0FA1AA17326F8",
+    "smiles": "NC(C(=O)N1CCC[C@H]1C(=O)NCc1cccc(O)c1)C(c1ccccc1)c1ccccc1",
+    "chembl_id": "CHEMBL3142679",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 443.55,
+    "log_p": 3.16,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_72FE0477BB6E7BA7",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCCC2=O)cc1",
+    "chembl_id": "CHEMBL124846",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 450.95,
+    "log_p": 5.25,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3D2AF1D4F9084C39",
+    "smiles": "Nc1cc[n+](Cc2ccc(OC(CCc3ccccc3)c3ccccc3)cc2)cc1",
+    "chembl_id": "CHEMBL47481",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 395.53,
+    "log_p": 5.36,
+    "assay_context": "Compound was evaluated for its inhibitory activity against human thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1A4AB4089021013E",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cnc3ccccc3c2)NC(=O)OCc2ccccc2)C1O",
+    "chembl_id": "CHEMBL324485",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 604.67,
+    "log_p": 0.56,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EE12443418C72780",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3c(c2)nc(CCC(=O)O)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL369159",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 512.61,
+    "log_p": 4.38,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7F273157C3D481CE",
+    "smiles": "Cc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCC[C@H]1CO",
+    "chembl_id": "CHEMBL278979",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 556.77,
+    "log_p": 6.6,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_37903ACE141B6C29",
+    "smiles": "COc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN(C)C",
+    "chembl_id": "CHEMBL282892",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 516.71,
+    "log_p": 6.41,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9656FC84285C74AC",
+    "smiles": "Oc1ccc2c(Cc3ccc(CN4CCOCC4)c(Br)c3)c(-c3ccc(OCCN4CCCC4)cc3)sc2c1",
+    "chembl_id": "CHEMBL18646",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 607.61,
+    "log_p": 6.93,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DE0B3DE4BEC31D93",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3c(c2)nc(CCC(N)=O)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL172795",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 511.63,
+    "log_p": 3.78,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_976BC9E4AE17E3CF",
+    "smiles": "CC(=N)N1CCC(N(CCCC(=O)O)c2ccc3nc(C)n(Cc4ccc5ccc(C(=N)N)cc5c4)c3c2)CC1",
+    "chembl_id": "CHEMBL177212",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 539.68,
+    "log_p": 4.96,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_33B28D8866762378",
+    "smiles": "COc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(F)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL19160",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 544.74,
+    "log_p": 7.38,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D178D2115E0E80A5",
+    "smiles": "CS(=O)(=O)c1ccccc1-c1ccc(NC(=O)Cc2ccc3[nH]c(-c4ccc(Cl)s4)nc3c2)cc1",
+    "chembl_id": "CHEMBL331231",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 522.05,
+    "log_p": 6.2,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7A81EC47F214B8C2",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCCCC2=O)cc1",
+    "chembl_id": "CHEMBL124705",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 464.98,
+    "log_p": 5.64,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_59E64144B68195A0",
+    "smiles": "Oc1ccc2c(Cc3ccc(CN4CCCC4)c(Br)c3)c(-c3ccc(OCCN4CCCC4)cc3)sc2c1",
+    "chembl_id": "CHEMBL275206",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 591.62,
+    "log_p": 7.7,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C7924B110B9C15FD",
+    "smiles": "N[C@@H](C(=O)N1CCC[C@H]1C(=O)NC[C@H]1CC[C@H](N)CC1)C(c1ccccc1)c1ccccc1",
+    "chembl_id": "CHEMBL3349684",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 448.61,
+    "log_p": 2.77,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F1830B3907CB3475",
+    "smiles": "CC1CC(=O)NN=C1c1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1",
+    "chembl_id": "CHEMBL333113",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 344.83,
+    "log_p": 3.8,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CAA65F7942D8A4DB",
+    "smiles": "c1ccc(COc2ccc(CCNc3ccncc3)cc2)cc1",
+    "chembl_id": "CHEMBL48029",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 304.39,
+    "log_p": 4.32,
+    "assay_context": "Compound was evaluated for its inhibitory activity against human thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0CE78D9D7E8E259D",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cccnc2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL117678",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 574.66,
+    "log_p": -1.4,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_205008EC1DA1CD1D",
+    "smiles": "COc1cccc(CNC(=O)[C@@H]2CCCN2C(=O)C(N)C(c2ccccc2)c2ccccc2)c1OC",
+    "chembl_id": "CHEMBL3142706",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 487.6,
+    "log_p": 3.47,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_262E2F29EF14DC54",
+    "smiles": "O=C(COc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCOCC2=O)cc1",
+    "chembl_id": "CHEMBL123151",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 482.95,
+    "log_p": 4.33,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AE53EB4BF7B80DA5",
+    "smiles": "Cc1cc(NC(=O)CCc2ccc3[nH]c(-c4ccc(Cl)s4)nc3c2)ccc1N1CCOCC1=O",
+    "chembl_id": "CHEMBL124370",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 495.0,
+    "log_p": 5.19,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_218C8E73AB618E6F",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCCNC(=O)c2cnccn2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL420322",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 589.68,
+    "log_p": -1.62,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_09C351AA8FB3342D",
+    "smiles": "CCCCc1nc2ccc(OC3CCN(C(C)=N)CC3)cc2n1Cc1ccc2ccc(C(=N)N)cc2c1",
+    "chembl_id": "CHEMBL177225",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 496.66,
+    "log_p": 5.7,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F05A0D90AA246363",
+    "smiles": "CC(=N)N1CCC(N(C(=O)CCC(=O)O)c2ccc3c(c2)nc(C)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL176405",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 553.67,
+    "log_p": 4.49,
+    "assay_context": "The compound was tested in vitro for inhibitory activity against human Coagulation factor II; ND is not determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_044104F3DB120991",
+    "smiles": "Oc1ccc2c(Cc3ccc(CN4CCCC4)c(O)c3)c(-c3ccc(OCCN4CCCC4)cc3)sc2c1",
+    "chembl_id": "CHEMBL19242",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 528.72,
+    "log_p": 6.64,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_23AC3517FA0937AD",
+    "smiles": "COC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(C)O)C1CCCCC1",
+    "chembl_id": "CHEMBL111195",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 591.67,
+    "log_p": -0.22,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_97D8E4E45C43FC90",
+    "smiles": "CC(O)[C@@H](C(=O)N[C@H](C)c1ccccc1)N(C)C(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N",
+    "chembl_id": "CHEMBL105819",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 555.64,
+    "log_p": 0.76,
+    "assay_context": "Concentration required to inhibit thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8B16CE30493A24AB",
+    "smiles": "Cc1ccccc1CNC(=O)[C@@H]1CCCN1C(=O)C(N)C(c1ccccc1)c1ccccc1",
+    "chembl_id": "CHEMBL3142785",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 441.58,
+    "log_p": 3.76,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1CCC675ED8C64C0A",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)NCc1ccc(N2CCOCC2=O)cc1",
+    "chembl_id": "CHEMBL264876",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 480.98,
+    "log_p": 4.17,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_355A97A6A393F9EA",
+    "smiles": "O=C(NCc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)c1ccc(N2CCOCC2=O)cc1",
+    "chembl_id": "CHEMBL125477",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 466.95,
+    "log_p": 4.24,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FF8EFC59EDB17145",
+    "smiles": "O=C(CCc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(-n2ccccc2=O)c(F)c1",
+    "chembl_id": "CHEMBL122102",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 492.96,
+    "log_p": 5.81,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C535A203E1486121",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)NCC1CCN(c2ccncc2)CC1",
+    "chembl_id": "CHEMBL126208",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 466.01,
+    "log_p": 4.92,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B8FDD8EC86D3D259",
+    "smiles": "NC1CCN(Cc2ccc(OCc3ccccc3)cc2)CC1",
+    "chembl_id": "CHEMBL47349",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 296.41,
+    "log_p": 3.19,
+    "assay_context": "Compound was evaluated for its inhibitory activity against human thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F1D59764683B8191",
+    "smiles": "c1ccc(COc2ccc(CNc3ccncc3)cc2)cc1",
+    "chembl_id": "CHEMBL47751",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 290.37,
+    "log_p": 4.27,
+    "assay_context": "Compound was evaluated for its inhibitory activity against human thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7812C4713E5CF143",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cnccn2)NC(=O)OCc2ccccc2)C1O",
+    "chembl_id": "CHEMBL116245",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 555.6,
+    "log_p": -1.2,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_549D0E6E8AD3D862",
+    "smiles": "COC(=O)CCCN(c1ccc2nc(C)n(Cc3ccc4ccc(C(=N)N)cc4c3)c2c1)C1CCN(C(C)=N)CC1",
+    "chembl_id": "CHEMBL366556",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 553.71,
+    "log_p": 5.05,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_40EDC4D44B4325A5",
+    "smiles": "COC(=O)C(C)CN(c1ccc2nc(C)n(Cc3ccc4ccc(C(=N)N)cc4c3)c2c1)C1CCN(C(C)=N)CC1",
+    "chembl_id": "CHEMBL366535",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 553.71,
+    "log_p": 4.91,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_183D5C3223F0CB37",
+    "smiles": "CC(=N)N1CCC(N(CCCC(=O)O)c2ccc3c(c2)nc(C)n3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL171966",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 539.68,
+    "log_p": 4.96,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D573EC4B62695117",
+    "smiles": "COc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(NS(C)(=O)=O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL274222",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 619.85,
+    "log_p": 6.61,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_36DE00873B3AF674",
+    "smiles": "Cc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCC[C@H]1C(=O)O",
+    "chembl_id": "CHEMBL280007",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 570.76,
+    "log_p": 6.7,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4BD0AD00D6402411",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(=O)N[C@@H](C)Cc1ccccc1",
+    "chembl_id": "CHEMBL322178",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 555.64,
+    "log_p": 0.29,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6F7967A771014803",
+    "smiles": "N#Cc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL418004",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 537.73,
+    "log_p": 6.81,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_84B10FE8166928A0",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(=O)N[C@H](C)c1ccccc1",
+    "chembl_id": "CHEMBL320707",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 541.61,
+    "log_p": 0.42,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_13AD34E17061586B",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(=O)N[C@@H](C)c1ccccc1",
+    "chembl_id": "CHEMBL320351",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 541.61,
+    "log_p": 0.42,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_37D8531454085397",
+    "smiles": "Cc1cccc(CNC(=O)[C@@H]2CCCN2C(=O)C(N)C(c2ccccc2)c2ccccc2)c1C",
+    "chembl_id": "CHEMBL3142678",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 455.6,
+    "log_p": 4.07,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_29A44E043A2DBC45",
+    "smiles": "Cc1cccc(CNC(=O)[C@@H]2CCCN2C(=O)C(N)C(c2ccccc2)c2ccccc2)c1",
+    "chembl_id": "CHEMBL3142752",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 441.58,
+    "log_p": 3.76,
+    "assay_context": "Inhibitory activity against thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8FED9D36122E1301",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCOCC2=O)cc1",
+    "chembl_id": "CHEMBL125839",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 466.95,
+    "log_p": 4.49,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F5AAAF9B3EDF065F",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Br)s3)nc2c1)NCC1CCN(c2ccncc2)CC1",
+    "chembl_id": "CHEMBL124658",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 510.46,
+    "log_p": 5.02,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BCB69E026849CC04",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cnc3ccccc3c2)NS(=O)(=O)Cc2ccccc2)C1O",
+    "chembl_id": "CHEMBL115902",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 624.72,
+    "log_p": -0.25,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2808B97DD36947A5",
+    "smiles": "CCCc1nc2cc(OC3CCN(C(C)=N)CC3)ccc2n1Cc1ccc2ccc(C(=N)N)cc2c1",
+    "chembl_id": "CHEMBL369161",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 482.63,
+    "log_p": 5.31,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D3036F8910789C6A",
+    "smiles": "N=C(N)c1ccc(CNC(=O)[C@H]2CCC[C@@H]2C(=O)NCc2ccccc2)cc1",
+    "chembl_id": "CHEMBL49130",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 378.48,
+    "log_p": 2.32,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A236C9DBC1965E95",
+    "smiles": "N=C(N)c1ccc(CNC(=O)[C@@H]2CCC=C2C(=O)NC2CCCCC2)cc1",
+    "chembl_id": "CHEMBL49808",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 368.48,
+    "log_p": 2.37,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8F96C750CF609EA0",
+    "smiles": "Cc1cc(NC(=O)COc2ccc3[nH]c(-c4ccc(Cl)s4)nc3c2)ccc1N1CCOCC1=O",
+    "chembl_id": "CHEMBL123150",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 496.98,
+    "log_p": 4.63,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8ACA2980E2DCBC8A",
+    "smiles": "Cc1cc(NC(=O)CCc2ccc3[nH]c(-c4ccc(Br)s4)nc3c2)ccc1N1CCOCC1=O",
+    "chembl_id": "CHEMBL122329",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 539.46,
+    "log_p": 5.3,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2FB90868A9609F21",
+    "smiles": "CCC[C@@H](NC(=O)Nc1ccc(Cl)cc1)C(=O)Nc1ccc(N2CCOCC2=O)cc1",
+    "chembl_id": "CHEMBL122023",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 444.92,
+    "log_p": 3.63,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6DDFBD893726D609",
+    "smiles": "CC1CC(c2ccc3[nH]c(-c4ccc(Br)s4)nc3c2)=NNC1=O",
+    "chembl_id": "CHEMBL124427",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 389.28,
+    "log_p": 3.91,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5F9513D387DDCC5F",
+    "smiles": "Oc1ccc2c(Cc3ccc(CN4CCCC4)cc3)c(-c3ccc(OCCN4CCCC4)cc3)sc2c1",
+    "chembl_id": "CHEMBL18495",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 512.72,
+    "log_p": 6.94,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0BF95ADBE4BB8B21",
+    "smiles": "COC[C@@H]1CCCN1Cc1ccc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)cc1C",
+    "chembl_id": "CHEMBL277649",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 570.8,
+    "log_p": 7.26,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E5F1366EC2CB9838",
+    "smiles": "N=C(N)c1ccc(CNC(=O)C2CCC=C2C(=O)Nc2ccccc2)cc1",
+    "chembl_id": "CHEMBL416904",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 362.43,
+    "log_p": 2.56,
+    "assay_context": "In vitro for the inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BC849C093007E284",
+    "smiles": "NC(C(=O)N1CCC[C@H]1C(=O)NCc1cc(Cl)ccc1Cl)C(c1ccccc1)c1ccccc1",
+    "chembl_id": "CHEMBL108183",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 496.44,
+    "log_p": 4.76,
+    "assay_context": "Binding affinity towards thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_890B2AE26BE4A382",
+    "smiles": "O=C(Cc1ccc2[nH]c(-c3ccc(Br)s3)nc2c1)Nc1ccc(-n2ccccc2=O)cc1",
+    "chembl_id": "CHEMBL419608",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 505.4,
+    "log_p": 5.39,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9AF231444B4A2B96",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3c(c2)ncn3Cc2ccc3ccc(C(=N)N)cc3c2)CC1",
+    "chembl_id": "CHEMBL172378",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 440.55,
+    "log_p": 4.36,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8589B28F8EBBE7C4",
+    "smiles": "COC(=O)CN(c1ccc2c(c1)nc(C)n2Cc1ccc2ccc(C(=N)N)cc2c1)C1CCN(C(C)=N)CC1",
+    "chembl_id": "CHEMBL355097",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 525.66,
+    "log_p": 4.27,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9290D8BAD2D8E79D",
+    "smiles": "Cc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL19511",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 526.75,
+    "log_p": 7.24,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C79E4248605FC95E",
+    "smiles": "CN(C)c1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL19017",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 555.79,
+    "log_p": 7.0,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DD15A4E6EAAB0A6F",
+    "smiles": "CC(O)[C@H](NC(=O)[C@H](Cc1ccc([N+](=O)[O-])cc1)NC(=O)CCCN=C(N)N)C(N)=O",
+    "chembl_id": "CHEMBL110564",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 437.46,
+    "log_p": -1.97,
+    "assay_context": "Concentration required to inhibit Human alpha-thrombin was determined",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4C24C61DB28CF429",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cn[nH]c2)NC(=O)OCc2ccccc2)C1O",
+    "chembl_id": "CHEMBL419222",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 543.59,
+    "log_p": -1.27,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_801E69806AF2FE79",
+    "smiles": "COc1cc(Cc2c(-c3ccc(OCCN4CCCC4)cc3)sc3cc(O)ccc23)ccc1CN1CCCC1",
+    "chembl_id": "CHEMBL18778",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 542.75,
+    "log_p": 6.94,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D9AF1BA45E728CE8",
+    "smiles": "COc1ccc2sc(-c3ccc(OCCN4CCCC4)cc3)c(Cc3ccc(CN4CCCC4)c(OC)c3)c2c1",
+    "chembl_id": "CHEMBL19209",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 556.77,
+    "log_p": 7.25,
+    "assay_context": "Inhibition of thrombin",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9BE67D5F6C06975B",
+    "smiles": "O=C(CCc1ccc2[nH]c(-c3ccc(Cl)s3)nc2c1)Nc1ccc(N2CCOCC2=O)c(Cl)c1",
+    "chembl_id": "CHEMBL125552",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 515.42,
+    "log_p": 5.53,
+    "assay_context": "Binding affinity against human thrombin.",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BB5D9A5E3C37B716",
+    "smiles": "N=C(N)N1CCC[C@H](NC(=O)CNC(=O)[C@@H](CCNC(=O)c2cncc(Br)c2)NC(=O)OCc2ccccc2)C1O",
+    "chembl_id": "CHEMBL323833",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 633.5,
+    "log_p": 0.17,
+    "assay_context": "In vitro inhibition of human Thrombin (FIIa).",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_85C6AEEF18FA787E",
+    "smiles": "CC(=N)N1CCC(Oc2ccc3nc(CCC(N)=O)n(Cc4ccc5ccc(C(=N)N)cc5c4)c3c2)CC1",
+    "chembl_id": "CHEMBL367725",
+    "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
+    "molecular_weight": 511.63,
+    "log_p": 3.78,
+    "assay_context": "In vitro inhibitory activity against human coagulation factor II",
+    "ingestion_timestamp": "2026-06-07T01:30:00Z"
+  }
+]

@@ -1,0 +1,682 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_63596E8C0CFD6C29",
+    "smiles": "COc1cccc2c1CC[C@H]1CN(CCn3c(=O)[nH]c4c(sc5cccnc54)c3=O)C[C@@H]21",
+    "chembl_id": "CHEMBL40650",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 448.55,
+    "log_p": 2.97,
+    "assay_context": "Binding affinity against adrenergic receptor subtype Beta-2 adrenergic receptor using [3H]DHA as radioligand",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_57DB5B3E86FA3464",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNC2CCN(c3ccc(CC4SC(=O)NC4=O)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL163262",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 534.66,
+    "log_p": 1.95,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5D3F4586CD21F280",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)c4ccc(O)c(NS(=O)(=O)c5ccccc5)c4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL424167",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 596.73,
+    "log_p": 3.38,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2740FA7B16A9C0EB",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)COc4ccccc4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL165893",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 455.58,
+    "log_p": 2.58,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2B46760284D1A68A",
+    "smiles": "C[C@H](Cc1ccc2c(c1)OC(C(=O)[O-])(C(=O)[O-])O2)NC[C@H](O)c1cccc(Cl)c1.[Na+].[Na+]",
+    "chembl_id": "CHEMBL32590",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 465.8,
+    "log_p": -6.43,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B3AA9411CF0EA817",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)COc4ccc(O)cc4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL166085",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 471.58,
+    "log_p": 2.28,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E9F7A15BD37AF153",
+    "smiles": "CC(C)NCC(O)c1cc2cc(O)ccc2o1",
+    "chembl_id": "CHEMBL157662",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 235.28,
+    "log_p": 2.17,
+    "assay_context": "Tested for agonistic effect on peripheral vascular resistance (PR) against beta-2 adrenergic receptor in cat",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EC05814264122BD1",
+    "smiles": "CC(C)NCC(O)c1cc2ccc(O)cc2o1",
+    "chembl_id": "CHEMBL346262",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 235.28,
+    "log_p": 2.17,
+    "assay_context": "Tested for agonistic effect on peripheral vascular resistance (PR) against beta 2 adrenergic receptor in cat",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7FB4272A0161FB0F",
+    "smiles": "CS(=O)(=O)Nc1cc(O[C@@H](O)CNC2CCN(c3ccc(CC4SC(=O)NC4=O)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL164378",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 550.66,
+    "log_p": 1.61,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6C3B2BBA51CA0994",
+    "smiles": "O=C1N=c2cccc(OC[C@@H](O)CNC3CCN(c4ccc(CC5SC(=O)NC5=O)cc4)CC3)c2=N1",
+    "chembl_id": "CHEMBL162711",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 509.59,
+    "log_p": 0.95,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0DC26C620A1D7F5F",
+    "smiles": "CS(=O)(=O)Nc1cccc([C@@H](O)CNC2CCN(c3ccc(CC4SC(=O)NC4=O)cc3)CC2)c1",
+    "chembl_id": "CHEMBL164065",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 518.66,
+    "log_p": 2.24,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor; Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_61ADAC077A9D0AEA",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)Oc4ccc(O)c(NS(=O)(=O)c5ccccc5)c4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL350131",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 612.73,
+    "log_p": 3.04,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor; Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CE18C93B8032C949",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)Oc4cccc5nc(O)ccc45)CC3)cc2)S1",
+    "chembl_id": "CHEMBL161949",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 508.6,
+    "log_p": 2.79,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AC44FAED1156130E",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNC2CCN(c3ccc(CC4SC(=O)NC4=O)cc3)CC2)ccc1Cl",
+    "chembl_id": "CHEMBL440924",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 553.11,
+    "log_p": 2.9,
+    "assay_context": "Intrinsic activity to increase cAMP level in CHO cells expressing human beta-2-adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1E5B6FA14BFB6253",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)c4cccc(Cl)c4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL162380",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 460.0,
+    "log_p": 3.53,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor; Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CEEC10AE11479CB9",
+    "smiles": "O=C1NC(=O)C(Cc2ccc(N3CCC(NC[C@H](O)c4cccnc4)CC3)cc2)S1",
+    "chembl_id": "CHEMBL161950",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 426.54,
+    "log_p": 2.27,
+    "assay_context": "Agonistic activity was assessed by measurement of cAMP accumulation levels in CHO cells expressing human beta-2-adrenergic receptor; Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2186F7C069B14FC0",
+    "smiles": "CC(=O)Oc1ccc(C(O)CNC(C)C)cc1OC(C)=O",
+    "chembl_id": "CHEMBL62032",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 295.34,
+    "log_p": 1.57,
+    "assay_context": "Evaluated for the affinity in stimulating cAMP synthesis by beta-2 adrenergic receptor in human platelets.",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6FD95A430779017C",
+    "smiles": "Cc1nc(-c2ccc(-c3ccc(C(=O)N4CCc5cc6c(cc54)C4(CCN(C)CC4)CO6)cc3)c(C)c2)no1",
+    "chembl_id": "CHEMBL281350",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 520.63,
+    "log_p": 5.58,
+    "assay_context": "Compound was tested for binding affinity against human cloned Beta-2 adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5BD27D1FD63ED191",
+    "smiles": "CC(C)NCC(O)c1ccc(O)c(O)c1",
+    "chembl_id": "CHEMBL434",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 211.26,
+    "log_p": 1.13,
+    "assay_context": "Evaluated for the affinity in stimulating cAMP synthesis by beta-2-adrenoceptor in human platelets.",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7DD1CCF1A9212083",
+    "smiles": "CC(=O)Oc1ccc(C(Cl)CNC(C)C)cc1OC(C)=O",
+    "chembl_id": "CHEMBL300552",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 313.78,
+    "log_p": 2.82,
+    "assay_context": "Evaluated for the affinity in stimulating cAMP synthesis by beta-2-adrenoceptor in human platelets.",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FD7AF6EE587D6551",
+    "smiles": "O=S(=O)(Nc1ccccc1)c1ccc2c(c1)CCN2c1cccc(CCCC2CCCC2)n1",
+    "chembl_id": "CHEMBL433252",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 461.63,
+    "log_p": 6.09,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0BCDD82BF35261ED",
+    "smiles": "O=S(=O)(Nc1ccccc1)c1ccc2c(c1)CCN2c1cccc(CCCC2CCCC2)c1",
+    "chembl_id": "CHEMBL54750",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 460.64,
+    "log_p": 6.69,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D023DC161D9BF102",
+    "smiles": "CCCCCCN(C)C(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL56594",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 415.56,
+    "log_p": 4.48,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_16163F33EEFF1D27",
+    "smiles": "CCCCCCCCc1nc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)no1",
+    "chembl_id": "CHEMBL52407",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 454.6,
+    "log_p": 5.47,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5902DDD4A4ECEE19",
+    "smiles": "CCCCCCc1ccc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)nc1",
+    "chembl_id": "CHEMBL56449",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 435.59,
+    "log_p": 5.7,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_69DBA7FDABAE026C",
+    "smiles": "CCCCCCC(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL56752",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 386.52,
+    "log_p": 4.35,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E9D6C5F5ED4A5CD6",
+    "smiles": "CCCCCCCCc1cnc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)o1",
+    "chembl_id": "CHEMBL54749",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 453.61,
+    "log_p": 6.07,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_49F90C0AA56EA00D",
+    "smiles": "CN(C)C(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL301202",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 345.42,
+    "log_p": 2.53,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DD3B0B3AAE5566C6",
+    "smiles": "CCCCCCCCN(C)C(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL292407",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 443.61,
+    "log_p": 5.26,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_06D43AB73A869666",
+    "smiles": "CCCCCCCCc1csc(Nc2ccc(S(=O)(=O)Nc3ccccc3)cc2)n1",
+    "chembl_id": "CHEMBL53679",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 443.64,
+    "log_p": 6.59,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BBC212AAA07B60FC",
+    "smiles": "CCCCCCc1cccc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL299719",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 435.59,
+    "log_p": 5.7,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CA343D933B9390A6",
+    "smiles": "CCCCCCc1ccnc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL55852",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 436.58,
+    "log_p": 5.09,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_15396F1BA15DCAF9",
+    "smiles": "CCCCCCc1cccc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)c1",
+    "chembl_id": "CHEMBL56308",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 434.61,
+    "log_p": 6.3,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F2ED74045C6070E1",
+    "smiles": "CCCCCCNC(=O)Nc1ccc(S(=O)(=O)Nc2ccc(CCNC[C@H](O)c3cccnc3)cc2)cc1",
+    "chembl_id": "CHEMBL57486",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 539.7,
+    "log_p": 4.45,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_81267A97B8D701E2",
+    "smiles": "O=S(=O)(Nc1ccccc1)c1ccc2c(c1)CCN2c1nc(CCCC2CCCC2)cs1",
+    "chembl_id": "CHEMBL55541",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 467.66,
+    "log_p": 6.15,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_502850AF51D3CE73",
+    "smiles": "CCCCCCNC(=O)N(C)c1ccc(S(=O)(=O)Nc2ccc(CCNC[C@H](O)c3cccnc3)cc2)cc1",
+    "chembl_id": "CHEMBL293818",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 553.73,
+    "log_p": 4.47,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7771823C9E363A09",
+    "smiles": "CNC(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL54885",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 331.4,
+    "log_p": 2.19,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_50DF78E1BD74227C",
+    "smiles": "CCCCCCCCc1csc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL54821",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 469.68,
+    "log_p": 6.54,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0F1563A45FEB00DF",
+    "smiles": "CCCCCCCCc1ccnc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL53359",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 464.64,
+    "log_p": 5.87,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3625DD7366A89034",
+    "smiles": "CCCCCCCCc1cccc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL291467",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 463.65,
+    "log_p": 6.48,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2BC5DAF346972BFD",
+    "smiles": "O=S(=O)(Nc1ccccc1)c1ccc2c(c1)CCN2c1noc(CCCC2CCCC2)n1",
+    "chembl_id": "CHEMBL295502",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 452.58,
+    "log_p": 5.08,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9EFEF10397469405",
+    "smiles": "CN(CCc1ccccc1)C(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL301594",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 435.55,
+    "log_p": 4.14,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A83B26FF79F82AF7",
+    "smiles": "CCCCCCNC(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL53842",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 401.53,
+    "log_p": 4.14,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_614AA096D9CAC543",
+    "smiles": "CCCCCCc1csc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL298594",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 441.62,
+    "log_p": 5.76,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8EB81CF19C8DBFB3",
+    "smiles": "CCCCCCCCc1csc(N(C)c2ccc(S(=O)(=O)Nc3ccccc3)cc2)n1",
+    "chembl_id": "CHEMBL56767",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 457.67,
+    "log_p": 6.61,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9632BC43DBBEFFEC",
+    "smiles": "CCCCCCc1nc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)no1",
+    "chembl_id": "CHEMBL56768",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 426.54,
+    "log_p": 4.69,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_65D656A5507A1716",
+    "smiles": "Cc1csc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)n1",
+    "chembl_id": "CHEMBL433454",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 371.49,
+    "log_p": 3.95,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0CE63FA01D35E755",
+    "smiles": "CCCCCCCCc1cccc(N2CCc3cc(S(=O)(=O)Nc4ccccc4)ccc32)c1",
+    "chembl_id": "CHEMBL296380",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 462.66,
+    "log_p": 7.08,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_780A5904A2FA8F3F",
+    "smiles": "CCCCCCCCC(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL294008",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 414.57,
+    "log_p": 5.13,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_59B0A87BB04602DD",
+    "smiles": "CCCCCCCCNC(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21",
+    "chembl_id": "CHEMBL57430",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 429.59,
+    "log_p": 4.92,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_08A1FA1539C007B1",
+    "smiles": "CN(C(=O)N1CCc2cc(S(=O)(=O)Nc3ccccc3)ccc21)C(C)(C)Cc1ccccc1",
+    "chembl_id": "CHEMBL53517",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 463.6,
+    "log_p": 4.92,
+    "assay_context": "In vitro binding affinity towards cloned human beta-2 adrenergic receptor using [125I]iodocyanopindolol as radioligand to stimulate increase in cAMP in CHO cells",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1ABA9B3C9B3D0A09",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(S(=O)(=O)c3ccc(-n4cc(CC(=O)O)c5ccccc54)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL317003",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 656.78,
+    "log_p": 3.06,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E70E6B164AC509BC",
+    "smiles": "CCCCCCCCNC(=O)Nc1ccc(S(=O)(=O)N2CCC(CNC[C@H](O)c3cc(NS(C)(=O)=O)c4[nH]ccc4c3)CC2)cc1",
+    "chembl_id": "CHEMBL330596",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 676.91,
+    "log_p": 4.75,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity was determined by a measurement of increased cAMP levels in CHO cells expressing human Beta-2 adrenergic receptor; NT is Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1568051F610DA537",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(c3ccc(C(=O)N[C@@H](CC(=O)O)C(=O)O)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL101521",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 578.64,
+    "log_p": 0.96,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_149CC8BC3C9F9127",
+    "smiles": "CC(C)C[C@H](NC(=O)c1ccc(N2CCC(CNC[C@H](O)c3ccc(O)c(NS(C)(=O)=O)c3)CC2)cc1)C(=O)O",
+    "chembl_id": "CHEMBL101630",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 576.72,
+    "log_p": 2.53,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F6A389E957FCA971",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(S(=O)(=O)c3ccc(-n4ccc5c(C(=O)O)cccc54)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL100351",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 642.76,
+    "log_p": 3.13,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8B8E507A96D1FA62",
+    "smiles": "CCCCCCCCNC(=O)Nc1ccc(S(=O)(=O)N2CCC(CNC[C@H](O)c3ccc4[nH]ccc4c3)CC2)cc1",
+    "chembl_id": "CHEMBL100571",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 583.8,
+    "log_p": 5.37,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity was determined by a measurement of increased cAMP levels in CHO cells expressing human Beta-2 adrenergic receptor; NT is Not tested",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9A515D5CE32273D0",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(c3ccc(C(=O)N[C@@H](Cc4ccccc4)C(=O)O)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL98088",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 610.73,
+    "log_p": 2.73,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EB488E27875C91C2",
+    "smiles": "CC(C)N(Cc1cc(F)ccc1F)C(=O)Nc1ccc(S(=O)(=O)N2CCC(CNC[C@H](O)c3ccc(O)c(NS(C)(=O)=O)c3)CC2)cc1",
+    "chembl_id": "CHEMBL100589",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 709.84,
+    "log_p": 4.21,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_010780B6AB60CABF",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(S(=O)(=O)c3ccc(-n4cc(C(=O)O)cn4)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL101606",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 593.68,
+    "log_p": 1.37,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D945FFCF9F0A35B9",
+    "smiles": "CCCCCCCCC(=O)Nc1ccc(S(=O)(=O)N2CCC(CNC[C@H](O)c3ccc(O)c(NS(C)(=O)=O)c3)CC2)cc1",
+    "chembl_id": "CHEMBL99599",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 638.85,
+    "log_p": 4.18,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0F28B7B98CCF4A75",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(S(=O)(=O)c3ccc(NC(=O)NCc4cc(F)ccc4F)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL99219",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 667.76,
+    "log_p": 3.09,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity was determined by a measurement of increased cAMP levels in CHO cells expressing human Beta-2 adrenergic receptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7333ABF3A91DB090",
+    "smiles": "CS(=O)(=O)Nc1cc([C@@H](O)CNCC2CCN(S(=O)(=O)c3ccc(NC(=O)N[C@@H](Cc4ccccc4)C(=O)O)cc3)CC2)ccc1O",
+    "chembl_id": "CHEMBL101674",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 689.81,
+    "log_p": 2.31,
+    "assay_context": "Beta-2 adrenergic receptor agonist activity as increased cAMP levels in CHO cells expressing human Beta-2-adrenoceptor",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_64A966318F407476",
+    "smiles": "COc1c(I)cc(CC2NCCc3ccccc32)cc1I",
+    "chembl_id": "CHEMBL154951",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 505.14,
+    "log_p": 4.33,
+    "assay_context": "Agonistic potency against BETA2-AR expressed in CHO cells by using CRE-LUC assay;MA means minimal activity",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1192D27715E77668",
+    "smiles": "COc1c(I)cc(CC2NCCc3c2cc(Br)c(O)c3Br)cc1I.O=C(O)C(=O)O",
+    "chembl_id": "CHEMBL348624",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 768.96,
+    "log_p": 4.72,
+    "assay_context": "Agonistic potency against BETA2-AR expressed in CHO cells by using cAMP-RIA assay; ND means not determined",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_107E93ADF9FD73A8",
+    "smiles": "COc1c(I)cc(CC2NCCc3c2cc(I)c(O)c3I)cc1I.Cl",
+    "chembl_id": "CHEMBL1203540",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 809.39,
+    "log_p": 5.67,
+    "assay_context": "Agonistic potency against BETA2-AR expressed in CHO cells by using cAMP-RIA assay;MA means minimal activity",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BEA4AF8EFE2FA7A3",
+    "smiles": "COc1c(I)cc(CC2NCCc3c2ccc(O)c3Br)cc1I.O=C(O)C(=O)O",
+    "chembl_id": "CHEMBL154583",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 690.07,
+    "log_p": 3.96,
+    "assay_context": "Agonistic potency against BETA2-AR expressed in CHO cells by using cAMP-RIA assay;MA means minimal activity",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_462044A0D941FEF7",
+    "smiles": "COc1c(I)cc(CC2NCCc3cc(O)ccc32)cc1I.Cl",
+    "chembl_id": "CHEMBL1203541",
+    "pubchem_cid": "Ingested via Respiratory Target Gateway",
+    "molecular_weight": 557.6,
+    "log_p": 4.46,
+    "assay_context": "Agonistic potency against BETA2-AR expressed in CHO cells by using CRE-LUC assay",
+    "ingestion_timestamp": "2026-06-07T01:00:00Z"
+  }
+]

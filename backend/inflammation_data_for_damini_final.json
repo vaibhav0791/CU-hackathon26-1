@@ -1,0 +1,912 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_538D83DA9417477B",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccccc1",
+    "chembl_id": "CHEMBL297008",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 311.41,
+    "log_p": 3.86,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F679AB51B90A5893",
+    "smiles": "Cc1c(C=O)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL289813",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 357.41,
+    "log_p": 3.81,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E6CA85E45B624731",
+    "smiles": "Cc1c(COc2cccc(Cl)c2)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL43736",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 469.97,
+    "log_p": 6.23,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7014389F33A949D5",
+    "smiles": "Fc1ccc(-c2[nH]c(-c3ccc(F)cc3)c3c2C2CCC3CC2)cc1",
+    "chembl_id": "CHEMBL140167",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 335.4,
+    "log_p": 6.38,
+    "assay_context": "Tested in vitro for inhibition against Prostaglandin G/H synthase 2 in human blood (95% confidence limits)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D3595AF417B1F9C7",
+    "smiles": "CCc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44194",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 343.42,
+    "log_p": 4.25,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_BDE876249309CD67",
+    "smiles": "CC(=O)c1cc(-c2ccc(S(C)(=O)=O)cc2)n(-c2ccc(F)cc2)c1C",
+    "chembl_id": "CHEMBL44290",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 371.43,
+    "log_p": 4.2,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D0AA8BA518483C3B",
+    "smiles": "COC(=O)c1ccc(-n2c(C)ccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL44464",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 309.34,
+    "log_p": 4.38,
+    "assay_context": "In vitro inhibitory activity against human Prostaglandin G/H synthase 2; NA indicates inactive",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6DE51A3C3C7A3A8A",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1Cc1ccc(F)cc1",
+    "chembl_id": "CHEMBL288773",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 343.42,
+    "log_p": 4.05,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_943814BCCA76647B",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)[nH]1",
+    "chembl_id": "CHEMBL44068",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 235.31,
+    "log_p": 2.39,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D8265D94EC1060B9",
+    "smiles": "CS(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1Cl",
+    "chembl_id": "CHEMBL44367",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 349.81,
+    "log_p": 4.34,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D9DA28ECEA7FD49E",
+    "smiles": "CCCCn1c(C)ccc1-c1ccc(S(C)(=O)=O)cc1",
+    "chembl_id": "CHEMBL297409",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 291.42,
+    "log_p": 3.67,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_114AE64713D1D2F3",
+    "smiles": "Cc1ccc(-n2c(C)ccc2-c2ccc(S(C)(=O)=O)cc2)cc1",
+    "chembl_id": "CHEMBL43737",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 325.43,
+    "log_p": 4.16,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7ECFAA102065D4C1",
+    "smiles": "NS(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL43511",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 316.36,
+    "log_p": 2.93,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4FD6A8BE1A8784F4",
+    "smiles": "CCN(CC)OC(=O)c1ccc(-n2c(C)ccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL290608",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 366.44,
+    "log_p": 5.01,
+    "assay_context": "In vitro inhibitory activity against human Prostaglandin G/H synthase 2; Active",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_94CF66FFC9AAE837",
+    "smiles": "Cc1c(CN(C)C)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL42801",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 386.49,
+    "log_p": 4.06,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1F18BFE434543C1B",
+    "smiles": "CC(C(=O)O)c1ccc2c(c1)[nH]c1ccc(Cl)cc12",
+    "chembl_id": "CHEMBL1316",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 273.72,
+    "log_p": 4.16,
+    "assay_context": "Inhibitory activity against cell-free canine COX-2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C84A2B21D92E881A",
+    "smiles": "Cc1c(Br)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL40245",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 408.29,
+    "log_p": 4.76,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E8A84B003BACD9F4",
+    "smiles": "CS(=O)(=O)c1ccc(-c2cccn2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL43210",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 315.37,
+    "log_p": 3.69,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_175DCD1CA5A7C584",
+    "smiles": "CS(=O)(=O)c1ccc(-c2ccc(CCC(=O)O)n2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL298231",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 387.43,
+    "log_p": 3.7,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_89BF80B9A64F7ECF",
+    "smiles": "Cc1c(CO)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44101",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 359.42,
+    "log_p": 3.49,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_08F007EDD4844994",
+    "smiles": "Cc1c(COc2ccc(Cl)cc2)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44152",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 469.97,
+    "log_p": 6.23,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9FC8078F7A221339",
+    "smiles": "COc1ccc(-c2ccc(CCC(=O)O)n2-c2ccc(C(C)=O)cc2)cc1",
+    "chembl_id": "CHEMBL43664",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 363.41,
+    "log_p": 4.37,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_27A9016B960FC39C",
+    "smiles": "Cc1ccc(-c2ccc(F)cc2)n1-c1ccc([S+](C)[O-])cc1",
+    "chembl_id": "CHEMBL40891",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 313.4,
+    "log_p": 4.33,
+    "assay_context": "In vitro inhibitory activity against human Prostaglandin G/H synthase 2; NA indicates inactive",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_52FACE14219196A3",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)c(F)c1",
+    "chembl_id": "CHEMBL298208",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 347.39,
+    "log_p": 4.13,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_83453CE21E94885E",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL43002",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 329.4,
+    "log_p": 4.0,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_366420980EA0ACE5",
+    "smiles": "CCS(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL42121",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 329.4,
+    "log_p": 4.08,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A102CC3BE2A9C7C1",
+    "smiles": "Cc1c(C(=O)C(F)(F)F)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL42409",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 425.4,
+    "log_p": 4.74,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2711C6E8EED1A4AF",
+    "smiles": "CS(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL43957",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 315.37,
+    "log_p": 3.69,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DBD4E7E73AFB861B",
+    "smiles": "Cc1c(C#N)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL43366",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 354.41,
+    "log_p": 3.87,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F4261B4D52174B3A",
+    "smiles": "Cc1ccc(-c2ccc(F)cc2)n1-c1ccc(S(C)(=O)=O)cc1",
+    "chembl_id": "CHEMBL296307",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 329.4,
+    "log_p": 4.0,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_254E7E70886800D9",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1C1CCCCC1",
+    "chembl_id": "CHEMBL43864",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 317.45,
+    "log_p": 4.37,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B8D44C56F33B2066",
+    "smiles": "Cc1c(S(=O)(=O)C(F)(F)F)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44244",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 461.46,
+    "log_p": 4.29,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_685EF85299B0421F",
+    "smiles": "CC(=O)c1ccc(-n2c(C)ccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL442349",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 293.34,
+    "log_p": 4.79,
+    "assay_context": "In vitro inhibitory activity against human Prostaglandin G/H synthase 2; NA indicates inactive",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EE4921AD1D125DAC",
+    "smiles": "Cc1c(C(=O)c2ccccc2)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44313",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 433.5,
+    "log_p": 5.23,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C457DDBD0A1A281B",
+    "smiles": "Cc1c(C(O)C(F)(F)F)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44362",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 427.42,
+    "log_p": 4.59,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1E568E37C75D8A87",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(C(F)(F)F)cc1",
+    "chembl_id": "CHEMBL42085",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 379.4,
+    "log_p": 4.88,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_09EE02D4C3DAAF49",
+    "smiles": "Cc1c(C(Oc2cccc(Cl)c2)C(F)(F)F)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL43647",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 537.96,
+    "log_p": 7.33,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_90F79AD8A2F0B934",
+    "smiles": "Fc1ccc(-c2[nH]c(-c3ccc(F)cc3)c3c2C2CCC3C2)cc1",
+    "chembl_id": "CHEMBL143776",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 321.37,
+    "log_p": 5.99,
+    "assay_context": "Tested in vitro for inhibition against Prostaglandin G/H synthase 2 in human blood (95% confidence limits)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6AB6B3E949601326",
+    "smiles": "CC(=O)c1ccc(-n2c(C)ccc2-c2ccc(S(C)(=O)=O)cc2)cc1",
+    "chembl_id": "CHEMBL297820",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 353.44,
+    "log_p": 4.06,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_991A54D320D27716",
+    "smiles": "O=S(=O)(c1ccccc1)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL42120",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 377.44,
+    "log_p": 5.12,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FC555AA95C1B208E",
+    "smiles": "COc1ccc(-c2ccc(C)n2-c2ccc(C(C)=O)cc2)cc1",
+    "chembl_id": "CHEMBL298079",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 305.38,
+    "log_p": 4.66,
+    "assay_context": "In vitro inhibitory activity against human Prostaglandin G/H synthase 2; NA indicates inactive",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DE7EF3C4B1CE59EA",
+    "smiles": "Cc1c(Cl)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44283",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 363.84,
+    "log_p": 4.65,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6513ADE4E4FD82D7",
+    "smiles": "Cc1c(CC(F)(F)F)cc(-c2ccc(S(C)(=O)=O)cc2)n1-c1ccc(F)cc1",
+    "chembl_id": "CHEMBL44038",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 411.42,
+    "log_p": 5.1,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6A3B2FA28AF9B68A",
+    "smiles": "CNS(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL298281",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 330.38,
+    "log_p": 3.19,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2DA0F77D1C12F6D3",
+    "smiles": "Cc1ccc(-c2ccc(S(C)(=O)=O)cc2)n1C(C)C",
+    "chembl_id": "CHEMBL43863",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 277.39,
+    "log_p": 3.45,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_330B90A32FAC704E",
+    "smiles": "CC(=O)OCc1cc(-c2ccc(S(C)(=O)=O)cc2)n(-c2ccc(F)cc2)c1C",
+    "chembl_id": "CHEMBL294971",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 401.46,
+    "log_p": 4.06,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4B34046A61762321",
+    "smiles": "CS(=O)(=O)c1ccc(-c2ccc(C(F)(F)F)n2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL44447",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 383.37,
+    "log_p": 4.71,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5DFF01C240A689D0",
+    "smiles": "CS(=O)(=O)c1cccc(-n2cccc2-c2ccc(F)cc2)c1",
+    "chembl_id": "CHEMBL288570",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 315.37,
+    "log_p": 3.69,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1956BEA948E3FDA7",
+    "smiles": "CN(C)S(=O)(=O)c1ccc(-n2cccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL44421",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 344.41,
+    "log_p": 3.53,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3FF36AA75A3E44B0",
+    "smiles": "CN(C)S(=O)(=O)c1ccc(-n2c(CCC(=O)O)ccc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL43755",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 416.47,
+    "log_p": 3.55,
+    "assay_context": "In vitro inhibitory activity against human prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2BA24B45C2B22039",
+    "smiles": "CC1(C)C(=O)C(c2ccc(F)cc2)=C1c1ccc(S(C)(=O)=O)cc1",
+    "chembl_id": "CHEMBL91832",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 344.41,
+    "log_p": 3.75,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1AC2C03090C4A60D",
+    "smiles": "C=C1CC(c2ccc(S(C)(=O)=O)cc2)=C1c1ccccc1",
+    "chembl_id": "CHEMBL91118",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 296.39,
+    "log_p": 3.96,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CBB8D9DFFF650646",
+    "smiles": "C=C1C(c2ccccc2)=C(c2ccc(S(C)(=O)=O)cc2)C1(C)C",
+    "chembl_id": "CHEMBL92443",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 324.45,
+    "log_p": 4.6,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D9A67C5A87CD73E9",
+    "smiles": "COC(=O)c1cc2cc(S(C)(=O)=O)ccc2n1C(=O)c1ccc(Cl)cc1",
+    "chembl_id": "CHEMBL282185",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 391.83,
+    "log_p": 3.17,
+    "assay_context": "Inhibition of PGE-2 generation in LPS-stimulated human monocytes (Prostaglandin G/H synthase 2 assay)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_219FC495C243FCAF",
+    "smiles": "CCCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL144658",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 224.32,
+    "log_p": 3.5,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C0D0706E1B9C39F5",
+    "smiles": "CCCCC#CCSc1ccccc1OC(=O)CC",
+    "chembl_id": "CHEMBL145283",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 276.4,
+    "log_p": 4.29,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_5184F0076E072307",
+    "smiles": "C[C@H](C(=O)O)c1ccc(C[C@@H]2CCC[C@H]2O)cc1",
+    "chembl_id": "CHEMBL19286",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 248.32,
+    "log_p": 2.58,
+    "assay_context": "Inhibitory activity against recombinant human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CA8A8327D3975F88",
+    "smiles": "CCCCCCC[Se]c1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL342799",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 313.3,
+    "log_p": 3.33,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DF5A4B0E608732E4",
+    "smiles": "CC(=O)Oc1ccccc1SCCCc1ccccc1",
+    "chembl_id": "CHEMBL145354",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 286.4,
+    "log_p": 4.34,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F3EA44DFB2C6385E",
+    "smiles": "CCCCCCC[S+]([O-])c1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL145493",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 282.41,
+    "log_p": 3.69,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_13C12B7CCF2A6D76",
+    "smiles": "CC(=O)Oc1ccccc1SCCCCC(=O)O",
+    "chembl_id": "CHEMBL344960",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 268.33,
+    "log_p": 2.96,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_868CD505CA04688F",
+    "smiles": "CC(=O)Oc1ccccc1SCCCCC#N",
+    "chembl_id": "CHEMBL144414",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 249.33,
+    "log_p": 3.4,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_285CE12EADCB97D5",
+    "smiles": "CCCCC#CCSc1ccccc1OC(=O)CBr",
+    "chembl_id": "CHEMBL144547",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 341.27,
+    "log_p": 4.27,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C4FA494B86012CC1",
+    "smiles": "CC(=O)Oc1ccccc1SC1CCCCCC1",
+    "chembl_id": "CHEMBL144944",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 264.39,
+    "log_p": 4.43,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_26CC2EDF712BD3AD",
+    "smiles": "CCCCCCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL143339",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 266.41,
+    "log_p": 4.67,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4299CC354FDADCDE",
+    "smiles": "CS(=O)(=O)c1ccc(C2=C(c3ccccc3)C(=O)C2)cc1",
+    "chembl_id": "CHEMBL328003",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 298.36,
+    "log_p": 2.97,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_14C8BAD16C395554",
+    "smiles": "CC1(C)C(=O)C(c2ccccc2)=C1c1ccc(S(C)(=O)=O)cc1",
+    "chembl_id": "CHEMBL420987",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 326.42,
+    "log_p": 3.61,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E4D06CCCF4DB43D1",
+    "smiles": "CCCCCCCCc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL145598",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 248.37,
+    "log_p": 4.51,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7633D4251205F25E",
+    "smiles": "CC(C(=O)O)c1ccc(CC2CCCC2O)cc1",
+    "chembl_id": "CHEMBL416542",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 248.32,
+    "log_p": 2.58,
+    "assay_context": "Inhibitory activity against recombinant human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D6D8ED63EDFAB07D",
+    "smiles": "CS(=O)(=O)c1ccc(C2=C(c3ccccc3)C(=O)OC2)cc1",
+    "chembl_id": "CHEMBL122",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 314.36,
+    "log_p": 2.56,
+    "assay_context": "Inhibitory potency against cyclooxygenase-2 in human whole blood assay",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8695FD86A729F5D6",
+    "smiles": "CC1(C)C(c2ccc(S(C)(=O)=O)cc2)=C(c2ccccc2)/C1=N/O",
+    "chembl_id": "CHEMBL330516",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 341.43,
+    "log_p": 3.87,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_01478005D45718A3",
+    "smiles": "CS(=O)(=O)c1ccc(-c2cc(Br)sc2-c2ccc(F)cc2)cc1",
+    "chembl_id": "CHEMBL42485",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 411.32,
+    "log_p": 5.39,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2684F2568688BE51",
+    "smiles": "CCCCC#CCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL345018",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 262.37,
+    "log_p": 3.9,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_74A37516F1885CA6",
+    "smiles": "COc1ccc2c(c1)c(CC(=O)O)c(C)n2C(=O)c1ccc(Cl)cc1",
+    "chembl_id": "CHEMBL6",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 357.79,
+    "log_p": 3.93,
+    "assay_context": "Inhibition of PGE-2 generation in LPS-stimulated human monocytes (Prostaglandin G/H synthase 2 cell assay)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E0CD2A13228E99C9",
+    "smiles": "CCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL342317",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 196.27,
+    "log_p": 2.72,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_98529A0E0288B201",
+    "smiles": "CCCCCC#CCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL357380",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 276.4,
+    "log_p": 4.29,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FF807A68CFB9A72E",
+    "smiles": "CS(=O)(=O)c1ccc(C2=C(c3ccc(F)cc3)CC3(CC3)C2)cc1",
+    "chembl_id": "CHEMBL92154",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 342.44,
+    "log_p": 4.71,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_55166E897EEF364B",
+    "smiles": "CC(=O)Oc1ccccc1SCCc1ccccc1",
+    "chembl_id": "CHEMBL145029",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 272.37,
+    "log_p": 3.95,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F39CD259AD38E155",
+    "smiles": "CC(=O)Oc1ccccc1SCCCCCBr",
+    "chembl_id": "CHEMBL358309",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 317.25,
+    "log_p": 4.27,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3F23C7EB510B81BC",
+    "smiles": "CC1(C)C(c2ccc(S(C)(=O)=O)cc2)=C(c2ccccc2)C1O",
+    "chembl_id": "CHEMBL328521",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 328.43,
+    "log_p": 3.4,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8DBCE83DD566935F",
+    "smiles": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+    "chembl_id": "CHEMBL118",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 381.38,
+    "log_p": 3.51,
+    "assay_context": "Inhibition of PGE-2 generation in LPS-stimulated human monocytes (Prostaglandin G/H synthase 2 cell assay)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_61F41841F0A8B41C",
+    "smiles": "CCCCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL144806",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 238.35,
+    "log_p": 3.89,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_75919C32F89C5937",
+    "smiles": "CC(=O)Oc1ccccc1SCCCCCCBr",
+    "chembl_id": "CHEMBL144533",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 331.27,
+    "log_p": 4.66,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AB65B5AC91226BB0",
+    "smiles": "CSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL145364",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 182.24,
+    "log_p": 2.33,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D2F446F55DC43C67",
+    "smiles": "CSc1ccccc1OC(=O)CBr",
+    "chembl_id": "CHEMBL146441",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 261.14,
+    "log_p": 2.71,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_57CA012E3288EDE5",
+    "smiles": "CCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL358097",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 210.3,
+    "log_p": 3.11,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_D27A8FAAC4E1AC7F",
+    "smiles": "CCCCCCCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL144850",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 280.43,
+    "log_p": 5.06,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_778A8FA7937078E7",
+    "smiles": "CCCCCCCCCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL143962",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 294.46,
+    "log_p": 5.45,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4147F9AF06C6E5E4",
+    "smiles": "CCCC/C=C/CSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL356794",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 264.39,
+    "log_p": 4.45,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_301B48CA14F2EF7F",
+    "smiles": "CCCC#CCSc1ccccc1OC(C)=O",
+    "chembl_id": "CHEMBL144920",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 248.35,
+    "log_p": 3.51,
+    "assay_context": "Inhibitory concentration in DMSO with purified human Prostaglandin G/H synthase 2 (COX-2)",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_97BF394D757B495A",
+    "smiles": "CS(=O)(=O)c1ccc(C2=C(c3ccccc3)CC2)cc1",
+    "chembl_id": "CHEMBL93803",
+    "pubchem_cid": "Ingested via Inflammation Target Gateway",
+    "molecular_weight": 284.38,
+    "log_p": 3.79,
+    "assay_context": "Inhibition of PGE-2 production by arachidonic acid-stimulated CHO cells expressing human Prostaglandin G/H synthase 2",
+    "ingestion_timestamp": "2026-06-07T01:15:00Z"
+  }
+]

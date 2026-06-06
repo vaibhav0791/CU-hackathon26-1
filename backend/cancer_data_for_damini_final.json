@@ -1,0 +1,602 @@
+[
+  {
+    "pharma_uid": "PAI_COMP_FCD06A5C57A9510F",
+    "smiles": "Cc1cc(C)c(/C=C2\\C(=O)Nc3ncnc(Nc4ccc(F)c(Cl)c4)c32)[nH]1",
+    "chembl_id": "CHEMBL68920",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 383.81,
+    "log_p": 4.45,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0752EA3BE2F4280A",
+    "smiles": "Cc1cc(C(=O)N2CCOCC2)[nH]c1/C=C1\\C(=O)Nc2ncnc(Nc3ccc(F)c(Cl)c3)c21",
+    "chembl_id": "CHEMBL69960",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 482.9,
+    "log_p": 3.61,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B227E077F3E3E8D7",
+    "smiles": "CN(c1ccccc1)c1ncnc2ccc(N/N=N/Cc3ccccn3)cc12",
+    "chembl_id": "CHEMBL137635",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 369.43,
+    "log_p": 4.77,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_CCF9306135E8318F",
+    "smiles": "CC(=C(C#N)C#N)c1ccc(NC(=O)CCC(=O)O)cc1",
+    "chembl_id": "CHEMBL306988",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 283.29,
+    "log_p": 2.31,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E95A09B07F92171C",
+    "smiles": "O=C(O)/C=C/c1ccc(O)cc1",
+    "chembl_id": "CHEMBL66879",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 164.16,
+    "log_p": 1.49,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8A5BEF2891F9D346",
+    "smiles": "N#CC(C#N)=Cc1cc(O)ccc1[N+](=O)[O-]",
+    "chembl_id": "CHEMBL77085",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 215.17,
+    "log_p": 1.73,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4C70A6A9EAC7B3C9",
+    "smiles": "Cc1cc(C(=O)NCCN2CCOCC2)[nH]c1/C=C1\\C(=O)N(C)c2ncnc(Nc3ccc(F)c(Cl)c3)c21",
+    "chembl_id": "CHEMBL443268",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 540.0,
+    "log_p": 3.23,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_045961AB44B69661",
+    "smiles": "COc1cc(/C=C(\\C#N)C(=O)O)cc(OC)c1O",
+    "chembl_id": "CHEMBL76979",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 249.22,
+    "log_p": 1.4,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7D082C045E9B1A7D",
+    "smiles": "N#CC(C#N)=C(N)/C(C#N)=C/c1ccc(O)cc1",
+    "chembl_id": "CHEMBL76589",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 236.23,
+    "log_p": 1.56,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4F81B573F5FA8C5E",
+    "smiles": "COc1cc(C=C(C#N)C#N)cc(OC)c1",
+    "chembl_id": "CHEMBL77724",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 214.22,
+    "log_p": 2.13,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9B128004F2BD66ED",
+    "smiles": "N#CC(C#N)=Cc1ccc(N2CCOCC2)cc1",
+    "chembl_id": "CHEMBL420385",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 239.28,
+    "log_p": 1.95,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_E58D72FC7945B7A6",
+    "smiles": "N#CC(C#N)=Cc1ccc(O)c(O)c1",
+    "chembl_id": "CHEMBL76904",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 186.17,
+    "log_p": 1.53,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_71B8659FC772ECF7",
+    "smiles": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O",
+    "chembl_id": "CHEMBL1009",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 197.19,
+    "log_p": 0.05,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C89B3B17FA1484F9",
+    "smiles": "CCN(CC)CC(O)CNC(=O)c1cc(C)c(/C=C2\\C(=O)Nc3ncnc(Nc4ccc(F)c(Cl)c4)c32)[nH]1",
+    "chembl_id": "CHEMBL304271",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 542.02,
+    "log_p": 3.57,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4C2A8877FD1BC67A",
+    "smiles": "N#C/C(=C\\c1ccc(O)c(O)c1)C(N)=O",
+    "chembl_id": "CHEMBL296407",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 204.18,
+    "log_p": 0.49,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_63585CAC26320F7A",
+    "smiles": "N#CC(C#N)=C(N)/C(C#N)=C/c1ccc(O)c([N+](=O)[O-])c1",
+    "chembl_id": "CHEMBL309625",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 281.23,
+    "log_p": 1.47,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_20123C338072D240",
+    "smiles": "COc1ccc(NN=C(C#N)C#N)cc1",
+    "chembl_id": "CHEMBL77825",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 200.2,
+    "log_p": 1.51,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_7082F5528626122A",
+    "smiles": "COc1cc(C=C(C#N)C#N)cc(OC)c1O",
+    "chembl_id": "CHEMBL421877",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 230.22,
+    "log_p": 1.84,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9EB57087B1230E56",
+    "smiles": "Cc1ccc(/C=C(\\C#N)C(=O)O)cc1",
+    "chembl_id": "CHEMBL77278",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 187.2,
+    "log_p": 1.99,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_468013095AA37BEC",
+    "smiles": "N#CC(C#N)=Cc1cc(O)c(O)c(O)c1",
+    "chembl_id": "CHEMBL310798",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 202.17,
+    "log_p": 1.23,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2B53F7847ADAFD52",
+    "smiles": "C/N=N/Nc1ccc2ncnc(N(C)c3ccccc3)c2c1",
+    "chembl_id": "CHEMBL135592",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 292.35,
+    "log_p": 3.81,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_1E130A995393B8CD",
+    "smiles": "N#C/C(=C\\c1ccc([N+](=O)[O-])cc1)C(=O)O",
+    "chembl_id": "CHEMBL309866",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 218.17,
+    "log_p": 1.59,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F6DFD72007F05D52",
+    "smiles": "N#C/C(=C/c1ccc[nH]1)C(=O)O",
+    "chembl_id": "CHEMBL77381",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 162.15,
+    "log_p": 1.01,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_20FF2D92FFDAB28E",
+    "smiles": "N#C/C(=C\\c1ccc(O)cc1)C(=O)O",
+    "chembl_id": "CHEMBL76602",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 189.17,
+    "log_p": 1.38,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_732F1884E4FB0773",
+    "smiles": "N#CC(C#N)=Cc1ccncc1",
+    "chembl_id": "CHEMBL77737",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 155.16,
+    "log_p": 1.51,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_157E21730D614C5D",
+    "smiles": "N#CC(C#N)=Cc1ccc(F)cc1",
+    "chembl_id": "CHEMBL76983",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 172.16,
+    "log_p": 2.26,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9D82094FFF171DCB",
+    "smiles": "N#CC(C#N)=Cc1ccc(O)c([N+](=O)[O-])c1",
+    "chembl_id": "CHEMBL308134",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 215.17,
+    "log_p": 1.73,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_44F879044F077BD2",
+    "smiles": "CN(C)/N=N/c1ccc2ncnc(Nc3cccc(Cl)c3)c2c1",
+    "chembl_id": "CHEMBL136491",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 326.79,
+    "log_p": 4.59,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_19C83571713BB01D",
+    "smiles": "CC(=C(C#N)C#N)c1ccc(N)cc1",
+    "chembl_id": "CHEMBL77280",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 183.21,
+    "log_p": 2.09,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FF06F687EDF93C4C",
+    "smiles": "O=[N+]([O-])c1ccc(O)c(O)c1",
+    "chembl_id": "CHEMBL42423",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 155.11,
+    "log_p": 1.01,
+    "assay_context": "Inhibition of EGF-dependent epidermal growth factor receptor autophosphorylation (inactive)",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_9E832019B16CD0A3",
+    "smiles": "N#CCNC(=O)/C(C#N)=C/c1ccc(O)cc1",
+    "chembl_id": "CHEMBL76557",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 227.22,
+    "log_p": 0.94,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FDC6459756F4CC85",
+    "smiles": "Cc1cccc(Nc2ncnc3ccc(N)cc23)c1",
+    "chembl_id": "CHEMBL336113",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 250.31,
+    "log_p": 3.26,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_EDC0E7A06C858A5D",
+    "smiles": "C/N=N/Nc1ccc2ncnc(Nc3cccc(Cl)c3)c2c1",
+    "chembl_id": "CHEMBL133024",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 312.76,
+    "log_p": 4.44,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DA6931A53AA104E5",
+    "smiles": "CN(C)/N=N/c1ccc2ncnc(N(C)c3ccccc3)c2c1",
+    "chembl_id": "CHEMBL344652",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 306.37,
+    "log_p": 3.96,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_AD96A8FDD7265E8E",
+    "smiles": "N#CC(C#N)=CNc1ccc(O)cc1",
+    "chembl_id": "CHEMBL77814",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 185.19,
+    "log_p": 1.74,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B9614074880E44B6",
+    "smiles": "O=CN/C=C/c1cc(O)ccc1O",
+    "chembl_id": "CHEMBL47986",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 179.17,
+    "log_p": 0.81,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_35DC40998D8ED5FC",
+    "smiles": "O=C(O)c1ccc(O)cc1",
+    "chembl_id": "CHEMBL441343",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 138.12,
+    "log_p": 1.09,
+    "assay_context": "Inhibition of EGF-dependent epidermal growth factor receptor autophosphorylation (inactive)",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DD02F8528E88268F",
+    "smiles": "Brc1cccc(Nc2ncnc3ccc(N/N=N/Cc4ccccn4)cc23)c1",
+    "chembl_id": "CHEMBL138125",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 434.3,
+    "log_p": 5.51,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_133D774745D3DDB7",
+    "smiles": "Brc1cccc(Nc2ncnc3ccc(N/N=N/CCN4CCOCC4)cc23)c1",
+    "chembl_id": "CHEMBL137364",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 456.35,
+    "log_p": 4.25,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2FFE383949F97774",
+    "smiles": "N#CC(C#N)=C1C(=O)NC(=O)NC1=O",
+    "chembl_id": "CHEMBL308339",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 190.12,
+    "log_p": -1.3,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_2A82FF6F2C416A6D",
+    "smiles": "N#CC(C#N)=Cc1ccc(C(=O)O)cc1",
+    "chembl_id": "CHEMBL78174",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 198.18,
+    "log_p": 1.82,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_4C471047DA73E604",
+    "smiles": "O=C1Nc2ncnc(Nc3ccc(F)c(Cl)c3)c2/C1=C/c1ccc(C(=O)NCCN2CCOCC2)[nH]1",
+    "chembl_id": "CHEMBL302552",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 511.95,
+    "log_p": 2.9,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_B4B98565003AE17C",
+    "smiles": "N#CC(C#N)=C(O)c1cc(O)c(O)c(O)c1",
+    "chembl_id": "CHEMBL309598",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 218.17,
+    "log_p": 1.12,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_21E6FA73343BE52E",
+    "smiles": "COc1ccc(C=C(C#N)C#N)cc1O",
+    "chembl_id": "CHEMBL78302",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 200.2,
+    "log_p": 1.83,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C1F95AF1BCD4D68B",
+    "smiles": "Cc1cc(C(=O)N2CCOCC2)[nH]c1/C=C1\\C(=O)Nc2ncnc(Nc3ccc4c(ccn4Cc4ccccc4)c3)c21",
+    "chembl_id": "CHEMBL67057",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 559.63,
+    "log_p": 4.82,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_FD083FDEDE72032C",
+    "smiles": "Nc1ccc2ncnc(NCc3ccccc3)c2c1",
+    "chembl_id": "CHEMBL332096",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 250.31,
+    "log_p": 2.82,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_25029CC61BCC4049",
+    "smiles": "N#CC(C#N)=Cc1ccc([N+](=O)[O-])c(O)c1",
+    "chembl_id": "CHEMBL77387",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 215.17,
+    "log_p": 1.73,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F82E6B065C8CF260",
+    "smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(/C=C2\\C(=O)Nc3ncnc(Nc4ccc(F)c(Cl)c4)c32)c1C",
+    "chembl_id": "CHEMBL432903",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 526.02,
+    "log_p": 4.52,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_0FEADBF5CB02DEE1",
+    "smiles": "Cc1cc(/C=C2\\C(=O)Nc3ncnc(Nc4ccc(F)c(Cl)c4)c32)[nH]c1C(=O)N1CCN(C)CC1",
+    "chembl_id": "CHEMBL69964",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 495.95,
+    "log_p": 3.53,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3A3AF327E2CB2AB1",
+    "smiles": "Cc1cc(C(=O)N2CCOCC2)[nH]c1/C=C1\\C(=O)Nc2ncnc(Nc3ccc4c(c3)CCC4)c21",
+    "chembl_id": "CHEMBL65848",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 470.53,
+    "log_p": 3.31,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C73FB03968FAC8C9",
+    "smiles": "Nc1ncnc2c1c(-c1ccc(Oc3ccccc3)cc1)cn2C1CCC(O)C1",
+    "chembl_id": "CHEMBL69129",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 386.46,
+    "log_p": 4.56,
+    "assay_context": "Inhibition of Epidermal growth factor receptor (not tested)",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_3F79E32A38C6FF1D",
+    "smiles": "N#C/C(=C\\c1ccc(F)cc1)C(=O)O",
+    "chembl_id": "CHEMBL78184",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 191.16,
+    "log_p": 1.82,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_DBD5BBD9F0F9210F",
+    "smiles": "N#C/C(=C\\c1ccc(C=O)cc1)C(=O)O",
+    "chembl_id": "CHEMBL76985",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 201.18,
+    "log_p": 1.49,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_103D0BE31BEA7B22",
+    "smiles": "O=C(O)/C=C/c1ccc(O)c(O)c1",
+    "chembl_id": "CHEMBL145",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 180.16,
+    "log_p": 1.2,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_C019A80D65D4F0C9",
+    "smiles": "Cc1cc(C(=O)NCCN2CCOCC2)[nH]c1/C=C1\\C(=O)Nc2ncnc(Nc3ccc(F)c(Cl)c3)c21",
+    "chembl_id": "CHEMBL69629",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 525.97,
+    "log_p": 3.2,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_A613CB7174661552",
+    "smiles": "CN(c1ccccc1)c1ncnc2ccc(N)cc12",
+    "chembl_id": "CHEMBL136492",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 250.3,
+    "log_p": 2.98,
+    "assay_context": "In vitro inhibition of Epidermal growth factor receptor tyrosine kinase isolated from A431 (human carcinoma).",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_8A524106136374DE",
+    "smiles": "COc1cc(/C(C)=C(\\C#N)C(=O)O)ccc1O",
+    "chembl_id": "CHEMBL77197",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 233.22,
+    "log_p": 1.78,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_538433B4BBFCFD13",
+    "smiles": "N#CC(C#N)=Cc1ccc(O)cc1",
+    "chembl_id": "CHEMBL305695",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 170.17,
+    "log_p": 1.82,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_F8EEAC1D97AE50E5",
+    "smiles": "Cc1cc(C(=O)N2CCOCC2)[nH]c1/C=C1\\C(=O)Nc2ncnc(N3CCCCC3)c21",
+    "chembl_id": "CHEMBL68258",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 422.49,
+    "log_p": 2.07,
+    "assay_context": "Inhibitory activity towards tyrosine phosphorylation for the epidermal growth factor-receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  },
+  {
+    "pharma_uid": "PAI_COMP_6D324EF74AEBB839",
+    "smiles": "N#CC(C#N)Cc1ccc(O)cc1",
+    "chembl_id": "CHEMBL76587",
+    "pubchem_cid": "Ingested via Oncology Target Gateway",
+    "molecular_weight": 172.19,
+    "log_p": 1.6,
+    "assay_context": "Inhibitory concentration of EGF dependent autophosphorylation of epidermal growth factor receptor kinase",
+    "ingestion_timestamp": "2026-06-07T00:50:00Z"
+  }
+]
