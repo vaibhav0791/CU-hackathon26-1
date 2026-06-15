@@ -1,6 +1,7 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
+from contextlib import asynccontextmanager
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
@@ -18,11 +19,21 @@ from typing import List, Optional, Dict, Any
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # --- Startup ---
+    mongo_url = os.environ['MONGO_URL']
+    app.mongodb_client = AsyncIOMotorClient(mongo_url)
+    app.database = app.mongodb_client[os.environ['DB_NAME']]
+    print("Database connected successfully.")
+    
+    yield  # --- App runs here ---
+    
+    # --- Shutdown ---
+    app.mongodb_client.close()
+    print("Database connection closed.")
 
-app = FastAPI(title="PHARMA-AI Formulation Optimizer")
+app = FastAPI(title="PHARMA-AI Formulation Optimizer", lifespan=lifespan)
 api_router = APIRouter(prefix="/api")
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -667,6 +678,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+#@app.on_event("shutdown")
+#async def shutdown_db_client():
+#    client.close()
+
+
+app.include_router(api_router)
