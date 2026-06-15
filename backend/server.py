@@ -1,20 +1,22 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Query
-from fastapi.responses import StreamingResponse
 from dotenv import load_dotenv
+from motor.motor_asyncio import AsyncIOMotorClient
 from contextlib import asynccontextmanager
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
+from contextlib import asynccontextmanager
 import os
 import logging
 import json
 import uuid
-import io
-import urllib.parse
-import aiohttp
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
+import hashlib
+import asyncio
+import time
+from bson import ObjectId
+from fastapi.responses import StreamingResponse
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -41,620 +43,591 @@ logger = logging.getLogger(__name__)
 
 # ─── Drug Database (SMILES + properties) ────────────────────────────────────────
 DRUG_DATABASE = {
-    "Aspirin": {
-        "smiles": "CC(=O)Oc1ccccc1C(=O)O",
-        "molecular_weight": 180.16,
-        "molecular_formula": "C9H8O4",
-        "logp": 1.19,
-        "pka": 3.5,
-        "bcs_class": "I",
-        "therapeutic_class": "NSAID / Antiplatelet",
-        "route": "Oral"
-    },
-    "Ibuprofen": {
-        "smiles": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
-        "molecular_weight": 206.28,
-        "molecular_formula": "C13H18O2",
-        "logp": 3.97,
-        "pka": 4.91,
-        "bcs_class": "II",
-        "therapeutic_class": "NSAID",
-        "route": "Oral"
-    },
-    "Acetaminophen": {
-        "smiles": "CC(=O)Nc1ccc(O)cc1",
-        "molecular_weight": 151.16,
-        "molecular_formula": "C8H9NO2",
-        "logp": 0.46,
-        "pka": 9.5,
-        "bcs_class": "I",
-        "therapeutic_class": "Analgesic / Antipyretic",
-        "route": "Oral"
-    },
-    "Metformin": {
-        "smiles": "CN(C)C(=N)NC(=N)N",
-        "molecular_weight": 129.16,
-        "molecular_formula": "C4H11N5",
-        "logp": -1.43,
-        "pka": 2.8,
-        "bcs_class": "III",
-        "therapeutic_class": "Antidiabetic (Biguanide)",
-        "route": "Oral"
-    },
-    "Atorvastatin": {
-        "smiles": "CC(C)c1c(C(=O)Nc2ccccc2F)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)O",
-        "molecular_weight": 558.64,
-        "molecular_formula": "C33H35FN2O5",
-        "logp": 6.36,
-        "pka": 4.46,
-        "bcs_class": "II",
-        "therapeutic_class": "Statin / Antilipidemic",
-        "route": "Oral"
-    },
-    "Lisinopril": {
-        "smiles": "OC(=O)[C@@H](CCc1ccccc1)N[C@@H](CC(=O)O)C(=O)N1CCC[C@H]1C(=O)O",
-        "molecular_weight": 405.49,
-        "molecular_formula": "C21H31N3O5",
-        "logp": -1.54,
-        "pka": 2.5,
-        "bcs_class": "III",
-        "therapeutic_class": "ACE Inhibitor / Antihypertensive",
-        "route": "Oral"
-    },
-    "Omeprazole": {
-        "smiles": "CC1=CN=C(C)C(CC2=NC3=CC=CC=C3N2)=C1",
-        "molecular_weight": 345.42,
-        "molecular_formula": "C17H19N3O3S",
-        "logp": 2.23,
-        "pka": 4.77,
-        "bcs_class": "II",
-        "therapeutic_class": "Proton Pump Inhibitor",
-        "route": "Oral"
-    },
-    "Amoxicillin": {
-        "smiles": "CC1(C)S[C@@H]2[C@H](NC(=O)[C@@H](N)c3ccc(O)cc3)C(=O)N2[C@H]1C(=O)O",
-        "molecular_weight": 365.40,
-        "molecular_formula": "C16H19N3O5S",
-        "logp": 0.87,
-        "pka": 2.4,
-        "bcs_class": "I",
-        "therapeutic_class": "Antibiotic (Penicillin)",
-        "route": "Oral"
-    },
-    "Metoprolol": {
-        "smiles": "CC(C)NCC(O)COc1ccc(CCOC)cc1",
-        "molecular_weight": 267.36,
-        "molecular_formula": "C15H25NO3",
-        "logp": 1.88,
-        "pka": 9.7,
-        "bcs_class": "I",
-        "therapeutic_class": "Beta-blocker / Antihypertensive",
-        "route": "Oral"
-    },
-    "Simvastatin": {
-        "smiles": "CCC(C)(C)C(=O)O[C@@H]1C[C@@H](C)C=C2C=C[C@H](C)[C@H](CC[C@@H]3C[C@@H](O)CC(=O)O3)[C@@H]12",
-        "molecular_weight": 418.57,
-        "molecular_formula": "C25H38O5",
-        "logp": 4.68,
-        "pka": 13.5,
-        "bcs_class": "II",
-        "therapeutic_class": "Statin / Antilipidemic",
-        "route": "Oral"
-    },
-    "Amlodipine": {
-        "smiles": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OCC)C1c1ccccc1Cl",
-        "molecular_weight": 408.88,
-        "molecular_formula": "C20H25ClN2O5",
-        "logp": 3.0,
-        "pka": 8.6,
-        "bcs_class": "I",
-        "therapeutic_class": "Calcium Channel Blocker",
-        "route": "Oral"
-    },
-    "Losartan": {
-        "smiles": "CCCc1nc(-c2ccccc2Cl)c(-c2ccc(CN3C(=O)N(Cc4ccc(-c5ccccc5-c5nnn[nH]5)cc4)C3=S)cc2)o1",
-        "molecular_weight": 422.91,
-        "molecular_formula": "C22H23ClN6O",
-        "logp": 4.01,
-        "pka": 5.0,
-        "bcs_class": "II",
-        "therapeutic_class": "ARB / Antihypertensive",
-        "route": "Oral"
-    },
-    "Warfarin": {
-        "smiles": "OC(=O)CCCC1CC(=O)c2ccccc2O1",
-        "molecular_weight": 308.33,
-        "molecular_formula": "C19H16O4",
-        "logp": 2.7,
-        "pka": 5.05,
-        "bcs_class": "I",
-        "therapeutic_class": "Anticoagulant",
-        "route": "Oral"
-    },
-    "Metronidazole": {
-        "smiles": "Cc1ncc([N+](=O)[O-])n1CCO",
-        "molecular_weight": 171.15,
-        "molecular_formula": "C6H9N3O3",
-        "logp": -0.02,
-        "pka": 2.62,
-        "bcs_class": "I",
-        "therapeutic_class": "Antibiotic / Antiprotozoal",
-        "route": "Oral"
-    },
-    "Ciprofloxacin": {
-        "smiles": "OC(=O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
-        "molecular_weight": 331.34,
-        "molecular_formula": "C17H18FN3O3",
-        "logp": 0.28,
-        "pka": 6.09,
-        "bcs_class": "IV",
-        "therapeutic_class": "Fluoroquinolone Antibiotic",
-        "route": "Oral"
-    },
-    "Doxycycline": {
-        "smiles": "OC1=C(C(=O)[C@H]2C[C@@H]3CC4=C(O)c5c(O)cccc5C(=O)[C@@]4(O)[C@H]3[C@H]2[C@@H]1C(N)=O)c(O)c1c(=C2)c(O)cccc1=O",
-        "molecular_weight": 444.43,
-        "molecular_formula": "C22H24N2O8",
-        "logp": -0.02,
-        "pka": 3.4,
-        "bcs_class": "I",
-        "therapeutic_class": "Tetracycline Antibiotic",
-        "route": "Oral"
-    },
-    "Fluoxetine": {
-        "smiles": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
-        "molecular_weight": 309.33,
-        "molecular_formula": "C17H18F3NO",
-        "logp": 4.05,
-        "pka": 9.8,
-        "bcs_class": "I",
-        "therapeutic_class": "SSRI Antidepressant",
-        "route": "Oral"
-    },
-    "Sertraline": {
-        "smiles": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc21",
-        "molecular_weight": 306.23,
-        "molecular_formula": "C17H17Cl2N",
-        "logp": 5.06,
-        "pka": 9.47,
-        "bcs_class": "II",
-        "therapeutic_class": "SSRI Antidepressant",
-        "route": "Oral"
-    },
-    "Alprazolam": {
-        "smiles": "Cc1nnc2n1-c1ccc(Cl)cc1C(=Nc1ccccc1)CC2",
-        "molecular_weight": 308.76,
-        "molecular_formula": "C17H13ClN4",
-        "logp": 2.12,
-        "pka": 2.48,
-        "bcs_class": "I",
-        "therapeutic_class": "Benzodiazepine / Anxiolytic",
-        "route": "Oral"
-    },
-    "Clopidogrel": {
-        "smiles": "COC(=O)[C@@H](c1ccccc1Cl)N1CCc2sccc2C1",
-        "molecular_weight": 321.82,
-        "molecular_formula": "C16H16ClNO2S",
-        "logp": 2.64,
-        "pka": 4.55,
-        "bcs_class": "I",
-        "therapeutic_class": "Antiplatelet",
-        "route": "Oral"
-    },
-    "Tamoxifen": {
-        "smiles": "CCN(CC)/C=C/C(=C(\\c1ccccc1)/c1ccc(OCCN(CC)CC)cc1)c1ccccc1",
-        "molecular_weight": 371.51,
-        "molecular_formula": "C26H29NO",
-        "logp": 6.3,
-        "pka": 8.85,
-        "bcs_class": "II",
-        "therapeutic_class": "SERM / Anticancer",
-        "route": "Oral"
-    },
-    "Morphine": {
-        "smiles": "[C@@H]12[C@H]3CC4=CC(=C(O)C=C4[C@H]1[C@H](O)CC2)NC3",
-        "molecular_weight": 285.34,
-        "molecular_formula": "C17H19NO3",
-        "logp": 0.9,
-        "pka": 8.0,
-        "bcs_class": "I",
-        "therapeutic_class": "Opioid Analgesic",
-        "route": "Oral / Parenteral"
-    },
-    "Gabapentin": {
-        "smiles": "NCC1(CC(=O)O)CCCCC1",
-        "molecular_weight": 171.24,
-        "molecular_formula": "C9H17NO2",
-        "logp": -1.1,
-        "pka": 3.68,
-        "bcs_class": "III",
-        "therapeutic_class": "Anticonvulsant / Neuropathic Pain",
-        "route": "Oral"
-    },
-    "Prednisolone": {
-        "smiles": "[C@@]12(O)CC[C@H]3[C@@H](CCC4=CC(=O)C=C[C@@]34C)[C@@H]1CC[C@@H]2C(=O)CO",
-        "molecular_weight": 360.44,
-        "molecular_formula": "C21H28O5",
-        "logp": 1.62,
-        "pka": 12.6,
-        "bcs_class": "I",
-        "therapeutic_class": "Corticosteroid",
-        "route": "Oral"
-    },
-    "Methotrexate": {
-        "smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(CC(=O)O)cc1",
-        "molecular_weight": 454.44,
-        "molecular_formula": "C20H22N8O5",
-        "logp": -1.85,
-        "pka": 3.36,
-        "bcs_class": "III",
-        "therapeutic_class": "Antifolate / Anticancer",
-        "route": "Oral / Parenteral"
-    },
-    "Furosemide": {
-        "smiles": "NS(=O)(=O)c1cc(C(=O)O)c(NCc2ccco2)cc1Cl",
-        "molecular_weight": 330.74,
-        "molecular_formula": "C12H11ClN2O5S",
-        "logp": 2.03,
-        "pka": 3.9,
-        "bcs_class": "IV",
-        "therapeutic_class": "Loop Diuretic",
-        "route": "Oral / IV"
-    },
-    "Hydrochlorothiazide": {
-        "smiles": "NS(=O)(=O)c1cc2c(cc1Cl)NCNS2(=O)=O",
-        "molecular_weight": 297.74,
-        "molecular_formula": "C7H8ClN3O4S2",
-        "logp": -0.07,
-        "pka": 7.9,
-        "bcs_class": "IV",
-        "therapeutic_class": "Thiazide Diuretic",
-        "route": "Oral"
-    },
-    "Levothyroxine": {
-        "smiles": "NC(Cc1cc(I)c(Oc2cc(I)c(O)c(I)c2)c(I)c1)C(=O)O",
-        "molecular_weight": 776.87,
-        "molecular_formula": "C15H11I4NO4",
-        "logp": 3.16,
-        "pka": 2.2,
-        "bcs_class": "II",
-        "therapeutic_class": "Thyroid Hormone",
-        "route": "Oral"
-    },
-    "Enalapril": {
-        "smiles": "CCOC(=O)[C@@H](CCc1ccccc1)NC(C)C(=O)N1CCC[C@H]1C(=O)O",
-        "molecular_weight": 376.45,
-        "molecular_formula": "C20H28N2O5",
-        "logp": 0.11,
-        "pka": 3.0,
-        "bcs_class": "III",
-        "therapeutic_class": "ACE Inhibitor",
-        "route": "Oral"
-    },
-    "Sildenafil": {
-        "smiles": "CCCc1nn(C)c2c1nc(C)nc2N1CCN(Cc2ccc(S(=O)(=O)N3CCOCC3)cc2)CC1",
-        "molecular_weight": 474.58,
-        "molecular_formula": "C22H30N6O4S",
-        "logp": 1.9,
-        "pka": 5.97,
-        "bcs_class": "II",
-        "therapeutic_class": "PDE5 Inhibitor / Vasodilator",
-        "route": "Oral"
-    }
+    "Aspirin": {"smiles": "CC(=O)Oc1ccccc1C(=O)O", "bcs_class": "I", "molecular_weight": 180.16, "category": "Analgesic"},
+    "Atorvastatin": {"smiles": "CC(C)c1c(C(=O)Nc2ccccc2F)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CC[C@@H](O)C[C@@H](O)CC(=O)O", "bcs_class": "II", "molecular_weight": 558.64, "category": "Cardiovascular"},
+    "Amlodipine": {"smiles": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OCC)C1c1ccccc1Cl", "bcs_class": "I", "molecular_weight": 408.88, "category": "Cardiovascular"},
+    "Lisinopril": {"smiles": "OC(=O)[C@@H](CCc1ccccc1)N[C@@H](CC(=O)O)C(=O)N1CCC[C@H]1C(=O)O", "bcs_class": "III", "molecular_weight": 405.49, "category": "Cardiovascular"},
+    "Metoprolol": {"smiles": "CC(C)NCC(O)COc1ccc(CCOC)cc1", "bcs_class": "I", "molecular_weight": 267.36, "category": "Cardiovascular"},
+    "Warfarin": {"smiles": "OC(=O)CCCC1CC(=O)c2ccccc2O1", "bcs_class": "I", "molecular_weight": 308.33, "category": "Anticoagulant"},
+    
+    # H-1: Week 1 — Cardiovascular drugs (10 new entries)
+    "Diltiazem": {"smiles": "COc1ccc2c(c1)SC(c1ccc(F)cc1)C(OC(C)=O)C(=O)N2CCN(C)C", "bcs_class": "I", "molecular_weight": 414.52, "category": "Cardiovascular"},
+    "Verapamil": {"smiles": "COc1ccc(CCN(C)CCCC(C#N)(c2ccc(OC)c(OC)c2)C(C)C)cc1OC", "bcs_class": "I", "molecular_weight": 454.60, "category": "Cardiovascular"},
+    "Digoxin": {"smiles": "CC1OC(OC2CC(O)C(OC3CC(O)C(OC4CCC5(C)C(CCC5C5CCC6(C)C(=CC(=O)OC6)C5)C4)O3)O2)C(O)CC1O", "bcs_class": "IV", "molecular_weight": 780.94, "category": "Cardiovascular"},
+    "Spironolactone": {"smiles": "CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3(C)C(CCC34CCC(=O)O4)C12", "bcs_class": "II", "molecular_weight": 416.57, "category": "Cardiovascular"},
+    "Propranolol": {"smiles": "CC(C)NCC(O)COc1cccc2ccccc12", "bcs_class": "I", "molecular_weight": 259.34, "category": "Cardiovascular"},
+    "Nifedipine": {"smiles": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]", "bcs_class": "II", "molecular_weight": 346.33, "category": "Cardiovascular"},
+    "Carvedilol": {"smiles": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12", "bcs_class": "II", "molecular_weight": 406.47, "category": "Cardiovascular"},
+    "Ramipril": {"smiles": "CCOC(=O)C(CCc1ccccc1)NC(C)C(=O)N1C2CCCC2CC1C(=O)O", "bcs_class": "I", "molecular_weight": 416.51, "category": "Cardiovascular"},
+    "Candesartan": {"smiles": "CCOc1nc2cccc(C(=O)O)c2n1Cc1ccc(-c2ccccc2-c2nnn[nH]2)cc1", "bcs_class": "II", "molecular_weight": 440.45, "category": "Cardiovascular"},
+    "Bisoprolol": {"smiles": "CC(C)NCC(O)COc1ccc(COCCOC(C)C)cc1", "bcs_class": "I", "molecular_weight": 325.44, "category": "Cardiovascular"},
+    
+    # H-2: Week 2 — Anti-infective drugs (10 new entries)
+    "Azithromycin": {"smiles": "CCC1C(C(C(N(CC(CC(C(C(C(C(C(=O)O1)C)OC2CC(C(C(O2)C)O)(C)OC)C)OC3C(C(CC(O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O", "bcs_class": "II", "molecular_weight": 748.98, "category": "Anti-infective"},
+    "Levofloxacin": {"smiles": "CC1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23", "bcs_class": "I", "molecular_weight": 361.37, "category": "Anti-infective"},
+    "Fluconazole": {"smiles": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F", "bcs_class": "I", "molecular_weight": 306.27, "category": "Anti-infective"},
+    "Acyclovir": {"smiles": "C1=NC2=C(N1COCCO)N=C(NC2=O)N", "bcs_class": "III", "molecular_weight": 225.20, "category": "Anti-infective"},
+    "Oseltamivir": {"smiles": "CCOC(=O)C1=CC(OC(CC)CC)C(NC(C)=O)C(N)C1", "bcs_class": "I", "molecular_weight": 312.40, "category": "Anti-infective"},
+    "Rifampicin": {"smiles": "CC1C=CC=C(C(=O)NC2=CC(=C3C(=C2O)C(=C(C4=C3C(=O)C(O4)(OC=CC(C(C(C(C(C(C1O)C)OC(=O)C)C)O)C)OC)C)C)O)C=NN5CCN(CC5)C)C", "bcs_class": "II", "molecular_weight": 822.94, "category": "Anti-infective"},
+    "Trimethoprim": {"smiles": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC", "bcs_class": "I", "molecular_weight": 290.32, "category": "Anti-infective"},
+    "Nitrofurantoin": {"smiles": "O=C1CN(N=Cc2ccc(o2)[N+](=O)[O-])C(=O)N1", "bcs_class": "IV", "molecular_weight": 238.16, "category": "Anti-infective"},
+    "Clindamycin": {"smiles": "CCCC1CC(N(C1)C)C(=O)NC(C(C2C(C(C(C(O2)SC)O)O)O)O)C(C)Cl", "bcs_class": "I", "molecular_weight": 424.98, "category": "Anti-infective"},
+    # "Vancomycin": SMILES too complex for manual entry — fetched via PubChem CID 14969 during ingestion
+    
+    # H-5: Week 3 — CNS drugs (10 new entries)
+    "Levetiracetam": {"smiles": "CCC(C(=O)NC)CC(=O)N1CCCC1", "bcs_class": "I", "molecular_weight": 170.21, "category": "CNS"},
+    "Carbamazepine": {"smiles": "c1ccc2c(c1)C=Cc1ccccc1N2C(=O)N", "bcs_class": "II", "molecular_weight": 236.27, "category": "CNS"},
+    "Valproic Acid": {"smiles": "CCCC(CCC)C(=O)O", "bcs_class": "I", "molecular_weight": 144.21, "category": "CNS"},
+    "Lithium Carbonate": {"smiles": "[Li+].[Li+].[O-]C([O-])=O", "bcs_class": "I", "molecular_weight": 73.89, "category": "CNS"},
+    "Risperidone": {"smiles": "CC1=C(C(=O)N2CCCCC2)C(=O)N(N1)c1ccc(F)cc1", "bcs_class": "II", "molecular_weight": 410.48, "category": "CNS"},
+    "Quetiapine": {"smiles": "OCCOCCN1CCN(CC1)c1c2ccccc2Sc2ccccc21", "bcs_class": "II", "molecular_weight": 383.51, "category": "CNS"},
+    "Duloxetine": {"smiles": "CNCC(Oc1cccc2ccccc12)c1cccs1", "bcs_class": "II", "molecular_weight": 297.41, "category": "CNS"},
+    "Venlafaxine": {"smiles": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1", "bcs_class": "I", "molecular_weight": 277.40, "category": "CNS"},
+    "Bupropion": {"smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1", "bcs_class": "I", "molecular_weight": 239.74, "category": "CNS"},
+    "Escitalopram": {"smiles": "Fc1ccc(C2(OCCN(C)C)CCc3cc(C#N)ccc32)cc1", "bcs_class": "I", "molecular_weight": 324.39, "category": "CNS"},
+
+        # H-6: Week 4 — Oncology drugs (10 new entries)
+    "Imatinib": {"smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1", "bcs_class": "II", "molecular_weight": 493.60, "category": "Oncology"},
+    "Erlotinib": {"smiles": "COCCOc1cc2ncnc(Nc3cccc(C#C)c3)c2cc1OCCOC", "bcs_class": "II", "molecular_weight": 393.44, "category": "Oncology"},
+    "Sorafenib": {"smiles": "CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)cc2)ccn1", "bcs_class": "II", "molecular_weight": 464.82, "category": "Oncology"},
+    "Sunitinib": {"smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C=c2[nH]c(=O)c3ccccc3/2)c1C", "bcs_class": "IV", "molecular_weight": 398.47, "category": "Oncology"},
+    "Capecitabine": {"smiles": "CCCCCOC(=O)NC1=NC(=O)N(C=C1F)C1OC(C)C(O)C1O", "bcs_class": "I", "molecular_weight": 359.35, "category": "Oncology"},
+    "Cyclophosphamide": {"smiles": "ClCCN(CCCl)P1(=O)NCCCO1", "bcs_class": "I", "molecular_weight": 261.08, "category": "Oncology"},
+    "Doxorubicin": {"smiles": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)CC(O)(C(=O)CO)CC3OC1CC(N)C(O)C(C)O1", "bcs_class": "III", "molecular_weight": 543.52, "category": "Oncology"},
+    "Paclitaxel": {"smiles": "CC1=C2C(C(=O)C3(C)CC(OC(=O)C(O)C(NC(=O)c4ccccc4)c4ccccc4)C(OC(C)=O)C(OC(=O)c4ccccc4)C3C2(C)C)OC(=O)CC1O", "bcs_class": "IV", "molecular_weight": 853.91, "category": "Oncology"},
+    "Cisplatin": {"smiles": "[NH3][Pt]([NH3])(Cl)Cl", "bcs_class": "III", "molecular_weight": 300.05, "category": "Oncology"},
+    # "Rituximab": Monoclonal antibody — no SMILES representation possible
+
 }
 
-# ─── Pydantic Models ─────────────────────────────────────────────────────────────
+
 class AnalysisRequest(BaseModel):
-    smiles: str                              # SMILES is now the PRIMARY required field
-    drug_name: Optional[str] = None         # Name is optional (for experimental drugs)
+    smiles: str
+    drug_name: Optional[str] = None
     molecular_weight: Optional[float] = None
     dose_mg: Optional[float] = None
 
-class AnalysisResult(BaseModel):
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+class OutlierInfo(BaseModel):
+    is_outlier: bool
+    flag_reason: str
+    severity: str
+
+class AnalysisResponse(BaseModel):
+    status: str
+    analysis_id: str
     drug_name: str
     smiles: str
-    molecular_weight: float
-    dose_mg: float
+    bcs_class: str
+    solubility_score: float
+    confidence_score: float
+    mol_3d: Optional[str] = None
+    outlier_flagged: bool
+    outlier_info: Optional[OutlierInfo] = None
+    cached: bool = False
     timestamp: str
-    solubility: Dict[str, Any]
-    excipients: Dict[str, Any]
-    stability: Dict[str, Any]
-    pk_compatibility: Dict[str, Any]
-    drug_info: Dict[str, Any]
 
-# ─── Routes ──────────────────────────────────────────────────────────────────────
+class CacheStats(BaseModel):
+    cache_enabled: bool
+    cache_type: str
+    total_cached: int
+    max_size: int
+    hit_count: int
+    miss_count: int
+    hit_rate: float
+
+def generate_3d_from_smiles(smiles: str) -> Optional[str]:
+    """Generate 3D SDF structure from SMILES string"""
+    try:
+        mol = Chem.MolFromSmiles(smiles)
+        if not mol:
+            logger.warning(f"Invalid SMILES: {smiles}")
+            return None
+
+        mol = Chem.AddHs(mol)
+        AllChem.EmbedMolecule(mol, AllChem.ETKDG())
+        AllChem.MMFFOptimizeMolecule(mol)
+        sdf = Chem.MolToMolBlock(mol)
+        return sdf
+    except Exception as e:
+        logger.error(f"Error generating 3D structure: {type(e).__name__}: {e}")
+        return None
+
+
+def compute_confidence_score(smiles: str, bcs_class: str, molecular_weight: Optional[float] = None) -> float:
+    """Calculate confidence score"""
+    confidence = 0.0
+
+    try:
+        mol = Chem.MolFromSmiles(smiles)
+        if mol:
+            confidence += 50
+            num_atoms = mol.GetNumAtoms()
+            if num_atoms > 20:
+                confidence += 5
+        else:
+            return 0.0
+    except Exception as e:
+        logger.error(f"Error in compute_confidence_score: {type(e).__name__}: {e}")
+        return 0.0
+
+    bcs_confidence_map = {"I": 30, "II": 20, "III": 15, "IV": 10}
+    confidence += bcs_confidence_map.get(bcs_class, 0)
+
+    if molecular_weight:
+        if 100 <= molecular_weight <= 1000:
+            confidence += 20
+        elif 50 <= molecular_weight <= 1200:
+            confidence += 10
+    else:
+        confidence += 15
+
+    return min(confidence, 100.0)
+
+
+def auto_tag_bcs_class(molecular_weight: Optional[float], solubility: Optional[float]) -> str:        
+    """Auto-assign BCS class"""
+    if solubility is None:
+        solubility = 50.0
+    if molecular_weight is None:
+        molecular_weight = 300.0
+
+    is_high_solubility = solubility > 50
+    is_high_permeability = molecular_weight < 400
+
+    if is_high_solubility and is_high_permeability:
+        return "I"
+    elif not is_high_solubility and is_high_permeability:
+        return "II"
+    elif is_high_solubility and not is_high_permeability:
+        return "III"
+    else:
+        return "IV"
+
+
+def flag_outliers(solubility: float, confidence: float, molecular_weight: Optional[float] = None) -> OutlierInfo:
+    """Flag unusual/outlier values"""
+    flags = []
+    severity = "low"
+
+    if solubility < 5:
+        flags.append("Extremely low solubility (< 5%)")
+        severity = "high"
+    elif solubility > 95:
+        flags.append("Extremely high solubility (> 95%)")
+        severity = "medium"
+
+    if confidence < 20:
+        flags.append("Very low confidence score")
+        severity = "high" if severity != "high" else "high"
+
+    if molecular_weight:
+        if molecular_weight < 50:
+            flags.append("Unusually small molecule (< 50 Da)")
+            severity = "high" if severity != "high" else "high"
+        elif molecular_weight > 1500:
+            flags.append("Unusually large molecule (> 1500 Da)")
+            severity = "medium"
+
+    if flags:
+        return OutlierInfo(
+            is_outlier=True,
+            flag_reason=" | ".join(flags),
+            severity=severity
+        )
+    else:
+        return OutlierInfo(
+            is_outlier=False,
+            flag_reason="Within normal parameters",
+            severity="low"
+        )
+
+
+def estimate_solubility_score(bcs_class: str, molecular_weight: Optional[float] = None) -> float:     
+    """Estimate solubility score"""
+    base_solubility = {"I": 75.0, "II": 30.0, "III": 80.0, "IV": 15.0}
+
+    solubility = base_solubility.get(bcs_class, 50.0)
+
+    if molecular_weight:
+        if molecular_weight > 500:
+            solubility *= 0.8
+        elif molecular_weight < 200:
+            solubility *= 1.1
+
+    return min(solubility, 100.0)
+
 
 @api_router.get("/")
 async def root():
-    return {"message": "PHARMA-AI Formulation Optimizer API", "version": "1.0.0"}
+    return {"message": "PHARMA-AI Formulation Optimizer API", "version": "2.7.0"}
+
 
 @api_router.get("/drugs")
 async def get_drugs():
-    drugs = []
-    for name, info in DRUG_DATABASE.items():
-        drugs.append({"name": name, **info})
-    return {"drugs": drugs, "total": len(drugs)}
+    """Get all available drugs from SQLite database"""
+    start_time = time.time()
+    
+    try:
+        drugs_from_db = await db['AnalysisBlueprint'].find_all()
+        
+        drugs = [
+            {
+                "name": drug.get("drug_name"),
+                "smiles": drug.get("smiles"),
+                "bcs_class": drug.get("bcs_class"),
+                "molecular_weight": drug.get("molecular_weight")
+            }
+            for drug in drugs_from_db
+        ]
+        
+        response_time = (time.time() - start_time) * 1000
+
+        try:
+            await AnalyticsTracker.log_request(
+                request_type=RequestType.FETCH_DRUG,
+                endpoint="/api/drugs",
+                response_time_ms=response_time,
+                status_code=200
+            )
+        except Exception as e:
+            logger.error(f"Failed to log analytics for /drugs: {e}")
+
+        return {"drugs": drugs, "total": len(drugs)}
+    
+    except Exception as e:
+        logger.error(f"Error fetching drugs from database: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch drugs")
+
 
 @api_router.get("/drugs/{drug_name}")
 async def get_drug(drug_name: str):
-    # Case-insensitive search
+    """Get specific drug information"""
+    start_time = time.time()
+
     for name, info in DRUG_DATABASE.items():
         if name.lower() == drug_name.lower():
+            response_time = (time.time() - start_time) * 1000
+
+            try:
+                await AnalyticsTracker.log_request(
+                    request_type=RequestType.FETCH_DRUG,
+                    endpoint="/api/drugs/{drug_name}",
+                    response_time_ms=response_time,
+                    status_code=200,
+                    drug_name=name
+                )
+            except Exception as e:
+                logger.error(f"Failed to log analytics: {e}")
+
             return {"name": name, **info}
-    raise HTTPException(status_code=404, detail=f"Drug '{drug_name}' not found in database")
+
+    response_time = (time.time() - start_time) * 1000
+    try:
+        await AnalyticsTracker.log_request(
+            request_type=RequestType.FETCH_DRUG,
+            endpoint="/api/drugs/{drug_name}",
+            response_time_ms=response_time,
+            status_code=404,
+            drug_name=drug_name,
+            is_error=True,
+            error_message="Drug not found"
+        )
+    except Exception as e:
+        logger.error(f"Failed to log analytics: {e}")
+
+    raise HTTPException(status_code=404, detail="Drug not found")
+
 
 @api_router.get("/molecule3d")
 async def get_molecule_3d(smiles: str = Query(..., description="SMILES string")):
-    """Fetch 3D SDF from PubChem for a given SMILES string."""
-    headers = {
-        "User-Agent": "PHARMA-AI/1.0",
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
+    """Generate 3D molecular structure"""
+    start_time = time.time()
 
     try:
-        async with aiohttp.ClientSession() as session:
-            # Step 1: POST smiles to PubChem (avoids URL-path encoding issues)
-            cid_url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/TXT"
-            post_data = f"smiles={urllib.parse.quote(smiles, safe='')}"
-            async with session.post(
-                cid_url,
-                data=post_data,
-                headers=headers,
-                timeout=aiohttp.ClientTimeout(total=20)
-            ) as resp:
-                resp_text = (await resp.text()).strip()
-                if resp.status != 200 or not resp_text.isdigit() or resp_text == '0':
-                    raise HTTPException(
-                        status_code=404,
-                        detail="Compound not found in PubChem. 3D visualization unavailable for this experimental structure."
-                    )
-                cid = resp_text.split("\n")[0].strip()
+        sdf_data = generate_3d_from_smiles(smiles)
+        if not sdf_data:
+            response_time = (time.time() - start_time) * 1000
+            try:
+                await AnalyticsTracker.log_request(
+                    request_type=RequestType.GET_MOLECULE_3D,
+                    endpoint="/api/molecule3d",
+                    response_time_ms=response_time,
+                    status_code=400,
+                    smiles=smiles,
+                    is_error=True,
+                    error_message="Could not generate 3D structure"
+                )
+            except Exception as e:
+                logger.error(f"Failed to log analytics: {e}")
+            raise HTTPException(status_code=400, detail="Could not generate 3D structure")
 
-            # Step 2: Fetch 3D SDF by CID
-            sdf_url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/record/SDF?record_type=3d"
-            async with session.get(
-                sdf_url,
-                headers={"User-Agent": "PHARMA-AI/1.0"},
-                timeout=aiohttp.ClientTimeout(total=20)
-            ) as resp:
-                if resp.status != 200:
-                    raise HTTPException(
-                        status_code=404,
-                        detail="3D conformer not available in PubChem for this compound."
-                    )
-                sdf_data = await resp.text()
+        response_time = (time.time() - start_time) * 1000
+        try:
+            await AnalyticsTracker.log_request(
+                request_type=RequestType.GET_MOLECULE_3D,
+                endpoint="/api/molecule3d",
+                response_time_ms=response_time,
+                status_code=200,
+                smiles=smiles
+            )
+        except Exception as e:
+            logger.error(f"Failed to log analytics: {e}")
 
-            # Validate the SDF has actual 3D coordinate content
-            if "V2000" not in sdf_data and "V3000" not in sdf_data:
-                raise HTTPException(status_code=404, detail="Invalid SDF data returned from PubChem.")
-
-        return {"sdf": sdf_data, "cid": cid, "source": "PubChem"}
-
-    except aiohttp.ClientError as e:
-        raise HTTPException(status_code=503, detail=f"PubChem service unavailable: {str(e)}")
+        return {"sdf": sdf_data, "source": "RDKit (Computed)"}
     except HTTPException:
         raise
     except Exception as e:
+        response_time = (time.time() - start_time) * 1000
+        try:
+            await AnalyticsTracker.log_request(
+                request_type=RequestType.GET_MOLECULE_3D,
+                endpoint="/api/molecule3d",
+                response_time_ms=response_time,
+                status_code=500,
+                smiles=smiles,
+                is_error=True,
+                error_message=str(e)
+            )
+        except Exception as log_e:
+            logger.error(f"Failed to log analytics: {log_e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
 @api_router.post("/analyze")
-async def analyze_drug(request: AnalysisRequest):
-    smiles = request.smiles.strip()
-    if not smiles:
-        raise HTTPException(status_code=400, detail="SMILES string is required.")
-
-    # Try to match with database by name (optional) or by SMILES
-    drug_info = None
-    drug_name = request.drug_name or "Experimental Compound"
-
-    if request.drug_name:
-        for name, info in DRUG_DATABASE.items():
-            if name.lower() == request.drug_name.lower():
-                drug_info = info
-                drug_name = name
-                # If no custom SMILES override, use DB smiles
-                if not request.smiles or request.smiles == info["smiles"]:
-                    smiles = info["smiles"]
-                break
-
-    # If SMILES matches a known drug, auto-detect info
-    if not drug_info:
-        for name, info in DRUG_DATABASE.items():
-            if info["smiles"].strip() == smiles.strip():
-                drug_info = info
-                if drug_name == "Experimental Compound":
-                    drug_name = name
-                break
-
-    # is_experimental only when no DB entry was matched AND no name was provided by user
-    is_experimental = (drug_info is None) and not bool(request.drug_name)
-
-    mw = request.molecular_weight or (drug_info["molecular_weight"] if drug_info else 300.0)
-    dose = request.dose_mg or 100.0
-    bcs_class = drug_info.get("bcs_class", "Unknown") if drug_info else "Unknown"
-    logp = drug_info.get("logp", "Unknown") if drug_info else "Unknown"
-    pka = drug_info.get("pka", "Unknown") if drug_info else "Unknown"
-    therapeutic_class = drug_info.get("therapeutic_class", "Unknown") if drug_info else "Unknown"
-    route = drug_info.get("route", "Oral") if drug_info else "Oral"
-
-    # AI Analysis using Hugging Face Llama-3.3-70B-Instruct
-    hf_api_key = os.environ.get("HF_API_KEY")
-    hf_model = os.environ.get("HF_MODEL", "meta-llama/Llama-3.3-70B-Instruct")
-    
-    if not hf_api_key:
-        raise HTTPException(status_code=500, detail="Hugging Face API key not configured")
-
-    system_message = """You are an expert pharmaceutical scientist and formulation chemist specializing in drug delivery systems, PK/PD modeling, and dosage form optimization. 
-You provide highly detailed, scientifically accurate analysis of drug formulation parameters purely from the SMILES structure.
-When the drug is unknown/experimental, derive all properties from the SMILES structure itself using cheminformatics reasoning.
-Always respond with valid JSON only, no markdown code blocks, no extra text."""
-
-    experimental_note = "IMPORTANT: This is an experimental/novel compound with no known name. Derive ALL properties purely from the SMILES molecular structure using expert cheminformatics reasoning (functional groups, ring systems, hydrogen bond donors/acceptors, rotatable bonds, LogP estimation, etc.)." if is_experimental else ""
-
-    prompt = f"""Analyze the following {'experimental ' if is_experimental else ''}drug compound for pharmaceutical formulation optimization.
-
-Compound Name: {drug_name}
-SMILES: {smiles}
-Estimated Molecular Weight: {mw} g/mol
-{'BCS Class: ' + str(bcs_class) if bcs_class != 'Unknown' else 'BCS Class: Determine from SMILES'}
-{'LogP: ' + str(logp) if logp != 'Unknown' else 'LogP: Estimate from SMILES'}
-{'pKa: ' + str(pka) if pka != 'Unknown' else 'pKa: Estimate from SMILES'}
-Therapeutic Class: {therapeutic_class}
-Target Dose: {dose} mg
-{experimental_note}
-
-Each section MUST include a "natural_language_summary" — 2-3 plain English sentences explaining the findings to a non-expert audience (judges, investors, healthcare decision-makers). Use simple language: avoid jargon, explain what the numbers mean for real-world drug manufacturing.
-
-Return ONLY valid JSON with this exact structure:
-{{
-  "molecule_overview": {{
-    "inferred_class": "What type of molecule this appears to be based on SMILES",
-    "key_features": ["list of 3-4 notable structural features identified from SMILES"],
-    "drug_likeness": "Lipinski/Veber rule assessment"
-  }},
-  "solubility": {{
-    "prediction": "number 0-100",
-    "accuracy": "accuracy % like 96.4",
-    "classification": "Highly Soluble / Moderately Soluble / Poorly Soluble",
-    "aqueous_solubility_mg_ml": "numeric value",
-    "ph_optimal": "optimal pH",
-    "mechanisms": ["3 key solubility mechanisms"],
-    "enhancement_strategies": ["3 enhancement strategies"],
-    "natural_language_summary": "2-3 plain English sentences for non-experts explaining what this solubility result means for making this into a real medicine. E.g. how easy/hard it is to dissolve and what that means for patients."
-  }},
-  "excipients": {{
-    "binders": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
-    "fillers": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
-    "disintegrants": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
-    "lubricants": [{{"name": "name", "grade": "grade", "recommended_conc": "% w/w", "rationale": "reason"}}],
-    "coating": {{"recommended": true/false, "type": "coating type", "rationale": "reason"}},
-    "incompatibilities": ["2-3 incompatibilities to avoid"],
-    "optimal_dosage_form": "Tablet / Capsule / etc.",
-    "natural_language_summary": "2-3 plain English sentences explaining what excipients are and why these specific ones were chosen — like explaining to a non-chemist what 'ingredients' go into the pill and why."
-  }},
-  "stability": {{
-    "shelf_life_years": "number",
-    "shelf_life_score": "0-100",
-    "primary_degradation": "main degradation pathway",
-    "degradation_mechanisms": ["3 degradation mechanisms"],
-    "storage_conditions": {{"temperature": "temp", "humidity": "% RH", "light": "protection needed", "container": "container type"}},
-    "accelerated_data": [
-      {{"condition": "25C/60%RH", "months": 0, "potency": 100}},
-      {{"condition": "25C/60%RH", "months": 3, "potency": 98}},
-      {{"condition": "25C/60%RH", "months": 6, "potency": 97}},
-      {{"condition": "25C/60%RH", "months": 12, "potency": 95}},
-      {{"condition": "40C/75%RH", "months": 0, "potency": 100}},
-      {{"condition": "40C/75%RH", "months": 1, "potency": 97}},
-      {{"condition": "40C/75%RH", "months": 3, "potency": 94}},
-      {{"condition": "40C/75%RH", "months": 6, "potency": 90}}
-    ],
-    "packaging_recommendation": "packaging type",
-    "natural_language_summary": "2-3 plain English sentences about how long this drug will last on the shelf and what conditions are needed to keep it safe and effective — frame it from a patient safety perspective."
-  }},
-  "pk_compatibility": {{
-    "bioavailability_percent": "number 0-100",
-    "bioavailability_score": "number 0-100",
-    "tmax_hours": "hours to peak",
-    "t_half_hours": "half-life hours",
-    "absorption_rate": "Fast / Moderate / Slow",
-    "absorption_mechanism": "mechanism",
-    "distribution_vd": "L/kg",
-    "protein_binding_percent": "% binding",
-    "metabolism": {{"primary_enzyme": "enzyme", "metabolites": ["metabolites"], "first_pass": "% effect"}},
-    "excretion": {{"route": "route", "percent_unchanged": "%"}},
-    "bioavailability_curve": [
-      {{"time": 0, "concentration": 0}},
-      {{"time": 0.5, "concentration": 45}},
-      {{"time": 1, "concentration": 85}},
-      {{"time": 2, "concentration": 100}},
-      {{"time": 4, "concentration": 75}},
-      {{"time": 6, "concentration": 55}},
-      {{"time": 8, "concentration": 38}},
-      {{"time": 12, "concentration": 18}},
-      {{"time": 24, "concentration": 4}}
-    ],
-    "recommended_dosage_form": "specific recommendation",
-    "dosing_frequency": "frequency",
-    "natural_language_summary": "2-3 plain English sentences about how the drug gets absorbed into the body, how quickly it works, and how long it stays active — written for patients or investors, not scientists."
-  }}
-}}"""
+async def analyze_drug(request: AnalysisRequest) -> AnalysisResponse:
+    """Analyze drug with caching"""
+    start_time = time.time()
 
     try:
-        # Hugging Face Inference API via novita router
-        hf_url = "https://router.huggingface.co/novita/v3/openai/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {hf_api_key}",
-            "Content-Type": "application/json"
-        }
-        
-        # Use lowercase model name for novita
-        model_name = hf_model.lower()
-        
-        payload = {
-            "model": model_name,
-            "messages": [
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": prompt}
-            ],
-            "max_tokens": 4096,
-            "temperature": 0.7,
-            "top_p": 0.95
-        }
-        
-        async with aiohttp.ClientSession() as session:
-            async with session.post(
-                hf_url,
-                headers=headers,
-                json=payload,
-                timeout=aiohttp.ClientTimeout(total=120)
-            ) as resp:
-                if resp.status != 200:
-                    error_text = await resp.text()
-                    logger.error(f"Hugging Face API error: {resp.status} - {error_text}")
-                    raise HTTPException(status_code=resp.status, detail=f"AI service error: {error_text}")
-                
-                result_json = await resp.json()
-                response = result_json["choices"][0]["message"]["content"]
-        
-        # Clean and parse JSON response (handle markdown code blocks)
-        clean_response = response.strip()
-        if clean_response.startswith('```json'):
-            clean_response = clean_response[7:]  # Remove ```json
-        if clean_response.startswith('```'):
-            clean_response = clean_response[3:]   # Remove ```
-        if clean_response.endswith('```'):
-            clean_response = clean_response[:-3]  # Remove ending ```
-        clean_response = clean_response.strip()
-        
-        analysis_data = json.loads(clean_response)
-        
-        result = {
-            "id": str(uuid.uuid4()),
-            "drug_name": drug_name,
-            "smiles": smiles,
-            "molecular_weight": mw,
-            "dose_mg": dose,
-            "is_experimental": is_experimental,
+        cached_result = await asyncio.to_thread(cache.get, request.smiles)
+        if cached_result:
+            result_copy = cached_result.copy()
+            result_copy["cached"] = True
+            response_time = (time.time() - start_time) * 1000
+
+            try:
+                await AnalyticsTracker.log_request(
+                    request_type=RequestType.ANALYZE,
+                    endpoint="/api/analyze",
+                    response_time_ms=response_time,
+                    status_code=200,
+                    drug_name=request.drug_name,
+                    smiles=request.smiles,
+                    was_cached=True
+                )
+            except Exception as e:
+                logger.error(f"Failed to log analytics: {e}")
+
+            return AnalysisResponse(**result_copy)
+
+        mol = Chem.MolFromSmiles(request.smiles)
+        if not mol:
+            response_time = (time.time() - start_time) * 1000
+            try:
+                await AnalyticsTracker.log_request(
+                    request_type=RequestType.ANALYZE,
+                    endpoint="/api/analyze",
+                    response_time_ms=response_time,
+                    status_code=400,
+                    drug_name=request.drug_name,
+                    smiles=request.smiles,
+                    is_error=True,
+                    error_message="Invalid SMILES string"
+                )
+            except Exception as e:
+                logger.error(f"Failed to log analytics: {e}")
+            raise HTTPException(status_code=400, detail="Invalid SMILES string")
+
+        mol_3d = generate_3d_from_smiles(request.smiles)
+
+        auto_bcs = auto_tag_bcs_class(
+            molecular_weight=request.molecular_weight,
+            solubility=None
+        )
+
+        solubility_score = estimate_solubility_score(auto_bcs, request.molecular_weight)
+
+        confidence_score = compute_confidence_score(
+            request.smiles,
+            auto_bcs,
+            request.molecular_weight
+        )
+
+        outlier_info = flag_outliers(solubility_score, confidence_score, request.molecular_weight)    
+
+        analysis_doc = {
+            "_id": str(ObjectId()),
+            "drug_name": request.drug_name or "Unknown",
+            "smiles": request.smiles,
+            "bcs_class": auto_bcs,
+            "solubility_score": solubility_score,
+            "confidence_score": confidence_score,
+            "molecular_weight": request.molecular_weight,
+            "dose_mg": request.dose_mg,
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "drug_info": drug_info or {"smiles": smiles, "molecular_weight": mw, "therapeutic_class": "Experimental Compound"},
-            **analysis_data
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "updated_at": datetime.now(timezone.utc).isoformat()
         }
-        
-        # Save to MongoDB
-        doc = result.copy()
-        await db.analyses.insert_one(doc)
-        doc.pop("_id", None)
-        
-        return result
-        
-    except json.JSONDecodeError as e:
-        logger.error(f"JSON parse error: {e}, response: {response[:500]}")
-        raise HTTPException(status_code=500, detail="AI returned invalid JSON. Please retry.")
+        await db['AnalysisBlueprint'].insert_one(analysis_doc)
+
+        logger.info(f"Analysis saved: {request.drug_name}")
+
+        response_data = {
+            "status": "success",
+            "analysis_id": analysis_doc["_id"],
+            "drug_name": request.drug_name or "Unknown",
+            "smiles": request.smiles,
+            "bcs_class": auto_bcs,
+            "solubility_score": round(solubility_score, 2),
+            "confidence_score": round(confidence_score, 2),
+            "mol_3d": mol_3d,
+            "outlier_flagged": outlier_info.is_outlier,
+            "outlier_info": outlier_info,
+            "cached": False,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+
+        await asyncio.to_thread(cache.set, request.smiles, response_data)
+
+        response_time = (time.time() - start_time) * 1000
+        try:
+            await AnalyticsTracker.log_request(
+                request_type=RequestType.ANALYZE,
+                endpoint="/api/analyze",
+                response_time_ms=response_time,
+                status_code=200,
+                drug_name=request.drug_name,
+                smiles=request.smiles,
+                was_cached=False
+            )
+        except Exception as e:
+            logger.error(f"Failed to log analytics: {e}")
+
+        return AnalysisResponse(**response_data)
+
+    except HTTPException:
+        raise
     except Exception as e:
-        logger.error(f"Analysis error: {e}")
+        response_time = (time.time() - start_time) * 1000
+        try:
+            await AnalyticsTracker.log_request(
+                request_type=RequestType.ANALYZE,
+                endpoint="/api/analyze",
+                response_time_ms=response_time,
+                status_code=500,
+                drug_name=request.drug_name,
+                smiles=request.smiles,
+                is_error=True,
+                error_message=str(e)
+            )
+        except Exception as log_e:
+            logger.error(f"Failed to log analytics: {log_e}")
+        logger.error(f"Analysis error: {type(e).__name__}: {e}")
+        raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
+
+
+@api_router.get("/cache/stats")
+async def get_cache_stats() -> CacheStats:
+    """Get cache statistics"""
+    stats = cache.get_stats()
+    return CacheStats(**stats)
+
+
+@api_router.delete("/cache/clear")
+async def clear_cache():
+    """Clear cache"""
+    cache.clear()
+    return {"message": "Cache cleared successfully"}
+
+
+@api_router.get("/analytics/daily")
+async def get_daily_analytics():
+    """Get today's analytics summary"""
+    try:
+        today = datetime.now(timezone.utc).date().isoformat()
+        summaries = await db['AnalyticsSummary'].find({"date": today})
+        
+        if not summaries:
+            return {
+                "message": "No analytics data for today yet",
+                "date": today,
+                "data": None
+            }
+
+        summary = summaries[0]
+        return {
+            "date": summary.get("date"),
+            "total_requests": summary.get("total_requests"),
+            "total_errors": summary.get("total_errors"),
+            "total_cache_hits": summary.get("total_cache_hits"),
+            "avg_response_time_ms": summary.get("avg_response_time_ms"),
+            "min_response_time_ms": summary.get("min_response_time_ms"),
+            "max_response_time_ms": summary.get("max_response_time_ms"),
+            "most_analyzed_drugs": json.loads(summary.get("most_analyzed_drugs", "{}")),
+            "cache_hit_rate": summary.get("cache_hit_rate"),
+            "endpoint_stats": json.loads(summary.get("endpoint_stats", "{}"))
+        }
+    except Exception as e:
+        logger.error(f"Error in get_daily_analytics: {type(e).__name__}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/analytics/summary")
+async def generate_analytics_summary():
+    """Generate and return today's analytics summary"""
+    try:
+        summary = await AnalyticsTracker.generate_daily_summary()
+
+        if not summary:
+            return {"message": "No analytics data available"}
+
+        return {
+            "status": "success",
+            "date": summary.get("date"),
+            "total_requests": summary.get("total_requests"),
+            "total_errors": summary.get("total_errors"),
+            "total_cache_hits": summary.get("total_cache_hits"),
+            "avg_response_time_ms": summary.get("avg_response_time_ms"),
+            "min_response_time_ms": summary.get("min_response_time_ms"),
+            "max_response_time_ms": summary.get("max_response_time_ms"),
+            "most_analyzed_drugs": json.loads(summary.get("most_analyzed_drugs", "{}")),
+            "cache_hit_rate": summary.get("cache_hit_rate"),
+            "endpoint_stats": json.loads(summary.get("endpoint_stats", "{}"))
+        }
+    except Exception as e:
+        logger.error(f"Error in generate_analytics_summary: {type(e).__name__}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@api_router.get("/analytics/requests")
+async def get_recent_requests(limit: int = Query(50, le=500)):
+    """Get recent API requests"""
+    try:
+        all_requests = await db['api_analytics'].find_all()
+        requests_data = sorted(all_requests, key=lambda x: x.get('timestamp', datetime.now(timezone.utc).isoformat()), reverse=True)[:limit]
+
+        requests_list = []
+        for r in requests_data:
+            requests_list.append({
+                "request_id": r.get("request_id"),
+                "request_type": r.get("request_type"),
+                "endpoint": r.get("endpoint"),
+                "drug_name": r.get("drug_name"),
+                "response_time_ms": r.get("response_time_ms"),
+                "status_code": r.get("status_code"),
+                "is_error": r.get("is_error"),
+                "was_cached": r.get("was_cached"),
+                "timestamp": r.get("timestamp")
+            })
+
+        return {
+            "total": len(requests_list),
+            "requests": requests_list
+        }
+    except Exception as e:
+        logger.error(f"Error in get_recent_requests: {type(e).__name__}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 @api_router.get("/analyses")
 async def get_analyses():
@@ -668,12 +641,11 @@ async def get_analysis(analysis_id: str):
         raise HTTPException(status_code=404, detail="Analysis not found")
     return analysis
 
-app.include_router(api_router)
 
 app.add_middleware(
     CORSMiddleware,
+    allow_origins=["*"],
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
     allow_methods=["*"],
     allow_headers=["*"],
 )

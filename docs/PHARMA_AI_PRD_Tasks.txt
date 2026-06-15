@@ -1,0 +1,100 @@
+﻿
+
+🧬 PHARMA-AI
+Product Requirements Document
+& Team Task Board
+From Molecule to Medicine in Seconds
+
+AI-Driven Optimization of Formulation Science
+& PK-Compatible Dosage Forms
+
+Team: Rishav · Shantanu · Aditya · Ani · Vaibhav · Himanshu
+Date: March 12, 2026
+
+
+Executive Summary
+PHARMA-AI is a full-stack web platform that transforms pharmaceutical formulation science by delivering comprehensive drug analysis in under 30 seconds. Given a SMILES string (the universal chemical language), it returns AI-powered predictions for solubility, excipient selection, stability, and pharmacokinetics - with interactive 3D visualization and PDF reports.
+The vision: Expand from a hackathon-grade prototype into a life-saving platform that pharmaceutical companies, researchers, and clinicians can rely on to accelerate drug development - cutting weeks of work into seconds.
+Current State Analysis
+Technology Stack
+LayerTechnologyStatusFrontendReact 18 SPA, Tailwind CSS, inline styles✅ FunctionalBackendFastAPI (Python 3.11), Llama-3.3-70B via HuggingFace✅ Functional3D Viewer3Dmol.js via PubChem SDF retrieval✅ FunctionalDatabaseMongoDB (Motor async driver)✅ FunctionalPDF ExportjsPDF client-side generation✅ FunctionalDrug Database30 hardcoded drugs in server.py✅ Functional
+Current Files & Components
+FileSizePurposeLandingPage.js348 linesHero, DNA helix, drug search, SMILES input, 3D preview, analysis formAnalysisPage.js729 lines4-panel glassmorphism dashboard, charts, PDF exportMoleculeViewer.js266 linesInteractive 3D WebGL viewer with 4 render stylesDNAHelix.js~100 linesCSS-only 3D double helix animationserver.py673 linesFull backend: routes, drug DB, AI analysis, PubChem proxy
+Identified Gaps & Pain Points
+GapImpactPriorityNo user authenticationCan't save personal analysis history🔴 HighNo drug comparison (side-by-side)Critical missing feature for researchers🔴 HighNo mobile responsivenessLanding page breaks on mobile🟡 MediumMonolithic AnalysisPage.js (729 lines)Hard to maintain & extend🟡 MediumNo loading skeleton / progress statesUX feels rough during 15-25s AI wait🟡 MediumNo error recovery (AI retries)Single failure = dead end🟡 MediumNo analysis history pageData saved to MongoDB but unretrievable in UI🔴 HighNo SMILES validationInvalid input wastes AI API calls🟡 MediumInline styles everywhereMaintenance difficulty🟢 Low
+
+Team Roster & Roles
+MemberRoleFocus AreaRishavFull-Stack LeadBackend architecture, API security, daily vulnerability checksShantanuFrontend SpecialistUI/UX, design polish, animations, responsivenessAdityaQA & Documentation LeadTesting, docs, environment config, code qualityAniProduct EngineerFeature strategy, UX flows, integrations, product decisionsVaibhavData EngineerData pipelines, analysis engine, data collection & processingHimanshuDatabase EngineerDrug database expansion (+10 drugs/week from DrugBank)
+
+🔥 Rishav - Full-Stack Lead & Security
+Owns backend, critical features, and daily vulnerability audits.
+Daily Responsibilities
+* Daily vulnerability check - Scan backend for dependency CVEs, API key exposure, injection risks
+* Code review - Review all PRs before merge (especially backend changes)
+
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusR-1Refactor server.py - Split 673-line monolith into modular files: routes/, models/, services/ai_engine.py, data/drug_database.py🔴 HighMedium1.5 days☐R-2SMILES Validation - Add server-side SMILES format validation before hitting the AI API🔴 HighEasy0.5 day☐R-3API Rate Limiting - Add rate limiting middleware to prevent abuse🔴 HighEasy0.5 day☐R-4Input Sanitization - Ensure all /api/analyze inputs are sanitized against injection🔴 HighEasy0.5 day☐R-5Error Handling & Retry - Add AI API retry logic (max 2 retries) with exponential backoff🟡 MediumMedium1 day☐R-6Environment Security Audit - Ensure no API keys in code, rotate HF_API_KEY, validate .env gitignored🔴 HighEasy0.5 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusR-7User Authentication - JWT auth system (FastAPI + React) with signup/login/logout🔴 HighHard3 days☐R-8Drug Comparison API - Build POST /api/compare endpoint for side-by-side analysis🔴 HighHard2 days☐R-9CORS Hardening - Restrict CORS to specific frontend origins (replace wildcard *)🟡 MediumEasy0.5 day☐R-10HTTPS & Security Headers - Add X-Content-Type-Options, X-Frame-Options, CSP headers🟡 MediumEasy0.5 day☐
+
+⚡ Shantanu - Frontend Specialist
+Owns everything the user sees - design, UX polish, and visual wow factor.
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusS-1Refactor AnalysisPage.js - Break 729-line file into: SolubilityPanel, ExcipientPanel, StabilityPanel, PKPanel, MoleculeOverview, DrugInfoBar🔴 HighMedium1.5 days☐S-2Loading Experience Overhaul - Step-by-step progress: Parsing structure → Computing solubility → Selecting excipients → Forecasting stability → Modeling PK🔴 HighMedium1.5 days☐S-3Mobile Responsive Design - LandingPage + AnalysisPage fully responsive (768px, 1024px breakpoints)🟡 MediumMedium2 days☐S-4Hover & Micro-animations - Scale/glow effects on GlassCards, fade-in on scroll🟢 LowEasy1 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusS-5Drug Comparison UI - Side-by-side comparison page with overlaid PK curves (pairs with R-8)🔴 HighHard2.5 days☐S-6Analysis History Page - "My Analyses" list view with search, filter, click-to-reopen🟡 MediumMedium2 days☐S-7Interactive Onboarding Tour - First-time user tooltip walkthrough🟢 LowEasy1 day☐S-8Dark/Light Theme Toggle - CSS variables swap for light mode option🟢 LowMedium1 day☐
+
+📝 Aditya - QA & Documentation Lead
+Ensures the product works, is well-documented, and properly configured.
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusA-1Backend Unit Tests - pytest tests for all API routes: GET /api/drugs, POST /api/analyze (mock AI), GET /api/molecule3d, GET /api/analyses🔴 HighEasy1.5 days☐A-2Frontend Component Tests - React Testing Library tests for LandingPage form, MoleculeViewer states, DB search dropdown🟡 MediumMedium1.5 days☐A-3Update README.md - Fix outdated info (says GPT-4o but uses Llama-3.3), add troubleshooting, screenshots🔴 HighEasy0.5 day☐A-4Environment Setup - Create .env.example files, add docker-compose.yml for one-command setup🟡 MediumEasy1 day☐A-5SEO & Meta Tags - Add title, meta description, Open Graph tags for social sharing🟢 LowEasy0.5 day☐A-6Error Boundary Components - Wrap each analysis panel in React error boundaries🟡 MediumEasy0.5 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusA-7Integration Tests - E2E: submit SMILES → verify response structure → check MongoDB write🟡 MediumMedium1.5 days☐A-8API Documentation - Polish auto-generated OpenAPI/Swagger docs from FastAPI🟡 MediumEasy0.5 day☐A-9Test Coverage Report - Set up pytest-cov, target 80%+ backend coverage🟡 MediumEasy0.5 day☐A-10Accessibility Audit - Add aria-labels, keyboard nav, screen reader support🟢 LowMedium1 day☐
+
+🎯 Ani - Product Engineer
+Thinks in user journeys - designs features that transform a prototype into a product.
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusN-1Analysis Dashboard Redesign - UX flow for "My Analyses": card layout, favoriting, notes, sorting🔴 HighMedium2 days☐N-2Shareable Report Links - Unique URL generation for each analysis, copy-to-clipboard, social sharing🔴 HighMedium1.5 days☐N-3User Journey Mapping - Create user flow diagrams: new user → first analysis → comparison → share🟡 MediumEasy1 day☐N-4Feature Prioritization Doc - Prioritized backlog with RICE framework impact/effort scoring🟡 MediumEasy0.5 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusN-5Drug Interaction Checker - UX for checking drug-drug interactions: input 2+ SMILES → show risks🔴 HighHard3 days☐N-6Feedback & Rating System - Users rate AI accuracy (👍/👎 + comment). Store for training signal🟡 MediumMedium1.5 days☐N-7Analytics Dashboard - Usage stats: total analyses, popular drugs, avg latency, retention🟡 MediumMedium2 days☐N-8Batch Analysis Flow - UX for CSV upload of SMILES → progress bar → batch report download🟡 MediumMedium1.5 days☐
+
+📊 Vaibhav - Data Engineer
+Owns data pipelines, analysis collection, and scaling the data infrastructure.
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusV-1MongoDB Schema Design - Proper collections: users, analyses, comparisons, feedback. Add indexes🔴 HighMedium1.5 days☐V-2Analysis Data Pipeline - Enrich results: auto-tag BCS class, flag outliers, compute confidence🔴 HighHard2.5 days☐V-3PubChem Data Scraper - Bulk-fetch drug properties (MW, LogP, pKa, SMILES) and populate DB🟡 MediumMedium1.5 days☐V-4Data Validation Layer - Validate AI-returned JSON matches expected schema before MongoDB save🔴 HighEasy1 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusV-5Analytics Collection - Log: analysis count per drug, avg latency, error rates, popular SMILES🟡 MediumMedium1.5 days☐V-6Data Export API - GET /api/export endpoint to download analysis data as CSV/JSON🟡 MediumEasy1 day☐V-7Redis Caching Layer - Cache AI results by SMILES hash (avoid re-running identical queries)🔴 HighMedium2 days☐V-8Backup & Recovery - MongoDB backup strategy (daily snapshots, point-in-time recovery)🟡 MediumMedium1 day☐
+
+💊 Himanshu - Database Expansion
+Grows the drug database by 10+ drugs every week from DrugBank/PubChem.
+Weekly Recurring
+* Weekly: Add 10 new drugs to DRUG_DATABASE in server.py each week - copy from DrugBank with verified SMILES, MW, LogP, pKa, BCS class, therapeutic class, route
+
+Sprint 1 Tasks
+#TaskPriorityDifficultyEst. TimeStatusH-1Week 1: Cardiovascular - Add: Diltiazem, Verapamil, Digoxin, Spironolactone, Propranolol, Nifedipine, Carvedilol, Ramipril, Candesartan, Bisoprolol🟡 MediumEasy1 day☐H-2Week 2: Anti-infective - Add: Azithromycin, Levofloxacin, Fluconazole, Acyclovir, Oseltamivir, Rifampicin, Trimethoprim, Nitrofurantoin, Clindamycin, Vancomycin🟡 MediumEasy1 day☐H-3SMILES Verification Script - Python script to validate all SMILES in DB (length, brackets, chars)🟡 MediumEasy0.5 day☐H-4Drug Category Tags - Add category field (Cardiovascular, CNS, Anti-infective, Oncology, etc.)🟢 LowEasy0.5 day☐
+Sprint 2 Tasks
+#TaskPriorityDifficultyEst. TimeStatusH-5Week 3: CNS - Add: Levetiracetam, Carbamazepine, Valproic Acid, Lithium, Risperidone, Quetiapine, Duloxetine, Venlafaxine, Bupropion, Escitalopram🟡 MediumEasy1 day☐H-6Week 4: Oncology - Add: Imatinib, Erlotinib, Sorafenib, Sunitinib, Capecitabine, Cyclophosphamide, Doxorubicin, Paclitaxel, Cisplatin, Rituximab🟡 MediumEasy1 day☐H-7DrugBank Integration - Research DrugBank API for automated drug property fetching (with Vaibhav)🟢 LowEasy1 day☐H-8Database README - Document DB format, required fields, how to add new entries🟢 LowEasy0.5 day☐
+
+Cross-Team Milestones
+MilestoneTarget DateOwner(s)DependenciesBackend refactored into modulesEnd of Week 1RishavNoneFrontend components splitEnd of Week 1ShantanuNone80%+ test coverageEnd of Week 2AdityaRishav (R-1)Drug database at 50 drugsEnd of Week 2HimanshuNoneMongoDB schema finalizedEnd of Week 1VaibhavNoneComparison feature liveEnd of Week 4Rishav + ShantanuR-8, S-5Shareable links workingEnd of Week 3AniR-1Auth system deployedEnd of Week 6RishavR-1Drug database at 70 drugsEnd of Week 4HimanshuNoneDemo-ready productEnd of Week 6AllAll above
+
+Future Enhancement Roadmap
+Phase 2: Enhanced Science (Weeks 3-6)
+EnhancementImpactEffortRDKit WebAssembly - Generate 3D coords offline (no PubChem needed for experimental drugs)🔴 Critical2 weeksADMET ML Models - Dedicated ML models for absorption, distribution, metabolism, excretion, toxicity🔴 Critical3 weeksDissolution Profile Prediction - USP Apparatus I/II simulation🟡 High1 weekMolecular Descriptor Calculator - TPSA, HBD, HBA, rotatable bonds in-browser🟡 High1 week
+Phase 3: Platform Features (Weeks 7-12)
+EnhancementImpactEffortTeam Collaboration - Workspaces, comments on analyses, shared projects🟡 High3 weeksELN Integration - Connect to electronic lab notebooks (Benchling, CDD Vault)🟡 High2 weeksBatch Analysis - Upload CSV of SMILES → get batch report🔴 Critical1 weekAPI Keys for External Use - Allow programmatic access for pharma companies🟡 High1 weekReal-time Notifications - WebSocket alerts when analysis completes🟢 Medium1 week
+Phase 4: Regulatory Intelligence (Weeks 13-20)
+EnhancementImpactEffortICH M9 Biowaiver Assessment - Auto-determine if 505(b)(2) or ANDA pathway is viable🔴 Critical4 weeksFDA/EMA Pathway Recommendations - AI recommends regulatory filing strategy🔴 Critical3 weeksScale-up Feasibility Scoring - Lab → Pilot → Commercial manufacturing assessment🟡 High2 weeksGMP Compliance Checker - Flag issues that would fail GMP audit🟡 High2 weeks
+Phase 5: Life-Saving Expansion (Months 6+)
+* Drug Repurposing Engine - Analyze existing drugs for new therapeutic applications
+* Pediatric Formulation Module - Age-appropriate dosage form recommendations
+* Tropical Disease Fast-Track - Priority analysis for malaria, TB, neglected diseases
+* Open-Source Drug Database - Community-contributed SMILES + validation data
+* AI Clinical Trial Designer - Suggest Phase I protocol based on PK predictions
+
+
+Success Metrics
+MetricCurrentTarget (3 months)Drug database size30 drugs100+ drugsAnalysis latency15-25s<15s (cached)Pages25+Mobile support❌ Broken✅ Full responsiveUser accountsNoneAuth systemTest coverageMinimal80%+ backendDrug comparisonNoneSide-by-sideSharable linksNoneUnique URLs
+
+6 minds, 1 mission:
+From Molecule to Medicine in Seconds 🧬
