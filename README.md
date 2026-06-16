@@ -251,42 +251,31 @@ SMILES (Simplified Molecular Input Line Entry System) was chosen because:
 
 We welcome contributions to improve this project! Whether it's fixing a bug, adding a new feature, or improving documentation, your help is appreciated. To keep our workflow clean and professional, please follow these guidelines:
 
-1. Fork and Clone
-If you are not an official collaborator yet, please fork the repository and clone it to your local machine.
+### 1. Fork and Clone
+If you are not an official collaborator yet, please **fork** the repository and clone it to your local machine.
 
-2. Create a Feature Branch
-Always work on a new branch. Do not push changes directly to main.
+### 2. Create a Feature Branch
+Always work on a new branch. **Do not push changes directly to main.**
+You can create a branch using: `git checkout -b feature/your-feature-name`
 
-Bash
-git checkout -b feature/your-feature-name
-3. Commit Guidelines
+### 3. Commit Guidelines
 Please use clear, descriptive commit messages. We follow the conventional commit format:
+* **feat:** for new features
+* **fix:** for bug fixes
+* **docs:** for documentation changes
+* **refactor:** for code changes that neither fix a bug nor add a feature
 
-feat: for new features
-
-fix: for bug fixes
-
-docs: for documentation changes
-
-refactor: for code changes that neither fix a bug nor add a feature
-
-4. Pull Requests
+### 4. Pull Requests
 Once your work is ready:
+* Push your branch to the repository: `git push -u origin feature/your-feature-name`
+* Open a **Pull Request** targeting the **main** branch.
+* Provide a clear description of the changes you made and how to verify them.
+* If you are a collaborator, please ensure your PR is reviewed or discussed before merging.
 
-Push your branch to the repository: git push -u origin feature/your-feature-name
-
-Open a Pull Request targeting the main branch.
-
-Provide a clear description of the changes you made and how to verify them.
-
-If you are a collaborator, please ensure your PR is reviewed or discussed before merging.
-
-5. Code Style
-Please ensure your code is well-commented.
-
-Follow the existing project structure (e.g., maintain the lifespan pattern for backend services).
-
-Verify your changes locally before submitting.
+### 5. Code Style
+* Please ensure your code is well-commented.
+* Follow the existing project structure (e.g., maintain the **lifespan** pattern for backend services).
+* Verify your changes locally before submitting.
 
 ---
 
