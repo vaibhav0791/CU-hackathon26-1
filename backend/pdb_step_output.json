@@ -1,0 +1,52 @@
+[
+  {
+    "gene_symbol": "TRPV1",
+    "uniprot_id": "Q8NER1",
+    "pdb_entry_ids": [
+      "7X2G",
+      "6VMS",
+      "5IRX"
+    ],
+    "status": "Verified Cache Mapping"
+  },
+  {
+    "gene_symbol": "EGFR",
+    "uniprot_id": "P00533",
+    "pdb_entry_ids": [
+      "1M1X",
+      "2ITX",
+      "4HJO"
+    ],
+    "status": "Verified Cache Mapping"
+  },
+  {
+    "gene_symbol": "ADRB2",
+    "uniprot_id": "P07550",
+    "pdb_entry_ids": [
+      "2RH1",
+      "3D4S",
+      "4LDE"
+    ],
+    "status": "Verified Cache Mapping"
+  },
+  {
+    "gene_symbol": "PTGS2",
+    "uniprot_id": "P35354",
+    "pdb_entry_ids": [
+      "5IKQ",
+      "5F1A",
+      "4COX"
+    ],
+    "status": "Verified Cache Mapping"
+  },
+  {
+    "gene_symbol": "PPARG",
+    "uniprot_id": "P37231",
+    "pdb_entry_ids": [
+      "1ZGY",
+      "2PRG",
+      "5Y2O"
+    ],
+    "status": "Verified Cache Mapping"
+  }
+]

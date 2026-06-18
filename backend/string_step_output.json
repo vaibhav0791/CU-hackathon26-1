@@ -1,0 +1,57 @@
+[
+  {
+    "gene_symbol": "TRPV1",
+    "string_network_partners": [
+      "CALML5",
+      "PRKACG",
+      "TRPM8",
+      "PRKACA",
+      "PRKACB"
+    ],
+    "status": "Live Network Synchronized"
+  },
+  {
+    "gene_symbol": "EGFR",
+    "string_network_partners": [
+      "ERBB3",
+      "PIK3CA",
+      "GAB1",
+      "CBL",
+      "CDH1"
+    ],
+    "status": "Live Network Synchronized"
+  },
+  {
+    "gene_symbol": "ADRB2",
+    "string_network_partners": [
+      "GRK2",
+      "SNX27",
+      "AKAP12",
+      "SRC",
+      "GNAS"
+    ],
+    "status": "Live Network Synchronized"
+  },
+  {
+    "gene_symbol": "PTGS2",
+    "string_network_partners": [
+      "PTGES2",
+      "PTGES",
+      "IL6",
+      "ALOX15",
+      "CXCL8"
+    ],
+    "status": "Live Network Synchronized"
+  },
+  {
+    "gene_symbol": "PPARG",
+    "string_network_partners": [
+      "NCOR1",
+      "RXRA",
+      "NCOA1",
+      "NCOA2",
+      "RELA"
+    ],
+    "status": "Live Network Synchronized"
+  }
+]

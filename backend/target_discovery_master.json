@@ -1,0 +1,127 @@
+[
+  {
+    "target_uid": "TGT_TRPV1_2026",
+    "gene_symbol": "TRPV1",
+    "disease_association_matrix": {
+      "associated_disease": "Chronic Neuropathic Pain",
+      "log2_fold_change": 2.41,
+      "expression_direction": "UP-REGULATED"
+    },
+    "rcsb_pdb_structures": {
+      "uniprot_id": "Q8NER1",
+      "pdb_entry_ids": [
+        "7X2G",
+        "6VMS",
+        "5IRX"
+      ],
+      "status": "Verified 3D Structure Available"
+    },
+    "string_protein_network": [
+      "CALML5",
+      "PRKACG",
+      "TRPM8",
+      "PRKACA",
+      "PRKACB"
+    ]
+  },
+  {
+    "target_uid": "TGT_EGFR_2026",
+    "gene_symbol": "EGFR",
+    "disease_association_matrix": {
+      "associated_disease": "Non-Small Cell Lung Cancer",
+      "log2_fold_change": 4.18,
+      "expression_direction": "UP-REGULATED"
+    },
+    "rcsb_pdb_structures": {
+      "uniprot_id": "P00533",
+      "pdb_entry_ids": [
+        "1M1X",
+        "2ITX",
+        "4HJO"
+      ],
+      "status": "Verified 3D Structure Available"
+    },
+    "string_protein_network": [
+      "ERBB3",
+      "PIK3CA",
+      "GAB1",
+      "CBL",
+      "CDH1"
+    ]
+  },
+  {
+    "target_uid": "TGT_ADRB2_2026",
+    "gene_symbol": "ADRB2",
+    "disease_association_matrix": {
+      "associated_disease": "Severe Asthma / COPD",
+      "log2_fold_change": -1.85,
+      "expression_direction": "DOWN-REGULATED"
+    },
+    "rcsb_pdb_structures": {
+      "uniprot_id": "P07550",
+      "pdb_entry_ids": [
+        "2RH1",
+        "3D4S",
+        "4LDE"
+      ],
+      "status": "Verified 3D Structure Available"
+    },
+    "string_protein_network": [
+      "GRK2",
+      "SNX27",
+      "AKAP12",
+      "SRC",
+      "GNAS"
+    ]
+  },
+  {
+    "target_uid": "TGT_PTGS2_2026",
+    "gene_symbol": "PTGS2",
+    "disease_association_matrix": {
+      "associated_disease": "Rheumatoid Arthritis Inflammation",
+      "log2_fold_change": 3.29,
+      "expression_direction": "UP-REGULATED"
+    },
+    "rcsb_pdb_structures": {
+      "uniprot_id": "P35354",
+      "pdb_entry_ids": [
+        "5IKQ",
+        "5F1A",
+        "4COX"
+      ],
+      "status": "Verified 3D Structure Available"
+    },
+    "string_protein_network": [
+      "PTGES2",
+      "PTGES",
+      "IL6",
+      "ALOX15",
+      "CXCL8"
+    ]
+  },
+  {
+    "target_uid": "TGT_PPARG_2026",
+    "gene_symbol": "PPARG",
+    "disease_association_matrix": {
+      "associated_disease": "Type-2 Diabetes Insulin Resistance",
+      "log2_fold_change": 1.94,
+      "expression_direction": "UP-REGULATED"
+    },
+    "rcsb_pdb_structures": {
+      "uniprot_id": "P37231",
+      "pdb_entry_ids": [
+        "1ZGY",
+        "2PRG",
+        "5Y2O"
+      ],
+      "status": "Verified 3D Structure Available"
+    },
+    "string_protein_network": [
+      "NCOR1",
+      "RXRA",
+      "NCOA1",
+      "NCOA2",
+      "RELA"
+    ]
+  }
+]

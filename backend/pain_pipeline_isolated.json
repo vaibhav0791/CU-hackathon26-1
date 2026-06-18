@@ -1,0 +1,23 @@
+{
+  "target_uid": "TGT_TRPV1_2026",
+  "gene_symbol": "TRPV1",
+  "uniprot_id": "Q8NER1",
+  "rna_seq_expression_data": {
+    "disease_context": "Chronic Neuropathic Pain",
+    "geo_dataset_gse": "GSE113421",
+    "log2_fold_change": 2.41,
+    "expression_status": "UP-REGULATED"
+  },
+  "rcsb_pdb_3d_structures": [
+    "7X2G",
+    "6VMS",
+    "5IRX"
+  ],
+  "string_protein_interaction_network": [
+    "PRKACA",
+    "CALML5",
+    "PRKACB",
+    "TRPM8",
+    "CALML4"
+  ]
+}

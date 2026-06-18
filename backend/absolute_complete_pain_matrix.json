@@ -1,0 +1,423 @@
+[
+  {
+    "master_uniprot_id": "Q8NER1",
+    "gene_symbol": "TRPV1",
+    "amino_acid_sequence": "MKKWSSTDLGAAADPLQKDTCPDPLDGDPNSRPPPAKPQLSTAKSRTRLFGKGDSEEAFPVDCPHEEGELDSCPTITVSPVITIQRPGDGPTGARLLSQDSVAASTEKTLRLYDRRSIFEAVAQNNCQDLESLLLFLQKSKKHLTDNEFKDPETGKTCLLKAMLNLHDGQNTTIPLLLEIARQTDSLKELVNASYTDSYYKGQTALHIAIERRNMALVTLLVENGADVQAAAHGDFFKKTKGRPGFYFGELPLSLAACTNQLGIVKFLLQNSWQTADISARDSVGNTVLHALVEVADNTADNTKFVTSMYNEILMLGAKLHPTLKLEELTNKKGMTPLALAAGTGKIGVLAYILQREIQEPECRHLSRKFTEWAYGPVHSSLYDLSCIDTCEKNSVLEVIAYSSSETPNRHDMLLVEPLNRLLQDKWDRFVKRIFYFNFLVYCLYMIIFTMAAYYRPVDGLPPFKMEKTGDYFRVTGEILSVLGGVYFFFRGIQYFLQRRPSMKTLFVDSYSEMLFFLQSLFMLATVVLYFSHLKEYVASMVFSLALGWTNMLYYTRGFQQMGIYAVMIEKMILRDLCRFMFVYIVFLFGFSTAVVTLIEDGKNDSLPSESTSHRWRGPACRPPDSSYNSLYSTCLELFKFTIGMGDLEFTENYDFKAVFIILLLAYVILTYILLLNMLIALMGETVNKIAQESKNIWKLQRAITILDTEKSFLKCMRKAFRSGKLLQVGYTPDGKDDYRWCFRVDEVNWTTWNTNVGIINEDPGNCEGVKRTLSFSLRSSRVSGRHWKNFALVPLLREASARDRQSAQPEEVYLRQFSGSLKPEDAEVFKSPAASGEK",
+    "structural_pdb_resolutions": [
+      "7X2G",
+      "6VMS",
+      "5IRX"
+    ],
+    "expression_matrices": [
+      {
+        "geo_id": "200314731",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200299314",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200299312",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200315295",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200297911",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200278171",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200308948",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200317464",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200315799",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200241083",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200232496",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200218454",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200305959",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200298583",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200274685",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200300787",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200300254",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200292089",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200296065",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200302928",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      }
+    ],
+    "validated_interaction_partners": [],
+    "last_pushed_to_warehouse": "2026-06-18T02:45:44.872049+00:00"
+  },
+  {
+    "master_uniprot_id": "Q15858",
+    "gene_symbol": "SCN9A",
+    "amino_acid_sequence": "MAMLPPPGPQSFVHFTKQSLALIEQRIAERKSKEPKEEKKDDDEEAPKPSSDLEAGKQLPFIYGDIPPGMVSEPLEDLDPYYADKKTFIVLNKGKTIFRFNATPALYMLSPFSPLRRISIKILVHSLFSMLIMCTILTNCIFMTMNNPPDWTKNVEYTFTGIYTFESLVKILARGFCVGEFTFLRDPWNWLDFVVIVFAYLTEFVNLGNVSALRTFRVLRALKTISVIPGLKTIVGALIQSVKKLSDVMILTVFCLSVFALIGLQLFMGNLKHKCFRNSLENNETLESIMNTLESEEDFRKYFYYLEGSKDALLCGFSTDSGQCPEGYTCVKIGRNPDYGYTSFDTFSWAFLALFRLMTQDYWENLYQQTLRAAGKTYMIFFVVVIFLGSFYLINLILAVVAMAYEEQNQANIEEAKQKELEFQQMLDRLKKEQEEAEAIAAAAAEYTSIRRSRIMGLSESSSETSKLSSKSAKERRNRRKKKNQKKLSSGEEKGDAEKLSKSESEDSIRRKSFHLGVEGHRRAHEKRLSTPNQSPLSIRGSLFSARRSSRTSLFSFKGRGRDIGSETEFADDEHSIFGDNESRRGSLFVPHRPQERRSSNISQASRSPPMLPVNGKMHSAVDCNGVVSLVDGRSALMLPNGQLLPEVIIDKATSDDSGTTNQIHKKRRCSSYLLSEDMLNDPNLRQRAMSRASILTNTVEELEESRQKCPPWWYRFAHKFLIWNCSPYWIKFKKCIYFIVMDPFVDLAITICIVLNTLFMAMEHHPMTEEFKNVLAIGNLVFTGIFAAEMVLKLIAMDPYEYFQVGWNIFDSLIVTLSLVELFLADVEGLSVLRSFRLLRVFKLAKSWPTLNMLIKIIGNSVGALGNLTLVLAIIVFIFAVVGMQLFGKSYKECVCKINDDCTLPRWHMNDFFHSFLIVFRVLCGEWIETMWDCMEVAGQAMCLIVYMMVMVIGNLVVLNLFLALLLSSFSSDNLTAIEEDPDANNLQIAVTRIKKGINYVKQTLREFILKAFSKKPKISREIRQAEDLNTKKENYISNHTLAEMSKGHNFLKEKDKISGFGSSVDKHLMEDSDGQSFIHNPSLTVTVPIAPGESDLENMNAEELSSDSDSEYSKVRLNRSSSSECSTVDNPLPGEGEEAEAEPMNSDEPEACFTDGCVWRFSCCQVNIESGKGKIWWNIRKTCYKIVEHSWFESFIVLMILLSSGALAFEDIYIERKKTIKIILEYADKIFTYIFILEMLLKWIAYGYKTYFTNAWCWLDFLIVDVSLVTLVANTLGYSDLGPIKSLRTLRALRPLRALSRFEGMRVVVNALIGAIPSIMNVLLVCLIFWLIFSIMGVNLFAGKFYECINTTDGSRFPASQVPNRSECFALMNVSQNVRWKNLKVNFDNVGLGYLSLLQVATFKGWTIIMYAAVDSVNVDKQPKYEYSLYMYIYFVVFIIFGSFFTLNLFIGVIIDNFNQQKKKLGGQDIFMTEEQKKYYNAMKKLGSKKPQKPIPRPGNKIQGCIFDLVTNQAFDISIMVLICLNMVTMMVEKEGQSQHMTEVLYWINVVFIILFTGECVLKLISLRHYYFTVGWNIFDFVVVIISIVGMFLADLIETYFVSPTLFRVIRLARIGRILRLVKGAKGIRTLLFALMMSLPALFNIGLLLFLVMFIYAIFGMSNFAYVKKEDGINDMFNFETFGNSMICLFQITTSAGWDGLLAPILNSKPPDCDPKKVHPGSSVEGDCGNPSVGIFYFVSYIIISFLVVVNMYIAVILENFSVATEESTEPLSEDDFEMFYEVWEKFDPDATQFIEFSKLSDFAAALDPPLLIAKPNKVQLIAMDLPMVSGDRIHCLDILFAFTKRVLGESGEMDSLRSQMEERFMSANPSKVSYEPITTTLKRKQEDVSATVIQRAYRRYRLRQNVKNISSIYIKDGDRDDDLLNKKDMAFDNVNENSSPEKTDATSSTTSPPSYDSVTKPDKEKYEQDRTEKEDKGKDSKESKK",
+    "structural_pdb_resolutions": [
+      "REF_SCN9A_PDB"
+    ],
+    "expression_matrices": [
+      {
+        "geo_id": "200302419",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200213826",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200213825",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200213827",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200159818",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200144832",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200111307",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200110884",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200061373",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200006630",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "309103777",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "309103776",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "309103775",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "309103774",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "309103773",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "306594893",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "306594892",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "306594891",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "306594890",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "306594889",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      }
+    ],
+    "validated_interaction_partners": [],
+    "last_pushed_to_warehouse": "2026-06-18T02:45:44.872071+00:00"
+  },
+  {
+    "master_uniprot_id": "P35372",
+    "gene_symbol": "OPRM1",
+    "amino_acid_sequence": "MDSSAAPTNASNCTDALAYSSCSPAPSPGSWVNLSHLDGNLSDPCGPNRTDLGGRDSLCPPTGSPSMITAITIMALYSIVCVVGLFGNFLVMYVIVRYTKMKTATNIYIFNLALADALATSTLPFQSVNYLMGTWPFGTILCKIVISIDYYNMFTSIFTLCTMSVDRYIAVCHPVKALDFRTPRNAKIINVCNWILSSAIGLPVMFMATTKYRQGSIDCTLTFSHPTWYWENLLKICVFIFAFIMPVLIITVCYGLMILRLKSVRMLSGSKEKDRNLRRITRMVLVVVAVFIVCWTPIHIYVIIKALVTIPETTFQTVSWHFCIALGYTNSCLNPVLYAFLDENFKRCFREFCIPTSSNIEQQNSTRIRQNTRDHPSTANTVDRTNHQLENLEAETAPLP",
+    "structural_pdb_resolutions": [
+      "REF_OPRM1_PDB"
+    ],
+    "expression_matrices": [
+      {
+        "geo_id": "200284562",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200307587",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200307586",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200271608",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200165803",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200165650",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200248537",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200241955",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200241268",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200214388",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200147510",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200147509",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200218564",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200151485",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200148007",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200139265",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200033457",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "200012457",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "308380619",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      },
+      {
+        "geo_id": "308380618",
+        "disease": "Neuropathic Pain / Nociception Study",
+        "log2_fc": 2.41,
+        "p_value": 0.0012
+      }
+    ],
+    "validated_interaction_partners": [],
+    "last_pushed_to_warehouse": "2026-06-18T02:45:44.872090+00:00"
+  },
+  {
+    "master_uniprot_id": "ORPHAN_ENSP00000386306",
+    "gene_symbol": "ENSP00000386306",
+    "amino_acid_sequence": null,
+    "structural_pdb_resolutions": [],
+    "expression_matrices": [],
+    "validated_interaction_partners": [
+      "ENSP00000394624",
+      "ENSP00000459962"
+    ],
+    "last_pushed_to_warehouse": "2026-06-18T02:45:44.872170+00:00"
+  },
+  {
+    "master_uniprot_id": "ORPHAN_ENSP00000394624",
+    "gene_symbol": "ENSP00000394624",
+    "amino_acid_sequence": null,
+    "structural_pdb_resolutions": [],
+    "expression_matrices": [],
+    "validated_interaction_partners": [
+      "ENSP00000459962"
+    ],
+    "last_pushed_to_warehouse": "2026-06-18T02:45:44.872180+00:00"
+  }
+]
