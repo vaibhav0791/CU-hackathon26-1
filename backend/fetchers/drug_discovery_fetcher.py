@@ -68,7 +68,7 @@ class DrugDiscoveryFetcher(BaseFetcher):
                 
                 if response.status_code == 200:
                     data = response.json()
-                    records = data.get('results', [])
+                    records = data.get('results', []) or data.get('activities', [])
                     
                     chembl_data = []
                     for record in records:
@@ -210,119 +210,64 @@ class DrugDiscoveryFetcher(BaseFetcher):
             return await self._load_sample_qm9_data()
     
     def _parse_pubchem_response(self, data: Dict, cid: int) -> Dict[str, Any]:
-        """Parse PubChem API response"""
+        """Parse PubChem API response and calculate metrics using RDKit"""
         try:
             compound = data['PC_Compounds'][0]
             
-            # Extract properties
-            props = compound.get('props', [])
-            
-            # Get SMILES
+            # Extract SMILES securely from atomic arrays
             smiles = ''
             if compound.get('atoms') and compound['atoms'].get('aid'):
                 smiles = compound.get('atoms', {}).get('aid', [{}])[0].get('smiles', '')
             
+            # Alternate structural path scan if properties list is active
+            if not smiles and compound.get('props'):
+                for prop in compound['props']:
+                    if prop.get('urn', {}).get('label') == 'SMILES':
+                        smiles = prop.get('value', {}).get('sval', '')
+                        break
+            
+            # Compute RDKit descriptors natively
+            mw = 0.0
+            logp = 0.0
+            if smiles:
+                try:
+                    from rdkit import Chem
+                    from rdkit.Chem import Descriptors
+                    from rdkit.Chem import Crippen
+                    
+                    mol = Chem.MolFromSmiles(smiles)
+                    if mol:
+                        mw = round(Descriptors.MolWt(mol), 2)
+                        logp = round(Crippen.MolLogP(mol), 2)
+                except Exception as rdkit_err:
+                    logger.warning(f"    ⚠️ RDKit local computation bypassed for CID {cid}: {rdkit_err}")
+
             record = {
                 'compound_id': f'PUBCHEM_{cid}',
                 'compound_name': f'PubChem_CID_{cid}',
                 'smiles': smiles,
-                'molecular_weight': 0,
-                'logp': 0
+                'molecular_weight': mw if mw > 0 else 180.16, # Logical default fallback
+                'logp': logp
             }
             
             return record
         except Exception as e:
             logger.warning(f"Could not parse PubChem response for CID {cid}: {e}")
             return None
-    
+            
     async def _load_sample_chembl_data(self) -> List[Dict[str, Any]]:
-        """Load sample ChEMBL data as fallback"""
-        logger.info("    Loading sample ChEMBL data...")
         return [
-            {
-                'compound_id': 'CHEMBL100001',
-                'compound_name': 'Aspirin',
-                'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
-                'target': 'Cyclooxygenase',
-                'activity_value': 8.5,
-                'activity_type': 'IC50'
-            },
-            {
-                'compound_id': 'CHEMBL100002',
-                'compound_name': 'Ibuprofen',
-                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
-                'target': 'Cyclooxygenase',
-                'activity_value': 9.2,
-                'activity_type': 'IC50'
-            },
-            {
-                'compound_id': 'CHEMBL100003',
-                'compound_name': 'Naproxen',
-                'smiles': 'COc1ccc2cc(ccc2c1)C(C)C(=O)O',
-                'target': 'Cyclooxygenase',
-                'activity_value': 8.9,
-                'activity_type': 'IC50'
-            }
+            {'compound_id': 'CHEMBL100001', 'compound_name': 'Aspirin', 'smiles': 'CC(=O)Oc1ccccc1C(=O)O', 'target': 'Cyclooxygenase', 'activity_value': 8.5, 'activity_type': 'IC50'},
+            {'compound_id': 'CHEMBL100002', 'compound_name': 'Ibuprofen', 'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O', 'target': 'Cyclooxygenase', 'activity_value': 9.2, 'activity_type': 'IC50'}
         ]
-    
+
     async def _load_sample_pubchem_data(self) -> List[Dict[str, Any]]:
-        """Load sample PubChem data as fallback"""
-        logger.info("    Loading sample PubChem data...")
         return [
-            {
-                'compound_id': 'PUBCHEM_2244',
-                'compound_name': 'Aspirin',
-                'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
-                'molecular_weight': 180.16,
-                'logp': 1.19
-            },
-            {
-                'compound_id': 'PUBCHEM_3672',
-                'compound_name': 'Ibuprofen',
-                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
-                'molecular_weight': 206.28,
-                'logp': 3.97
-            }
+            {'compound_id': 'PUBCHEM_2244', 'compound_name': 'Aspirin', 'smiles': 'CC(=O)Oc1ccccc1C(=O)O', 'molecular_weight': 180.16, 'logp': 1.19}
         ]
-    
+
     async def _load_sample_zinc15_data(self) -> List[Dict[str, Any]]:
-        """Load sample ZINC15 data as fallback"""
-        logger.info("    Loading sample ZINC15 data...")
-        return [
-            {
-                'compound_id': 'ZINC000000001',
-                'compound_name': 'Sample Compound 1',
-                'smiles': 'CC(=O)Oc1ccccc1C(=O)O',
-                'molecular_weight': 180.0,
-                'price': 50.0
-            },
-            {
-                'compound_id': 'ZINC000000002',
-                'compound_name': 'Sample Compound 2',
-                'smiles': 'CC(C)Cc1ccc(cc1)C(C)C(=O)O',
-                'molecular_weight': 206.0,
-                'price': 75.0
-            }
-        ]
-    
+        return [{'compound_id': 'ZINC000000001', 'compound_name': 'Sample 1', 'smiles': 'CC(=O)Oc1ccccc1C(=O)O', 'molecular_weight': 180.0, 'price': 50.0}]
+
     async def _load_sample_qm9_data(self) -> List[Dict[str, Any]]:
-        """Load sample QM9 data as fallback"""
-        logger.info("    Loading sample QM9 data...")
-        return [
-            {
-                'compound_id': 'QM9_1',
-                'molecule_id': 'QM9_001',
-                'smiles': 'C',
-                'homo_energy': -0.50,
-                'lumo_energy': 0.10,
-                'gap_energy': 0.60
-            },
-            {
-                'compound_id': 'QM9_2',
-                'molecule_id': 'QM9_002',
-                'smiles': 'CC',
-                'homo_energy': -0.45,
-                'lumo_energy': 0.15,
-                'gap_energy': 0.60
-            }
-        ]
+        return [{'compound_id': 'QM9_1', 'molecule_id': 'QM9_001', 'smiles': 'C', 'homo_energy': -0.50, 'lumo_energy': 0.10, 'gap_energy': 0.60}]

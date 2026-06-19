@@ -17,23 +17,19 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger("pharma_ai_audit")
 
 class PharmaAIDiscoveryAudit:
-    def __init__(self, db_path: str = "pharma_enhanced.db"):
+    # ✅ FIXED: Point initialization directly to the shared pipeline sqlite instance 'pharma.db'
+    def __init__(self, db_path: str = "pharma.db"):
         self.db_path = db_path
         self.chembl_url = "https://www.ebi.ac.uk/chembl/api/data/activity.json"
         self.pubchem_base_url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug"
         self.timeout = 30.0
         
         # 🛡️ SYSTEM DATA BLACKLIST (FROM CDO REVIEWS)
-        # Tracking target proteins and pathways already trained by the tech team to prevent duplication
         self.already_trained_targets = {
-            # Inflammation / Autoimmune
             "TNF", "PTGS1", "PTGS2", "JAK1", "JAK2", "JAK3", "TYK2", "IL6", "IL6R", "IL1B", 
             "IL1R1", "NFKB1", "NFKB2", "NLRP3", "CCR5", "CCR2", "CXCR4", "PDE4A", "PDE4B", "PDE4D",
-            # Respiratory
             "ADRB2", "CHRM3", "HRH1", "IL5", "IL5RA", "IL13", "IL4R", "ALOX5", "CYSLTR1",
-            # Pain
             "OPRM1", "OPRD1", "OPRK1", "TRPV1", "SCN9A", "CACNA2D1", "FAAH",
-            # Diabetes / Metabolic
             "DPP4", "PPARG", "PPARD", "PPARGC1A", "SLC5A2", "GCK", "GLP1R", "INSR", "PTPN1", 
             "HMGCR", "PCSK9", "CETP", "LPL", "FABP4", "FASN", "ACACA", "AMPK"
         }
@@ -50,6 +46,8 @@ class PharmaAIDiscoveryAudit:
         try:
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
+            
+            # Lenient column extraction block
             cursor.execute("SELECT smiles FROM chembl_bioactivity WHERE smiles IS NOT NULL")
             for row in cursor.fetchall():
                 if row[0]: trained_set.add(row[0].strip())
@@ -70,15 +68,11 @@ class PharmaAIDiscoveryAudit:
         return f"PAI_COMP_{hash_obj.hexdigest()[:16].upper()}"
 
     async def fetch_dynamic_category(self, keywords: list, limit: int = 50) -> list:
-        """
-        🌐 DYNAMIC RETRIEVAL: Filters live data streams 
-        dynamically using runtime disease category keywords.
-        """
+        """🌐 DYNAMIC RETRIEVAL: Filters live data streams dynamically"""
         upper_keywords = [k.upper() for k in keywords]
         primary_search = keywords[0].lower()
         logger.info(f"🔍 Mining live endpoints for target category: '{primary_search}'")
         
-        # Force server-side text search string matching directly inside the ChEMBL query URL format
         url = f"{self.chembl_url}?description__contains={primary_search}&limit={limit}&assay_organism=Homo sapiens&format=json"
         
         async with httpx.AsyncClient(timeout=self.timeout) as client:
@@ -100,11 +94,9 @@ class PharmaAIDiscoveryAudit:
                     if not smiles:
                         continue
 
-                    # 1. Match against incoming runtime parameters (e.g., CANCER, PAIN, RESPIRATORY)
                     matches_category = any(kw in target_desc for kw in upper_keywords)
                     
-                    # 2. Safety filter checkpoints
-                    # FIXED: We bypass the structural gene block checks if it's an explicit targeted query invocation
+                    # Bypass logic checks for targeted query overrides
                     is_blacklisted_target = any(trained in target_desc for trained in self.already_trained_targets if trained != "PAIN")
                     is_blacklisted_structure = smiles in self.already_trained_smiles
                     
