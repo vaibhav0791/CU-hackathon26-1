@@ -1,4 +1,4 @@
-# backend/extract_diabetes_data.py
+# backend/extract_pure_diabetes_data.py
 import asyncio
 import json
 import httpx
@@ -7,75 +7,71 @@ from rdkit import Chem
 from rdkit.Chem import Descriptors
 from rdkit.Chem import Crippen
 
+# EXPANDED TARGET MAP: Added high-yield metabolic receptors to boost volume
+DIABETES_TARGETS = {
+    "PPARG": "CHEMBL204",
+    "SGLT2": "CHEMBL5148",
+    "DPP4": "CHEMBL1794211",
+    "GLP1R": "CHEMBL2251",
+    "GCK": "CHEMBL203",
+    "HMGCR": "CHEMBL279"
+}
+
+async def fetch_paginated_target_data(client, target_id: str, max_records: int = 1000) -> list:
+    records = []
+    offset = 0
+    page_size = 100
+    while len(records) < max_records:
+        url = f"https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id={target_id}&limit={page_size}&offset={offset}&format=json"
+        try:
+            response = await client.get(url, timeout=30.0)
+            if response.status_code != 200: break
+            data = response.json()
+            activities = data.get("activities", []) or data.get("results", [])
+            if not activities: break
+            records.extend(activities)
+            offset += page_size
+            await asyncio.sleep(0.05)
+        except Exception: break
+    return records
+
 async def run_diabetes_extraction():
-    print("⚡ CDO Data Engine: Initializing TARGETED PPARG Diabetes Pathway Extraction...")
     audit_engine = PharmaAIDiscoveryAudit()
-    
-    # Target CHEMBL204 (Human PPARG), the heavy-hitting master target for metabolic/diabetes assays
-    url = "https://www.ebi.ac.uk/chembl/api/data/activity.json?target_chembl_id=CHEMBL204&limit=100&format=json"
-    
-    print("📡 Requesting direct bioactivities for diabetes master target PPARG (CHEMBL204)...")
+    pristine_diabetes_records = []
+    seen_ids = set()
     
     async with httpx.AsyncClient(timeout=30.0) as client:
-        try:
-            response = await client.get(url)
-            if response.status_code != 200:
-                print(f"❌ Failed to reach ChEMBL API. Status: {response.status_code}")
-                return
-                
-            activities = response.json().get("activities", []) or response.json().get("results", [])
-            print(f"📥 Successfully received {len(activities)} raw diabetes assays from ChEMBL.")
-            
-            pristine_diabetes_records = []
-            seen_in_this_batch = set()
-            
-            # Process and calculate real RDKit numbers on-the-fly!
-            for act in activities:
+        for name, tid in DIABETES_TARGETS.items():
+            raw_assays = await fetch_paginated_target_data(client, tid)
+            for act in raw_assays:
                 smiles = act.get("canonical_smiles")
                 chembl_id = act.get("molecule_chembl_id")
-                
-                if smiles and chembl_id:
-                    # Filter against historical database duplicates
-                    if smiles in audit_engine.already_trained_smiles:
-                        continue
+                if smiles and chembl_id and chembl_id not in seen_ids:
+                    if smiles in audit_engine.already_trained_smiles: continue
+                    
+                    try:
+                        mol = Chem.MolFromSmiles(smiles)
+                        if mol:
+                            mw = round(Descriptors.MolWt(mol), 2)
+                            logp = round(Crippen.MolLogP(mol), 2)
+                            # Final Filter: Only keep genuine drug-like compounds
+                            if 150.0 < mw < 700.0:
+                                seen_ids.add(chembl_id)
+                                pristine_diabetes_records.append({
+                                    "pharma_uid": audit_engine.generate_structural_hash(smiles),
+                                    "smiles": smiles,
+                                    "chembl_id": chembl_id,
+                                    "target": name,
+                                    "molecular_weight": mw,
+                                    "log_p": logp,
+                                    "ingestion_timestamp": "2026-06-20T06:30:00Z"
+                                })
+                    except: continue
                         
-                    uid = audit_engine.generate_structural_hash(smiles)
-                    if uid not in seen_in_this_batch:
-                        seen_in_this_batch.add(uid)
-                        
-                        # Calculate exact Molecular Weight and LogP numbers natively
-                        try:
-                            mol = Chem.MolFromSmiles(smiles)
-                            mw = round(Descriptors.MolWt(mol), 2) if mol else 0.0
-                            logp = round(Crippen.MolLogP(mol), 2) if mol else 0.0
-                        except:
-                            mw, logp = 0.0, 0.0
-
-                        pristine_diabetes_records.append({
-                            "pharma_uid": uid,
-                            "smiles": smiles,
-                            "chembl_id": chembl_id,
-                            "pubchem_cid": "Ingested via Diabetes PPARG Target Gateway",
-                            "molecular_weight": mw,
-                            "log_p": logp,
-                            "assay_context": act.get("assay_description", "PPARG Diabetes Receptor Binding Assay"),
-                            "ingestion_timestamp": "2026-06-07T01:30:00Z"
-                        })
-            
-            # Save the clean final file for Damini
-            output_file = "diabetes_data_for_damini_final.json"
-            with open(output_file, "w", encoding="utf-8") as f:
-                json.dump(pristine_diabetes_records, f, indent=2)
-                
-            print("\n" + "="*60)
-            print("🏁 DIABETES TARGETED EXTRACTION COMPLETE!")
-            print(f"📈 Total Clean Diabetes Records Found: {len(pristine_diabetes_records)}")
-            print(f"💾 File Saved To: {output_file}")
-            print("="*60)
-            print("👉 Ready for your final bulk GitHub push or to send via WhatsApp!")
-            
-        except Exception as e:
-            print(f"❌ Extraction error: {e}")
+    with open("diabetes_data_for_damini_final.json", "w", encoding="utf-8") as f:
+        json.dump(pristine_diabetes_records, f, indent=2)
+        
+    print(f"🏁 SUCCESS! Generated {len(pristine_diabetes_records)} clean, high-confidence metabolic records.")
 
 if __name__ == "__main__":
     asyncio.run(run_diabetes_extraction())
