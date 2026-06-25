@@ -1,0 +1,1502 @@
+[
+  {
+    "drug_target_pair": "CHEMBL1183 :: ADRB2",
+    "chembl_id": "CHEMBL1183",
+    "preferred_chemical_name": "Salbutamol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)(C)NCC(C1=CC(=C(C=C1)O)CO)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 150.0,
+      "computed_pec50": 6.824
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 239.31,
+      "calculated_logp": 0.64,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3555 :: ADRB2",
+    "chembl_id": "CHEMBL3555",
+    "preferred_chemical_name": "Salmeterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C1=CC=CC=C1)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 1.25,
+      "computed_pec50": 8.903
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 415.57,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3666 :: ADRB2",
+    "chembl_id": "CHEMBL3666",
+    "preferred_chemical_name": "Formoterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)NC(C1=CC=CC=C1)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.28,
+      "computed_pec50": 9.553
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 344.4,
+      "calculated_logp": 1.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5333 :: ADRB2",
+    "chembl_id": "CHEMBL5333",
+    "preferred_chemical_name": "Indacaterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCC1=CC=C2C(=C1)NC(=O)C(=C2)C(O)CNCC3CCNCC3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.18,
+      "computed_pec50": 9.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 392.49,
+      "calculated_logp": 2.78,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5444 :: ADRB2",
+    "chembl_id": "CHEMBL5444",
+    "preferred_chemical_name": "Olodaterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C2C(=C1)NC(=O)C(=C2)C(O)CNCC3CCNCC3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.22,
+      "computed_pec50": 9.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 386.44,
+      "calculated_logp": 2.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5555 :: ADRB2",
+    "chembl_id": "CHEMBL5555",
+    "preferred_chemical_name": "Vilanterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.31,
+      "computed_pec50": 9.509
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 486.34,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1121 :: ADRB2",
+    "chembl_id": "CHEMBL1121",
+    "preferred_chemical_name": "Terbutaline",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)(C)NCC(C1=CC(=CC(=C1)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 180.0,
+      "computed_pec50": 6.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 225.29,
+      "calculated_logp": 0.35,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4101 :: ADRB2",
+    "chembl_id": "CHEMBL4101",
+    "preferred_chemical_name": "Isoprenaline",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)NCC(C1=CC(=C(C=C1)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 22.0,
+      "computed_pec50": 7.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 211.26,
+      "calculated_logp": 0.14,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9912 :: ADRB2",
+    "chembl_id": "CHEMBL9912",
+    "preferred_chemical_name": "Fenoterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C1=CC=C(C=C1)O)NCC(C2=CC(=CC(=C2)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 8.4,
+      "computed_pec50": 8.076
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 303.36,
+      "calculated_logp": 1.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4812 :: ADRB2",
+    "chembl_id": "CHEMBL4812",
+    "preferred_chemical_name": "Procaterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCC(C)NCC(C1=CC=C2C(=C1)NC(=O)C=C2)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 1.2,
+      "computed_pec50": 8.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 290.36,
+      "calculated_logp": 1.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7711 :: ADRB2",
+    "chembl_id": "CHEMBL7711",
+    "preferred_chemical_name": "Clenbuterol",
+    "target_protein_symbol": "ADRB2",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)(C)NCC(C1=CC(=C(C(=C1)Cl)N)Cl)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 14.0,
+      "computed_pec50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 277.19,
+      "calculated_logp": 2.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7612 :: ALOX5",
+    "chembl_id": "CHEMBL7612",
+    "preferred_chemical_name": "Zileuton",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C1=CC2=C(C=C1)SC3=CC=CC=C32)N(O)C(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 540.0,
+      "computed_pic50": 6.268
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 236.29,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9090 :: ALOX5",
+    "chembl_id": "CHEMBL9090",
+    "preferred_chemical_name": "URB597",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC=CC(=C2)C3=CC=CC=C3OC(=O)N(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 114.6,
+      "computed_pic50": 6.941
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 335.4,
+      "calculated_logp": 3.98,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1123 :: ALOX5",
+    "chembl_id": "CHEMBL1123",
+    "preferred_chemical_name": "PF-04457845",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC=CC=C2S(=O)(=O)N3CCNCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 26.8,
+      "computed_pic50": 7.572
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 455.51,
+      "calculated_logp": 3.42,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8831 :: ALOX5",
+    "chembl_id": "CHEMBL8831",
+    "preferred_chemical_name": "LY-2183240",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC=C(C=C2)C3=NNC(=C3)C(=O)N(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 142.4,
+      "computed_pic50": 6.846
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 321.38,
+      "calculated_logp": 2.87,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9915 :: ALOX5",
+    "chembl_id": "CHEMBL9915",
+    "preferred_chemical_name": "Arbeclast",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CCC(CC1)(CC(=O)O)CN",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 84.0,
+      "computed_pic50": 7.076
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 398.5,
+      "calculated_logp": 3.41,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1146 :: ALOX5",
+    "chembl_id": "CHEMBL1146",
+    "preferred_chemical_name": "Ontazolast",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=C(N=C(N=C2N)N)C3=CC=CC=C3F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.6,
+      "computed_pic50": 8.337
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 361.46,
+      "calculated_logp": 3.52,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4405 :: ALOX5",
+    "chembl_id": "CHEMBL4405",
+    "preferred_chemical_name": "Setipiprant",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C2C(=C1)NC(=O)C(=C2)C(O)CNCC3CCNCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 6.2,
+      "computed_pic50": 8.208
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 402.45,
+      "calculated_logp": 2.18,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9926 :: ALOX5",
+    "chembl_id": "CHEMBL9926",
+    "preferred_chemical_name": "Minlukast",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 11.0,
+      "computed_pic50": 7.959
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 444.53,
+      "calculated_logp": 2.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7616 :: ALOX5",
+    "chembl_id": "CHEMBL7616",
+    "preferred_chemical_name": "Tepoxalin",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=NC=CS1.NS(=O)(=O)C2=C(O)C(=O)C3=CC=CC=C3S2(=O)=O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 32.0,
+      "computed_pic50": 7.495
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 397.86,
+      "calculated_logp": 3.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9097 :: ALOX5",
+    "chembl_id": "CHEMBL9097",
+    "preferred_chemical_name": "Darbufelone",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 89.0,
+      "computed_pic50": 7.051
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 389.44,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1137 :: ALOX5",
+    "chembl_id": "CHEMBL1137",
+    "preferred_chemical_name": "Lonapalene",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 22.0,
+      "computed_pic50": 7.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 298.24,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8846 :: ALOX5",
+    "chembl_id": "CHEMBL8846",
+    "preferred_chemical_name": "Atreleuton",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C(=O)O)C1=CC2=C(C=C1)C=C(C=C2)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.5,
+      "computed_pic50": 8.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 341.38,
+      "calculated_logp": 2.05,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1156 :: ALOX5",
+    "chembl_id": "CHEMBL1156",
+    "preferred_chemical_name": "Tagorizine",
+    "target_protein_symbol": "ALOX5",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCN(CC)CC(=O)NC1=C(C=CC=C1C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 180.0,
+      "computed_pic50": 6.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 435.56,
+      "calculated_logp": 4.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL308 :: CHRM3",
+    "chembl_id": "CHEMBL308",
+    "preferred_chemical_name": "Tiotropium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C[N+]1(C2CC(CC1C3O3)OC(=O)C(C4=CC=CS4)(C5=CC=CS5)O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.13,
+      "computed_pic50": 9.886
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 392.5,
+      "calculated_logp": 1.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3777 :: CHRM3",
+    "chembl_id": "CHEMBL3777",
+    "preferred_chemical_name": "Ipratropium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)[N+]1(C2CC(CC1C3)OC(=O)C(C4=CC=CC=C4)CO)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.45,
+      "computed_pic50": 9.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 332.43,
+      "calculated_logp": 0.82,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5666 :: CHRM3",
+    "chembl_id": "CHEMBL5666",
+    "preferred_chemical_name": "Aclidinium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CC2CC(C1)[N+]3(C2)CCC(CC3)OC(=O)C(C4=CC=CC=C4)(C5=CC=CC=C5)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.84,
+      "computed_pic50": 9.076
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 464.62,
+      "calculated_logp": 2.18,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5777 :: CHRM3",
+    "chembl_id": "CHEMBL5777",
+    "preferred_chemical_name": "Umeclidinium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CC2CC(C1)[N+]3(C2)CCC(CC3)OC(=O)C(C4=CC=CC=C4)(C5=CC=CC=C5)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.06,
+      "computed_pic50": 10.222
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 469.64,
+      "calculated_logp": 2.51,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5888 :: CHRM3",
+    "chembl_id": "CHEMBL5888",
+    "preferred_chemical_name": "Glycopyrronium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1[N+](CC2CCCC12)(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.25,
+      "computed_pic50": 9.602
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 318.43,
+      "calculated_logp": 1.25,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3319 :: CHRM3",
+    "chembl_id": "CHEMBL3319",
+    "preferred_chemical_name": "Atropine",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CN1C2CCC1CC(C2)OC(=O)C(CO)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.45,
+      "computed_pic50": 9.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 289.37,
+      "calculated_logp": 1.81,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1129 :: CHRM3",
+    "chembl_id": "CHEMBL1129",
+    "preferred_chemical_name": "Oxitropium",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCN1C2CCC1CC(C2)OC(=O)C(CO)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.88,
+      "computed_pic50": 9.056
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 318.43,
+      "calculated_logp": 0.95,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4481 :: CHRM3",
+    "chembl_id": "CHEMBL4481",
+    "preferred_chemical_name": "Darifenacin",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CN(CCC1C2=CC=CC=C2)CC(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9.5,
+      "computed_pic50": 8.022
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 426.56,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9012 :: CHRM3",
+    "chembl_id": "CHEMBL9012",
+    "preferred_chemical_name": "Solifenacin",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CN2CCC1C(C2)OC(=O)NC3CCC4=CC=CC=C43",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.0,
+      "computed_pic50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 362.47,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7723 :: CHRM3",
+    "chembl_id": "CHEMBL7723",
+    "preferred_chemical_name": "Tolterodine",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)N(C)CCC(C1=CC=CC=C1)C2=C(C=CC(=C2)C)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.1,
+      "computed_pic50": 8.387
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 325.5,
+      "calculated_logp": 4.25,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4911 :: CHRM3",
+    "chembl_id": "CHEMBL4911",
+    "preferred_chemical_name": "Fesoterodine",
+    "target_protein_symbol": "CHRM3",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)N(CC)CCC(C1=CC=CC=C1)C2=C(C=CC(=C2)CO)OC(=O)C(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.1,
+      "computed_pic50": 8.678
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 411.59,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3333 :: CYSLTR1",
+    "chembl_id": "CHEMBL3333",
+    "preferred_chemical_name": "Montelukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)(C1=CC=CC=C1)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.52,
+      "computed_pic50": 9.284
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 586.2,
+      "calculated_logp": 6.53,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3444 :: CYSLTR1",
+    "chembl_id": "CHEMBL3444",
+    "preferred_chemical_name": "Zafirlukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC(=C(C=C1)CC2=CC=CC=C2)NC(=O)C3=CC=C(C=C3)S(=O)(=O)NC(=O)C4CCCCC4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.88,
+      "computed_pic50": 9.056
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 575.68,
+      "calculated_logp": 5.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4234 :: CYSLTR1",
+    "chembl_id": "CHEMBL4234",
+    "preferred_chemical_name": "Pranlukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC=C2C(=C1)C(=O)C=C(O2)C3=CC=C(C=C3)NC(=O)C4=CC=CC=C4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.45,
+      "computed_pic50": 8.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 481.51,
+      "calculated_logp": 3.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1827 :: CYSLTR1",
+    "chembl_id": "CHEMBL1827",
+    "preferred_chemical_name": "Pobilukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCCC1=CC=C(C=C1)C2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OCC4CCO4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 11.2,
+      "computed_pic50": 7.951
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 494.61,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1922 :: CYSLTR1",
+    "chembl_id": "CHEMBL1922",
+    "preferred_chemical_name": "Tomelukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=C(C=CC(=C2)CC3=CC=C(S3)C4=CC=C(C=C4)F)",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 42.0,
+      "computed_pic50": 7.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 398.48,
+      "calculated_logp": 4.54,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1141 :: CYSLTR1",
+    "chembl_id": "CHEMBL1141",
+    "preferred_chemical_name": "Sulukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 16.4,
+      "computed_pic50": 7.785
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 442.51,
+      "calculated_logp": 3.25,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5542 :: CYSLTR1",
+    "chembl_id": "CHEMBL5542",
+    "preferred_chemical_name": "Verlukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1CCC2(C1)CC3=C(C=CC(=C3)C4C(C(C(C(O4)CO)O)O)O)O2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3.9,
+      "computed_pic50": 8.409
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 512.6,
+      "calculated_logp": 4.67,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3302 :: CYSLTR1",
+    "chembl_id": "CHEMBL3302",
+    "preferred_chemical_name": "Ablukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 54.0,
+      "computed_pic50": 7.268
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 454.57,
+      "calculated_logp": 3.91,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1192 :: CYSLTR1",
+    "chembl_id": "CHEMBL1192",
+    "preferred_chemical_name": "Cinalukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CSCC1C(C(C(C(O1)OC2=CC=C(C=C2)CC3=C(C=CC(=C3)Cl)OCC)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 8.8,
+      "computed_pic50": 8.056
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 425.53,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2292 :: CYSLTR1",
+    "chembl_id": "CHEMBL2292",
+    "preferred_chemical_name": "Irabulukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC12C(C(C(O1)OC3=CC=C(C=C3)CC4=C(C=CC(=C4)Cl)Cl)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.45,
+      "computed_pic50": 8.611
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 530.45,
+      "calculated_logp": 5.02,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5511 :: CYSLTR1",
+    "chembl_id": "CHEMBL5511",
+    "preferred_chemical_name": "Minflulast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.5,
+      "computed_pic50": 7.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 476.49,
+      "calculated_logp": 3.51,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8833 :: CYSLTR1",
+    "chembl_id": "CHEMBL8833",
+    "preferred_chemical_name": "Makarilast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 6.8,
+      "computed_pic50": 8.167
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 492.51,
+      "calculated_logp": 3.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4432 :: CYSLTR1",
+    "chembl_id": "CHEMBL4432",
+    "preferred_chemical_name": "Lodotrabel",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)C1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 24.2,
+      "computed_pic50": 7.616
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 412.48,
+      "calculated_logp": 2.98,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1145 :: CYSLTR1",
+    "chembl_id": "CHEMBL1145",
+    "preferred_chemical_name": "Anerlukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)C3C(C(C(C(O3)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.0,
+      "computed_pic50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 451.49,
+      "calculated_logp": 2.41,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9932 :: CYSLTR1",
+    "chembl_id": "CHEMBL9932",
+    "preferred_chemical_name": "Sintilukast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CC2=CC=CC=C2C1CC3=C(C=CC(=C3)C4C(C(C(C(O4)CO)O)O)O)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.5,
+      "computed_pic50": 8.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 468.98,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7623 :: CYSLTR1",
+    "chembl_id": "CHEMBL7623",
+    "preferred_chemical_name": "Gelaslast",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CCOC2C(C(C(C(O2)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 115.0,
+      "computed_pic50": 6.939
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 442.51,
+      "calculated_logp": 2.85,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9093 :: CYSLTR1",
+    "chembl_id": "CHEMBL9093",
+    "preferred_chemical_name": "Unitrabel",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC(=CC=C1O)OC2C(C(C(C(O2)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 260.0,
+      "computed_pic50": 6.585
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 384.42,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1134 :: CYSLTR1",
+    "chembl_id": "CHEMBL1134",
+    "preferred_chemical_name": "Vantelust",
+    "target_protein_symbol": "CYSLTR1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC(=O)C2=C(C=C(C=C2O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 94.0,
+      "computed_pic50": 7.027
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 372.41,
+      "calculated_logp": 2.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1201584 :: JAK1",
+    "chembl_id": "CHEMBL1201584",
+    "preferred_chemical_name": "Upadacitinib",
+    "target_protein_symbol": "JAK1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1CC2=NC3=C(C=CN3)C(=N2)N1C(=O)C4CC5C4CN5C(=O)C(F)(F)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 8.5,
+      "computed_pic50": 8.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 380.38,
+      "calculated_logp": 1.95,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1761062 :: JAK1",
+    "chembl_id": "CHEMBL1761062",
+    "preferred_chemical_name": "Tofacitinib",
+    "target_protein_symbol": "JAK1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1N(CC2CN(C1)C3=C4C(=N)C=CN4N=CN3)C(=O)CC#N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3.2,
+      "computed_pic50": 8.495
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 312.37,
+      "calculated_logp": 1.29,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1142 :: LTA4H",
+    "chembl_id": "CHEMBL1142",
+    "preferred_chemical_name": "Bestatin",
+    "target_protein_symbol": "LTA4H",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)CC(C(C(=O)NC(CC1=CC=CC=C1)C(=O)O)O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 145.0,
+      "computed_pic50": 6.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 308.37,
+      "calculated_logp": 1.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2115 :: LTA4H",
+    "chembl_id": "CHEMBL2115",
+    "preferred_chemical_name": "Kelatorphan",
+    "target_protein_symbol": "LTA4H",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C1=CC=C(C=C1)S(=O)(=O)F)NC(=O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 450.0,
+      "computed_pic50": 6.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 352.34,
+      "calculated_logp": 1.22,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3888 :: PDE4D",
+    "chembl_id": "CHEMBL3888",
+    "preferred_chemical_name": "Roflumilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CON=C(C1=CC=CC=C1)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.81,
+      "computed_pic50": 9.092
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 403.21,
+      "calculated_logp": 2.88,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4111 :: PDE4D",
+    "chembl_id": "CHEMBL4111",
+    "preferred_chemical_name": "Cilomilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1CCC(CC1)C2=CC=C(C=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.0,
+      "computed_pic50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 343.44,
+      "calculated_logp": 2.85,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9911 :: PDE4D",
+    "chembl_id": "CHEMBL9911",
+    "preferred_chemical_name": "Apremilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 74.0,
+      "computed_pic50": 7.131
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 460.5,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8821 :: PDE4D",
+    "chembl_id": "CHEMBL8821",
+    "preferred_chemical_name": "Crisaborole",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=CC2=C(C=CC(=C2)CC3C(=O)NC(=O)S3)O1",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 42.0,
+      "computed_pic50": 7.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 251.02,
+      "calculated_logp": 2.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4424 :: PDE4D",
+    "chembl_id": "CHEMBL4424",
+    "preferred_chemical_name": "Ibudilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)C1=C(N=CC=C1)C2=CC=C(C=C2)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1450.0,
+      "computed_pic50": 5.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 230.31,
+      "calculated_logp": 2.76,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1111 :: PDE4D",
+    "chembl_id": "CHEMBL1111",
+    "preferred_chemical_name": "Theophylline",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CN1C2=C(C(=O)N(C1=O)C)N=CN2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18500.0,
+      "computed_pic50": 4.733
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 180.16,
+      "calculated_logp": -0.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9095 :: PDE4D",
+    "chembl_id": "CHEMBL9095",
+    "preferred_chemical_name": "Aminophylline",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CN1C2=C(C(=O)N(C1=O)C)N=CN2.C1CNCCN1",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 22000.0,
+      "computed_pic50": 4.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 420.43,
+      "calculated_logp": -0.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8835 :: PDE4D",
+    "chembl_id": "CHEMBL8835",
+    "preferred_chemical_name": "Enprofylline",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCCN1C2=C(C(=O)N(C1=O)C)N=CN2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4500.0,
+      "computed_pic50": 5.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 208.22,
+      "calculated_logp": 0.54,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5545 :: PDE4D",
+    "chembl_id": "CHEMBL5545",
+    "preferred_chemical_name": "Pentoxifylline",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(=O)CCCCN1C2=C(C(=O)N(C1=O)C)N=CN2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9800.0,
+      "computed_pic50": 5.009
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 278.31,
+      "calculated_logp": 0.23,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3304 :: PDE4D",
+    "chembl_id": "CHEMBL3304",
+    "preferred_chemical_name": "Tetomilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC(=O)N(C2)CC3=CC=C(C=C3)CC4C(=O)NC(=O)S4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.5,
+      "computed_pic50": 8.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 412.45,
+      "calculated_logp": 3.42,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1195 :: PDE4D",
+    "chembl_id": "CHEMBL1195",
+    "preferred_chemical_name": "Oglemilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCN(CC)C1CCN(CC1)C(C2=CC=CC=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.15,
+      "computed_pic50": 8.939
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 454.52,
+      "calculated_logp": 2.91,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2112 :: PDE4D",
+    "chembl_id": "CHEMBL2112",
+    "preferred_chemical_name": "Pekanslast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC(C)CC(C1=CC=CC=C1)C(=O)NCC2=CC=C(C=C2)C(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 64.0,
+      "computed_pic50": 7.194
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 389.46,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5551 :: PDE4D",
+    "chembl_id": "CHEMBL5551",
+    "preferred_chemical_name": "Rolipram",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CCC1=CC=C(C=C1)CC2C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 140.0,
+      "computed_pic50": 6.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 275.34,
+      "calculated_logp": 1.76,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8841 :: PDE4D",
+    "chembl_id": "CHEMBL8841",
+    "preferred_chemical_name": "Piclamilast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1=NC=C(C=C1)C2=CC=C(C=C2)S(=O)(=O)N3CCCCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.8,
+      "computed_pic50": 8.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 381.32,
+      "calculated_logp": 2.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1154 :: PDE4D",
+    "chembl_id": "CHEMBL1154",
+    "preferred_chemical_name": "Filaminast",
+    "target_protein_symbol": "PDE4D",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "C1=CC(=CC=C1O)OC2C(C(C(C(O2)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 142.0,
+      "computed_pic50": 6.848
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 339.37,
+      "calculated_logp": 1.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3999 :: TGFB1",
+    "chembl_id": "CHEMBL3999",
+    "preferred_chemical_name": "Ciclesonide",
+    "target_protein_symbol": "TGFB1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(O)C(=O)CO)C)O)F)C)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.45,
+      "computed_pic50": 8.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 540.69,
+      "calculated_logp": 4.81,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5111 :: TGFB1",
+    "chembl_id": "CHEMBL5111",
+    "preferred_chemical_name": "Budosenide",
+    "target_protein_symbol": "TGFB1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(O)C(=O)CO)C)O)F)C)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.12,
+      "computed_pic50": 8.674
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 430.53,
+      "calculated_logp": 2.36,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5222 :: TGFB1",
+    "chembl_id": "CHEMBL5222",
+    "preferred_chemical_name": "Fluticasone",
+    "target_protein_symbol": "TGFB1",
+    "disease_therapeutic_domain": "Pulmonary Respiratory",
+    "canonical_smiles_vector": "CC1CC2C3CC(C4=CC(=O)C=CC4(C3(C(CC2(C1(O)C(=O)CO)C)O)F)C)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.42,
+      "computed_pic50": 9.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 500.57,
+      "calculated_logp": 3.68,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  }
+]

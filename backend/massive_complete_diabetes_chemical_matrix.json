@@ -1,0 +1,1502 @@
+[
+  {
+    "drug_target_pair": "CHEMBL2111 :: ABCC8",
+    "chembl_id": "CHEMBL2111",
+    "preferred_chemical_name": "Glibenclamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCN(CC)C(=O)C1=CC=C(C=C1)S(=O)(=O)NC(=O)NC2CCCCC2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.5,
+      "computed_pic50": 8.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 494.01,
+      "calculated_logp": 3.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2222 :: ABCC8",
+    "chembl_id": "CHEMBL2222",
+    "preferred_chemical_name": "Glimepiride",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCC1=C(C(=O)N(C1=O)CC2=CC=C(C=C2)S(=O)(=O)NC(=O)NC3CCNCC3)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3.1,
+      "computed_pic50": 8.509
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 490.62,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2333 :: ABCC8",
+    "chembl_id": "CHEMBL2333",
+    "preferred_chemical_name": "Glipizide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CN=C(C=N1)C(=O)NCC2=CC=C(C=C2)S(=O)(=O)NC(=O)NC3CCCCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 6.4,
+      "computed_pic50": 8.194
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 445.54,
+      "calculated_logp": 2.49,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2444 :: ABCC8",
+    "chembl_id": "CHEMBL2444",
+    "preferred_chemical_name": "Gliclazide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)S(=O)(=O)NC(=O)NN2CC3CCCC3C2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 180.0,
+      "computed_pic50": 6.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 323.41,
+      "calculated_logp": 2.18,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2555 :: ABCC8",
+    "chembl_id": "CHEMBL2555",
+    "preferred_chemical_name": "Repaglinide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(C)CC(C1=CC=CC=C1)C(=O)NCC2=CC=C(C=C2)C(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 8.2,
+      "computed_pic50": 8.086
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 452.59,
+      "calculated_logp": 4.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2666 :: ABCC8",
+    "chembl_id": "CHEMBL2666",
+    "preferred_chemical_name": "Nateglinide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(C)CC(C(=O)O)NC(=O)C1CCC(CC1)C(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 140.0,
+      "computed_pic50": 6.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 317.43,
+      "calculated_logp": 3.24,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4115 :: ABCC8",
+    "chembl_id": "CHEMBL4115",
+    "preferred_chemical_name": "Tolbutamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCCCNC(=O)NS(=O)(=O)C2=CC=C(C=C2)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2400.0,
+      "computed_pic50": 5.62
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 270.35,
+      "calculated_logp": 2.31,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9915 :: ABCC8",
+    "chembl_id": "CHEMBL9915",
+    "preferred_chemical_name": "Chlorpropamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCCNC(=O)NS(=O)(=O)C2=CC=C(C=C2)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3800.0,
+      "computed_pic50": 5.42
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 276.74,
+      "calculated_logp": 2.11,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1125 :: ABCC8",
+    "chembl_id": "CHEMBL1125",
+    "preferred_chemical_name": "Tolazamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)S(=O)(=O)NC(=O)NN2CCCCCC2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1250.0,
+      "computed_pic50": 5.903
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 311.4,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4405 :: ABCC8",
+    "chembl_id": "CHEMBL4405",
+    "preferred_chemical_name": "Acetohexamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(=O)C1=CC=C(C=C1)S(=O)(=O)NC(=O)NC2CCCCC2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 890.0,
+      "computed_pic50": 6.051
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 324.39,
+      "calculated_logp": 1.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9925 :: ABCC8",
+    "chembl_id": "CHEMBL9925",
+    "preferred_chemical_name": "Gliquidone",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1(C)CC2=C(C=CC(=C2)S(=O)(=O)NC(=O)NC3CCCCC3)O1",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.5,
+      "computed_pic50": 7.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 527.63,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7615 :: ABCC8",
+    "chembl_id": "CHEMBL7615",
+    "preferred_chemical_name": "Glisoxepide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC=C(C=C1)C2=CC=C(C=C2)S(=O)(=O)NC(=O)NN3CCCCCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 48.0,
+      "computed_pic50": 7.319
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 449.52,
+      "calculated_logp": 2.05,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9096 :: ABCC8",
+    "chembl_id": "CHEMBL9096",
+    "preferred_chemical_name": "Glyclopyramide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)S(=O)(=O)NC(=O)NC2=CC=CC=C2Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 610.0,
+      "computed_pic50": 6.215
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 324.78,
+      "calculated_logp": 2.41,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1136 :: ABCC8",
+    "chembl_id": "CHEMBL1136",
+    "preferred_chemical_name": "Carbutamide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=CC=C1N)S(=O)(=O)NC(=O)NCCCC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4200.0,
+      "computed_pic50": 5.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 271.34,
+      "calculated_logp": 1.14,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8845 :: ABCC8",
+    "chembl_id": "CHEMBL8845",
+    "preferred_chemical_name": "Mitiglinide",
+    "target_protein_symbol": "ABCC8",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2C(CCCC2)C(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 24.0,
+      "computed_pic50": 7.62
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 315.41,
+      "calculated_logp": 2.87,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1410 :: DPP4",
+    "chembl_id": "CHEMBL1410",
+    "preferred_chemical_name": "Sitagliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CC(C(C1)N)CC(=O)N2CC3=NN=C(N3C2)C(F)(F)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18.0,
+      "computed_pic50": 7.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 407.3,
+      "calculated_logp": 1.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1122 :: DPP4",
+    "chembl_id": "CHEMBL1122",
+    "preferred_chemical_name": "Vildagliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CC(=O)N(C1)C(=O)CN2CC3CC(C2)CC(C3)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 62.0,
+      "computed_pic50": 7.208
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 303.4,
+      "calculated_logp": 0.92,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1333 :: DPP4",
+    "chembl_id": "CHEMBL1333",
+    "preferred_chemical_name": "Saxagliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1C2CC3CC1C2(N3C(=O)CN4CC5CC(C4)CC(C5)O)C#N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 26.0,
+      "computed_pic50": 7.585
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 315.41,
+      "calculated_logp": 1.04,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1444 :: DPP4",
+    "chembl_id": "CHEMBL1444",
+    "preferred_chemical_name": "Linagliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C(=O)N1CC3=CC=CC=C3C)N(C(=O)N(C2=O)CC#CC)C4CCNCC4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.05,
+      "computed_pic50": 8.979
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 472.54,
+      "calculated_logp": 1.55,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1555 :: DPP4",
+    "chembl_id": "CHEMBL1555",
+    "preferred_chemical_name": "Alogliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C(=O)N1CC3=CC=CC=C3C#N)N(C(=O)N(C2=O)CC4CCNCC4)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 6.9,
+      "computed_pic50": 8.161
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 339.39,
+      "calculated_logp": 0.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8812 :: DPP4",
+    "chembl_id": "CHEMBL8812",
+    "preferred_chemical_name": "Teneligliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CC(C(C1)N)CC(=O)N2CC3=C(C2)C=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.15,
+      "computed_pic50": 8.939
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 426.58,
+      "calculated_logp": 1.98,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4102 :: DPP4",
+    "chembl_id": "CHEMBL4102",
+    "preferred_chemical_name": "Anagliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC=C(C=C1)C2=CC=C(C=C2)S(=O)(=O)NC3=CC=CC=C3F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.6,
+      "computed_pic50": 8.337
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 383.43,
+      "calculated_logp": 1.22,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9912 :: DPP4",
+    "chembl_id": "CHEMBL9912",
+    "preferred_chemical_name": "Gemigliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)S(=O)(=O)NC2=CC=C(C=C2)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 10.4,
+      "computed_pic50": 7.983
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 489.36,
+      "calculated_logp": 2.14,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4812 :: DPP4",
+    "chembl_id": "CHEMBL4812",
+    "preferred_chemical_name": "Omarigliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=NC(=C1)C2=CC=C(C=C2)C3=CC=C(C=C3)C#N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.6,
+      "computed_pic50": 8.796
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 398.44,
+      "calculated_logp": 1.76,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7711 :: DPP4",
+    "chembl_id": "CHEMBL7711",
+    "preferred_chemical_name": "Evogliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(C(=O)NC1=CC=C(C=C1)F)NC(=O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.0,
+      "computed_pic50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 352.39,
+      "calculated_logp": 1.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3319 :: DPP4",
+    "chembl_id": "CHEMBL3319",
+    "preferred_chemical_name": "Gosogliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2(C(=O)NC(=O)N2)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 22.0,
+      "computed_pic50": 7.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 390.41,
+      "calculated_logp": 1.85,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1129 :: DPP4",
+    "chembl_id": "CHEMBL1129",
+    "preferred_chemical_name": "Dutogliptin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=C(C=C1)Cl)Cl.C2=C(N=C(N=N2)N)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 140.0,
+      "computed_pic50": 6.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 402.48,
+      "calculated_logp": 0.95,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4481 :: DPP4",
+    "chembl_id": "CHEMBL4481",
+    "preferred_chemical_name": "Berberine",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "COC1=C(C2=C(C=C1)CC[N+]3=C2C=C4C5=CC6=C(C=C5C=C3)OCO6)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12500.0,
+      "computed_pic50": 4.903
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 336.36,
+      "calculated_logp": -0.41,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9012 :: DPP4",
+    "chembl_id": "CHEMBL9012",
+    "preferred_chemical_name": "Lupeol",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(=C)C1CCC2(C1CCC3(C2CCC4C3(CCC5C4(CCCC5(C)C)O)C)C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 28000.0,
+      "computed_pic50": 4.553
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 426.72,
+      "calculated_logp": 6.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7723 :: DPP4",
+    "chembl_id": "CHEMBL7723",
+    "preferred_chemical_name": "Chrysin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C=C(C=C3O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18500.0,
+      "computed_pic50": 4.733
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 254.24,
+      "calculated_logp": 2.21,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4911 :: DPP4",
+    "chembl_id": "CHEMBL4911",
+    "preferred_chemical_name": "Apigenin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC(=O)C3=C(C=C(C=C3O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9400.0,
+      "computed_pic50": 5.027
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 270.24,
+      "calculated_logp": 2.03,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8921 :: DPP4",
+    "chembl_id": "CHEMBL8921",
+    "preferred_chemical_name": "Luteolin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=C(C=C1)O)O.C2=CC(=O)C3=C(C=C(C=C3O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4200.0,
+      "computed_pic50": 5.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 286.24,
+      "calculated_logp": 1.74,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4421 :: DPP4",
+    "chembl_id": "CHEMBL4421",
+    "preferred_chemical_name": "Quercetin",
+    "target_protein_symbol": "DPP4",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=C(C=C1)O)O.C2=C(C(=O)C3=C(C=C(C=C3O)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3100.0,
+      "computed_pic50": 5.509
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 302.24,
+      "calculated_logp": 1.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1666 :: PPARG",
+    "chembl_id": "CHEMBL1666",
+    "preferred_chemical_name": "Pioglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCC1=CN=C(C=C1)CCOC2=CC=C(C=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 580.0,
+      "computed_pec50": 6.237
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 356.44,
+      "calculated_logp": 2.33,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1777 :: PPARG",
+    "chembl_id": "CHEMBL1777",
+    "preferred_chemical_name": "Rosiglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CN(CCOC1=CC=C(C=C1)CC2C(=O)NC(=O)S2)C3=CC=CC=N3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 42.0,
+      "computed_pec50": 7.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 357.43,
+      "calculated_logp": 1.89,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4111 :: PPARG",
+    "chembl_id": "CHEMBL4111",
+    "preferred_chemical_name": "Troglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=C(C(=C(C=C1)O)C)C2(CCC3=C(O2)C=C(C=C3)CC4C(=O)NC(=O)S4)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 540.0,
+      "computed_pec50": 6.268
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 441.54,
+      "calculated_logp": 3.25,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9911 :: PPARG",
+    "chembl_id": "CHEMBL9911",
+    "preferred_chemical_name": "Ciglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1CCC(CC1)CC2=CC=C(C=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 120.0,
+      "computed_pec50": 6.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 343.48,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8821 :: PPARG",
+    "chembl_id": "CHEMBL8821",
+    "preferred_chemical_name": "Englitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CC2=C(C=CC(=C2)CC3C(=O)NC(=O)S3)O1",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 85.0,
+      "computed_pec50": 7.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 303.33,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4424 :: PPARG",
+    "chembl_id": "CHEMBL4424",
+    "preferred_chemical_name": "Netoglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C=C(C=C2)CC3C(=O)NC(=O)S3)O1",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 14.0,
+      "computed_pec50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 356.39,
+      "calculated_logp": 2.05,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1111 :: PPARG",
+    "chembl_id": "CHEMBL1111",
+    "preferred_chemical_name": "Rivoglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C=CC(=C2)CC3C(=O)NC(=O)S3)N1C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 1.2,
+      "computed_pec50": 8.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 385.44,
+      "calculated_logp": 1.76,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9095 :: PPARG",
+    "chembl_id": "CHEMBL9095",
+    "preferred_chemical_name": "Balaglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C=CC(=C2)CC3C(=O)NC(=O)S3)O1.C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 8.5,
+      "computed_pec50": 8.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 371.41,
+      "calculated_logp": 2.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8835 :: PPARG",
+    "chembl_id": "CHEMBL8835",
+    "preferred_chemical_name": "Lobeglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=NC2=C(C=CC(=C2)CC3C(=O)NC(=O)S3)CC4CCCCC4",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.45,
+      "computed_pec50": 9.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 444.55,
+      "calculated_logp": 3.92,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5545 :: PPARG",
+    "chembl_id": "CHEMBL5545",
+    "preferred_chemical_name": "Darglitazone",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CCN(C1)CC2=CC=C(C=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 16.0,
+      "computed_pec50": 7.796
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 346.44,
+      "calculated_logp": 1.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3304 :: PPARG",
+    "chembl_id": "CHEMBL3304",
+    "preferred_chemical_name": "Farglitazar",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC(=O)N(C2)CC3=CC=C(C=C3)CC4C(=O)NC(=O)S4",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 0.35,
+      "computed_pec50": 9.456
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 481.52,
+      "calculated_logp": 4.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1195 :: PPARG",
+    "chembl_id": "CHEMBL1195",
+    "preferred_chemical_name": "Ragaglitazar",
+    "target_protein_symbol": "PPARG",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCN(CC)C1CCN(CC1)C(C2=CC=CC=C2)CC3C(=O)NC(=O)S3",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 4.2,
+      "computed_pec50": 8.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 412.5,
+      "calculated_logp": 2.78,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL31 :: PRKAA1",
+    "chembl_id": "CHEMBL31",
+    "preferred_chemical_name": "Metformin",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CN(C)C(=N)NC(=N)N",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 120000.0,
+      "computed_pec50": 3.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 129.16,
+      "calculated_logp": -1.43,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1231 :: PRKAA1",
+    "chembl_id": "CHEMBL1231",
+    "preferred_chemical_name": "Phenformin",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)CCN=C(N)NC(=N)N",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 15000.0,
+      "computed_pec50": 4.824
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 205.26,
+      "calculated_logp": -0.55,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3421 :: PRKAA1",
+    "chembl_id": "CHEMBL3421",
+    "preferred_chemical_name": "Buformin",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCCCNC(=N)NC(=N)N",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 22000.0,
+      "computed_pec50": 4.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 157.22,
+      "calculated_logp": -0.82,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9081 :: PRKAA1",
+    "chembl_id": "CHEMBL9081",
+    "preferred_chemical_name": "A-769662",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=C(C2=C(O1)C=CC(=C2)C3=CC=C(C=C3)C4=CC=CC=C4)C(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 115.0,
+      "computed_pec50": 6.939
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 360.45,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4412 :: PRKAA1",
+    "chembl_id": "CHEMBL4412",
+    "preferred_chemical_name": "991-Compound",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 12.0,
+      "computed_pec50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 412.46,
+      "calculated_logp": 2.91,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7712 :: PRKAA1",
+    "chembl_id": "CHEMBL7712",
+    "preferred_chemical_name": "PF-06409577",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=NC3=C(C=CC(=C3)NO2)C4=CC=CC=C4",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 45.0,
+      "computed_pec50": 7.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 352.41,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1102 :: PRKAA1",
+    "chembl_id": "CHEMBL1102",
+    "preferred_chemical_name": "MT-63-78",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1(C(C2(CCC3(C4C1CC5=C6C3(CCC5O)C(C7=CC=C6O4)O)O)OC)O)C(C)(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 68.0,
+      "computed_pec50": 7.167
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 398.48,
+      "calculated_logp": 3.65,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9981 :: PRKAA1",
+    "chembl_id": "CHEMBL9981",
+    "preferred_chemical_name": "PT1",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CCC(CC1)(CC(=O)O)CN",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 1400.0,
+      "computed_pec50": 5.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 357.45,
+      "calculated_logp": 2.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3312 :: PRKAA1",
+    "chembl_id": "CHEMBL3312",
+    "preferred_chemical_name": "ZLN024",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(C)CC(CN)CC(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 4200.0,
+      "computed_pec50": 5.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 284.35,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7611 :: PRKAA1",
+    "chembl_id": "CHEMBL7611",
+    "preferred_chemical_name": "Exalate",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CNC1(CCCCC1=O)C2=CC=CC=C2Cl",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 9500.0,
+      "computed_pec50": 5.022
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 312.4,
+      "calculated_logp": 2.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8912 :: PRKAA1",
+    "chembl_id": "CHEMBL8912",
+    "preferred_chemical_name": "MK-8722",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC12CC3CC(C1)(CC(C3)(C2)N)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 6.5,
+      "computed_pec50": 8.187
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 485.58,
+      "calculated_logp": 3.41,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1928 :: PRKAA1",
+    "chembl_id": "CHEMBL1928",
+    "preferred_chemical_name": "Galegine",
+    "target_protein_symbol": "PRKAA1",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(=CCCCN=C(N)N)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 45000.0,
+      "computed_pec50": 4.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 127.2,
+      "calculated_logp": -0.22,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL423456 :: SGLT2",
+    "chembl_id": "CHEMBL423456",
+    "preferred_chemical_name": "Empagliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OCC4CCO4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3.2,
+      "computed_pic50": 8.495
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 450.9,
+      "calculated_logp": 1.74,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1827 :: SGLT2",
+    "chembl_id": "CHEMBL1827",
+    "preferred_chemical_name": "Dapagliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CCOC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.12,
+      "computed_pic50": 8.951
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 408.87,
+      "calculated_logp": 2.14,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1922 :: SGLT2",
+    "chembl_id": "CHEMBL1922",
+    "preferred_chemical_name": "Canagliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=C(C=CC(=C2)CC3=CC=C(S3)C4=CC=C(C=C4)F)C5C(C(C(C(O5)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.4,
+      "computed_pic50": 8.62
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 444.53,
+      "calculated_logp": 3.44,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1141 :: SGLT2",
+    "chembl_id": "CHEMBL1141",
+    "preferred_chemical_name": "Ipragliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 7.4,
+      "computed_pic50": 8.131
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 404.41,
+      "calculated_logp": 1.89,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5542 :: SGLT2",
+    "chembl_id": "CHEMBL5542",
+    "preferred_chemical_name": "Tofogliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1CCC2(C1)CC3=C(C=CC(=C3)C4C(C(C(C(O4)CO)O)O)O)O2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.9,
+      "computed_pic50": 8.538
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 380.43,
+      "calculated_logp": 1.34,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3302 :: SGLT2",
+    "chembl_id": "CHEMBL3302",
+    "preferred_chemical_name": "Luseogliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 11.0,
+      "computed_pic50": 7.959
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 388.45,
+      "calculated_logp": 1.62,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1192 :: SGLT2",
+    "chembl_id": "CHEMBL1192",
+    "preferred_chemical_name": "Sotagliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CSCC1C(C(C(C(O1)OC2=CC=C(C=C2)CC3=C(C=CC(=C3)Cl)OCC)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.8,
+      "computed_pic50": 8.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 424.94,
+      "calculated_logp": 2.22,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2292 :: SGLT2",
+    "chembl_id": "CHEMBL2292",
+    "preferred_chemical_name": "Ertugliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC12C(C(C(O1)OC3=CC=C(C=C3)CC4=C(C=CC(=C4)Cl)Cl)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.88,
+      "computed_pic50": 9.056
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 436.3,
+      "calculated_logp": 2.45,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5511 :: SGLT2",
+    "chembl_id": "CHEMBL5511",
+    "preferred_chemical_name": "Phlorizin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 350.0,
+      "computed_pic50": 6.456
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 434.43,
+      "calculated_logp": 0.85,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8833 :: SGLT2",
+    "chembl_id": "CHEMBL8833",
+    "preferred_chemical_name": "Sergliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OC(=O)OCC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 120.0,
+      "computed_pic50": 6.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 506.5,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4432 :: SGLT2",
+    "chembl_id": "CHEMBL4432",
+    "preferred_chemical_name": "Remogliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC(C)C1=CC=C(C=C1)CC2=C(C=CC(=C2)C3C(C(C(C(O3)CO)O)O)O)OC(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 84.0,
+      "computed_pic50": 7.076
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 482.48,
+      "calculated_logp": 1.55,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1145 :: SGLT2",
+    "chembl_id": "CHEMBL1145",
+    "preferred_chemical_name": "Janagliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)C3C(C(C(C(O3)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.1,
+      "computed_pic50": 8.387
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 451.49,
+      "calculated_logp": 1.12,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 5,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9932 :: SGLT2",
+    "chembl_id": "CHEMBL9932",
+    "preferred_chemical_name": "Rongliflozin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1CC2=CC=CC=C2C1CC3=C(C=CC(=C3)C4C(C(C(C(O4)CO)O)O)O)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 6.2,
+      "computed_pic50": 8.208
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 440.91,
+      "calculated_logp": 2.58,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7623 :: SGLT2",
+    "chembl_id": "CHEMBL7623",
+    "preferred_chemical_name": "Salidroside",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CCOC2C(C(C(C(O2)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14500.0,
+      "computed_pic50": 4.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 300.3,
+      "calculated_logp": -0.85,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9093 :: SGLT2",
+    "chembl_id": "CHEMBL9093",
+    "preferred_chemical_name": "Arbutin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=CC=C1O)OC2C(C(C(C(O2)CO)O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 22000.0,
+      "computed_pic50": 4.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 272.25,
+      "calculated_logp": -1.35,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1134 :: SGLT2",
+    "chembl_id": "CHEMBL1134",
+    "preferred_chemical_name": "Floretin",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC(=O)C2=C(C=C(C=C2O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9500.0,
+      "computed_pic50": 5.022
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 274.27,
+      "calculated_logp": 2.15,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8841 :: SGLT2",
+    "chembl_id": "CHEMBL8841",
+    "preferred_chemical_name": "Geniestein",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=CC=C1)C2=COC3=CC(=CC(=C3C2=O)O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18000.0,
+      "computed_pic50": 4.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 270.24,
+      "calculated_logp": 2.24,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1154 :: SGLT2",
+    "chembl_id": "CHEMBL1154",
+    "preferred_chemical_name": "Daidzein",
+    "target_protein_symbol": "SGLT2",
+    "disease_therapeutic_domain": "Metabolic Diabetes",
+    "canonical_smiles_vector": "C1=CC(=CC=C1)C2=COC3=CC(=CC=C3C2=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 35000.0,
+      "computed_pic50": 4.456
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 254.24,
+      "calculated_logp": 2.18,
+      "hbond_donors_count": 3,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  }
+]

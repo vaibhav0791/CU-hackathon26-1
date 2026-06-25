@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-06-23T07:40:23.444315",
+  "duration_seconds": 0.052922,
+  "total_records_inserted": 0,
+  "database_statistics": {
+    "data_quality_report": 0,
+    "chembl_bioactivity": 6,
+    "pubchem_properties": 0,
+    "zinc15_compounds": 0,
+    "qm9_properties": 0,
+    "uniprot_sequences": 0,
+    "pdb_structures": 0,
+    "geo_expression": 0,
+    "string_interactions": 843,
+    "clinical_trials": 11,
+    "mimic_patients": 0,
+    "aact_trials": 0,
+    "drugbank_formulations": 18,
+    "esol_solubility": 0,
+    "tox21_toxicity": 0,
+    "gras_excipients": 0
+  },
+  "ingestion_summary": {
+    "Drug Discovery": {
+      "inserted": 0,
+      "duplicates": 6,
+      "errors": 0
+    },
+    "Target Discovery": {
+      "inserted": 0,
+      "duplicates": 5,
+      "errors": 0
+    },
+    "Clinical Trials": {
+      "inserted": 0,
+      "duplicates": 11,
+      "errors": 0
+    },
+    "Formulations": {
+      "inserted": 0,
+      "duplicates": 18,
+      "errors": 0
+    }
+  },
+  "quality_metrics": {
+    "total_records_attempted": 40,
+    "total_records_inserted": 0,
+    "total_duplicates_skipped": 40,
+    "total_validation_errors": 0,
+    "total_null_values_found": 0
+  }
+}

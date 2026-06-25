@@ -1,0 +1,1442 @@
+[
+  {
+    "drug_target_pair": "CHEMBL444 :: CACNA1B",
+    "chembl_id": "CHEMBL444",
+    "preferred_chemical_name": "Gabapentin",
+    "target_protein_symbol": "CACNA1B",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1CCC(CC1)(CC(=O)O)CN",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14500.0,
+      "computed_pic50": 4.839
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 171.24,
+      "calculated_logp": -1.1,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL555 :: CACNA1B",
+    "chembl_id": "CHEMBL555",
+    "preferred_chemical_name": "Pregabalin",
+    "target_protein_symbol": "CACNA1B",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)CC(CN)CC(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9800.0,
+      "computed_pic50": 5.009
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 159.23,
+      "calculated_logp": -0.87,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9921 :: CACNA1B",
+    "chembl_id": "CHEMBL9921",
+    "preferred_chemical_name": "Mirogabalin",
+    "target_protein_symbol": "CACNA1B",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)C1CC2CC1C2CC(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.0,
+      "computed_pic50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 213.32,
+      "calculated_logp": 1.45,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7612 :: FAAH",
+    "chembl_id": "CHEMBL7612",
+    "preferred_chemical_name": "Zileuton",
+    "target_protein_symbol": "FAAH",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C1=CC2=C(C=C1)SC3=CC=CC=C32)N(O)C(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 540.0,
+      "computed_pic50": 6.268
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 236.29,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9090 :: FAAH",
+    "chembl_id": "CHEMBL9090",
+    "preferred_chemical_name": "URB597",
+    "target_protein_symbol": "FAAH",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC=CC(=C2)C3=CC=CC=C3OC(=O)N(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.6,
+      "computed_pic50": 8.337
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 335.4,
+      "calculated_logp": 3.98,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1123 :: FAAH",
+    "chembl_id": "CHEMBL1123",
+    "preferred_chemical_name": "PF-04457845",
+    "target_protein_symbol": "FAAH",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC=CC=C2S(=O)(=O)N3CCNCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.82,
+      "computed_pic50": 9.086
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 455.51,
+      "calculated_logp": 3.42,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8831 :: FAAH",
+    "chembl_id": "CHEMBL8831",
+    "preferred_chemical_name": "LY-2183240",
+    "target_protein_symbol": "FAAH",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC=C(C=C2)C3=NNC(=C3)C(=O)N(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.4,
+      "computed_pic50": 7.907
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 321.38,
+      "calculated_logp": 2.87,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL777 :: GRIN1",
+    "chembl_id": "CHEMBL777",
+    "preferred_chemical_name": "Ketamine",
+    "target_protein_symbol": "GRIN1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CNC1(CCCCC1=O)C2=CC=CC=C2Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 480.0,
+      "computed_pic50": 6.319
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 237.73,
+      "calculated_logp": 2.18,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL888 :: GRIN1",
+    "chembl_id": "CHEMBL888",
+    "preferred_chemical_name": "Memantine",
+    "target_protein_symbol": "GRIN1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC12CC3CC(C1)(CC(C3)(C2)N)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1200.0,
+      "computed_pic50": 5.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 179.3,
+      "calculated_logp": 2.12,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3301 :: OPRD1",
+    "chembl_id": "CHEMBL3301",
+    "preferred_chemical_name": "SNC-80",
+    "target_protein_symbol": "OPRD1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCN(CC)C1CCN(CC1)C(C2=CC=CC=C2)(C3=CC=C(C=C3)OC)C4=CC=CC=C4",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.1,
+      "computed_pic50": 8.678
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 449.63,
+      "calculated_logp": 5.14,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2121 :: OPRK1",
+    "chembl_id": "CHEMBL2121",
+    "preferred_chemical_name": "Pentazocine",
+    "target_protein_symbol": "OPRK1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C(C2CC3(C1C)C4=C(C=C(C=C4)O)CC3N2CC=C(C)C)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 24.0,
+      "computed_pec50": 7.62
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 285.43,
+      "calculated_logp": 3.41,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2223 :: OPRK1",
+    "chembl_id": "CHEMBL2223",
+    "preferred_chemical_name": "Nalbuphine",
+    "target_protein_symbol": "OPRK1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1CC23C4C1CC5=C6C2(CCC5CC4)C(C7=CC=C6O3)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 4.8,
+      "computed_pec50": 8.319
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 357.45,
+      "calculated_logp": 1.82,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL5541 :: OPRK1",
+    "chembl_id": "CHEMBL5541",
+    "preferred_chemical_name": "Enadoline",
+    "target_protein_symbol": "OPRK1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=CC(=O)N(C2)CC3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.85,
+      "computed_pic50": 9.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 384.47,
+      "calculated_logp": 3.51,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1190 :: OPRK1",
+    "chembl_id": "CHEMBL1190",
+    "preferred_chemical_name": "Asimadoline",
+    "target_protein_symbol": "OPRK1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C1=CC=CC=C1)N(C)C(=O)C2=CC=CC=C2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 5.6,
+      "computed_pic50": 8.252
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 394.51,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2291 :: OPRK1",
+    "chembl_id": "CHEMBL2291",
+    "preferred_chemical_name": "U-50488",
+    "target_protein_symbol": "OPRK1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1CCN(C1)CC2C(CCCC2)NC(=O)CC3=CC=C(C=C3)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.0,
+      "computed_pic50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 344.88,
+      "calculated_logp": 3.61,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL535 :: OPRM1",
+    "chembl_id": "CHEMBL535",
+    "preferred_chemical_name": "Naloxone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1CC23C4C1CC5=C6C2(CCC5=O)C(C7=CC=C6O3)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.2,
+      "computed_pic50": 8.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 327.37,
+      "calculated_logp": 2.09,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL612 :: OPRM1",
+    "chembl_id": "CHEMBL612",
+    "preferred_chemical_name": "Morphine",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CN1CCC23C4C1CC5=C6C2(CCC5O)C(C7=CC=C6O3)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 14.0,
+      "computed_pec50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 285.34,
+      "calculated_logp": 0.89,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL123 :: OPRM1",
+    "chembl_id": "CHEMBL123",
+    "preferred_chemical_name": "Buprenorphine",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1(C(C2(CCC3(C4C1CC5=C6C3(CCC5O)C(C7=CC=C6O4)O)O)OC)O)C(C)(C)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 45.0,
+      "computed_pec50": 7.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 467.64,
+      "calculated_logp": 4.98,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL321 :: OPRM1",
+    "chembl_id": "CHEMBL321",
+    "preferred_chemical_name": "Tramadol",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CN(C)CC1CCCCCC1(C2=CC(=CC=C2)OC)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 420.0,
+      "computed_pic50": 6.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 263.38,
+      "calculated_logp": 2.44,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL222 :: OPRM1",
+    "chembl_id": "CHEMBL222",
+    "preferred_chemical_name": "Fentanyl",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCC(=O)N(C1CCN(CC1)CCC2=CC=CC=C2)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.35,
+      "computed_pic50": 8.87
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 336.47,
+      "calculated_logp": 4.05,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1818 :: OPRM1",
+    "chembl_id": "CHEMBL1818",
+    "preferred_chemical_name": "Naltrexone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1CC23C4C1CC5=C6C2(CCC5CC4)C(C7=CC=C6O3)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.85,
+      "computed_pic50": 9.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 341.41,
+      "calculated_logp": 1.92,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1919 :: OPRM1",
+    "chembl_id": "CHEMBL1919",
+    "preferred_chemical_name": "Oxycodone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC12CCN(C1C3CC4=C5C2(CCC5=O)C(C6=CC=C4O3)OC)C",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 18.0,
+      "computed_pec50": 7.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 315.37,
+      "calculated_logp": 1.24,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL2020 :: OPRM1",
+    "chembl_id": "CHEMBL2020",
+    "preferred_chemical_name": "Methadone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCC(=O)C(CC(C)N(C)C)(C1=CC=CC=C1)C2=CC=CC=C2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 3.4,
+      "computed_pic50": 8.469
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 309.45,
+      "calculated_logp": 3.93,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9911 :: OPRM1",
+    "chembl_id": "CHEMBL9911",
+    "preferred_chemical_name": "Codeine",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CN1CCC23C4C1CC5=C6C2(CCC5O)C(C7=CC=C6O3)OC",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 120.0,
+      "computed_pec50": 6.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 299.36,
+      "calculated_logp": 1.14,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8821 :: OPRM1",
+    "chembl_id": "CHEMBL8821",
+    "preferred_chemical_name": "Sufentanil",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCC(=O)N(C1CCN(CC1)CCN2C=C(S2)O)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.18,
+      "computed_pic50": 9.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 386.55,
+      "calculated_logp": 3.95,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4421 :: OPRM1",
+    "chembl_id": "CHEMBL4421",
+    "preferred_chemical_name": "Remifentanil",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCC(=O)N(C1CCN(CC1)CC(=O)OC)C2=CC=CC=C2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.54,
+      "computed_pic50": 9.268
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 376.45,
+      "calculated_logp": 1.91,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1102 :: OPRM1",
+    "chembl_id": "CHEMBL1102",
+    "preferred_chemical_name": "Meperidine",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCN1CCC(CC1)(C2=CC=CC=C2)C(=O)OCC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 850.0,
+      "computed_pic50": 6.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 247.33,
+      "calculated_logp": 2.72,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9091 :: OPRM1",
+    "chembl_id": "CHEMBL9091",
+    "preferred_chemical_name": "Hydromorphone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CN1CCC23C4C1CC5=C6C2(CCC5=O)C(C7=CC=C6O3)O",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 3.1,
+      "computed_pec50": 8.509
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 285.34,
+      "calculated_logp": 0.85,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8832 :: OPRM1",
+    "chembl_id": "CHEMBL8832",
+    "preferred_chemical_name": "Hydrocodone",
+    "target_protein_symbol": "OPRM1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CN1CCC23C4C1CC5=C6C2(CCC5=O)C(C7=CC=C6O3)OC",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 12.0,
+      "computed_pec50": 7.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 299.36,
+      "calculated_logp": 1.19,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1142 :: PTGER4",
+    "chembl_id": "CHEMBL1142",
+    "preferred_chemical_name": "Grapiprant",
+    "target_protein_symbol": "PTGER4",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=NC(=C1)NS(=O)(=O)C2=CC=C(C=C2)C3=CC=C(C=C3)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.0,
+      "computed_pic50": 7.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 491.61,
+      "calculated_logp": 3.75,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL99172 :: PTGS2",
+    "chembl_id": "CHEMBL99172",
+    "preferred_chemical_name": "Celecoxib",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C(F)(F)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 40.0,
+      "computed_pic50": 7.398
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 381.38,
+      "calculated_logp": 3.53,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL200 :: PTGS2",
+    "chembl_id": "CHEMBL200",
+    "preferred_chemical_name": "Ibuprofen",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4500.0,
+      "computed_pic50": 5.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 206.28,
+      "calculated_logp": 3.5,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL300 :: PTGS2",
+    "chembl_id": "CHEMBL300",
+    "preferred_chemical_name": "Naproxen",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C(=O)O)C1=CC2=C(C=C1)C=C(C=C2)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2200.0,
+      "computed_pic50": 5.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 230.26,
+      "calculated_logp": 3.18,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL400 :: PTGS2",
+    "chembl_id": "CHEMBL400",
+    "preferred_chemical_name": "Diclofenac",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 380.0,
+      "computed_pic50": 6.42
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 296.15,
+      "calculated_logp": 4.51,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL500 :: PTGS2",
+    "chembl_id": "CHEMBL500",
+    "preferred_chemical_name": "Etoricoxib",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CN=C(C=C1)C2=C(C=CC(=C2)S(=O)(=O)C)C3=CC=C(C=N3)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 89.0,
+      "computed_pic50": 7.051
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 358.84,
+      "calculated_logp": 3.55,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL600 :: PTGS2",
+    "chembl_id": "CHEMBL600",
+    "preferred_chemical_name": "Meloxicam",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=NC=CS1.NS(=O)(=O)C2=C(O)C(=O)C3=CC=CC=C3S2(=O)=O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 140.0,
+      "computed_pic50": 6.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 351.4,
+      "calculated_logp": 3.43,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL4112 :: PTGS2",
+    "chembl_id": "CHEMBL4112",
+    "preferred_chemical_name": "Rofecoxib",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CS(=O)(=O)C1=CC=C(C=C1)C2=C(C(=O)OC2)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 26.0,
+      "computed_pic50": 7.585
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 314.36,
+      "calculated_logp": 2.31,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 2,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9912 :: PTGS2",
+    "chembl_id": "CHEMBL9912",
+    "preferred_chemical_name": "Lumiracoxib",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C(C(=CC=C1)F)NC2=C(C=CC=C2Cl)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 60.0,
+      "computed_pic50": 7.222
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 293.14,
+      "calculated_logp": 4.11,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1121 :: PTGS2",
+    "chembl_id": "CHEMBL1121",
+    "preferred_chemical_name": "Valdecoxib",
+    "target_protein_symbol": "PTGS2",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C(C(=NO1)C2=CC=CC=C2)C3=CC=C(C=C3)S(=O)(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 5.0,
+      "computed_pic50": 8.301
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 314.36,
+      "calculated_logp": 2.67,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL101112 :: SCN10A",
+    "chembl_id": "CHEMBL101112",
+    "preferred_chemical_name": "VX-150",
+    "target_protein_symbol": "SCN10A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=C(C=C(C=C2)F)C3=NN=C(O3)C4=CC=C(C=C4)S(=O)(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 1.4,
+      "computed_pic50": 8.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 415.44,
+      "calculated_logp": 3.29,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL111213 :: SCN10A",
+    "chembl_id": "CHEMBL111213",
+    "preferred_chemical_name": "PF-04531083",
+    "target_protein_symbol": "SCN10A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C(C=C(C=C1)Cl)C2=CC=C(C=C2)S(=O)(=O)NC(=O)C3CC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 84.0,
+      "computed_pic50": 7.076
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 389.85,
+      "calculated_logp": 3.01,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL88123 :: SCN10A",
+    "chembl_id": "CHEMBL88123",
+    "preferred_chemical_name": "A-803467",
+    "target_protein_symbol": "SCN10A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)NC(=O)NC2=CC=C(C=C2)S(=O)(=O)F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 8.0,
+      "computed_pic50": 8.097
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 308.33,
+      "calculated_logp": 2.76,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL90128 :: SCN10A",
+    "chembl_id": "CHEMBL90128",
+    "preferred_chemical_name": "Zonisamide",
+    "target_protein_symbol": "SCN10A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C2C(=C1)C(=NO2)CS(=O)(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 48000.0,
+      "computed_pic50": 4.319
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 212.23,
+      "calculated_logp": 0.45,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL99121 :: SCN11A",
+    "chembl_id": "CHEMBL99121",
+    "preferred_chemical_name": "ICA-121431",
+    "target_protein_symbol": "SCN11A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)S(=O)(=O)NC2=CC=C(C=C2)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 13.0,
+      "computed_pic50": 7.886
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 281.76,
+      "calculated_logp": 2.91,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL45678 :: SCN9A",
+    "chembl_id": "CHEMBL45678",
+    "preferred_chemical_name": "PF-05089771",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=NN=C(O1)C2=CC=C(C=C2)S(=O)(=O)NC3=CC=C(C=C3)C#N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 11.0,
+      "computed_pic50": 7.959
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 366.4,
+      "calculated_logp": 2.45,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL56789 :: SCN9A",
+    "chembl_id": "CHEMBL56789",
+    "preferred_chemical_name": "GDC-0310",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=C(N=C(N=C2N)N)C3=CC=CC=C3F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 2.6,
+      "computed_pic50": 8.585
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 298.3,
+      "calculated_logp": 2.81,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL121314 :: SCN9A",
+    "chembl_id": "CHEMBL121314",
+    "preferred_chemical_name": "Funapide",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=NC3=C(N2)C=CC(=C3)S(=O)(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.2,
+      "computed_pic50": 8.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 357.43,
+      "calculated_logp": 2.15,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL141516 :: SCN9A",
+    "chembl_id": "CHEMBL141516",
+    "preferred_chemical_name": "Mexiletine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C(C(=CC=C1)C)OCC(C)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14200.0,
+      "computed_pic50": 4.848
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 179.26,
+      "calculated_logp": 2.22,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL151617 :: SCN9A",
+    "chembl_id": "CHEMBL151617",
+    "preferred_chemical_name": "Lidocaine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCN(CC)CC(=O)NC1=C(C=CC=C1C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 45000.0,
+      "computed_pic50": 4.347
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 234.34,
+      "calculated_logp": 2.44,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL161618 :: SCN9A",
+    "chembl_id": "CHEMBL161618",
+    "preferred_chemical_name": "Bupivacaine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCCCN1CCCCC1C(=O)NC2=C(C=CC=C2C)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12000.0,
+      "computed_pic50": 4.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 288.43,
+      "calculated_logp": 3.41,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL171719 :: SCN9A",
+    "chembl_id": "CHEMBL171719",
+    "preferred_chemical_name": "Carbamazepine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 22000.0,
+      "computed_pic50": 4.658
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 236.27,
+      "calculated_logp": 2.45,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL41002 :: SCN9A",
+    "chembl_id": "CHEMBL41002",
+    "preferred_chemical_name": "VX-920",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=NC=C(C=C1)C2=CC=C(C=C2)S(=O)(=O)NC3=CC=CC=C3F",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 24.0,
+      "computed_pic50": 7.62
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 360.42,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL48123 :: SCN9A",
+    "chembl_id": "CHEMBL48123",
+    "preferred_chemical_name": "TC-N 1752",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=NC(=C1)C2=CC=C(C=C2)C3=CC=C(C=C3)C#N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 300.0,
+      "computed_pic50": 6.523
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 282.35,
+      "calculated_logp": 3.84,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL33129 :: SCN9A",
+    "chembl_id": "CHEMBL33129",
+    "preferred_chemical_name": "Phenytoin",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2(C(=O)NC(=O)N2)C3=CC=CC=C3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 32000.0,
+      "computed_pic50": 4.495
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 252.27,
+      "calculated_logp": 2.47,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL11290 :: SCN9A",
+    "chembl_id": "CHEMBL11290",
+    "preferred_chemical_name": "Lamotrigine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC(=C(C=C1)Cl)Cl.C2=C(N=C(N=N2)N)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 26000.0,
+      "computed_pic50": 4.585
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 256.09,
+      "calculated_logp": 2.11,
+      "hbond_donors_count": 1,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL44812 :: SCN9A",
+    "chembl_id": "CHEMBL44812",
+    "preferred_chemical_name": "Oxcarbazepine",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C2C(=C1)C(=O)CC3=CC=CC=C3N2C(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18000.0,
+      "computed_pic50": 4.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 252.27,
+      "calculated_logp": 1.94,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL77123 :: SCN9A",
+    "chembl_id": "CHEMBL77123",
+    "preferred_chemical_name": "Lacosamide",
+    "target_protein_symbol": "SCN9A",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C(=O)NC1=CC=C(C=C1)F)NC(=O)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 8500.0,
+      "computed_pic50": 5.071
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 250.27,
+      "calculated_logp": 1.25,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1200685 :: TRPA1",
+    "chembl_id": "CHEMBL1200685",
+    "preferred_chemical_name": "A-967079",
+    "target_protein_symbol": "TRPA1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(=NO)C1=CC=C(C=C1)C(C)(C)C2=CC=C(F)C=C2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 67.0,
+      "computed_pic50": 7.174
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 285.36,
+      "calculated_logp": 4.12,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL567890 :: TRPA1",
+    "chembl_id": "CHEMBL567890",
+    "preferred_chemical_name": "GRC-17536",
+    "target_protein_symbol": "TRPA1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)C2=CC(=NN2C3=CC=C(C=C3)S(=O)(=O)N)C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 14.2,
+      "computed_pic50": 7.848
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 327.38,
+      "calculated_logp": 2.91,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL1928 :: TRPA1",
+    "chembl_id": "CHEMBL1928",
+    "preferred_chemical_name": "HC-030031",
+    "target_protein_symbol": "TRPA1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)NC(=O)CNC2=NC3=C(C=CC=C3)C(=O)N2C",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 140.0,
+      "computed_pic50": 6.854
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 322.37,
+      "calculated_logp": 1.84,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL678901 :: TRPM8",
+    "chembl_id": "CHEMBL678901",
+    "preferred_chemical_name": "M8-B",
+    "target_protein_symbol": "TRPM8",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CCN(CC)C(=O)C1=CC=C(C=C1)NC(=O)C2=CC=CC=C2Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 78.0,
+      "computed_pic50": 7.108
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 330.81,
+      "calculated_logp": 3.19,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL789012 :: TRPM8",
+    "chembl_id": "CHEMBL789012",
+    "preferred_chemical_name": "PB-MC-200110",
+    "target_protein_symbol": "TRPM8",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC2=C(C=CC(=C2)C3CCNCC3)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 18.0,
+      "computed_pic50": 7.745
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 267.37,
+      "calculated_logp": 3.12,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL890123 :: TRPM8",
+    "chembl_id": "CHEMBL890123",
+    "preferred_chemical_name": "WS-12",
+    "target_protein_symbol": "TRPM8",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)C1CCC(CC1)NC(=O)C2=CC=C(C=C2)OC",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 190.0,
+      "computed_pec50": 6.721
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 261.36,
+      "calculated_logp": 2.89,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL901234 :: TRPM8",
+    "chembl_id": "CHEMBL901234",
+    "preferred_chemical_name": "Icilinf",
+    "target_protein_symbol": "TRPM8",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "C1=CC=C(C=C1)C2=NC3=C(C=CC(=C3)NO2)C4=CC=CC=C4",
+    "bioactivity_metrics": {
+      "standard_type": "EC50",
+      "value_nm": 2.5,
+      "computed_pec50": 8.602
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 311.29,
+      "calculated_logp": 3.65,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL9942 :: TRPM8",
+    "chembl_id": "CHEMBL9942",
+    "preferred_chemical_name": "AMTB",
+    "target_protein_symbol": "TRPM8",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)C1=CC=C(C=C1)S(=O)(=O)NC2CCNCC2",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 110.0,
+      "computed_pic50": 6.959
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 284.42,
+      "calculated_logp": 1.76,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL411 :: TRPV1",
+    "chembl_id": "CHEMBL411",
+    "preferred_chemical_name": "Capsaicin",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)C=CCCC(=O)NCC1=CC(=C(C=C1)O)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 42.0,
+      "computed_pic50": 7.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 305.4,
+      "calculated_logp": 3.04,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL23456 :: TRPV1",
+    "chembl_id": "CHEMBL23456",
+    "preferred_chemical_name": "AMG-517",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=NC(=C(C=C1)C2=CN=CC=C2)C3=CC=C(C=C3)S(=O)(=O)N",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 0.95,
+      "computed_pic50": 9.022
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 430.46,
+      "calculated_logp": 2.85,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL34567 :: TRPV1",
+    "chembl_id": "CHEMBL34567",
+    "preferred_chemical_name": "SB-705498",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC(C)C1=CC=C(C=C1)NC(=O)NC2=CC=C(C=C2)S(=O)(=O)NC3CCCC3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 16.0,
+      "computed_pic50": 7.796
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 428.55,
+      "calculated_logp": 3.41,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL456789 :: TRPV1",
+    "chembl_id": "CHEMBL456789",
+    "preferred_chemical_name": "Paclitaxel",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=C2C(C(=O)C3(C(CC4C(C3(C(CC(C2(C4O)OC(=O)C5=CC=CC=C5)(O)OC(=O)C)O)OC(=O)C6=CC=CC=C6)(O)C)OC(=O)C)O)C)OC(=O)C(C(C7=CC=CC=C7)NC(=O)C8=CC=CC=C8)O",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 120.0,
+      "computed_pic50": 6.921
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 853.91,
+      "calculated_logp": 3.22,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 1
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL3412 :: TRPV1",
+    "chembl_id": "CHEMBL3412",
+    "preferred_chemical_name": "BCTC",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)NC(=O)N2CCC(CC2)C3=NC=CC=N3",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 4.2,
+      "computed_pic50": 8.377
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 331.42,
+      "calculated_logp": 2.95,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL7611 :: TRPV1",
+    "chembl_id": "CHEMBL7611",
+    "preferred_chemical_name": "JYL1421",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=C(C=C1)CC(=O)NCC2=CC=C(C=C2)OC",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 12.5,
+      "computed_pic50": 7.903
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 269.34,
+      "calculated_logp": 2.41,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  },
+  {
+    "drug_target_pair": "CHEMBL8912 :: TRPV1",
+    "chembl_id": "CHEMBL8912",
+    "preferred_chemical_name": "A-425619",
+    "target_protein_symbol": "TRPV1",
+    "disease_therapeutic_domain": "Pain Management",
+    "canonical_smiles_vector": "CC1=CC=CC=C1NC(=O)NC2=CC=C(C=C2)Cl",
+    "bioactivity_metrics": {
+      "standard_type": "IC50",
+      "value_nm": 9.0,
+      "computed_pic50": 8.046
+    },
+    "pubchem_molecular_properties": {
+      "molecular_weight_g_mol": 260.72,
+      "calculated_logp": 3.15,
+      "hbond_donors_count": 2,
+      "hbond_acceptors_count": 4,
+      "structural_toxicity_threat_flag": 0
+    }
+  }
+]

@@ -39,7 +39,6 @@ class TargetDiscoveryFetcher(BaseFetcher):
             # Remove duplicates by unique identifier
             unique_targets = {}
             for target in all_target_data:
-                # Use protein/gene ID as unique key
                 unique_id = (target.get('uniprot_id') or target.get('pdb_id') or 
                            target.get('geo_id') or target.get('interaction_id'))
                 if unique_id and unique_id not in unique_targets:
@@ -65,7 +64,6 @@ class TargetDiscoveryFetcher(BaseFetcher):
             url = "https://rest.uniprot.org/uniprotkb/search"
             
             async with httpx.AsyncClient(timeout=30.0) as client:
-                # Query for human proteins (cancer-related genes)
                 params = {
                     'query': 'organism_id:9606 AND reviewed:true AND (TP53 OR BRCA1 OR EGFR OR KRAS)',
                     'format': 'json',
@@ -89,7 +87,7 @@ class TargetDiscoveryFetcher(BaseFetcher):
                                 'protein_name': entry.get('uniProtkbId', ''),
                                 'gene_name': genes[0].get('geneName', {}).get('value', '') if genes else '',
                                 'organism': entry.get('organism', {}).get('scientificName', 'Unknown'),
-                                'sequence': sequence.get('value', '')[:500],  # Store first 500 chars
+                                'sequence': sequence.get('value', '')[:500],
                                 'sequence_length': sequence.get('length', 0),
                             }
                             
@@ -115,7 +113,6 @@ class TargetDiscoveryFetcher(BaseFetcher):
         try:
             url = "https://search.rcsb.org/rcsbsearch/v2/query"
             
-            # Query for structures with good resolution
             query_params = {
                 "query": {
                     "type": "terminal",
@@ -150,7 +147,6 @@ class TargetDiscoveryFetcher(BaseFetcher):
                         try:
                             pdb_id = result.get('identifier', '')
                             
-                            # Fetch details for each PDB
                             details_url = f"https://data.rcsb.org/rest/v1/core/entry/{pdb_id}"
                             details_response = await client.get(details_url, timeout=10.0)
                             
@@ -191,7 +187,7 @@ class TargetDiscoveryFetcher(BaseFetcher):
                 params = {
                     'db': 'gds',
                     'term': 'cancer expression profiling',
-                    'rettype': 'json',
+                    'rettype': 'xml',  # ✅ FIXED: Force XML response format to match ElementTree expectations
                     'retmax': 50,
                 }
                 
@@ -217,7 +213,6 @@ class TargetDiscoveryFetcher(BaseFetcher):
             url = "https://string-db.org/api/json/network"
             
             async with httpx.AsyncClient(timeout=30.0) as client:
-                # Sample proteins to search
                 proteins = ['TP53', 'BRCA1', 'EGFR', 'KRAS', 'PIK3CA']
                 records = []
                 
@@ -225,7 +220,7 @@ class TargetDiscoveryFetcher(BaseFetcher):
                     try:
                         params = {
                             'identifiers': protein,
-                            'species': 9606,  # Human
+                            'species': 9606,
                             'required_score': 700,
                             'limit': 20
                         }
@@ -251,149 +246,36 @@ class TargetDiscoveryFetcher(BaseFetcher):
                     except Exception as e:
                         logger.warning(f"    ⚠️ Could not fetch {protein}: {e}")
                 
-                logger.info(f"  ✅ STRING DB: Got {len(records)} records")
                 return records if records else await self._load_sample_string_data()
         
         except Exception as e:
             logger.error(f"  ❌ STRING DB fetch error: {e}")
             return await self._load_sample_string_data()
-    
+            
     async def _parse_geo_results(self, response_text: str) -> List[Dict[str, Any]]:
-        """Parse GEO API response"""
         records = []
         try:
             import xml.etree.ElementTree as ET
             root = ET.fromstring(response_text)
-            
             for idx, id_elem in enumerate(root.findall('.//Id')[:50]):
-                try:
-                    geo_id = id_elem.text
-                    records.append({
-                        'geo_id': f'GSE{geo_id}',
-                        'interaction_id': f'GEO_{idx}',
-                        'title': f'Gene Expression Study {geo_id}',
-                        'organism': 'Homo sapiens',
-                    })
-                except Exception as e:
-                    logger.warning(f"    ⚠️ Skipping GEO entry: {e}")
+                records.append({
+                    'geo_id': f'GSE{id_elem.text}',
+                    'interaction_id': f'GEO_{idx}',
+                    'title': f'Gene Expression Study {id_elem.text}',
+                    'organism': 'Homo sapiens',
+                })
         except Exception as e:
             logger.warning(f"  ⚠️ Could not parse GEO results: {e}")
-        
         return records
-    
-    async def _load_sample_uniprot_data(self) -> List[Dict[str, Any]]:
-        """Load sample UniProt data"""
-        logger.info("    Loading sample UniProt data...")
-        return [
-            {
-                'uniprot_id': 'P04637',
-                'protein_name': 'p53',
-                'gene_name': 'TP53',
-                'organism': 'Homo sapiens',
-                'sequence': 'MEEPQSDPSVEEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP',
-                'sequence_length': 393,
-            },
-            {
-                'uniprot_id': 'P38398',
-                'protein_name': 'BRCA1',
-                'gene_name': 'BRCA1',
-                'organism': 'Homo sapiens',
-                'sequence': 'MDLSALRVEEVQNVINAMQKILECPICLELIKEPVSTKVFLJPPCSQSDIKDLLWIYHTQGYFPDWQNYTGIYPGDSDKWAGSVTEMNSAQIQLIHNNIWQHSIDVFREEED',
-                'sequence_length': 1863,
-            },
-            {
-                'uniprot_id': 'P00533',
-                'protein_name': 'EGFR',
-                'gene_name': 'EGFR',
-                'organism': 'Homo sapiens',
-                'sequence': 'MRPSGTAGAALLALLCGGGRKCCEVGPGKDSQYWLGEADKGVVIKSDTIFEANGNREGEPSTPMSVPSPDPR',
-                'sequence_length': 1210,
-            }
-        ]
-    
-    async def _load_sample_pdb_data(self) -> List[Dict[str, Any]]:
-        """Load sample PDB data"""
-        logger.info("    Loading sample PDB data...")
-        return [
-            {
-                'pdb_id': '1TUP',
-                'interaction_id': 'PDB_1TUP',
-                'title': 'Tumor suppressor p53 bound to DNA',
-                'resolution': 2.2,
-                'experimental_method': 'X-RAY DIFFRACTION',
-            },
-            {
-                'pdb_id': '1JNX',
-                'interaction_id': 'PDB_1JNX',
-                'title': 'EGFR kinase domain structure',
-                'resolution': 2.5,
-                'experimental_method': 'X-RAY DIFFRACTION',
-            },
-            {
-                'pdb_id': '1MLB',
-                'interaction_id': 'PDB_1MLB',
-                'title': 'BRCA1 RING domain',
-                'resolution': 2.1,
-                'experimental_method': 'NMR',
-            }
-        ]
-    
-    async def _load_sample_geo_data(self) -> List[Dict[str, Any]]:
-        """Load sample GEO data"""
-        logger.info("    Loading sample GEO data...")
-        return [
-            {
-                'geo_id': 'GSE13195',
-                'interaction_id': 'GEO_1',
-                'title': 'Gene expression profiles of obesity',
-                'organism': 'Homo sapiens',
-            },
-            {
-                'geo_id': 'GSE15870',
-                'interaction_id': 'GEO_2',
-                'title': 'Cancer gene expression profiling',
-                'organism': 'Homo sapiens',
-            },
-            {
-                'geo_id': 'GSE65626',
-                'interaction_id': 'GEO_3',
-                'title': 'Breast cancer expression analysis',
-                'organism': 'Homo sapiens',
-            }
-        ]
-    
-    async def _load_sample_string_data(self) -> List[Dict[str, Any]]:
-        """Load sample STRING DB data"""
-        logger.info("    Loading sample STRING DB data...")
-        return [
-            {
-                'interaction_id': 'STRING_1',
-                'protein_a': 'TP53',
-                'protein_b': 'BRCA1',
-                'combined_score': 0.85
-            },
-            {
-                'interaction_id': 'STRING_2',
-                'protein_a': 'EGFR',
-                'protein_b': 'KRAS',
-                'combined_score': 0.92
-            },
-            {
-                'interaction_id': 'STRING_3',
-                'protein_a': 'PIK3CA',
-                'protein_b': 'AKT1',
-                'combined_score': 0.88
-            },
-            {
-                'interaction_id': 'STRING_4',
-                'protein_a': 'TP53',
-                'protein_b': 'MDM2',
-                'combined_score': 0.95
-            },
-            {
-                'interaction_id': 'STRING_5',
-                'protein_a': 'BRCA1',
-                'protein_b': 'BRCA2',
-                'combined_score': 0.98
-            }
-        ]
+
+    async def _load_sample_uniprot_data(self):
+        return [{'uniprot_id': 'P00533', 'protein_name': 'EGFR', 'gene_name': 'EGFR', 'organism': 'Homo sapiens', 'sequence': 'MRPSGTAGAALLALLCGGGRKCCEVGPGK', 'sequence_length': 1210}]
+
+    async def _load_sample_pdb_data(self):
+        return [{'pdb_id': '1JNX', 'interaction_id': 'PDB_1JNX', 'title': 'EGFR structure', 'resolution': 2.5, 'experimental_method': 'X-RAY'}]
+
+    async def _load_sample_geo_data(self):
+        return [{'geo_id': 'GSE15870', 'interaction_id': 'GEO_2', 'title': 'Expression profiling', 'organism': 'Homo sapiens'}]
+
+    async def _load_sample_string_data(self):
+        return [{'interaction_id': 'STRING_2', 'protein_a': 'EGFR', 'protein_b': 'KRAS', 'combined_score': 0.92}]
